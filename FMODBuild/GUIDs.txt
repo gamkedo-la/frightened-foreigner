@@ -1,0 +1,11 @@
+{3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/BasicBackgroundMusic
+{9b47f662-18b8-45ba-8b77-dcf1ea2a1a61} event:/Bathroom_Furdoszoba
+{e31f3597-e728-480a-8ff4-444c529fec74} event:/Correct_Answer
+{2c4da0d4-de55-46fc-ae1d-c340d6d7849f} event:/HarmonicMinoredBackgroundMusic
+{d515d029-57d2-4877-a1dc-f5962fcddf67} event:/Incorrect_Answer
+{85a27b98-850b-40cc-b8a1-6022c49a0c9d} event:/Music
+{8da8b126-78cc-4c7e-97f9-c4f12c15d712} event:/PitchRandomizedSound
+{2648964c-bea3-4479-85f4-554a4bb08650} event:/RightClickScrollThroughWords
+{4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
+{7f11b81c-4d1e-4f60-a9ad-e1ef7a47be5b} bus:/Reverb
+{b1c3f9c2-5418-405a-913e-c8334fe8f0f1} bank:/Master Bank
