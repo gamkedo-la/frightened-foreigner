@@ -30,7 +30,7 @@ public class characterController : MonoBehaviour
 
         if (Input.GetKeyDown("r"))//repeats target audio
         {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Bathroom_Furdoszoba");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Bathroom_Furdoszoba");
         }
             
     }

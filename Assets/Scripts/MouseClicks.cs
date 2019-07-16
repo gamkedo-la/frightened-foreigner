@@ -36,7 +36,7 @@ public class MouseClicks: MonoBehaviour
         freedSoulsCounter = GameObject.Find("SoulCounter");
         FreedSoulsScript = freedSoulsCounter.GetComponent<CountFreedSouls>();
 
-        BasicBackGroundMusic = FMODUnity.RuntimeManager.CreateInstance("event:/BasicBackgroundMusic");
+        BasicBackGroundMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BasicBackgroundMusic");
         BasicBackGroundMusic.start();
 
         //HarmonicMinoredBackgroundMusic = FMODUnity.RuntimeManager.CreateInstance("event:/HarmonicMinoredBackgroundMusic");
@@ -68,14 +68,14 @@ public class MouseClicks: MonoBehaviour
                 Debug.LogError("no sprite found ImageName = " + ImageNameList[ImageListIndex]);//if there is an error, notify the developers
             }
 
-            FMODUnity.RuntimeManager.PlayOneShot("event:/RightClickScrollThroughWords");//aural feedback to confirm we're cycling through choices
+            FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/RightClickScrollThroughWords");//aural feedback to confirm we're cycling through choices
         }//end of right click
 
         if (Input.GetMouseButtonDown(0))//left click submits an answer choice
         {            
             if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
             {                
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Correct_Answer");//positive aural feedback for player
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
 
                 Sprite GhostSoulSprite = Resources.Load<Sprite>("ghost_soul");//load soul sprite
                 
@@ -96,7 +96,7 @@ public class MouseClicks: MonoBehaviour
             }
             else
             {
-                FMODUnity.RuntimeManager.PlayOneShot("event:/Incorrect_Answer");//negative aural feedback to player for an incorrect answer              
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Incorrect_Answer");//negative aural feedback to player for an incorrect answer              
             }
                 
         }//end of left click
