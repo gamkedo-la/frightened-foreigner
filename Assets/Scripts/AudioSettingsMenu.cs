@@ -17,9 +17,9 @@ public class AudioSettingsMenu : MonoBehaviour
     FMOD.Studio.Bus SFXBus;
 
     float MasterBusVolume = 1.0f;
-    float MusicBusVolume = 1f;
-    float WordsBusVolume = 1f;
-    float SFXBusVolume = 1f;
+    float MusicBusVolume = 1.0f;
+    float WordsBusVolume = 1.0f;
+    float SFXBusVolume = 1.0f;
 
     FMOD.Studio.EventInstance SFXVolumeTestEvent;
     FMOD.Studio.EventInstance WordsVolumeTestEvent;

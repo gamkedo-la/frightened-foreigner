@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class camMouseLook : MonoBehaviour
 {
-    public Transform canvas;
+    public Transform PauseCanvas;
+    public Transform AudioSettingsCanvas;
+
+    private PauseGame PauseGameScript;
+    private bool gamePaused;
 
     Vector2 mouselook; //change per frame in mouse movement
     Vector2 smoothV; //smoothing of changes
@@ -12,6 +16,12 @@ public class camMouseLook : MonoBehaviour
     public float smoothing = 2.0f; // smoothing factor
 
     GameObject character;
+
+    private void Awake()
+    {
+        PauseGameScript = GameObject.Find("GameController").GetComponent<PauseGame>();
+        gamePaused = PauseGameScript.GamePaused;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +32,9 @@ public class camMouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canvas.gameObject.activeInHierarchy == false)
+        gamePaused = PauseGameScript.GamePaused;
+        Debug.Log(gamePaused);
+        if (!gamePaused)
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 

@@ -31,13 +31,14 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
             audioSettingsCanvas.gameObject.SetActive(true);
             pauseMenuCanvas.gameObject.SetActive(false);
 
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             audioSettingsCanvas.gameObject.SetActive(false);
             pauseMenuCanvas.gameObject.SetActive(true);
+            //Time.timeScale = 0;
             //Cursor.lockState = CursorLockMode.Confined;
             //Cursor.lockState = CursorLockMode.Locked;
             //Time.timeScale = 1;
