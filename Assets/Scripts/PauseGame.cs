@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
-    public Transform canvas;
+    public Transform PauseMenuCanvas;
+
+    private void Awake()
+    {
+        //PauseMenuCanvas = GameObject.Find("PauseCanvas");
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +28,15 @@ public class PauseGame : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        if (canvas.gameObject.activeInHierarchy == false)
+        if (PauseMenuCanvas.gameObject.activeInHierarchy == false)
         {
-            canvas.gameObject.SetActive(true);
+            PauseMenuCanvas.gameObject.SetActive(true);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
         }
         else
         {
-            canvas.gameObject.SetActive(false);
+            PauseMenuCanvas.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
