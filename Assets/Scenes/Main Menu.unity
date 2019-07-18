@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 275530843}
   - component: {fileID: 275530842}
+  - component: {fileID: 275530844}
   - component: {fileID: 275530841}
   - component: {fileID: 275530845}
   m_Layer: 0
@@ -204,6 +205,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275530844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275530840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneManagerFromHierarchy: {fileID: 1426134167}
 --- !u!114 &275530845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SceneManagerFromHierarchy: {fileID: 0}
 --- !u!1 &1483536446
 GameObject:
   m_ObjectHideFlags: 0
