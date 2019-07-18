@@ -33,7 +33,7 @@ public class camMouseLook : MonoBehaviour
     void Update()
     {
         gamePaused = PauseGameScript.GamePaused;
-        Debug.Log(gamePaused);
+        //Debug.Log(gamePaused);
         if (!gamePaused)
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
