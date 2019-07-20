@@ -60,10 +60,12 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
             if ("Main Menu" == SceneManager.GetActiveScene().name)//if the current scene is the main menu
             {
                 TitleScreenCanvas.gameObject.SetActive(true);//show the title screen
+                Time.timeScale = 1;//debug for scrolling text in intro cutscene
             }
             else if ("Intro CutScene" == SceneManager.GetActiveScene().name)//if the current scene is the intro cutscene
             {
                 //we don't need to do anything, just making it clear in comprehensive logic
+                Time.timeScale = 1;//just in case
             }
             else if ("Cemetery Level" == SceneManager.GetActiveScene().name) //if the current scene is the cemetery
             {
