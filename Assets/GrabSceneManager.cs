@@ -15,7 +15,6 @@ public class GrabSceneManager : MonoBehaviour
     private void Awake()
     {
         preservedSceneManager = GameObject.Find("SceneManager");
-        Debug.Log(preservedSceneManager);
         SceneManagementScript = preservedSceneManager.GetComponent<SceneManagement>();
     }
     // Start is called before the first frame update

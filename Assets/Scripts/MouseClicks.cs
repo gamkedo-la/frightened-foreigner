@@ -82,9 +82,9 @@ public class MouseClicks: MonoBehaviour
                     FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
 
                     Sprite GhostSoulSprite = Resources.Load<Sprite>("Images/ghost_soul");//load soul sprite
-                    Debug.Log(GhostSoulSprite);
+                    
                     GhostSoul.GetComponent<SpriteRenderer>().sprite = GhostSoulSprite;//soul sprite becomes visible
-                    Debug.Log(GhostSoul.GetComponent<SpriteRenderer>().sprite);
+                    
                     GhostSoulVisible = true;//set bool to trigger float to heaven movement in the function/conditional at the bottom of this script
 
                     RenderSettings.ambientIntensity = 0.1f;//make the game slightly darker to help add progressive creepy ambience
@@ -108,7 +108,7 @@ public class MouseClicks: MonoBehaviour
             if (GhostSoulVisible)
             {
                 GhostSoul.transform.position += Vector3.up * 0.1f;//when the soul is freed, make it fly to heaven
-                Debug.Log("inside soul floating up");
+                
             }
         }
             }//end of update

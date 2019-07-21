@@ -6,11 +6,6 @@ using UnityEngine.UI;
 public class AudioSettingsMenu : MonoBehaviour
 {
 
-    //public Slider MasterVolumeSlider;
-    //public Slider MusicVolumeSlider;
-    //public Slider WordsVolumeSlider;
-    //public Slider SFXVolumeSlider;
-
     FMOD.Studio.Bus MasterBus;
     FMOD.Studio.Bus MusicBus;
     FMOD.Studio.Bus WordsBus;
@@ -27,7 +22,6 @@ public class AudioSettingsMenu : MonoBehaviour
     private void Awake()
     {
         MasterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
-        Debug.Log(MasterBus);
         MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
         WordsBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Words");
         SFXBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
@@ -45,10 +39,7 @@ public class AudioSettingsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //MasterBusVolume -= 0.01f;
         MasterBus.setVolume(MasterBusVolume);
-        Debug.Log("Master Bus Volume in update");
-        Debug.Log(MasterBusVolume);
         MusicBus.setVolume(MusicBusVolume);
         WordsBus.setVolume(WordsBusVolume);
         SFXBus.setVolume(SFXBusVolume);
@@ -57,7 +48,6 @@ public class AudioSettingsMenu : MonoBehaviour
     public void GrabMasterVolumeFromGameplay(float newMasterVolume)
     {
         MasterBusVolume = newMasterVolume;
-        //Debug.Log(MasterBusVolume);
     }
     public void GrabMusicVolumeFromGameplay(float newMusicVolume)
     {
