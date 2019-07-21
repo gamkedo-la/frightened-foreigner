@@ -19,6 +19,9 @@ public class AudioSettingsMenu : MonoBehaviour
     FMOD.Studio.EventInstance SFXVolumeTestEvent;
     FMOD.Studio.EventInstance WordsVolumeTestEvent;
 
+    public GameObject AudioSettingsManagerFromHierarchy;
+
+
     private void Awake()
     {
         MasterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
@@ -84,5 +87,10 @@ public class AudioSettingsMenu : MonoBehaviour
         {
             WordsVolumeTestEvent.start();
         }
+    }
+
+    public void DontDestroyMe()
+    {
+        DontDestroyOnLoad(transform.gameObject);
     }
 }

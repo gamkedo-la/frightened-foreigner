@@ -10,29 +10,25 @@ public class SceneManagement : MonoBehaviour
     static public FMOD.Studio.PLAYBACK_STATE TitleScreenMusicPlaybackState;
 
     public GameObject SceneManagerFromHierarchy;
+    public GameObject AudioSettingsCanvasFromHierarchy;
+    public GameObject AudioSettingsManagerFromHierarchy;
 
     private void Awake()
     {
-
+        
         TitleScreenMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/titleScreenMusicV1");
     }
 
     // Start is called before the first frame update
     void Start()
-    {
-        //TitleScreenMusic.getPlaybackState(out TitleScreenMusicPlaybackState);
-        //Debug.Log(TitleScreenMusicPlaybackState);
-        //if (TitleScreenMusicPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
-        //{
+    {       
             TitleScreenMusic.start();
-        //}   
     }
 
     // Update is called once per frame
     void Update()
     {
-        //TitleScreenMusic.getPlaybackState(out TitleScreenMusicPlaybackState);
-       // Debug.Log(TitleScreenMusicPlaybackState);
+
     }
 
     public void LoadCemeteryLevelFromIntroCutscene()
@@ -40,11 +36,15 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("Cemetery Level");
         TitleScreenMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(AudioSettingsCanvasFromHierarchy);
+        DontDestroyOnLoad(AudioSettingsManagerFromHierarchy);
     }
 
     public void LoadIntroCutScene()
     {
         SceneManager.LoadScene("Intro CutScene");
         DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(AudioSettingsCanvasFromHierarchy);
+        DontDestroyOnLoad(AudioSettingsManagerFromHierarchy);
     }
 }
