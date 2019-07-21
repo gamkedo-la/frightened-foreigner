@@ -739,6 +739,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneManagerFromHierarchy: {fileID: 1426134167}
+  AudioSettingsCanvasFromHierarchy: {fileID: 0}
+  AudioSettingsManagerFromHierarchy: {fileID: 0}
 --- !u!114 &275530845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1187,6 +1189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521e078e4cf1ee74d9cef476e257712b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSettingsManagerFromHierarchy: {fileID: 450431628}
+  whatever: {fileID: 1697121803}
 --- !u!4 &450431630
 Transform:
   m_ObjectHideFlags: 0
@@ -1194,11 +1198,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450431628}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 385, y: 203.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1079021196}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &485358805
@@ -2591,6 +2595,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054049199}
   m_CullTransparentMesh: 0
+--- !u!1 &1079021194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1079021196}
+  - component: {fileID: 1079021195}
+  - component: {fileID: 1079021197}
+  m_Layer: 0
+  m_Name: ActiveStatusManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1079021195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079021194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec30cb32a9ee1324e8e3c01c110660e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSettingsCanvas: {fileID: 1697121803}
+  pauseMenuCanvas: {fileID: 1919963853}
+  TitleScreenCanvas: {fileID: 1483536450}
+--- !u!4 &1079021196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079021194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1697121807}
+  - {fileID: 1426134168}
+  - {fileID: 2117885488}
+  - {fileID: 1919963853}
+  - {fileID: 450431630}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079021197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079021194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646c05ac93e73cc4e9b3fd6caec94054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1152535622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,7 +2821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30cb32a9ee1324e8e3c01c110660e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSettingsCanvas: {fileID: 0}
+  audioSettingsCanvas: {fileID: 1697121803}
   pauseMenuCanvas: {fileID: 1919963853}
   TitleScreenCanvas: {fileID: 0}
 --- !u!114 &1262074171
@@ -2799,7 +2867,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1262074170}
         m_MethodName: toggleAudioSettingsMenu
         m_Mode: 1
         m_Arguments:
@@ -3055,12 +3123,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426134167}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 385, y: 203.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1079021196}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1426134169
 MonoBehaviour:
@@ -3075,6 +3143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneManagerFromHierarchy: {fileID: 1426134167}
+  AudioSettingsCanvasFromHierarchy: {fileID: 1697121803}
+  AudioSettingsManagerFromHierarchy: {fileID: 450431628}
 --- !u!1 &1483536446
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,7 +3620,6 @@ GameObject:
   - component: {fileID: 1575567763}
   - component: {fileID: 1575567762}
   - component: {fileID: 1575567761}
-  - component: {fileID: 1575567764}
   m_Layer: 5
   m_Name: AudioSettingsButton
   m_TagString: Untagged
@@ -3671,21 +3740,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575567759}
   m_CullTransparentMesh: 0
---- !u!114 &1575567764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575567759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec30cb32a9ee1324e8e3c01c110660e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSettingsCanvas: {fileID: 1697121807}
-  pauseMenuCanvas: {fileID: 0}
-  TitleScreenCanvas: {fileID: 1483536450}
 --- !u!1 &1697121803
 GameObject:
   m_ObjectHideFlags: 0
@@ -3698,6 +3752,7 @@ GameObject:
   - component: {fileID: 1697121806}
   - component: {fileID: 1697121805}
   - component: {fileID: 1697121804}
+  - component: {fileID: 1697121808}
   m_Layer: 5
   m_Name: AudioSettingsCanvas
   m_TagString: Untagged
@@ -3783,14 +3838,27 @@ RectTransform:
   - {fileID: 861074199}
   - {fileID: 1502023151}
   - {fileID: 1546464591}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 1079021196}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1697121808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697121803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1f5fa83b4d7c349b383b7fa6db7bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSettingsCanvasManagerFromHierarchy: {fileID: 1697121803}
 --- !u!1 &1751235095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3808,7 +3876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1751235096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4274,14 +4342,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919963849}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 489205430}
   - {fileID: 753964806}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1079021196}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4850,7 +4918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec30cb32a9ee1324e8e3c01c110660e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSettingsCanvas: {fileID: 1697121807}
+  audioSettingsCanvas: {fileID: 1697121803}
   pauseMenuCanvas: {fileID: 1919963853}
   TitleScreenCanvas: {fileID: 1483536450}
 --- !u!114 &2117885487
@@ -4875,10 +4943,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117885485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 385, y: 203.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1079021196}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

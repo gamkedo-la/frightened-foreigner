@@ -7,7 +7,7 @@ public class MouseClicks: MonoBehaviour
 {
 
     public Transform PauseCanvas;
-    public Transform AudioSettingsCanvas;
+    private GameObject AudioActiveStatusManager;
 
     public List<string> ImageNameList;//to keep a list of possible word choices
     private int ImageListIndex = 0;
@@ -25,9 +25,18 @@ public class MouseClicks: MonoBehaviour
     private FMOD.Studio.EventInstance BasicBackGroundMusic;//to set the parameter value of freed souls in FMOD, which should transition to creepier tracks as the level progresses
     private FMOD.Studio.EventInstance HarmonicMinoredBackgroundMusic;
 
+    private void Awake()
+    {
+        
+    }
+
     // Use this for initialization
     void Start()
-    {  
+    {
+
+        AudioActiveStatusManager = GameObject.Find("ActiveStatusManager");
+        Debug.Log(AudioActiveStatusManager);
+
         RandomWordsScript = transform.parent.GetComponent<RandomWords>();
         //Debug.Log(RandomWordsScript);
         temporaryPictureName = transform.parent.name;//grabbing the correct answer choice based on the parent object
@@ -48,7 +57,7 @@ public class MouseClicks: MonoBehaviour
 
     void Update()
     {
-        if (PauseCanvas.gameObject.activeInHierarchy == false && AudioSettingsCanvas.gameObject.activeInHierarchy == false) //if the game isn't paused
+        if (PauseCanvas.gameObject.activeInHierarchy == false && AudioActiveStatusManager.activeInHierarchy == false) //if the game isn't paused
         {
             if (Input.GetMouseButtonDown(1))    // right mouse button click
             {

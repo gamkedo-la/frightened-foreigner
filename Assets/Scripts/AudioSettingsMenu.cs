@@ -21,6 +21,7 @@ public class AudioSettingsMenu : MonoBehaviour
 
     public GameObject AudioSettingsManagerFromHierarchy;
 
+    public GameObject whatever;
 
     private void Awake()
     {

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ToggleAudioSettingsMenu : MonoBehaviour
 {
-    public Transform audioSettingsCanvas;
+    public GameObject audioSettingsCanvas;
     public Transform pauseMenuCanvas;
     public Transform TitleScreenCanvas;
 
@@ -13,7 +13,7 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
 
     private void Awake()
     {
-        
+        //audioSettingsCanvas = GameObject.Find("AudioSettingsCanvas");
     }
     // Start is called before the first frame update
     void Start()
@@ -24,15 +24,20 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if ("Cemetery Level" == SceneManager.GetActiveScene().name && audioSettingsCanvas == null)
+        //{ 
+        //    Debug.Log("inside update of ToggleAudio");
         
+        //    audioSettingsCanvas = GameObject.Find("AudioSettingsCanvas");
+        //}
     }
 
     public void toggleAudioSettingsMenu()
     {
-        
-        if (audioSettingsCanvas.gameObject.activeInHierarchy == false)//if the audio settings menu is inactive
+        Debug.Log(gameObject.name);
+        if (audioSettingsCanvas.activeInHierarchy == false)//if the audio settings menu is inactive
         {
-            audioSettingsCanvas.gameObject.SetActive(true);//make the audio settings menu active, then check.....
+            audioSettingsCanvas.SetActive(true);//make the audio settings menu active, then check.....
 
             if ("Main Menu" == SceneManager.GetActiveScene().name)//if the current scene is the main menu
             {
@@ -53,9 +58,9 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-        else if ((audioSettingsCanvas.gameObject.activeInHierarchy == true))//when leaving the audio settings menu
+        else if ((audioSettingsCanvas.activeInHierarchy == true))//when leaving the audio settings menu
         {
-            audioSettingsCanvas.gameObject.SetActive(false);//hide the audio settings menu
+            audioSettingsCanvas.SetActive(false);//hide the audio settings menu
 
             if ("Main Menu" == SceneManager.GetActiveScene().name)//if the current scene is the main menu
             {

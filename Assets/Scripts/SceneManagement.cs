@@ -12,6 +12,7 @@ public class SceneManagement : MonoBehaviour
     public GameObject SceneManagerFromHierarchy;
     public GameObject AudioSettingsCanvasFromHierarchy;
     public GameObject AudioSettingsManagerFromHierarchy;
+    
 
     private void Awake()
     {
@@ -35,16 +36,16 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Cemetery Level");
         TitleScreenMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        DontDestroyOnLoad(transform.gameObject);
-        DontDestroyOnLoad(AudioSettingsCanvasFromHierarchy);
-        DontDestroyOnLoad(AudioSettingsManagerFromHierarchy);
+        
+       
+        
     }
 
     public void LoadIntroCutScene()
     {
         SceneManager.LoadScene("Intro CutScene");
-        DontDestroyOnLoad(transform.gameObject);
-        DontDestroyOnLoad(AudioSettingsCanvasFromHierarchy);
-        DontDestroyOnLoad(AudioSettingsManagerFromHierarchy);
+        
+       
+        
     }
 }
