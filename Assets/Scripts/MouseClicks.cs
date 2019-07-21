@@ -60,7 +60,7 @@ public class MouseClicks: MonoBehaviour
 
                 temporaryPictureName = ImageNameList[ImageListIndex];//string for picture to load
 
-                Sprite SpriteToLoad = Resources.Load<Sprite>("TextSprites/" + temporaryPictureName);//create a space in memory for the sprite to load
+                Sprite SpriteToLoad = Resources.Load<Sprite>("Images/TextSprites/" + temporaryPictureName);//create a space in memory for the sprite to load
 
                 if (SpriteToLoad)//error checking
                 {
