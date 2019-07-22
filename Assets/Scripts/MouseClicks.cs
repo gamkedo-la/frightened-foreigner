@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MouseClicks: MonoBehaviour
 {
 
-    public Transform PauseCanvas;
+    private PauseGame PauseGameScript;
     private GameObject AudioActiveStatusManager;
 
     public List<string> ImageNameList;//to keep a list of possible word choices
@@ -33,6 +33,7 @@ public class MouseClicks: MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        PauseGameScript = GameObject.Find("GameController")?.GetComponent<PauseGame>();
 
         AudioActiveStatusManager = GameObject.Find("ActiveStatusManager");
         Debug.Log(AudioActiveStatusManager);
@@ -57,7 +58,7 @@ public class MouseClicks: MonoBehaviour
 
     void Update()
     {
-        if (PauseCanvas.gameObject.activeInHierarchy == false && AudioActiveStatusManager.activeInHierarchy == false) //if the game isn't paused
+        if (!PauseGameScript.GamePaused)
         {
             if (Input.GetMouseButtonDown(1))    // right mouse button click
             {

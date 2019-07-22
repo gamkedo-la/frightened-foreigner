@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44970918, g: 0.49977744, b: 0.575634, a: 1}
+  m_IndirectSpecularColor: {r: 0.44970965, g: 0.49977773, b: 0.5756354, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,6 +137,8 @@ GameObject:
   - component: {fileID: 75928659}
   - component: {fileID: 75928658}
   - component: {fileID: 75928660}
+  - component: {fileID: 75928661}
+  - component: {fileID: 75928662}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -285,6 +287,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: 0
+--- !u!114 &75928661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75928651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722c359baa94e1a479069f69caaa8b6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImageNameList: []
+  temporaryPictureName: 
+--- !u!114 &75928662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75928651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnswerChoices: []
+  CorrectChoice: 
+  CurrentChoice: 
+  MasterListOfChoicesScript: {fileID: 0}
+  MasterListOfChoices: []
+  CurrentTransferableChoicesList: []
+  CurrentLengthOfTransferableList: 0
+  RandomIntegerForTransferableListOfChoices: 0
+  CurrentStringToAddToAnswerChoicesList: 
 --- !u!1 &85502935
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   AnswerChoices: []
   CorrectChoice: 
   CurrentChoice: 
@@ -461,7 +497,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.45e-43, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 9.8e-44, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1066,6 +1102,8 @@ MonoBehaviour:
   AudioSettingsCanvas: {fileID: 0}
   sensitivity: 5
   smoothing: 2
+  minVerticalAngle: -60
+  maxVerticalAngle: 60
 --- !u!1 &560385328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,7 +1489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   AnswerChoices: []
   CorrectChoice: 
   CurrentChoice: 
@@ -2829,7 +2866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   AnswerChoices: []
   CorrectChoice: 
   CurrentChoice: 
@@ -3352,7 +3388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   AnswerChoices: []
   CorrectChoice: 
   CurrentChoice: 
@@ -3457,7 +3492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   AnswerChoices: []
   CorrectChoice: 
   CurrentChoice: 
@@ -3582,6 +3616,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 722c359baa94e1a479069f69caaa8b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PauseCanvas: {fileID: 1049168767}
   ImageNameList: []
   temporaryPictureName: 
