@@ -49,8 +49,9 @@ public class camMouseLook : MonoBehaviour
 
             mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
             smoothV.x = Mathf.Lerp(smoothV.x, mouseDelta.x, 1f / smoothing);
-            smoothV.y = Mathf.Clamp(Mathf.Lerp(smoothV.y, mouseDelta.y, 1f / smoothing), minVerticalAngle, maxVerticalAngle);
+            smoothV.y = Mathf.Lerp(smoothV.y, mouseDelta.y, 1f / smoothing);
             mouselook += smoothV;
+            mouselook.y = Mathf.Clamp(mouselook.y, minVerticalAngle, maxVerticalAngle);
 
             Quaternion xRotation = Quaternion.AngleAxis(mouselook.x, Vector3.up);
             character.transform.localRotation = ogCharacterRotation * xRotation;
