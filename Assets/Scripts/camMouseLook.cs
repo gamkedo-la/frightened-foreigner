@@ -15,7 +15,14 @@ public class camMouseLook : MonoBehaviour
     public float sensitivity = 5.0f; // offset for how much change in mouse movement needs to happen to trigger changes
     public float smoothing = 2.0f; // smoothing factor
 
+    [Space]
+    public float minVerticalAngle = -60f;
+    public float maxVerticalAngle = 60f;
+
     GameObject character;
+
+    Quaternion ogCharacterRotation;
+    Quaternion ogRotation;
 
     private void Awake()
     {
@@ -27,6 +34,8 @@ public class camMouseLook : MonoBehaviour
     void Start()
     {
         character = this.transform.parent.gameObject;
+        ogRotation = transform.localRotation;
+        ogCharacterRotation = character.transform.localRotation;
     }
 
     // Update is called once per frame
@@ -40,12 +49,16 @@ public class camMouseLook : MonoBehaviour
 
             mouseDelta = Vector2.Scale(mouseDelta, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
             smoothV.x = Mathf.Lerp(smoothV.x, mouseDelta.x, 1f / smoothing);
-            smoothV.y = Mathf.Lerp(smoothV.y, mouseDelta.y, 1f / smoothing);
+            smoothV.y = Mathf.Clamp(Mathf.Lerp(smoothV.y, mouseDelta.y, 1f / smoothing), minVerticalAngle, maxVerticalAngle);
             mouselook += smoothV;
 
-            transform.localRotation = Quaternion.AngleAxis(-mouselook.y, Vector2.right);
-            character.transform.localRotation = Quaternion.AngleAxis(mouselook.x, character.transform.up);
+            Quaternion xRotation = Quaternion.AngleAxis(mouselook.x, Vector3.up);
+            character.transform.localRotation = ogCharacterRotation * xRotation;
+
+            Vector3 angles = ogRotation.eulerAngles;
+            angles.x = -mouselook.y;
+            transform.localEulerAngles = angles;
         }
-        
+
     }
 }
