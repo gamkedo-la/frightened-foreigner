@@ -34,7 +34,7 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
 
     public void toggleAudioSettingsMenu()
     {
-        Debug.Log(gameObject.name);
+        
         if (audioSettingsCanvas.activeInHierarchy == false)//if the audio settings menu is inactive
         {
             audioSettingsCanvas.SetActive(true);//make the audio settings menu active, then check.....
@@ -76,7 +76,7 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
             {
                 if (pauseMenuCanvas.gameObject.activeInHierarchy == false)//and we're leaving the audio settings, which navigates back to the pause menu
                 {
-                    pauseMenuCanvas.gameObject.SetActive(false);//show the pause menu
+                    pauseMenuCanvas.gameObject.SetActive(true);//show the pause menu
                 }
             }
         }
