@@ -43,8 +43,7 @@ public class MouseClicks: MonoBehaviour
         temporaryPictureName = transform.name;//grabbing the correct answer choice based on the parent object
         
         ImageNameList = new List<string>(RandomWordsScript.MasterListOfChoices);
-        Debug.Log(ImageNameList);
-        Debug.Log(ImageNameList.Count);
+        
         
         GhostSoul = GameObject.Find("BathroomGhostSoul");//grabbing the specific ghost soul
 

@@ -24,7 +24,7 @@ public class RandomWords : MonoBehaviour
         player = GameObject.Find("Character");
         MasterListOfChoicesScript = player.GetComponent<MasterListOfWordChoices>();
         MasterListOfChoices = MasterListOfChoicesScript.ListOfAllChoicesForGame;
-        Debug.Log(MasterListOfChoices[0]);
+        
 
         CorrectChoice = gameObject.name;
     }
