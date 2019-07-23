@@ -9,10 +9,10 @@ public class MouseClicks: MonoBehaviour
     private PauseGame PauseGameScript;
     private GameObject AudioActiveStatusManager;
 
-    public List<string> ImageNameList;//to keep a list of possible word choices
+    private List<string> ImageNameList;//to keep a list of possible word choices
     private int ImageListIndex = 0;
 
-    private RandomWords RandomWordsScript;//where to grab list of possible words
+    public RandomWords RandomWordsScript;//where to put list of possible words in memory
 
     public string temporaryPictureName;//helps cycle through word choices
 
@@ -36,13 +36,15 @@ public class MouseClicks: MonoBehaviour
         PauseGameScript = GameObject.Find("GameController")?.GetComponent<PauseGame>();
 
         AudioActiveStatusManager = GameObject.Find("ActiveStatusManager");
-        Debug.Log(AudioActiveStatusManager);
-
-        RandomWordsScript = transform.parent.GetComponent<RandomWords>();
-        //Debug.Log(RandomWordsScript);
-        temporaryPictureName = transform.parent.name;//grabbing the correct answer choice based on the parent object
         
-        ImageNameList = new List<string>(RandomWordsScript.AnswerChoices);
+        RandomWordsScript = gameObject.GetComponent<RandomWords>();
+        //Debug.Log(RandomWordsScript);
+
+        temporaryPictureName = transform.name;//grabbing the correct answer choice based on the parent object
+        
+        ImageNameList = new List<string>(RandomWordsScript.MasterListOfChoices);
+        Debug.Log(ImageNameList);
+        Debug.Log(ImageNameList.Count);
         
         GhostSoul = GameObject.Find("BathroomGhostSoul");//grabbing the specific ghost soul
 

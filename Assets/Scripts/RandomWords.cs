@@ -23,6 +23,8 @@ public class RandomWords : MonoBehaviour
     {
         player = GameObject.Find("Character");
         MasterListOfChoicesScript = player.GetComponent<MasterListOfWordChoices>();
+        MasterListOfChoices = MasterListOfChoicesScript.ListOfAllChoicesForGame;
+        Debug.Log(MasterListOfChoices[0]);
 
         CorrectChoice = gameObject.name;
     }
@@ -30,7 +32,7 @@ public class RandomWords : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MasterListOfChoices = MasterListOfChoicesScript.ListOfAllChoicesForGame;
+        
         CurrentTransferableChoicesList = new List<string>(MasterListOfChoices);
         AnswerChoices.Add(CorrectChoice);//ensure that the correct choice is in the list
 

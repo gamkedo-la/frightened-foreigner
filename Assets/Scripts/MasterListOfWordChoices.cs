@@ -14,6 +14,7 @@ public class MasterListOfWordChoices : MonoBehaviour
         ListOfAllChoicesForGame.Add("idő");//time
         ListOfAllChoicesForGame.Add("nő");//woman
         ListOfAllChoicesForGame.Add("pénz");//money
+        
     }
 
     void Start()
