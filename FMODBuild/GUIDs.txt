@@ -1,6 +1,8 @@
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
 {2c4da0d4-de55-46fc-ae1d-c340d6d7849f} event:/Music/HarmonicMinoredBackgroundMusic
 {cc9f3775-3d67-4852-9233-1b60af6c5073} event:/Music/titleScreenMusicV1
+{8951ceca-4279-4295-93ba-ec676e862ad0} event:/Music/titleTransitionOneV1
+{646afc85-2002-4caf-b76d-ab7931096245} event:/Music/titleTransitionTwoV1
 {8da8b126-78cc-4c7e-97f9-c4f12c15d712} event:/SFX/PitchRandomizedSound
 {2648964c-bea3-4479-85f4-554a4bb08650} event:/SFX/RightClickScrollThroughWords
 {9b47f662-18b8-45ba-8b77-dcf1ea2a1a61} event:/Words/Bathroom_Furdoszoba
