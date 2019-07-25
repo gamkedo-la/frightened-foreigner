@@ -44,8 +44,9 @@ public class SceneManagement : MonoBehaviour
     public void LoadIntroCutScene()
     {
         SceneManager.LoadScene("Intro CutScene");
-        
-       
-        
+        TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", 1);
+
+
+
     }
 }
