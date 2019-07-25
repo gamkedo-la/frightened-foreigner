@@ -12,6 +12,8 @@ public class SceneManagement : MonoBehaviour
     public GameObject SceneManagerFromHierarchy;
     public GameObject AudioSettingsCanvasFromHierarchy;
     public GameObject AudioSettingsManagerFromHierarchy;
+
+    public Animator animator;
     
 
     private void Awake()
