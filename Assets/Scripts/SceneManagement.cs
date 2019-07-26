@@ -14,6 +14,9 @@ public class SceneManagement : MonoBehaviour
     public GameObject AudioSettingsManagerFromHierarchy;
 
     public Animator animator;
+
+    private float BackgroundMusicLayersFadeValue = 0f;
+    private bool ShouldFadeInSopranos = false;
     
 
     private void Awake()
@@ -31,7 +34,11 @@ public class SceneManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (ShouldFadeInSopranos && BackgroundMusicLayersFadeValue < 1)
+        {
+            BackgroundMusicLayersFadeValue += 0.005f;
+            TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+        }
     }
 
     public void LoadCemeteryLevelFromIntroCutscene()
@@ -46,9 +53,6 @@ public class SceneManagement : MonoBehaviour
     public void LoadIntroCutScene()
     {
         SceneManager.LoadScene("Intro CutScene");
-        TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", 1);
-
-
-
+        ShouldFadeInSopranos = true;
     }
 }
