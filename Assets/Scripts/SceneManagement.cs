@@ -16,12 +16,13 @@ public class SceneManagement : MonoBehaviour
     public Animator animator;
 
     private float BackgroundMusicLayersFadeValue = 0f;
+    private bool ShouldFadeInTitleTrack = false;
     private bool ShouldFadeInSopranos = false;
     
 
     private void Awake()
     {
-        
+        ShouldFadeInTitleTrack = true;
         TitleScreenMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/titleScreenMusicV1");
     }
 
@@ -34,7 +35,12 @@ public class SceneManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ShouldFadeInSopranos && BackgroundMusicLayersFadeValue < 1)
+        if (ShouldFadeInTitleTrack && BackgroundMusicLayersFadeValue < 1)
+        {
+            BackgroundMusicLayersFadeValue += 0.005f;
+            TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+        }
+        if (ShouldFadeInSopranos && BackgroundMusicLayersFadeValue < 2)
         {
             BackgroundMusicLayersFadeValue += 0.005f;
             TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
