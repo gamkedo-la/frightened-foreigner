@@ -6,16 +6,17 @@ using UnityEngine.UI;
 public class GrabSceneManager : MonoBehaviour
 {
 
-    private GameObject preservedSceneManager;
+    private GameObject preservedLevelChanger;
 
-    public Button SkipIntroButton;
+    private Button SkipIntroButton;
 
     private SceneManagement SceneManagementScript;
 
     private void Awake()
     {
-        preservedSceneManager = GameObject.Find("SceneManager");
-        SceneManagementScript = preservedSceneManager.GetComponent<SceneManagement>();
+        SkipIntroButton = GetComponent<Button>();
+        preservedLevelChanger = GameObject.Find("LevelChanger");
+        SceneManagementScript = preservedLevelChanger.GetComponent<SceneManagement>();
     }
     // Start is called before the first frame update
     void Start()

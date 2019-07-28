@@ -61,6 +61,7 @@ public class SceneManagement : MonoBehaviour
     {
         Debug.Log(gameObject.name);
         SceneManager.LoadScene("Intro CutScene");
+
         
     }
 

@@ -651,7 +651,6 @@ GameObject:
   m_Component:
   - component: {fileID: 275530843}
   - component: {fileID: 275530842}
-  - component: {fileID: 275530844}
   - component: {fileID: 275530841}
   - component: {fileID: 275530845}
   m_Layer: 0
@@ -726,21 +725,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &275530844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275530840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneManagerFromHierarchy: {fileID: 1426134167}
-  AudioSettingsCanvasFromHierarchy: {fileID: 0}
-  AudioSettingsManagerFromHierarchy: {fileID: 0}
 --- !u!114 &275530845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +749,6 @@ GameObject:
   - component: {fileID: 313043659}
   - component: {fileID: 313043661}
   - component: {fileID: 313043660}
-  - component: {fileID: 313043662}
   m_Layer: 5
   m_Name: BlackFade
   m_TagString: Untagged
@@ -829,21 +812,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313043658}
   m_CullTransparentMesh: 0
---- !u!114 &313043662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313043658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneManagerFromHierarchy: {fileID: 1426134167}
-  AudioSettingsCanvasFromHierarchy: {fileID: 0}
-  AudioSettingsManagerFromHierarchy: {fileID: 0}
 --- !u!1 &341231642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,7 +3278,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1426134168}
-  - component: {fileID: 1426134169}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3332,21 +3299,6 @@ Transform:
   m_Father: {fileID: 1079021196}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426134169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426134167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneManagerFromHierarchy: {fileID: 1426134167}
-  AudioSettingsCanvasFromHierarchy: {fileID: 1697121803}
-  AudioSettingsManagerFromHierarchy: {fileID: 450431628}
 --- !u!1 &1482567411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,7 +3311,6 @@ GameObject:
   - component: {fileID: 1482567415}
   - component: {fileID: 1482567414}
   - component: {fileID: 1482567413}
-  - component: {fileID: 1482567416}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3447,21 +3398,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 999
   m_TargetDisplay: 0
---- !u!114 &1482567416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482567411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneManagerFromHierarchy: {fileID: 1426134167}
-  AudioSettingsCanvasFromHierarchy: {fileID: 0}
-  AudioSettingsManagerFromHierarchy: {fileID: 0}
 --- !u!1 &1483536446
 GameObject:
   m_ObjectHideFlags: 0
@@ -4368,7 +4304,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1426134169}
+      - m_Target: {fileID: 1194000405}
         m_MethodName: TransitionToIntroCutscene
         m_Mode: 1
         m_Arguments:
