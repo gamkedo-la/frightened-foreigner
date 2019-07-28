@@ -765,6 +765,7 @@ GameObject:
   - component: {fileID: 313043659}
   - component: {fileID: 313043661}
   - component: {fileID: 313043660}
+  - component: {fileID: 313043662}
   m_Layer: 5
   m_Name: BlackFade
   m_TagString: Untagged
@@ -828,6 +829,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313043658}
   m_CullTransparentMesh: 0
+--- !u!114 &313043662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313043658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneManagerFromHierarchy: {fileID: 1426134167}
+  AudioSettingsCanvasFromHierarchy: {fileID: 0}
+  AudioSettingsManagerFromHierarchy: {fileID: 0}
 --- !u!1 &341231642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,6 +2914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194000403}
   - component: {fileID: 1194000404}
+  - component: {fileID: 1194000405}
   m_Layer: 0
   m_Name: LevelChanger
   m_TagString: Untagged
@@ -2939,6 +2956,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1194000405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194000402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneManagerFromHierarchy: {fileID: 1426134167}
+  AudioSettingsCanvasFromHierarchy: {fileID: 0}
+  AudioSettingsManagerFromHierarchy: {fileID: 0}
 --- !u!1 &1262074168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3327,6 +3359,7 @@ GameObject:
   - component: {fileID: 1482567415}
   - component: {fileID: 1482567414}
   - component: {fileID: 1482567413}
+  - component: {fileID: 1482567416}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3414,6 +3447,21 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 999
   m_TargetDisplay: 0
+--- !u!114 &1482567416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482567411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb226a520d877904d90ee2bfa75f00aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneManagerFromHierarchy: {fileID: 1426134167}
+  AudioSettingsCanvasFromHierarchy: {fileID: 0}
+  AudioSettingsManagerFromHierarchy: {fileID: 0}
 --- !u!1 &1483536446
 GameObject:
   m_ObjectHideFlags: 0
@@ -4321,7 +4369,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1426134169}
-        m_MethodName: LoadIntroCutScene
+        m_MethodName: TransitionToIntroCutscene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

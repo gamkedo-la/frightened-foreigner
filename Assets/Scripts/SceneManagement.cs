@@ -13,7 +13,7 @@ public class SceneManagement : MonoBehaviour
     public GameObject AudioSettingsCanvasFromHierarchy;
     public GameObject AudioSettingsManagerFromHierarchy;
 
-    public Animator animator;
+    private Animator LevelChangerAnimator;
 
     private float BackgroundMusicLayersFadeValue = 0f;
     private bool ShouldFadeInTitleTrack = false;
@@ -24,6 +24,7 @@ public class SceneManagement : MonoBehaviour
     {
         ShouldFadeInTitleTrack = true;
         TitleScreenMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/titleScreenMusicV1");
+        LevelChangerAnimator = GameObject.Find("LevelChanger").GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -58,7 +59,14 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadIntroCutScene()
     {
+        Debug.Log(gameObject.name);
         SceneManager.LoadScene("Intro CutScene");
-        ShouldFadeInSopranos = true;
+        
+    }
+
+    public void TransitionToIntroCutscene()
+    {
+        LevelChangerAnimator.Play("FadeOut");
+        ShouldFadeInSopranos = true;       
     }
 }
