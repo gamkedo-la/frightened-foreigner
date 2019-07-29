@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
 
-    static public FMOD.Studio.EventInstance TitleScreenMusic;
+     public FMOD.Studio.EventInstance TitleScreenMusic;
     static public FMOD.Studio.PLAYBACK_STATE TitleScreenMusicPlaybackState;
 
     public GameObject SceneManagerFromHierarchy;
@@ -15,9 +15,13 @@ public class SceneManagement : MonoBehaviour
 
     private Animator LevelChangerAnimator;
 
-    private float BackgroundMusicLayersFadeValue = 0f;
+    public float BackgroundMusicLayersFadeValue = 0f;
     private bool ShouldFadeInTitleTrack = false;
     private bool ShouldFadeInSopranos = false;
+    private bool ShouldFadeInGlock = false;
+    private bool ShouldTransitionToBassoonPart = false;
+
+    private GameObject BlackFade;
     
 
     private void Awake()
@@ -25,6 +29,7 @@ public class SceneManagement : MonoBehaviour
         ShouldFadeInTitleTrack = true;
         TitleScreenMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/titleScreenMusicV1");
         LevelChangerAnimator = GameObject.Find("LevelChanger").GetComponent<Animator>();
+        BlackFade = GameObject.Find("BlackFade");
     }
 
     // Start is called before the first frame update
@@ -46,23 +51,30 @@ public class SceneManagement : MonoBehaviour
             BackgroundMusicLayersFadeValue += 0.005f;
             TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
         }
+        if (ShouldFadeInGlock && BackgroundMusicLayersFadeValue < 3)
+        {
+            BackgroundMusicLayersFadeValue += 0.005f;
+            TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+        }
+        //if (ShouldTransitionToBassoonPart && BackgroundMusicLayersFadeValue < 4)
+        //{
+        //    BackgroundMusicLayersFadeValue += 0.005f;
+         //   TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+        //}
     }
 
     public void LoadCemeteryLevelFromIntroCutscene()
     {
         SceneManager.LoadScene("Cemetery Level");
         TitleScreenMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        
-       
-        
     }
 
     public void LoadIntroCutScene()
     {
-        Debug.Log(gameObject.name);
         SceneManager.LoadScene("Intro CutScene");
-
-        
+        ShouldFadeInGlock = true;
+        BlackFade.SetActive(false);
+        Debug.Log("Black Fade should be inactive");
     }
 
     public void TransitionToIntroCutscene()
@@ -70,4 +82,6 @@ public class SceneManagement : MonoBehaviour
         LevelChangerAnimator.Play("FadeOut");
         ShouldFadeInSopranos = true;       
     }
+
+    
 }
