@@ -8,7 +8,7 @@ public class TriggerLayerChange : MonoBehaviour
     private SceneManagement SceneManagementScript;
     private FMOD.Studio.EventInstance TitleScreenMusic;
     private float BackgroundMusicLayersFadeValue;
-    private bool ShouldTransitionToBassoonPart = false;
+    public bool ShouldTransitionToBassoonPart = false;
 
     private void Awake()
     {

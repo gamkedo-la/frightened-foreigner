@@ -22,6 +22,9 @@ public class SceneManagement : MonoBehaviour
     private bool ShouldTransitionToBassoonPart = false;
 
     private GameObject BlackFade;
+
+    private GameObject Part1Text;
+    private TriggerLayerChange TriggerLayerChangeScript;
     
 
     private void Awake()
@@ -30,6 +33,8 @@ public class SceneManagement : MonoBehaviour
         TitleScreenMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/titleScreenMusicV1");
         LevelChangerAnimator = GameObject.Find("LevelChanger").GetComponent<Animator>();
         BlackFade = GameObject.Find("BlackFade");
+
+        
     }
 
     // Start is called before the first frame update
@@ -56,17 +61,22 @@ public class SceneManagement : MonoBehaviour
             BackgroundMusicLayersFadeValue += 0.005f;
             TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
         }
-        //if (ShouldTransitionToBassoonPart && BackgroundMusicLayersFadeValue < 4)
-        //{
-        //    BackgroundMusicLayersFadeValue += 0.005f;
-         //   TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
-        //}
+        if (TriggerLayerChangeScript.ShouldTransitionToBassoonPart && BackgroundMusicLayersFadeValue < 4)
+        {
+            BackgroundMusicLayersFadeValue += 0.005f;
+            TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+        }
     }
 
     public void LoadCemeteryLevelFromIntroCutscene()
     {
+        Part1Text = GameObject.Find("Part1 Text");
+        TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
         SceneManager.LoadScene("Cemetery Level");
-        
+        if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
+        {
+            TriggerLayerChangeScript.ShouldTransitionToBassoonPart = true;
+        }
     }
 
     public void LoadIntroCutScene()
