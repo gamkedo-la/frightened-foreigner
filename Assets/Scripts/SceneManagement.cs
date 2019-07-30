@@ -25,7 +25,8 @@ public class SceneManagement : MonoBehaviour
 
     private GameObject Part1Text;
     private TriggerLayerChange TriggerLayerChangeScript;
-    
+
+    private Scene CurrentScene;
 
     private void Awake()
     {
@@ -46,6 +47,8 @@ public class SceneManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CurrentScene = SceneManager.GetActiveScene();
+
         if (ShouldFadeInTitleTrack && BackgroundMusicLayersFadeValue < 1)
         {
             BackgroundMusicLayersFadeValue += 0.005f;
@@ -72,10 +75,17 @@ public class SceneManagement : MonoBehaviour
     {
         Part1Text = GameObject.Find("Part1 Text");
         TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
-        SceneManager.LoadScene("Cemetery Level");
+
+        BlackFade.SetActive(true);
+        Debug.Log(BlackFade);
+        Debug.Log(LevelChangerAnimator);
+        LevelChangerAnimator.Play("FadeOut");
+        //SceneManager.LoadScene("Cemetery Level");
+
         if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
         {
             TriggerLayerChangeScript.ShouldTransitionToBassoonPart = true;
+            TriggerLayerChangeScript.BackgroundMusicLayersFadeValue = BackgroundMusicLayersFadeValue;
         }
     }
 
@@ -83,8 +93,8 @@ public class SceneManagement : MonoBehaviour
     {
         SceneManager.LoadScene("Intro CutScene");
         ShouldFadeInGlock = true;
-        BlackFade.SetActive(false);
-        Debug.Log("Black Fade should be inactive");
+        //BlackFade.SetActive(false);
+        
     }
 
     public void TransitionToIntroCutscene()

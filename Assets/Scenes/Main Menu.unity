@@ -2939,6 +2939,7 @@ MonoBehaviour:
   SceneManagerFromHierarchy: {fileID: 1426134167}
   AudioSettingsCanvasFromHierarchy: {fileID: 0}
   AudioSettingsManagerFromHierarchy: {fileID: 0}
+  BackgroundMusicLayersFadeValue: 0
 --- !u!1 &1262074168
 GameObject:
   m_ObjectHideFlags: 0
