@@ -33,13 +33,23 @@ public class camMouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        character = this.transform.parent.gameObject;
         ogRotation = transform.localRotation;
         ogCharacterRotation = character.transform.localRotation;
     }
 
-    // Update is called once per frame
-    void Update()
+	private void OnEnable( )
+	{
+		character = transform.parent.gameObject;
+
+		ogRotation = transform.localRotation;
+		ogCharacterRotation = character.transform.localRotation;
+		mouselook = Vector2.zero;
+
+		mouselook.y = -transform.localEulerAngles.x;
+	}
+
+	// Update is called once per frame
+	void Update()
     {
         gamePaused = PauseGameScript.GamePaused;
         //Debug.Log(gamePaused);

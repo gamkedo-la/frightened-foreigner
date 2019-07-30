@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
+  - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1068,6 +1069,23 @@ MonoBehaviour:
   smoothing: 2
   minVerticalAngle: -60
   maxVerticalAngle: 60
+--- !u!114 &534669907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2c3cf9711426e48b7417f016348c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toDisable:
+  - {fileID: 534669906}
+  - {fileID: 75928658}
+  character: {fileID: 75928656}
+  damping: 3
 --- !u!1 &560385328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,6 +3974,7 @@ GameObject:
   - component: {fileID: 2009396825}
   - component: {fileID: 2009396827}
   - component: {fileID: 2009396824}
+  - component: {fileID: 2009396829}
   m_Layer: 0
   m_Name: "F\xE9rfi"
   m_TagString: Untagged
@@ -4060,6 +4079,19 @@ MonoBehaviour:
   CurrentLengthOfTransferableList: 0
   RandomIntegerForTransferableListOfChoices: 0
   CurrentStringToAddToAnswerChoicesList: 
+--- !u!65 &2009396829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009396823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.105751, y: 13.660045, z: 0.06324196}
+  m_Center: {x: -0.17953873, y: 1.8653446, z: 0.018405914}
 --- !u!1 &2107524686
 GameObject:
   m_ObjectHideFlags: 0
