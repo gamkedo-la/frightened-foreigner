@@ -71,7 +71,7 @@ public class SceneManagement : MonoBehaviour
         }
     }
 
-    public void LoadCemeteryLevelFromIntroCutscene()
+    public void TransitionsForCemeteryLevelFromIntroCutscene()
     {
         Part1Text = GameObject.Find("Part1 Text");
         TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
@@ -79,8 +79,7 @@ public class SceneManagement : MonoBehaviour
         BlackFade.SetActive(true);
         Debug.Log(BlackFade);
         Debug.Log(LevelChangerAnimator);
-        LevelChangerAnimator.Play("FadeOut");
-        //SceneManager.LoadScene("Cemetery Level");
+        LevelChangerAnimator.Play("FadeOut", 0, 0.25f);
 
         if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
         {
@@ -89,12 +88,22 @@ public class SceneManagement : MonoBehaviour
         }
     }
 
+    public void LoadCemeteryLevelFromIntroCutscene()
+    {
+        if (CurrentScene.name == "Intro CutScene")
+        {
+            SceneManager.LoadScene("Cemetery Level");
+        }
+    }
+
     public void LoadIntroCutScene()
     {
-        SceneManager.LoadScene("Intro CutScene");
-        ShouldFadeInGlock = true;
-        //BlackFade.SetActive(false);
-        
+        if (CurrentScene.name == "Main Menu")
+        {
+            SceneManager.LoadScene("Intro CutScene");
+            ShouldFadeInGlock = true;
+            //BlackFade.SetActive(false);
+        }
     }
 
     public void TransitionToIntroCutscene()

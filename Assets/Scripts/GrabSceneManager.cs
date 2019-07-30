@@ -21,7 +21,7 @@ public class GrabSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SkipIntroButton.onClick.AddListener(SceneManagementScript.LoadCemeteryLevelFromIntroCutscene);
+        SkipIntroButton.onClick.AddListener(SceneManagementScript.TransitionsForCemeteryLevelFromIntroCutscene);
     }
 
     // Update is called once per frame
