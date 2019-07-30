@@ -488,7 +488,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Skip Intro
+  m_Text: 'Skip Intro/
+
+    Start Game'
 --- !u!222 &399042522
 CanvasRenderer:
   m_ObjectHideFlags: 0
