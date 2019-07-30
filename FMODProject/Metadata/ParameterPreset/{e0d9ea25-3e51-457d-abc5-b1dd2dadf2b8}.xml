@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{e0d9ea25-3e51-457d-abc5-b1dd2dadf2b8}">
+        <property name="name">
+            <value>PostFirstPuzzleLayersFadeValue</value>
+        </property>
+        <relationship name="folder">
+            <destination>{1a59ad89-e9d1-46d8-a764-8bc770f8f5b4}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{8c825bec-4a72-4566-9b17-d4506d8a49b3}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{8c825bec-4a72-4566-9b17-d4506d8a49b3}">
+        <property name="maximum">
+            <value>10</value>
+        </property>
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

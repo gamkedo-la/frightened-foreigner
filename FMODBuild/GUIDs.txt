@@ -1,4 +1,8 @@
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
+{118077e6-62c8-4f84-88cf-aebc269d80bb} event:/Music/firstPuzzleMusicBaseLayer
+{38603b31-4e90-4c9b-b178-f72d7f72f039} event:/Music/firstPuzzleMusicFourthLayer
+{c8ea11fa-03f4-4c16-9dd4-1ac4d2236caa} event:/Music/firstPuzzleMusicSecondLayer
+{6cc0651c-be27-49df-9ad7-d3d3fef9260f} event:/Music/firstPuzzleMusicThirdLayer
 {2c4da0d4-de55-46fc-ae1d-c340d6d7849f} event:/Music/HarmonicMinoredBackgroundMusic
 {cc9f3775-3d67-4852-9233-1b60af6c5073} event:/Music/titleScreenMusicV1
 {8951ceca-4279-4295-93ba-ec676e862ad0} event:/Music/titleTransitionOneV1

@@ -26,6 +26,12 @@ public class SceneManagement : MonoBehaviour
     private GameObject Part1Text;
     private TriggerLayerChange TriggerLayerChangeScript;
 
+    public FMOD.Studio.EventInstance PostFirstPuzzleMusic;
+    static public FMOD.Studio.PLAYBACK_STATE PostFirstPuzzleMusicPlaybackState;
+
+    public float PostFirstPuzzleLayersFadeValue = 0f;
+    public bool ShouldFadeInPostFirstLevelTrack = false;
+
     private Scene CurrentScene;
 
     private void Awake()
@@ -35,7 +41,7 @@ public class SceneManagement : MonoBehaviour
         LevelChangerAnimator = GameObject.Find("LevelChanger").GetComponent<Animator>();
         BlackFade = GameObject.Find("BlackFade");
 
-        
+        PostFirstPuzzleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/firstPuzzleMusicBaseLayer");
     }
 
     // Start is called before the first frame update
@@ -67,6 +73,23 @@ public class SceneManagement : MonoBehaviour
         if (TriggerLayerChangeScript.ShouldTransitionToBassoonPart && BackgroundMusicLayersFadeValue < 4)
         {
             BackgroundMusicLayersFadeValue += 0.005f;
+            TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+        }
+        if (ShouldFadeInPostFirstLevelTrack && PostFirstPuzzleLayersFadeValue < 1)
+        {
+            Debug.Log(PostFirstPuzzleLayersFadeValue);
+            PostFirstPuzzleMusic.getPlaybackState(out PostFirstPuzzleMusicPlaybackState);
+            Debug.Log(PostFirstPuzzleMusicPlaybackState);
+            if (PostFirstPuzzleMusicPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            {
+                PostFirstPuzzleMusic.start();
+            }
+            PostFirstPuzzleLayersFadeValue += 0.01f;
+            PostFirstPuzzleMusic.setParameterValue("PostFirstPuzzleLayersFadeValue", PostFirstPuzzleLayersFadeValue);
+        }
+        if (ShouldFadeInPostFirstLevelTrack && BackgroundMusicLayersFadeValue < 5)
+        {
+            BackgroundMusicLayersFadeValue += 0.01f;
             TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
         }
     }

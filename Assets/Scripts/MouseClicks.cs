@@ -22,7 +22,10 @@ public class MouseClicks: MonoBehaviour
     private GameObject freedSoulsCounter;//keeping track of level progress
     private CountFreedSouls FreedSoulsScript;
 
-    private FMOD.Studio.EventInstance HarmonicMinoredBackgroundMusic;
+    private FMOD.Studio.EventInstance PostFirstPuzzleMusic;
+    private FMOD.Studio.EventInstance TitleScreenMusic;
+    private GameObject LevelChanger;
+    private SceneManagement SceneManagementScript;
 
     private void Awake()
     {
@@ -48,7 +51,11 @@ public class MouseClicks: MonoBehaviour
         freedSoulsCounter = GameObject.Find("SoulCounter");
         FreedSoulsScript = freedSoulsCounter.GetComponent<CountFreedSouls>();
 
-
+        LevelChanger = GameObject.Find("LevelChanger");
+        SceneManagementScript = LevelChanger.GetComponent<SceneManagement>();
+        TitleScreenMusic = SceneManagementScript.TitleScreenMusic;
+        PostFirstPuzzleMusic = SceneManagementScript.PostFirstPuzzleMusic;
+        Debug.Log(PostFirstPuzzleMusic);
        
     }
 
@@ -97,8 +104,10 @@ public class MouseClicks: MonoBehaviour
 
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
-                    //BasicBackGroundMusic.setParameterValue("FreedSouls", FreedSoulsScript.NumberOfFreedSouls);//changes the parameter value in FMOD, used to trigger progressively creepier music
-
+                    SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;
+                    Debug.Log(PostFirstPuzzleMusic);
+                    //PostFirstPuzzleMusic.start();
+                    
                     //Debug.Log(BasicBackGroundMusic.getParameterValue("FreedSouls", out float NewFreedSoulsValue, out float NewFreedSoulsFinalValue));//ONLY grabs the value from FMOD and outputs OK to Debug Log, see following function
                     //Debug.Log(NewFreedSoulsValue);//displays actual value after being grabbed in the previous function
 
