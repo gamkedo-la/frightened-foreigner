@@ -22,7 +22,6 @@ public class MouseClicks: MonoBehaviour
     private GameObject freedSoulsCounter;//keeping track of level progress
     private CountFreedSouls FreedSoulsScript;
 
-    private FMOD.Studio.EventInstance BasicBackGroundMusic;//to set the parameter value of freed souls in FMOD, which should transition to creepier tracks as the level progresses
     private FMOD.Studio.EventInstance HarmonicMinoredBackgroundMusic;
 
     private void Awake()
@@ -38,7 +37,6 @@ public class MouseClicks: MonoBehaviour
         AudioActiveStatusManager = GameObject.Find("ActiveStatusManager");
         
         RandomWordsScript = gameObject.GetComponent<RandomWords>();
-        //Debug.Log(RandomWordsScript);
 
         temporaryPictureName = transform.name;//grabbing the correct answer choice based on the parent object
         
@@ -50,10 +48,7 @@ public class MouseClicks: MonoBehaviour
         freedSoulsCounter = GameObject.Find("SoulCounter");
         FreedSoulsScript = freedSoulsCounter.GetComponent<CountFreedSouls>();
 
-        BasicBackGroundMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BasicBackgroundMusic");
-        BasicBackGroundMusic.start();
 
-        //HarmonicMinoredBackgroundMusic = FMODUnity.RuntimeManager.CreateInstance("event:/HarmonicMinoredBackgroundMusic");
        
     }
 
@@ -102,13 +97,11 @@ public class MouseClicks: MonoBehaviour
 
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
-                    BasicBackGroundMusic.setParameterValue("FreedSouls", FreedSoulsScript.NumberOfFreedSouls);//changes the parameter value in FMOD, used to trigger progressively creepier music
+                    //BasicBackGroundMusic.setParameterValue("FreedSouls", FreedSoulsScript.NumberOfFreedSouls);//changes the parameter value in FMOD, used to trigger progressively creepier music
 
-                    Debug.Log(BasicBackGroundMusic.getParameterValue("FreedSouls", out float NewFreedSoulsValue, out float NewFreedSoulsFinalValue));//ONLY grabs the value from FMOD and outputs OK to Debug Log, see following function
-                    Debug.Log(NewFreedSoulsValue);//displays actual value after being grabbed in the previous function
+                    //Debug.Log(BasicBackGroundMusic.getParameterValue("FreedSouls", out float NewFreedSoulsValue, out float NewFreedSoulsFinalValue));//ONLY grabs the value from FMOD and outputs OK to Debug Log, see following function
+                    //Debug.Log(NewFreedSoulsValue);//displays actual value after being grabbed in the previous function
 
-                    //BasicBackGroundMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                    //HarmonicMinoredBackgroundMusic.start();
                 }
                 else
                 {

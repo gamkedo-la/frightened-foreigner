@@ -66,7 +66,7 @@ public class SceneManagement : MonoBehaviour
     public void LoadCemeteryLevelFromIntroCutscene()
     {
         SceneManager.LoadScene("Cemetery Level");
-        TitleScreenMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        
     }
 
     public void LoadIntroCutScene()
