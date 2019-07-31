@@ -220,17 +220,17 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 4
-    functionName: LoadIntroCutScene
-    data: 
-    objectReferenceParameter: {fileID: 7400000}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 4
+  - time: 3.7666667
     functionName: LoadCemeteryLevelFromIntroCutscene
     data: 
     objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 4.016667
+    functionName: LoadIntroCutScene
+    data: 
+    objectReferenceParameter: {fileID: 7400000}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
