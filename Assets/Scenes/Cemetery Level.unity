@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44970965, g: 0.49977773, b: 0.5756354, a: 1}
+  m_IndirectSpecularColor: {r: 0.44970924, g: 0.4997775, b: 0.57563436, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -388,6 +388,7 @@ GameObject:
   - component: {fileID: 85502937}
   - component: {fileID: 85502936}
   - component: {fileID: 85502938}
+  - component: {fileID: 85502939}
   m_Layer: 0
   m_Name: "p\xE9nz"
   m_TagString: Untagged
@@ -480,6 +481,19 @@ MonoBehaviour:
   CurrentLengthOfTransferableList: 0
   RandomIntegerForTransferableListOfChoices: 0
   CurrentStringToAddToAnswerChoicesList: 
+--- !u!65 &85502939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85502935}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 13.41, y: 11.4, z: 0.66}
+  m_Center: {x: 1.16, y: 0, z: 0}
 --- !u!1 &86996550
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +659,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 2.1e-44, z: 1.99e-42, w: 6e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -2036,6 +2050,7 @@ GameObject:
   - component: {fileID: 779678316}
   - component: {fileID: 779678315}
   - component: {fileID: 779678318}
+  - component: {fileID: 779678319}
   m_Layer: 0
   m_Name: "n\u0151"
   m_TagString: Untagged
@@ -2140,6 +2155,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6450f9d26101b94ba97893b36d12233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &779678319
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779678314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4999998, y: 8.78, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &835760767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4714,6 +4742,7 @@ GameObject:
   - component: {fileID: 1531475286}
   - component: {fileID: 1531475285}
   - component: {fileID: 1531475287}
+  - component: {fileID: 1531475288}
   m_Layer: 0
   m_Name: "id\u0151"
   m_TagString: Untagged
@@ -4806,6 +4835,19 @@ MonoBehaviour:
   CurrentLengthOfTransferableList: 0
   RandomIntegerForTransferableListOfChoices: 0
   CurrentStringToAddToAnswerChoicesList: 
+--- !u!65 &1531475288
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531475284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.08, y: 2.71, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1536073371
 GameObject:
   m_ObjectHideFlags: 0
@@ -6353,8 +6395,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 17.105751, y: 13.660045, z: 0.06324196}
-  m_Center: {x: -0.17953873, y: 1.8653446, z: 0.018405914}
+  m_Size: {x: 7.92, y: 8.52, z: 0.06324196}
+  m_Center: {x: -0.17953873, y: -0.9, z: 0.018405914}
 --- !u!1 &2107524686
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,6 +6409,7 @@ GameObject:
   - component: {fileID: 2107524687}
   - component: {fileID: 2107524689}
   - component: {fileID: 2107524690}
+  - component: {fileID: 2107524691}
   m_Layer: 0
   m_Name: "f\xFCrd\u0151szoba"
   m_TagString: Untagged
@@ -6483,6 +6526,19 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!65 &2107524691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107524686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 9.1, z: 0.2}
+  m_Center: {x: 0, y: 1.35, z: 0}
 --- !u!1 &2131468285
 GameObject:
   m_ObjectHideFlags: 0
