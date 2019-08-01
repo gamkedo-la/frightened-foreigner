@@ -27,6 +27,9 @@ public class MouseClicks: MonoBehaviour
     private GameObject LevelChanger;
     private SceneManagement SceneManagementScript;
 
+    private GameObject Lights;
+    private ProgressiveLights LightScript;
+
     private void Awake()
     {
         
@@ -44,8 +47,10 @@ public class MouseClicks: MonoBehaviour
         temporaryPictureName = transform.name;//grabbing the correct answer choice based on the parent object
         
         ImageNameList = new List<string>(RandomWordsScript.MasterListOfChoices);
-        
-        
+
+        Lights = GameObject.Find("Lights");
+        LightScript = Lights.GetComponent<ProgressiveLights>();
+
         GhostSoul = GameObject.Find("BathroomGhostSoul");//grabbing the specific ghost soul
 
         freedSoulsCounter = GameObject.Find("SoulCounter");
@@ -100,7 +105,9 @@ public class MouseClicks: MonoBehaviour
                     
                     GhostSoulVisible = true;//set bool to trigger float to heaven movement in the function/conditional at the bottom of this script
 
-                    RenderSettings.ambientIntensity = 0.1f;//make the game slightly darker to help add progressive creepy ambience
+                    //RenderSettings.ambientIntensity = 0.1f;//make the game slightly darker to help add progressive creepy ambience
+
+                    LightScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
 
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
