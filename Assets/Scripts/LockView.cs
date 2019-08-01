@@ -9,6 +9,9 @@ public class LockView : MonoBehaviour
 	private bool locked = false;
 	private RandomWords rw = null;
 
+    private GameObject TargetsTextGraphic;
+    private GameObject TargetHit;
+
 	void Start()
     {
 
@@ -33,6 +36,8 @@ public class LockView : MonoBehaviour
 
 			transform.localRotation = Quaternion.Euler( rotationT.eulerAngles.x, 0, 0 );
 			character.rotation = Quaternion.Euler( 0, rotationC.eulerAngles.y, 0 );
+
+            
 		}
     }
 
@@ -47,7 +52,14 @@ public class LockView : MonoBehaviour
 
 		Debug.Log( "Focusing on: " + rw.gameObject.name );
 
-		foreach ( var item in toDisable )
+        TargetHit = rw.gameObject;
+        //Debug.Log(TargetHit);
+        TargetsTextGraphic = rw.gameObject.transform.Find("TextGraphic").gameObject;
+        TargetsTextGraphic.SetActive(true);
+
+
+
+        foreach ( var item in toDisable )
 			item.enabled = false;
 
 		locked = true;
