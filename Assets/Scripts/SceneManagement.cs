@@ -54,6 +54,7 @@ public class SceneManagement : MonoBehaviour
     void Update()
     {
         CurrentScene = SceneManager.GetActiveScene();
+        Debug.Log(BackgroundMusicLayersFadeValue);
 
         if (ShouldFadeInTitleTrack && BackgroundMusicLayersFadeValue < 1)
         {
@@ -100,14 +101,12 @@ public class SceneManagement : MonoBehaviour
         TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
 
         BlackFade.SetActive(true);
-        Debug.Log(BlackFade);
-        Debug.Log(LevelChangerAnimator);
+        
         LevelChangerAnimator.Play("FadeOut", 0, 0.25f);
 
         if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
         {
             TriggerLayerChangeScript.ShouldTransitionToBassoonPart = true;
-            TriggerLayerChangeScript.BackgroundMusicLayersFadeValue = BackgroundMusicLayersFadeValue;
         }
     }
 

@@ -7,7 +7,7 @@ public class TriggerLayerChange : MonoBehaviour
 
     private SceneManagement SceneManagementScript;
     private FMOD.Studio.EventInstance TitleScreenMusic;
-    public float BackgroundMusicLayersFadeValue;
+    //public float BackgroundMusicLayersFadeValue;
     public bool ShouldTransitionToBassoonPart = false;
 
     private void Awake()
@@ -25,18 +25,20 @@ public class TriggerLayerChange : MonoBehaviour
     void Update()
     {
         
-        if (ShouldTransitionToBassoonPart && BackgroundMusicLayersFadeValue < 4)
+        if (ShouldTransitionToBassoonPart && SceneManagementScript.BackgroundMusicLayersFadeValue < 4)
         {
-            BackgroundMusicLayersFadeValue += 0.005f;
+            SceneManagementScript.BackgroundMusicLayersFadeValue += 0.005f;
             
-            TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+            TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", SceneManagementScript.BackgroundMusicLayersFadeValue);
         }
     }
 
     public void ChangeLayersSecondPartIntroText()
     {
-        ShouldTransitionToBassoonPart = true;
+        if (!ShouldTransitionToBassoonPart)
+        {
+            ShouldTransitionToBassoonPart = true;
+        }
         
-        BackgroundMusicLayersFadeValue = SceneManagementScript.BackgroundMusicLayersFadeValue;
     }
 }
