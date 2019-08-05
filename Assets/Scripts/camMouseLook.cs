@@ -6,6 +6,7 @@ public class camMouseLook : MonoBehaviour
 {
     public Transform PauseCanvas;
     public Transform AudioSettingsCanvas;
+    public bool useAngleFix = false;
 
     private PauseGame PauseGameScript;
     private bool gamePaused;
@@ -45,7 +46,7 @@ public class camMouseLook : MonoBehaviour
 		ogCharacterRotation = character.transform.localRotation;
 		mouselook = Vector2.zero;
 
-		mouselook.y = -transform.localEulerAngles.x;
+		mouselook.y = useAngleFix ? 360 - transform.localEulerAngles.x : -transform.localEulerAngles.x;
 	}
 
 	// Update is called once per frame
