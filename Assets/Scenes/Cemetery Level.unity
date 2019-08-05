@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44970965, g: 0.49977773, b: 0.5756354, a: 1}
+  m_IndirectSpecularColor: {r: 0.44970924, g: 0.4997775, b: 0.57563436, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -703,7 +703,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 4.5485036e+30, z: 7.4e-43, w: 4.831102e+30}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1307,6 +1307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseCanvas: {fileID: 1049168767}
   AudioSettingsCanvas: {fileID: 0}
+  useAngleFix: 1
   sensitivity: 5
   smoothing: 2
   minVerticalAngle: -60
@@ -1327,6 +1328,8 @@ MonoBehaviour:
   - {fileID: 534669906}
   - {fileID: 75928658}
   character: {fileID: 75928656}
+  maxTargetDistance: 5
+  lookUpCorrection: 0.75
   damping: 3
 --- !u!1 &536231569
 GameObject:
