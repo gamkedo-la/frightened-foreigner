@@ -54,7 +54,7 @@ public class SceneManagement : MonoBehaviour
     void Update()
     {
         CurrentScene = SceneManager.GetActiveScene();
-        Debug.Log(BackgroundMusicLayersFadeValue);
+
 
         if (ShouldFadeInTitleTrack && BackgroundMusicLayersFadeValue < 1)
         {
