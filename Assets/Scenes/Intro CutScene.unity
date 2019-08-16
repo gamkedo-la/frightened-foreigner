@@ -156,8 +156,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -509}
-  m_SizeDelta: {x: 700, y: 600}
+  m_AnchoredPosition: {x: -21, y: -668}
+  m_SizeDelta: {x: 700, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &38373245
 Animator:
@@ -200,7 +200,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 21
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -211,36 +211,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Part1 Text Goes Here
-
-
-    You''re a happy traveler
-
-
-    You''re in a foreign country
-
-
-    Happy happy joy joy
-
-
-
-
-
-
-
-    Part2 Text Goes Here
-
-
-    You''ve wandered off from the group
-
-
-    You''re so scared you may need to change pants
-
-
-    You should find the bathroom
-
-
-'
+  m_Text: "You are a traveler who is on a trip to Hungary \nwith a group of friends.
+    \nIt is a hot summer day and your group \nhas been on a non airconditioned bus
+    all day. \nOf course the bus isn\u2019t air conditioned... \nThat\u2019s what
+    you get for trying to do things on the cheap. \nYou are on Salgotarjani Street,
+    \nwhich is known for its Jewish Cemetery. \nYou just did an audiobook tour of
+    the cemetery, \nwhich you have downloaded on your phone,\n but it\u2019s all in
+    Hungarian,\n which you didn\u2019t realize before you bought it. \nIt seems to
+    have a death mythology theme,\nbut you're not quite sure.\nWhen the group is done
+    exploring, \neveryone gets back on the bus,\n but you have to go to the bathroom
+    \nbecause you were chugging water \non the hot, stuffy bus. \nOne of your friends
+    says \u201COh yeah, \nI think I saw a bathroom in the cemetery, \nwe\u2019ll wait
+    for you. But hurry up, \nCharlie isn\u2019t feeling well. \nHe always gets sick
+    when he smokes too much, \nand I tried taking away his lighter earlier today,
+    \nbut he still got sick. He has medicine with him \njust in case this happens,\n
+    but apparently it\u2019s not working for him today.\u201D \nYour friend then continues
+    in a sarcastically joking voice, \n\n\n\n\u201CAnd be careful\u2026 It\u2019s
+    getting late \nand this place might be HAUNTED! Haha.\u201D \nYou respond dismissively,
+    \u201CYeah, OKAAAAYYY.\u201D\n\n"
 --- !u!222 &38373247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -261,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b324eeeb7601049bbda2f862316c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShouldTransitionToBassoonPart: 0
 --- !u!1 &124365164
 GameObject:
   m_ObjectHideFlags: 0
