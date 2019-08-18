@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class MouseClicks: MonoBehaviour
@@ -29,6 +30,14 @@ public class MouseClicks: MonoBehaviour
 
     private GameObject Lights;
     private ProgressiveLights LightScript;
+
+    public GameObject PostProccessingValue;
+    private PostProcessVolume PPVScript;
+    private Grain GrainLayer;
+    private Vignette VignetteLayer;
+    private float PPVMultiplier = 1.5f;
+    private float maxGrainIntensity = 0.5f;
+    private float maxVignetteIntensity = 0.45f;
 
     private void Awake()
     {
@@ -61,13 +70,19 @@ public class MouseClicks: MonoBehaviour
         TitleScreenMusic = SceneManagementScript.TitleScreenMusic;
         PostFirstPuzzleMusic = SceneManagementScript.PostFirstPuzzleMusic;
         Debug.Log(PostFirstPuzzleMusic);
-       
+
+        //PostProccessingValue = GameObject.Find("PostProccessingVolume");
+        //PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
+        //Debug.Log(PostProccessingValue);
+
+
     }
 
     void Update()
     {
         if (!PauseGameScript.GamePaused)
         {
+            Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
             if (Input.GetMouseButtonDown(1))    // right mouse button click
             {
                 ImageListIndex++;//move through the ImageList and cycle back to 0 at the end
@@ -108,6 +123,27 @@ public class MouseClicks: MonoBehaviour
                     //RenderSettings.ambientIntensity = 0.1f;//make the game slightly darker to help add progressive creepy ambience
 
                     LightScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
+
+                    // postprocessing effect to make ambient creepier
+                    //PPVScript.profile.TryGetSettings(out grainLayer);
+                    //PPVScript.profile.TryGetSettings(out ambientOcclusionLayer);
+                    //grainLayer = FindObjectOfType<Grain>();
+                    //grainLayer = PPVScript.GetComponent<Grain>();
+                    //ambientOcclusionLayer = FindObjectOfType<AmbientOcclusion>();
+                    PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
+                    PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
+                    PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
+                    //Debug.Log(ambientOcclusionLayer);
+                    GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
+                    VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
+                    if (GrainLayer.intensity > maxGrainIntensity)
+                    {
+                        GrainLayer.intensity.Override(maxGrainIntensity);
+                    }
+                    if (VignetteLayer.intensity > maxVignetteIntensity)
+                    {
+                        VignetteLayer.intensity.Override(maxVignetteIntensity);
+                    }
 
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
