@@ -42,6 +42,8 @@ public class SceneManagement : MonoBehaviour
         BlackFade = GameObject.Find("BlackFade");
 
         PostFirstPuzzleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/firstPuzzleMusicBaseLayer");
+
+        TriggerLayerChangeScript = gameObject.GetComponent<TriggerLayerChange>();
     }
 
     // Start is called before the first frame update
