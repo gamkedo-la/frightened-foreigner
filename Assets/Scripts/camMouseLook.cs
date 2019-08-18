@@ -25,9 +25,12 @@ public class camMouseLook : MonoBehaviour
     Quaternion ogCharacterRotation;
     Quaternion ogRotation;
 
+    private Inventory InventoryScript;
+
     private void Awake()
     {
         PauseGameScript = GameObject.Find("GameController").GetComponent<PauseGame>();
+        InventoryScript = GameObject.Find("Character").GetComponent<Inventory>();
         gamePaused = PauseGameScript.GamePaused;
     }
 
@@ -54,7 +57,7 @@ public class camMouseLook : MonoBehaviour
     {
         gamePaused = PauseGameScript.GamePaused;
         //Debug.Log(gamePaused);
-        if (!gamePaused)
+        if (!gamePaused && !InventoryScript.inventoryActive)
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
