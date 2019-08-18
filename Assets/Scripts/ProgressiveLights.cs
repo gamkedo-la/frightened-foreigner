@@ -19,7 +19,12 @@ public class ProgressiveLights : MonoBehaviour
         RenderSettings.ambientIntensity -= 0.4f;
         for (int i = 0; i < allLightObjects.Count; i++)
         {
-            allLightObjects[i].GetComponent<Light>().intensity -= 0.3f;
+            float tempIntensity = allLightObjects[i].GetComponent<Light>().intensity;
+            tempIntensity -= 0.3f;
+            if (tempIntensity > 0)
+            {
+                allLightObjects[i].GetComponent<Light>().intensity = tempIntensity;
+            }
         }
     }
 }
