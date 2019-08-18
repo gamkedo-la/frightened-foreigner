@@ -539,6 +539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f991874fdde12442a4672d1b348aabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryActive: 0
   inventory: {fileID: 820510042}
   slotHolder: {fileID: 444568304}
 --- !u!1 &85502935
@@ -8238,7 +8239,6 @@ GameObject:
   - component: {fileID: 2107524688}
   - component: {fileID: 2107524687}
   - component: {fileID: 2107524689}
-  - component: {fileID: 2107524690}
   - component: {fileID: 2107524691}
   m_Layer: 0
   m_Name: "f\xFCrd\u0151szoba"
@@ -8333,29 +8333,6 @@ MonoBehaviour:
   CurrentLengthOfTransferableList: 0
   RandomIntegerForTransferableListOfChoices: 0
   CurrentStringToAddToAnswerChoicesList: 
---- !u!114 &2107524690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2107524686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/Words/Bathroom_Furdoszoba
-  PlayEvent: 1
-  StopEvent: 0
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!65 &2107524691
 BoxCollider:
   m_ObjectHideFlags: 0
