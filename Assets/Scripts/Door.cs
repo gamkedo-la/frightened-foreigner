@@ -2,12 +2,18 @@
 
 public class Door : MonoBehaviour
 {
+    public bool BathroomCutsceneHasPlayed = false;
+
 	private void OnTriggerExit( Collider other )
 	{
-		if ( !other.CompareTag( "Player" ) )
+		if ( !other.CompareTag( "Player" )  )
 			return;
 
-		GetComponent<Animator>( ).enabled = true;
-		GetComponent<Collider>( ).enabled = false;
+        if (BathroomCutsceneHasPlayed)
+        {
+            GetComponent<Animator>().enabled = true;
+            GetComponent<Collider>().enabled = false;
+        }
+		
 	}
 }

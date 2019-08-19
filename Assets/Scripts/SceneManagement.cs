@@ -50,13 +50,14 @@ public class SceneManagement : MonoBehaviour
     void Start()
     {       
             TitleScreenMusic.start();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         CurrentScene = SceneManager.GetActiveScene();
-
+        Debug.Log(Time.timeScale);
 
         if (ShouldFadeInTitleTrack && BackgroundMusicLayersFadeValue < 1)
         {
