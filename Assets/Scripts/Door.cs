@@ -3,6 +3,7 @@
 public class Door : MonoBehaviour
 {
     public bool BathroomCutsceneHasPlayed = false;
+    //nonsense to make a commit
 
 	private void OnTriggerExit( Collider other )
 	{
