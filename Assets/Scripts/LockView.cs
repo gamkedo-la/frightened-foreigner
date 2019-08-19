@@ -7,6 +7,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private float maxTargetDistance = 5f;
 	[SerializeField]private float lookUpCorrection = 0.3f;
 	[SerializeField] private float damping = 1f;
+	[SerializeField] private LayerMask mask = 0;
 
 	private bool locked = false;
 	private RandomWords randomWord = null;
@@ -46,7 +47,7 @@ public class LockView : MonoBehaviour
 	private void TryToLockView( )
 	{
 		// Did we hit something?
-		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out RaycastHit hit, Mathf.Infinity ) )
+		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out RaycastHit hit, Mathf.Infinity, mask ) )
 			return;
 
 		// Is it within out max distance?

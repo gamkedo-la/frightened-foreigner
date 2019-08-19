@@ -2192,6 +2192,9 @@ MonoBehaviour:
   maxTargetDistance: 5
   lookUpCorrection: 0.75
   damping: 3
+  mask:
+    serializedVersion: 2
+    m_Bits: 307
 --- !u!114 &534669908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9101,7 +9104,7 @@ PrefabInstance:
     - target: {fileID: 3311241418494844612, guid: 7e76c9c0f6d486e489429f8604381f93,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.776
+      value: 5.729
       objectReference: {fileID: 0}
     - target: {fileID: 3311241418494844612, guid: 7e76c9c0f6d486e489429f8604381f93,
         type: 3}
@@ -9111,7 +9114,7 @@ PrefabInstance:
     - target: {fileID: 3311241418494844612, guid: 7e76c9c0f6d486e489429f8604381f93,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.737633
+      value: 9.799
       objectReference: {fileID: 0}
     - target: {fileID: 3311241418494844612, guid: 7e76c9c0f6d486e489429f8604381f93,
         type: 3}
