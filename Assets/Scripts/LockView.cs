@@ -15,9 +15,12 @@ public class LockView : MonoBehaviour
     private GameObject TargetsTextGraphic;
     //private GameObject TargetHit;
 
-	void Start()
-    {
+    private RaycastHit hit;
+    private bool NPC;
 
+    void Start()
+    {
+        NPC = false;
     }
 
     void Update()
@@ -54,18 +57,26 @@ public class LockView : MonoBehaviour
 		if ( Vector3.Distance( character.transform.position, hit.collider.gameObject.transform.position ) > maxTargetDistance )
 			return;
 
-		// Does it have a RandomWords on it?
-		randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
-		if ( !randomWord )
+        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
+        if (hit.transform.tag == "NPC")
+        {
+            NPC = true;
+            Debug.Log("raycast hit NPC");
+        }
+        // Does it have a RandomWords on it?
+        randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
+		if ( !randomWord && !NPC)
 			return;
 
-		// We got a winner!
-		Debug.Log( "Focusing on: " + randomWord.gameObject.name );
+        
+
+        // We got a winner!
+        //Debug.Log( "Focusing on: " + randomWord.gameObject.name );
 
         //TargetHit = randomWord.gameObject;
         //Debug.Log(TargetHit);
-        TargetsTextGraphic = randomWord.gameObject.transform.Find("TextGraphic").gameObject;
-        TargetsTextGraphic.SetActive(true);
+        //TargetsTextGraphic = randomWord.gameObject.transform.Find("TextGraphic").gameObject;
+        //TargetsTextGraphic.SetActive(true);
 
         foreach ( var item in toDisable )
 			item.enabled = false;
