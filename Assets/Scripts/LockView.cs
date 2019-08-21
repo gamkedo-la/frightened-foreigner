@@ -68,13 +68,11 @@ public class LockView : MonoBehaviour
         if (hit.transform.tag == "NPC")
         {
             NPC = true;
-            Debug.Log("raycast hit NPC");
         }
 
         if (hit.transform.name == "Vanessa")
         {
             LockedWithVanessa = true;
-            Debug.Log("locked with vanessa");
         }
         // Does it have a RandomWords on it?
         randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );

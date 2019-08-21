@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log(inventory);
+            
             if (!inventory.active)
             {
                 inventory.SetActive(true);

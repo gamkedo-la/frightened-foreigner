@@ -14,23 +14,38 @@ public class DialogueWithVanessa : MonoBehaviour
     public GameObject door;
     private DoorScript doorScript;
 
+    private FMOD.Studio.EventInstance TellPlayerToFindTheBathroom;
+    private bool PlayerHasBeenToldToFindBathroomThisInteraction = false;
+
     // Start is called before the first frame update
     void Start()
     {
         
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         doorScript = door.GetComponent<DoorScript>();
+
+        TellPlayerToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom");
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(LockViewScript);
         
+        if (LockViewScript.LockedWithVanessa && !doorScript.playerHasExploredTheCemetery && !PlayerHasBeenToldToFindBathroomThisInteraction)
+        {
+            TellPlayerToFindTheBathroom.start();
+            PlayerHasBeenToldToFindBathroomThisInteraction = true;
+        }
+
+        if (!LockViewScript.LockedWithVanessa)
+        {
+            PlayerHasBeenToldToFindBathroomThisInteraction = false;
+        }
+
         if (LockViewScript.LockedWithVanessa && groundskeeperInvisible && doorScript.playerHasExploredTheCemetery)
         {
             groundskeeper.SetActive(true);
-            Debug.Log(groundskeeperInvisible);
+            groundskeeperInvisible = false;
         }
 
         

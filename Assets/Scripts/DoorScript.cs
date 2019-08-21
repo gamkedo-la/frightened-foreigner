@@ -27,8 +27,6 @@ public class DoorScript : MonoBehaviour
         }
 
         playerHasExploredTheCemetery = true;
-        Debug.Log("Player has explored the cemetery");
-
-
+        
     }
 }
