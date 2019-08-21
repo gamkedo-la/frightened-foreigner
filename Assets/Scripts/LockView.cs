@@ -18,6 +18,8 @@ public class LockView : MonoBehaviour
     private RaycastHit hit;
     private bool NPC;
 
+    public bool LockedWithVanessa = false;
+
     void Start()
     {
         NPC = false;
@@ -35,15 +37,20 @@ public class LockView : MonoBehaviour
 
 		if ( locked )
 		{
-			Vector3 targetPos = randomWord.gameObject.transform.position + randomWord.gameObject.transform.up * lookUpCorrection;
+            if (randomWord)
+            {
+                Vector3 targetPos = randomWord.gameObject.transform.position + randomWord.gameObject.transform.up * lookUpCorrection;
 
-			Quaternion rotationT = Quaternion.LookRotation( targetPos - transform.position );
-			Quaternion rotationC = Quaternion.LookRotation( targetPos - character.position );
-			rotationT = Quaternion.Slerp( transform.rotation, rotationT, Time.deltaTime * damping );
-			rotationC = Quaternion.Slerp( character.rotation, rotationC, Time.deltaTime * damping );
 
-			transform.localRotation = Quaternion.Euler( rotationT.eulerAngles.x, 0, 0 );
-			character.rotation = Quaternion.Euler( 0, rotationC.eulerAngles.y, 0 );
+
+                Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
+                Quaternion rotationC = Quaternion.LookRotation(targetPos - character.position);
+                rotationT = Quaternion.Slerp(transform.rotation, rotationT, Time.deltaTime * damping);
+                rotationC = Quaternion.Slerp(character.rotation, rotationC, Time.deltaTime * damping);
+
+                transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
+                character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
+            }
 		}
     }
 
@@ -62,6 +69,12 @@ public class LockView : MonoBehaviour
         {
             NPC = true;
             Debug.Log("raycast hit NPC");
+        }
+
+        if (hit.transform.name == "Vanessa")
+        {
+            LockedWithVanessa = true;
+            Debug.Log("locked with vanessa");
         }
         // Does it have a RandomWords on it?
         randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
@@ -90,5 +103,7 @@ public class LockView : MonoBehaviour
 			item.enabled = true;
 
 		locked = false;
+
+        LockedWithVanessa = false;
 	}
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18276438, g: 0.2015597, b: 0.3130412, a: 1}
+  m_IndirectSpecularColor: {r: 0.18276402, g: 0.20155933, b: 0.31304064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10615,7 +10615,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: NaN, z: 6.5e-43, w: 2.5172028e+38}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -35732,6 +35732,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 307
+  LockedWithVanessa: 0
 --- !u!114 &534669908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36485,6 +36486,8 @@ GameObject:
   - component: {fileID: 681154856}
   - component: {fileID: 681154855}
   - component: {fileID: 681154858}
+  - component: {fileID: 681154859}
+  - component: {fileID: 681154860}
   m_Layer: 0
   m_Name: Vanessa
   m_TagString: NPC
@@ -36579,6 +36582,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.86, y: 5.25, z: 0.2}
   m_Center: {x: 0.31, y: 0, z: 0}
+--- !u!114 &681154859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681154854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e220911f0962004d822420275e68d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeft: 10
+  HeyComeHereHasStarted: 0
+--- !u!114 &681154860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681154854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab0a23e873e5483478fb58893fe5196a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 75928651}
+  groundskeeper: {fileID: 2009396823}
+  groundskeeperInvisible: 1
+  door: {fileID: 1640351639}
+  doorScript: {fileID: 0}
 --- !u!1 &711488988
 GameObject:
   m_ObjectHideFlags: 0
@@ -55704,6 +55738,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639074940}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1640351639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3311241418494844613, guid: 7e76c9c0f6d486e489429f8604381f93,
+    type: 3}
+  m_PrefabInstance: {fileID: 3311241418723049815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1646601725
 GameObject:
   m_ObjectHideFlags: 0
@@ -61312,7 +61352,7 @@ GameObject:
   - component: {fileID: 2009396824}
   - component: {fileID: 2009396829}
   m_Layer: 0
-  m_Name: "F\xE9rfi"
+  m_Name: Groundskeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62216,5 +62256,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7526433526948541507, guid: 7e76c9c0f6d486e489429f8604381f93,
+        type: 3}
+      propertyPath: vanessa
+      value: 
+      objectReference: {fileID: 681154854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e76c9c0f6d486e489429f8604381f93, type: 3}
