@@ -17,6 +17,10 @@ public class DialogueWithVanessa : MonoBehaviour
     public FMOD.Studio.EventInstance TellPlayerToFindTheBathroom;
     private bool PlayerHasBeenToldToFindBathroomThisInteraction = false;
 
+    public FMOD.Studio.EventInstance ITriedToFindTheBathroom;
+    public bool ITriedToFindTheBathroomPlayed = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +29,7 @@ public class DialogueWithVanessa : MonoBehaviour
         doorScript = door.GetComponent<DoorScript>();
 
         TellPlayerToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom");
+        ITriedToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/ITriedToFindTheBathroom");
     }
 
     // Update is called once per frame
@@ -46,6 +51,8 @@ public class DialogueWithVanessa : MonoBehaviour
         {
             groundskeeper.SetActive(true);
             groundskeeperInvisible = false;
+            ITriedToFindTheBathroom.start();
+            ITriedToFindTheBathroomPlayed = true;
         }
 
         

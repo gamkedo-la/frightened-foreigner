@@ -1,5 +1,6 @@
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
+{22951b32-251e-45fb-b8fd-419b10882e02} event:/Dialogue/Player/ITriedToFindTheBathroom
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
 {118077e6-62c8-4f84-88cf-aebc269d80bb} event:/Music/firstPuzzleMusicBaseLayer
 {38603b31-4e90-4c9b-b178-f72d7f72f039} event:/Music/firstPuzzleMusicFourthLayer
