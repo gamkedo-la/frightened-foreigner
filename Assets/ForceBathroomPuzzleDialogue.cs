@@ -10,7 +10,7 @@ public class ForceBathroomPuzzleDialogue : MonoBehaviour
     public bool HeyComeHereHasStarted = false;
 
 
-    private FMOD.Studio.EventInstance tellPlayerToFindTheBathroom;
+    //private FMOD.Studio.EventInstance tellPlayerToFindTheBathroom;
     FMOD.Studio.PLAYBACK_STATE tellPlayerToFindTheBathroomPlaybackState;
     private DialogueWithVanessa DialogueWithVanessaScript;
 
@@ -18,7 +18,7 @@ public class ForceBathroomPuzzleDialogue : MonoBehaviour
     void Start()
     {
         DialogueWithVanessaScript = gameObject.GetComponent<DialogueWithVanessa>();
-        tellPlayerToFindTheBathroom = DialogueWithVanessaScript.TellPlayerToFindTheBathroom;
+        //tellPlayerToFindTheBathroom = DialogueWithVanessaScript.TellPlayerToFindTheBathroom;
 
         VanessaSaysComeHere = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/VanessaSaysComeHere");
     }
@@ -27,8 +27,8 @@ public class ForceBathroomPuzzleDialogue : MonoBehaviour
     {
         timeLeft -= Time.deltaTime;
 
-        tellPlayerToFindTheBathroom.getPlaybackState(out tellPlayerToFindTheBathroomPlaybackState);
-        //Debug.Log(tellPlayerToFindTheBathroomPlaybackState);
+        DialogueWithVanessaScript.TellPlayerToFindTheBathroom.getPlaybackState(out tellPlayerToFindTheBathroomPlaybackState);
+        Debug.Log(tellPlayerToFindTheBathroomPlaybackState);
         Debug.Log(timeLeft);
 
         if (timeLeft < 0 && !HeyComeHereHasStarted && tellPlayerToFindTheBathroomPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING && !DialogueWithVanessaScript.ITriedToFindTheBathroomPlayed)

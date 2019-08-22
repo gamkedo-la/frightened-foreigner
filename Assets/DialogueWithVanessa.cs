@@ -20,6 +20,8 @@ public class DialogueWithVanessa : MonoBehaviour
     public FMOD.Studio.EventInstance ITriedToFindTheBathroom;
     public bool ITriedToFindTheBathroomPlayed = false;
 
+    private ForceBathroomPuzzleDialogue forceBathroomPuzzleDialogueScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,8 @@ public class DialogueWithVanessa : MonoBehaviour
 
         TellPlayerToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom");
         ITriedToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/ITriedToFindTheBathroom");
+
+        forceBathroomPuzzleDialogueScript = gameObject.GetComponent<ForceBathroomPuzzleDialogue>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,7 @@ public class DialogueWithVanessa : MonoBehaviour
         {
             TellPlayerToFindTheBathroom.start();
             PlayerHasBeenToldToFindBathroomThisInteraction = true;
+            forceBathroomPuzzleDialogueScript.timeLeft = 180.0f;
         }
 
         if (!LockViewScript.LockedWithVanessa)
