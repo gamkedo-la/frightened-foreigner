@@ -14,7 +14,7 @@ public class DialogueWithVanessa : MonoBehaviour
     public GameObject door;
     private DoorScript doorScript;
 
-    private FMOD.Studio.EventInstance TellPlayerToFindTheBathroom;
+    public FMOD.Studio.EventInstance TellPlayerToFindTheBathroom;
     private bool PlayerHasBeenToldToFindBathroomThisInteraction = false;
 
     // Start is called before the first frame update
