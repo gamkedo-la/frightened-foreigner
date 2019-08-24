@@ -21,6 +21,9 @@ public class DialogueWithVanessa : MonoBehaviour
     public bool ITriedToFindTheBathroomPlayed = false;
     public FMOD.Studio.EventInstance Lightning;
     public bool LightningPlayed = false;
+    public FMOD.Studio.EventInstance ScaryLightningVanessa;
+    public bool ScaryLightningVanessaPlayed = false;
+
 
     private ForceBathroomPuzzleDialogue forceBathroomPuzzleDialogueScript;
 
@@ -34,6 +37,8 @@ public class DialogueWithVanessa : MonoBehaviour
 
         TellPlayerToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom");
         ITriedToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/ITriedToFindTheBathroom");
+        ScaryLightningVanessa = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/VanessaSaysComeHere");
+
 
         Lightning = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
 
@@ -62,20 +67,7 @@ public class DialogueWithVanessa : MonoBehaviour
             groundskeeper.SetActive(true);
             groundskeeperInvisible = false;
             ITriedToFindTheBathroom.start();
-            ITriedToFindTheBathroomPlayed = true;
-            StartCoroutine(playLightningAfterDelay());
+            ITriedToFindTheBathroomPlayed = true;            
         }
-
-        
-    }
-
-    IEnumerator playLightningAfterDelay()
-    {
-        
-        
-        yield return new WaitForSeconds(4.25f);
-        Lightning.start();
-        LightningPlayed = true;
-
     }
 }
