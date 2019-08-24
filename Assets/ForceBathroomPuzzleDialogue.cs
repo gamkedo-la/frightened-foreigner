@@ -28,9 +28,7 @@ public class ForceBathroomPuzzleDialogue : MonoBehaviour
         timeLeft -= Time.deltaTime;
 
         DialogueWithVanessaScript.TellPlayerToFindTheBathroom.getPlaybackState(out tellPlayerToFindTheBathroomPlaybackState);
-        Debug.Log(tellPlayerToFindTheBathroomPlaybackState);
-        Debug.Log(timeLeft);
-
+        
         if (timeLeft < 0 && !HeyComeHereHasStarted && tellPlayerToFindTheBathroomPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING && !DialogueWithVanessaScript.ITriedToFindTheBathroomPlayed)
         {
             VanessaSaysComeHere.start();

@@ -10,6 +10,7 @@ public class DialogueWithVanessa : MonoBehaviour
 
     public GameObject groundskeeper;
     public bool groundskeeperInvisible = true;
+    private DialogueWithGroundskeeper dialogueWithGroundskeeperScript;
 
     public GameObject door;
     private DoorScript doorScript;
@@ -19,11 +20,10 @@ public class DialogueWithVanessa : MonoBehaviour
 
     public FMOD.Studio.EventInstance ITriedToFindTheBathroom;
     public bool ITriedToFindTheBathroomPlayed = false;
-    public FMOD.Studio.EventInstance Lightning;
-    public bool LightningPlayed = false;
-    public FMOD.Studio.EventInstance ScaryLightningVanessa;
-    public bool ScaryLightningVanessaPlayed = false;
 
+    public FMOD.Studio.EventInstance HeDoesntKnowEnglish;
+    public bool HeDoesntKnowEnglishHasPlayed = false;
+    public bool learnedFuruszoba = false;
 
     private ForceBathroomPuzzleDialogue forceBathroomPuzzleDialogueScript;
 
@@ -37,11 +37,9 @@ public class DialogueWithVanessa : MonoBehaviour
 
         TellPlayerToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom");
         ITriedToFindTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/ITriedToFindTheBathroom");
-        ScaryLightningVanessa = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/VanessaSaysComeHere");
+        HeDoesntKnowEnglish = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/AskIfSheKnowsWordForBathroom");
 
-
-        Lightning = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
-
+        dialogueWithGroundskeeperScript = groundskeeper.GetComponent<DialogueWithGroundskeeper>();
 
         forceBathroomPuzzleDialogueScript = gameObject.GetComponent<ForceBathroomPuzzleDialogue>();
     }
@@ -68,6 +66,14 @@ public class DialogueWithVanessa : MonoBehaviour
             groundskeeperInvisible = false;
             ITriedToFindTheBathroom.start();
             ITriedToFindTheBathroomPlayed = true;            
+        }
+
+        Debug.Log(dialogueWithGroundskeeperScript.PlayerHasAskedWhereTheBathroomIs);
+        if (LockViewScript.LockedWithVanessa && dialogueWithGroundskeeperScript.PlayerHasAskedWhereTheBathroomIs && !HeDoesntKnowEnglishHasPlayed)
+        {
+            HeDoesntKnowEnglish.start();
+            HeDoesntKnowEnglishHasPlayed = true;
+            learnedFuruszoba = true;
         }
     }
 }

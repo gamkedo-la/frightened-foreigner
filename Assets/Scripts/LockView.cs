@@ -19,6 +19,7 @@ public class LockView : MonoBehaviour
     private bool NPC;
 
     public bool LockedWithVanessa = false;
+    public bool LockedWithGroundskeeper = false;
 
     void Start()
     {
@@ -52,6 +53,8 @@ public class LockView : MonoBehaviour
                 character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
             }
 		}
+
+        
     }
 
 	private void TryToLockView( )
@@ -74,6 +77,11 @@ public class LockView : MonoBehaviour
         {
             LockedWithVanessa = true;
         }
+        if (hit.transform.name == "Groundskeeper")
+        {
+            LockedWithGroundskeeper = true;
+        }
+
         // Does it have a RandomWords on it?
         randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
 		if ( !randomWord && !NPC)
@@ -103,5 +111,6 @@ public class LockView : MonoBehaviour
 		locked = false;
 
         LockedWithVanessa = false;
+        LockedWithGroundskeeper = false;
 	}
 }

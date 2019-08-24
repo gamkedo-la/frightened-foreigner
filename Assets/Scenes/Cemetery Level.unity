@@ -25702,7 +25702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &411975365
 Transform:
   m_ObjectHideFlags: 0
@@ -35733,6 +35733,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 307
   LockedWithVanessa: 0
+  LockedWithGroundskeeper: 0
 --- !u!114 &534669908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61627,6 +61628,7 @@ GameObject:
   - component: {fileID: 2009396827}
   - component: {fileID: 2009396824}
   - component: {fileID: 2009396829}
+  - component: {fileID: 2009396828}
   m_Layer: 0
   m_Name: Groundskeeper
   m_TagString: Untagged
@@ -61731,6 +61733,20 @@ MonoBehaviour:
   CurrentLengthOfTransferableList: 0
   RandomIntegerForTransferableListOfChoices: 0
   CurrentStringToAddToAnswerChoicesList: 
+--- !u!114 &2009396828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009396823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b885b0d5af2aae4e95cb08870334b11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GroundskeeperSaidThere: 0
+  LightningPlayed: 0
 --- !u!65 &2009396829
 BoxCollider:
   m_ObjectHideFlags: 0
