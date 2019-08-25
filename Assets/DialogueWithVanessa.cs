@@ -32,6 +32,8 @@ public class DialogueWithVanessa : MonoBehaviour
 
     private ForceBathroomPuzzleDialogue forceBathroomPuzzleDialogueScript;
 
+    
+    private CameraShake CameraShakeScript;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,8 @@ public class DialogueWithVanessa : MonoBehaviour
         forceBathroomPuzzleDialogueScript = gameObject.GetComponent<ForceBathroomPuzzleDialogue>();
 
         tutorialUIScript = TutorialUIHolder.GetComponent<TutorialUIScript>();
+
+        CameraShakeScript = PlayerCamera.GetComponent<CameraShake>();
     }
 
     // Update is called once per frame
@@ -78,7 +82,8 @@ public class DialogueWithVanessa : MonoBehaviour
             groundskeeper.SetActive(true);
             groundskeeperInvisible = false;
             ITriedToFindTheBathroom.start();
-            ITriedToFindTheBathroomPlayed = true;            
+            ITriedToFindTheBathroomPlayed = true;
+            CameraShakeScript.ResetShakeSettings();
         }
 
 

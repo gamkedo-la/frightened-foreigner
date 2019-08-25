@@ -56,6 +56,7 @@ public class DialogueWithGroundskeeper : MonoBehaviour
             TextGraphic.SetActive(true);
         }
 
+
         
 
         
