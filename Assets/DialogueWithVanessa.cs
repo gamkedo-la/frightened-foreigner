@@ -24,7 +24,7 @@ public class DialogueWithVanessa : MonoBehaviour
 
     public FMOD.Studio.EventInstance HeDoesntKnowEnglish;
     public bool HeDoesntKnowEnglishHasPlayed = false;
-    public bool learnedFuruszoba = false;
+    public bool learnedFurduszoba = false;
 
     public GameObject TutorialUIHolder;
     public TutorialUIScript tutorialUIScript;
@@ -81,12 +81,12 @@ public class DialogueWithVanessa : MonoBehaviour
             ITriedToFindTheBathroomPlayed = true;            
         }
 
-        Debug.Log(dialogueWithGroundskeeperScript.PlayerHasAskedWhereTheBathroomIs);
+
         if (LockViewScript.LockedWithVanessa && dialogueWithGroundskeeperScript.PlayerHasAskedWhereTheBathroomIs && !HeDoesntKnowEnglishHasPlayed)
         {
             HeDoesntKnowEnglish.start();
             HeDoesntKnowEnglishHasPlayed = true;
-            learnedFuruszoba = true;
+            learnedFurduszoba = true;
         }
     }
 }

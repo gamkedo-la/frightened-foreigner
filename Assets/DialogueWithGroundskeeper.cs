@@ -18,6 +18,11 @@ public class DialogueWithGroundskeeper : MonoBehaviour
     public FMOD.Studio.EventInstance Lightning;
     public bool LightningPlayed = false;
 
+    public GameObject TextGraphic;
+
+    public GameObject Vanessa;
+    private DialogueWithVanessa DialogueWithVanessaScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,22 +36,22 @@ public class DialogueWithGroundskeeper : MonoBehaviour
 
         Lightning = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
 
-
+        DialogueWithVanessaScript = Vanessa.GetComponent<DialogueWithVanessa>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Debug.Log(PlayerHasLearnedWordForBathroom);
         if (LockViewScript.LockedWithGroundskeeper && !PlayerHasAskedWhereTheBathroomIs)
         {
             WheresTheBathroom.start();
             PlayerHasAskedWhereTheBathroomIs = true;
         }
-        if (LockViewScript.LockedWithGroundskeeper && PlayerHasLearnedWordForBathroom)
+        if (LockViewScript.LockedWithGroundskeeper && DialogueWithVanessaScript.learnedFurduszoba)
         {
-            PlayerSaysBathroomAndGroundskeeperSaysThere.start();
+            TextGraphic.SetActive(true);
         }
 
         
