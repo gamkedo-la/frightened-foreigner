@@ -6,6 +6,7 @@ public class PauseGame : MonoBehaviour
 {
     public Transform PauseMenuCanvas;
     public Transform AudioSettingsCanvas;
+    public GameObject TutorialUIHolder;
     public bool GamePaused = false;
 
     private void Awake()
@@ -22,7 +23,7 @@ public class PauseGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("p"))
+        if (Input.GetKeyDown("p") && !TutorialUIHolder.GetComponent<TutorialUIScript>().isDialogActive)
         {
             TogglePauseMenu();
         }

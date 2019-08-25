@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,6 +26,10 @@ public class DialogueWithVanessa : MonoBehaviour
     public bool HeDoesntKnowEnglishHasPlayed = false;
     public bool learnedFuruszoba = false;
 
+    public GameObject TutorialUIHolder;
+    public TutorialUIScript tutorialUIScript;
+    private string dialogText;
+
     private ForceBathroomPuzzleDialogue forceBathroomPuzzleDialogueScript;
 
 
@@ -42,6 +47,8 @@ public class DialogueWithVanessa : MonoBehaviour
         dialogueWithGroundskeeperScript = groundskeeper.GetComponent<DialogueWithGroundskeeper>();
 
         forceBathroomPuzzleDialogueScript = gameObject.GetComponent<ForceBathroomPuzzleDialogue>();
+
+        tutorialUIScript = TutorialUIHolder.GetComponent<TutorialUIScript>();
     }
 
     // Update is called once per frame
@@ -53,6 +60,12 @@ public class DialogueWithVanessa : MonoBehaviour
             TellPlayerToFindTheBathroom.start();
             PlayerHasBeenToldToFindBathroomThisInteraction = true;
             forceBathroomPuzzleDialogueScript.timeLeft = 180.0f;
+            dialogText = "WASD - Forward, Left, Back, Right movement" + Environment.NewLine +
+                        "Mouse movement -First person eyesight movement" + Environment.NewLine +
+                        "Left Click - Submit answer" + Environment.NewLine +
+                        "Right Click - Scroll through word choices" + Environment.NewLine +
+                        "r key - repeat the target word";
+            tutorialUIScript.openDialog(dialogText);
         }
 
         if (!LockViewScript.LockedWithVanessa)
