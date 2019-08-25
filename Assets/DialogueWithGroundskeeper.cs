@@ -16,8 +16,9 @@ public class DialogueWithGroundskeeper : MonoBehaviour
     public FMOD.Studio.EventInstance PlayerSaysBathroomAndGroundskeeperSaysThere;
     public bool GroundskeeperSaidThere = false;
     //public FMOD.Studio.EventInstance Lightning;
-   // public bool LightningPlayed = false;
+    // public bool LightningPlayed = false;
 
+    public GameObject Furduszoba;
     public GameObject TextGraphic;
 
     public GameObject Vanessa;
@@ -51,6 +52,7 @@ public class DialogueWithGroundskeeper : MonoBehaviour
         }
         if (LockViewScript.LockedWithGroundskeeper && DialogueWithVanessaScript.learnedFurduszoba)
         {
+            Furduszoba.SetActive(true);
             TextGraphic.SetActive(true);
         }
 

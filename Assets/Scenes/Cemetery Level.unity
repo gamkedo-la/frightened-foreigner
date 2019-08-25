@@ -10615,7 +10615,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 1.193861e-39, y: 9.1835e-41, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 2.938736e-39, y: 0, z: 0, w: 3.67343e-40}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -25827,6 +25827,8 @@ GameObject:
   m_Component:
   - component: {fileID: 411975365}
   - component: {fileID: 411975366}
+  - component: {fileID: 411975369}
+  - component: {fileID: 411975368}
   - component: {fileID: 411975367}
   m_Layer: 0
   m_Name: TextGraphic
@@ -25834,7 +25836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &411975365
 Transform:
   m_ObjectHideFlags: 0
@@ -25842,11 +25844,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411975364}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.23, y: 7.04, z: 0}
-  m_LocalScale: {x: 0.33, y: 0.28, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.029999413, y: 7.61, z: 0}
+  m_LocalScale: {x: 0.63, y: 0.55, z: 1}
   m_Children: []
-  m_Father: {fileID: 2009396826}
+  m_Father: {fileID: 1389679204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &411975366
@@ -25909,6 +25911,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6450f9d26101b94ba97893b36d12233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &411975368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411975364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  AnswerChoices: []
+  CorrectChoice: 
+  CurrentChoice: 
+  MasterListOfChoicesScript: {fileID: 0}
+  MasterListOfChoices: []
+  CurrentTransferableChoicesList: []
+  CurrentLengthOfTransferableList: 0
+  RandomIntegerForTransferableListOfChoices: 0
+  CurrentStringToAddToAnswerChoicesList: 
+--- !u!114 &411975369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411975364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722c359baa94e1a479069f69caaa8b6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomWordsScript: {fileID: 0}
+  temporaryPictureName: 
+  PostProccessingValue: {fileID: 0}
 --- !u!4 &437175495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2719654914045507514, guid: beac287b862839244896fb5e552b2660,
@@ -54936,6 +54975,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1389679203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389679204}
+  m_Layer: 0
+  m_Name: "f\xFCrd\u0151szoba"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1389679204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389679203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 411975365}
+  m_Father: {fileID: 2009396826}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1396926143
 GameObject:
   m_ObjectHideFlags: 0
@@ -56014,7 +56084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1596007474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61402,7 +61472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1716416024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61968,7 +62038,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1959457124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62168,7 +62238,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2009396824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62240,7 +62310,7 @@ Transform:
   m_LocalPosition: {x: 5.864, y: 0.961, z: 3.82}
   m_LocalScale: {x: -0.15, y: 0.08, z: 1}
   m_Children:
-  - {fileID: 411975365}
+  - {fileID: 1389679204}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62281,6 +62351,7 @@ MonoBehaviour:
   PlayerHasAskedWhereTheBathroomIs: 0
   PlayerHasLearnedWordForBathroom: 0
   GroundskeeperSaidThere: 0
+  Furduszoba: {fileID: 1389679203}
   TextGraphic: {fileID: 411975364}
   Vanessa: {fileID: 681154854}
 --- !u!65 &2009396829
@@ -62481,7 +62552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2107524687
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -82,7 +82,7 @@ public class MouseClicks: MonoBehaviour
     {
         if (!PauseGameScript.GamePaused)
         {
-            Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
+           // Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
             if (Input.GetMouseButtonDown(1))    // right mouse button click
             {
                 ImageListIndex++;//move through the ImageList and cycle back to 0 at the end
@@ -116,9 +116,9 @@ public class MouseClicks: MonoBehaviour
 
                     Sprite GhostSoulSprite = Resources.Load<Sprite>("Images/ghost_soul");//load soul sprite
                     
-                    GhostSoul.GetComponent<SpriteRenderer>().sprite = GhostSoulSprite;//soul sprite becomes visible
+                    //GhostSoul.GetComponent<SpriteRenderer>().sprite = GhostSoulSprite;//soul sprite becomes visible
                     
-                    GhostSoulVisible = true;//set bool to trigger float to heaven movement in the function/conditional at the bottom of this script
+                    //GhostSoulVisible = true;//set bool to trigger float to heaven movement in the function/conditional at the bottom of this script
 
                     //RenderSettings.ambientIntensity = 0.1f;//make the game slightly darker to help add progressive creepy ambience
 
