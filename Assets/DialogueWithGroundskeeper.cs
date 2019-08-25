@@ -15,8 +15,8 @@ public class DialogueWithGroundskeeper : MonoBehaviour
 
     public FMOD.Studio.EventInstance PlayerSaysBathroomAndGroundskeeperSaysThere;
     public bool GroundskeeperSaidThere = false;
-    public FMOD.Studio.EventInstance Lightning;
-    public bool LightningPlayed = false;
+    //public FMOD.Studio.EventInstance Lightning;
+   // public bool LightningPlayed = false;
 
     public GameObject TextGraphic;
 
@@ -34,7 +34,7 @@ public class DialogueWithGroundskeeper : MonoBehaviour
         
 
 
-        Lightning = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
+        //Lightning = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
 
         DialogueWithVanessaScript = Vanessa.GetComponent<DialogueWithVanessa>();
         
