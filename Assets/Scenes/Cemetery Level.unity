@@ -10439,7 +10439,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 4.5918e-41, z: 0, w: 2.3509887e-38}
+  m_BoundingSphereOverride: {x: 0, y: 2.3509887e-38, z: -2.3059134e+18, w: -9.094947e-13}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -35723,6 +35723,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3304905925833801478}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &534669903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672bbaf33690d014b9953b0b7cc2e661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &536231569
 GameObject:
   m_ObjectHideFlags: 0
@@ -36546,10 +36558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 534669902}
   groundskeeper: {fileID: 2009396823}
-  groundskeeperInvisible: 1
   door: {fileID: 1640351639}
-  ITriedToFindTheBathroomPlayed: 0
-  HeDoesntKnowEnglishHasPlayed: 0
   learnedFurduszoba: 0
   TutorialUIHolder: {fileID: 1191243112}
   tutorialUIScript: {fileID: 0}
@@ -61874,9 +61883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b885b0d5af2aae4e95cb08870334b11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHasAskedWhereTheBathroomIs: 0
-  PlayerHasLearnedWordForBathroom: 0
-  GroundskeeperSaidThere: 0
   Furduszoba: {fileID: 1389679203}
   TextGraphic: {fileID: 411975364}
   Vanessa: {fileID: 681154854}
