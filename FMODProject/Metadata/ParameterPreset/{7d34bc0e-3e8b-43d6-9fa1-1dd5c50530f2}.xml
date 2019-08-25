@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{7d34bc0e-3e8b-43d6-9fa1-1dd5c50530f2}">
+        <property name="name">
+            <value>MetalsIn</value>
+        </property>
+        <relationship name="folder">
+            <destination>{1a59ad89-e9d1-46d8-a764-8bc770f8f5b4}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{32433672-28a8-4765-89a6-f369a0a22ad6}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{32433672-28a8-4765-89a6-f369a0a22ad6}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.20000001788139343</value>
+        </property>
+    </object>
+</objects>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{276ecb67-3f02-49cb-925c-1271c9020d60}">
+        <property name="name">
+            <value>VocalsIn</value>
+        </property>
+        <relationship name="folder">
+            <destination>{1a59ad89-e9d1-46d8-a764-8bc770f8f5b4}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{78abc18a-5a1b-4f70-8801-ac4248b59627}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{78abc18a-5a1b-4f70-8801-ac4248b59627}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+        <property name="seekSpeed">
+            <value>0.20000001788139343</value>
+        </property>
+    </object>
+</objects>

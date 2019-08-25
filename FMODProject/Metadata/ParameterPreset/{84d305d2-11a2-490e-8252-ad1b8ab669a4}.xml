@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{84d305d2-11a2-490e-8252-ad1b8ab669a4}">
+        <property name="name">
+            <value>FrozenViolinsIn</value>
+        </property>
+        <relationship name="folder">
+            <destination>{1a59ad89-e9d1-46d8-a764-8bc770f8f5b4}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{f4fb309b-96f4-463c-a47a-9dd316c2784c}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{f4fb309b-96f4-463c-a47a-9dd316c2784c}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>
