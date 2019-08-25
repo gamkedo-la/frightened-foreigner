@@ -5,7 +5,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private Behaviour[] toDisable = null;
 	[SerializeField] private Transform character = null;
 	[SerializeField] private float maxTargetDistance = 5f;
-	[SerializeField]private float lookUpCorrection = 0.3f;
+	[SerializeField] private float lookUpCorrection = 0.3f;
 	[SerializeField] private float damping = 1f;
 	[SerializeField] private LayerMask mask = 0;
 
@@ -41,20 +41,31 @@ public class LockView : MonoBehaviour
             if (randomWord)
             {
                 Vector3 targetPos = randomWord.gameObject.transform.position + randomWord.gameObject.transform.up * lookUpCorrection;
+                LockOnToTargetObject(targetPos);
 
 
+                //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
+                //Quaternion rotationC = Quaternion.LookRotation(targetPos - character.position);
+                //rotationT = Quaternion.Slerp(transform.rotation, rotationT, Time.deltaTime * damping);
+                //rotationC = Quaternion.Slerp(character.rotation, rotationC, Time.deltaTime * damping);
 
-                Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
-                Quaternion rotationC = Quaternion.LookRotation(targetPos - character.position);
-                rotationT = Quaternion.Slerp(transform.rotation, rotationT, Time.deltaTime * damping);
-                rotationC = Quaternion.Slerp(character.rotation, rotationC, Time.deltaTime * damping);
-
-                transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
-                character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
+                //transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
+                //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
             }
 		}
 
         
+    }
+
+    public void LockOnToTargetObject(Vector3 targetPos)
+    {
+        Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
+        Quaternion rotationC = Quaternion.LookRotation(targetPos - character.position);
+        rotationT = Quaternion.Slerp(transform.rotation, rotationT, Time.deltaTime * damping);
+        rotationC = Quaternion.Slerp(character.rotation, rotationC, Time.deltaTime * damping);
+
+        transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
+        character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
     }
 
 	private void TryToLockView( )

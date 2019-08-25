@@ -10,20 +10,20 @@ public class DialogueWithVanessa : MonoBehaviour
     public GameObject PlayerCamera;
 
     public GameObject groundskeeper;
-    public bool groundskeeperInvisible = true;
+    //public bool groundskeeperInvisible = true;
     private DialogueWithGroundskeeper dialogueWithGroundskeeperScript;
 
     public GameObject door;
     private DoorScript doorScript;
 
     public FMOD.Studio.EventInstance TellPlayerToFindTheBathroom;
-    private bool PlayerHasBeenToldToFindBathroomThisInteraction = false;
+    //private bool PlayerHasBeenToldToFindBathroomThisInteraction = false;
 
     public FMOD.Studio.EventInstance ITriedToFindTheBathroom;
-    public bool ITriedToFindTheBathroomPlayed = false;
+    //public bool ITriedToFindTheBathroomPlayed = false;
 
     public FMOD.Studio.EventInstance HeDoesntKnowEnglish;
-    public bool HeDoesntKnowEnglishHasPlayed = false;
+    //public bool HeDoesntKnowEnglishHasPlayed = false;
     public bool learnedFurduszoba = false;
 
     public GameObject TutorialUIHolder;
@@ -32,13 +32,13 @@ public class DialogueWithVanessa : MonoBehaviour
 
     private ForceBathroomPuzzleDialogue forceBathroomPuzzleDialogueScript;
 
-    
+
     private CameraShake CameraShakeScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         doorScript = door.GetComponent<DoorScript>();
 
@@ -58,11 +58,11 @@ public class DialogueWithVanessa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (LockViewScript.LockedWithVanessa && !doorScript.playerHasExploredTheCemetery && !PlayerHasBeenToldToFindBathroomThisInteraction)
+
+        if (LockViewScript.LockedWithVanessa && !doorScript.playerHasExploredTheCemetery && !DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction)
         {
             TellPlayerToFindTheBathroom.start();
-            PlayerHasBeenToldToFindBathroomThisInteraction = true;
+            DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = true;
             forceBathroomPuzzleDialogueScript.timeLeft = 180.0f;
             dialogText = "WASD - Forward, Left, Back, Right movement" + Environment.NewLine +
                         "Mouse movement -First person eyesight movement" + Environment.NewLine +
@@ -74,23 +74,22 @@ public class DialogueWithVanessa : MonoBehaviour
 
         if (!LockViewScript.LockedWithVanessa)
         {
-            PlayerHasBeenToldToFindBathroomThisInteraction = false;
+            DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = false;
         }
 
-        if (LockViewScript.LockedWithVanessa && groundskeeperInvisible && doorScript.playerHasExploredTheCemetery)
+        if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && doorScript.playerHasExploredTheCemetery)
         {
             groundskeeper.SetActive(true);
-            groundskeeperInvisible = false;
+            DialogManager.groundskeeperInvisible = false;
             ITriedToFindTheBathroom.start();
-            ITriedToFindTheBathroomPlayed = true;
-            CameraShakeScript.ResetShakeSettings();
+            DialogManager.ITriedToFindTheBathroomPlayed = true;
         }
 
 
-        if (LockViewScript.LockedWithVanessa && dialogueWithGroundskeeperScript.PlayerHasAskedWhereTheBathroomIs && !HeDoesntKnowEnglishHasPlayed)
+        if (LockViewScript.LockedWithVanessa && DialogManager.PlayerHasAskedWhereTheBathroomIs && !DialogManager.HeDoesntKnowEnglishHasPlayed)
         {
             HeDoesntKnowEnglish.start();
-            HeDoesntKnowEnglishHasPlayed = true;
+            DialogManager.HeDoesntKnowEnglishHasPlayed = true;
             learnedFurduszoba = true;
         }
     }

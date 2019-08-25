@@ -10,11 +10,11 @@ public class DialogueWithGroundskeeper : MonoBehaviour
     private GameObject PlayerCamera;
 
     public FMOD.Studio.EventInstance WheresTheBathroom;
-    public bool PlayerHasAskedWhereTheBathroomIs = false;
-    public bool PlayerHasLearnedWordForBathroom = false;
+    //public bool PlayerHasAskedWhereTheBathroomIs = false;
+    //public bool PlayerHasLearnedWordForBathroom = false;
 
     public FMOD.Studio.EventInstance PlayerSaysBathroomAndGroundskeeperSaysThere;
-    public bool GroundskeeperSaidThere = false;
+    //public bool GroundskeeperSaidThere = false;
     //public FMOD.Studio.EventInstance Lightning;
     // public bool LightningPlayed = false;
 
@@ -44,11 +44,11 @@ public class DialogueWithGroundskeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(PlayerHasLearnedWordForBathroom);
-        if (LockViewScript.LockedWithGroundskeeper && !PlayerHasAskedWhereTheBathroomIs)
+        Debug.Log(DialogManager.PlayerHasLearnedWordForBathroom);
+        if (LockViewScript.LockedWithGroundskeeper && !DialogManager.PlayerHasAskedWhereTheBathroomIs)
         {
             WheresTheBathroom.start();
-            PlayerHasAskedWhereTheBathroomIs = true;
+            DialogManager.PlayerHasAskedWhereTheBathroomIs = true;
         }
         if (LockViewScript.LockedWithGroundskeeper && DialogueWithVanessaScript.learnedFurduszoba)
         {

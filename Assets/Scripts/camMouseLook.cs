@@ -48,7 +48,6 @@ public class camMouseLook : MonoBehaviour
 		ogRotation = transform.localRotation;
 		ogCharacterRotation = character.transform.localRotation;
 		mouselook = Vector2.zero;
-
 		mouselook.y = useAngleFix ? 360 - transform.localEulerAngles.x : -transform.localEulerAngles.x;
 	}
 
