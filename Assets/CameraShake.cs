@@ -9,8 +9,8 @@ public class CameraShake : MonoBehaviour
 
     private float shakeDuration = 0f;
 
-    private float shakeAmount = 0.7f;
-    private float decreaseFactor = 1.0f;
+    private float shakeAmount = 0.4f;
+    private float decreaseFactor = 2.0f;
 
     Vector3 originalPosition;
 
@@ -29,12 +29,12 @@ public class CameraShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ShakeTheCamera();
     }
 
     public void ResetShakeSettings()
     {
-        shakeDuration = 0.5f;
+        shakeDuration = 0.35f;
         originalPosition = CamerasTransform.localPosition;
     }
 
@@ -51,5 +51,11 @@ public class CameraShake : MonoBehaviour
             shakeDuration = 0f;
             CamerasTransform.localPosition = originalPosition;
         }
+    }
+
+    public IEnumerator DelayedCameraShakeForGroundskeeperLightning()
+    {
+        yield return new WaitForSeconds(6.6f);
+        ResetShakeSettings();
     }
 }

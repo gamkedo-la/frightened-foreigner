@@ -77,12 +77,13 @@ public class DialogueWithVanessa : MonoBehaviour
             DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = false;
         }
 
-        if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && doorScript.playerHasExploredTheCemetery)
+        if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && doorScript.playerHasExploredTheCemetery && !DialogManager.ITriedToFindTheBathroomPlayed)
         {
             groundskeeper.SetActive(true);
             DialogManager.groundskeeperInvisible = false;
             ITriedToFindTheBathroom.start();
             DialogManager.ITriedToFindTheBathroomPlayed = true;
+            StartCoroutine(CameraShakeScript.DelayedCameraShakeForGroundskeeperLightning());
         }
 
 
