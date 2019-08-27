@@ -124,6 +124,7 @@ public class MouseClicks: MonoBehaviour
                     if (LockViewScript.LockedWithGroundskeeper)
                     {
                         GroundskeeperRespondsToCorrectAnswer.start();
+                        LockViewScript.bathroomCutSceneCameraPan = true;
                     }
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
 

@@ -21,6 +21,9 @@ public class LockView : MonoBehaviour
     public bool LockedWithVanessa = false;
     public bool LockedWithGroundskeeper = false;
 
+    public GameObject BathroomDoor;
+    public bool bathroomCutSceneCameraPan = false;
+
     void Start()
     {
         NPC = false;
@@ -51,6 +54,11 @@ public class LockView : MonoBehaviour
 
                 //transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
                 //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
+            }
+            if (bathroomCutSceneCameraPan)
+            {
+                Vector3 targetPos = BathroomDoor.transform.position;
+                LockOnToTargetObject(targetPos);
             }
 		}
 

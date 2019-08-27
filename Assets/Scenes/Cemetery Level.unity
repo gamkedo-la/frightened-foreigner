@@ -63574,6 +63574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sparks: {fileID: 715769531}
+  PlayerCamera: {fileID: 534669902}
 --- !u!1001 &1126078377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78549,6 +78550,11 @@ PrefabInstance:
       propertyPath: PauseCanvas
       value: 
       objectReference: {fileID: 1049168767}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: BathroomDoor
+      value: 
+      objectReference: {fileID: 2107524686}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b258cfa1de4a0cb4ca7989786d76a2a1, type: 3}
 --- !u!1001 &3311241418723049815
