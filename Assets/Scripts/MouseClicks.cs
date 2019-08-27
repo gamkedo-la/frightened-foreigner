@@ -39,6 +39,11 @@ public class MouseClicks: MonoBehaviour
     private float maxGrainIntensity = 0.5f;
     private float maxVignetteIntensity = 0.45f;
 
+    private LockView LockViewScript;
+    public GameObject PlayerCamera;
+    public FMOD.Studio.EventInstance GroundskeeperRespondsToIncorrectAnswer;
+    public FMOD.Studio.EventInstance GroundskeeperRespondsToCorrectAnswer;
+
     private void Awake()
     {
         
@@ -47,6 +52,8 @@ public class MouseClicks: MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
+
         PauseGameScript = GameObject.Find("GameController")?.GetComponent<PauseGame>();
 
         AudioActiveStatusManager = GameObject.Find("ActiveStatusManager");
@@ -75,7 +82,9 @@ public class MouseClicks: MonoBehaviour
         //PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
         //Debug.Log(PostProccessingValue);
 
-
+        LockViewScript = PlayerCamera.GetComponent<LockView>();
+        GroundskeeperRespondsToIncorrectAnswer = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse");
+        GroundskeeperRespondsToCorrectAnswer = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse");
     }
 
     void Update()
@@ -112,9 +121,13 @@ public class MouseClicks: MonoBehaviour
             {
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
+                    if (LockViewScript.LockedWithGroundskeeper)
+                    {
+                        GroundskeeperRespondsToCorrectAnswer.start();
+                    }
+                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
 
-                    Sprite GhostSoulSprite = Resources.Load<Sprite>("Images/ghost_soul");//load soul sprite
+                    //Sprite GhostSoulSprite = Resources.Load<Sprite>("Images/ghost_soul");//load soul sprite
                     
                     //GhostSoul.GetComponent<SpriteRenderer>().sprite = GhostSoulSprite;//soul sprite becomes visible
                     
@@ -155,9 +168,15 @@ public class MouseClicks: MonoBehaviour
                     //Debug.Log(NewFreedSoulsValue);//displays actual value after being grabbed in the previous function
 
                 }
-                else
+                else //incorrect answer choice
                 {
-                    FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Incorrect_Answer");//negative aural feedback to player for an incorrect answer              
+                    if (LockViewScript.LockedWithGroundskeeper)
+                    {
+
+                        GroundskeeperRespondsToIncorrectAnswer.start();
+                        
+                    }
+                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Incorrect_Answer");//negative aural feedback to player for an incorrect answer              
                 }
 
             }//end of left click

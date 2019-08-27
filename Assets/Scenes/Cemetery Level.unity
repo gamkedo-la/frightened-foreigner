@@ -30893,6 +30893,7 @@ MonoBehaviour:
   RandomWordsScript: {fileID: 0}
   temporaryPictureName: 
   PostProccessingValue: {fileID: 1396926143}
+  PlayerCamera: {fileID: 534669902}
 --- !u!1 &423392767
 GameObject:
   m_ObjectHideFlags: 0
