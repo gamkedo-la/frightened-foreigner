@@ -1,10 +1,11 @@
+{bd4504da-04fd-4e7a-b41a-fba689ca3461} event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse
+{f6357e1c-3c18-46bc-a577-e80278b3af95} event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse
 {22951b32-251e-45fb-b8fd-419b10882e02} event:/Dialogue/Player/ITriedToFindTheBathroom
 {3f3b99f8-8e0e-4bff-8310-e4e261fb8463} event:/Dialogue/Player/WheresTheBathroom
+{79090859-d682-499d-b5f8-1ab99ec3ec08} event:/Dialogue/Player/UhhhhMaybeYouShouldWait
 {d0bdba2f-aa98-4376-81d2-1b6464a14b7e} event:/Dialogue/Vanessa/AskIfSheKnowsWordForBathroom
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
-{f6357e1c-3c18-46bc-a577-e80278b3af95} event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse
-{bd4504da-04fd-4e7a-b41a-fba689ca3461} event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
 {118077e6-62c8-4f84-88cf-aebc269d80bb} event:/Music/firstPuzzleMusicBaseLayer
 {38603b31-4e90-4c9b-b178-f72d7f72f039} event:/Music/firstPuzzleMusicFourthLayer
@@ -19,6 +20,7 @@
 {8da8b126-78cc-4c7e-97f9-c4f12c15d712} event:/SFX/PitchRandomizedSound
 {2648964c-bea3-4479-85f4-554a4bb08650} event:/SFX/RightClickScrollThroughWords
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
+{63f79db1-1012-47ed-a9c3-64f988f3a31c} event:/SFX/Lightning
 {9b47f662-18b8-45ba-8b77-dcf1ea2a1a61} event:/Words/Bathroom_Furdoszoba
 {e31f3597-e728-480a-8ff4-444c529fec74} event:/Words/Correct_Answer
 {d515d029-57d2-4877-a1dc-f5962fcddf67} event:/Words/Incorrect_Answer

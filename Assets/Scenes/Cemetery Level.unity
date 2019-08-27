@@ -30894,6 +30894,10 @@ MonoBehaviour:
   temporaryPictureName: 
   PostProccessingValue: {fileID: 1396926143}
   PlayerCamera: {fileID: 534669902}
+  bathroomDoor: {fileID: 2107524686}
+  bathroomAttendant: {fileID: 1716416023}
+  candyTable: {fileID: 1959457123}
+  candyBasket: {fileID: 1596007473}
 --- !u!1 &423392767
 GameObject:
   m_ObjectHideFlags: 0
@@ -58847,7 +58851,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 1
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -63559,7 +63563,7 @@ Transform:
   - {fileID: 134116988}
   - {fileID: 715769529}
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &1116510227
 MonoBehaviour:
@@ -70872,7 +70876,7 @@ Transform:
   - {fileID: 423392768}
   - {fileID: 134024818}
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593411318
 GameObject:
@@ -70982,7 +70986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1596007474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71050,12 +71054,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596007473}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.147, y: 1.581, z: -8.44}
-  m_LocalScale: {x: 0.13, y: 0.12, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.975, z: 0.027999882}
+  m_LocalScale: {x: 0.9285719, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_Father: {fileID: 1959457126}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1596072769
 PrefabInstance:
@@ -76722,7 +76726,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831399848
 GameObject:
@@ -77345,9 +77349,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959457123}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8.175, y: 0.984, z: -8.44}
+  m_LocalPosition: {x: -8.175, y: 0.984, z: -5.176}
   m_LocalScale: {x: 0.14, y: 0.12, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1596007476}
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -78555,6 +78560,11 @@ PrefabInstance:
       propertyPath: BathroomDoor
       value: 
       objectReference: {fileID: 2107524686}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: GroundskeeperTextGraphic
+      value: 
+      objectReference: {fileID: 411975364}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b258cfa1de4a0cb4ca7989786d76a2a1, type: 3}
 --- !u!1001 &3311241418723049815

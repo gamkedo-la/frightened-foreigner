@@ -44,6 +44,13 @@ public class MouseClicks: MonoBehaviour
     public FMOD.Studio.EventInstance GroundskeeperRespondsToIncorrectAnswer;
     public FMOD.Studio.EventInstance GroundskeeperRespondsToCorrectAnswer;
 
+    public GameObject bathroomDoor;
+    public GameObject bathroomAttendant;
+    public GameObject candyTable;
+    public GameObject candyBasket;
+
+    public FMOD.Studio.EventInstance LightningSound;
+
     private void Awake()
     {
         
@@ -85,6 +92,9 @@ public class MouseClicks: MonoBehaviour
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         GroundskeeperRespondsToIncorrectAnswer = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse");
         GroundskeeperRespondsToCorrectAnswer = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse");
+        LightningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
+
+
     }
 
     void Update()
@@ -121,10 +131,13 @@ public class MouseClicks: MonoBehaviour
             {
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
-                    if (LockViewScript.LockedWithGroundskeeper)
+                    if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
                     {
-                        GroundskeeperRespondsToCorrectAnswer.start();
-                        LockViewScript.bathroomCutSceneCameraPan = true;
+                        GroundskeeperRespondsToCorrectAnswer.start(); //groundskeeper says 'there' in Hungarian
+                        LockViewScript.randomWord = null;
+                        LockViewScript.bathroomCutSceneCameraPan = true; //camera pans to the bathroom
+                        LightningSound.start();
+                        StartCoroutine(delayAppearanceOfBathroomStuff());
                     }
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
 
@@ -188,4 +201,14 @@ public class MouseClicks: MonoBehaviour
             }
         }
             }//end of update
+
+        public IEnumerator delayAppearanceOfBathroomStuff()
+    {
+        yield return new WaitForSeconds(2.0f);
+        bathroomDoor.SetActive(true);
+        bathroomAttendant.SetActive(true);
+        candyTable.SetActive(true);
+        candyBasket.SetActive(true);
+        Debug.Log("Hello World");
+    }
 }//end of right click class

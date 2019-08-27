@@ -81,9 +81,7 @@ public class SceneManagement : MonoBehaviour
         }
         if (ShouldFadeInPostFirstLevelTrack && PostFirstPuzzleLayersFadeValue < 1)
         {
-            Debug.Log(PostFirstPuzzleLayersFadeValue);
             PostFirstPuzzleMusic.getPlaybackState(out PostFirstPuzzleMusicPlaybackState);
-            Debug.Log(PostFirstPuzzleMusicPlaybackState);
             if (PostFirstPuzzleMusicPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
             {
                 PostFirstPuzzleMusic.start();

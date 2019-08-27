@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class LockView : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private LayerMask mask = 0;
 
 	private bool locked = false;
-	private RandomWords randomWord = null;
+	public RandomWords randomWord = null;
 
     private GameObject TargetsTextGraphic;
     //private GameObject TargetHit;
@@ -24,9 +26,15 @@ public class LockView : MonoBehaviour
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
 
+    public GameObject GroundskeeperTextGraphic;
+
+    public FMOD.Studio.EventInstance UhhhhMaybeYouShouldWait;
+    public bool UhhhMaybeYouShouldWaitPlayed = false;
+
     void Start()
     {
         NPC = false;
+        UhhhhMaybeYouShouldWait = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/UhhhhMaybeYouShouldWait");
     }
 
     void Update()
@@ -59,6 +67,13 @@ public class LockView : MonoBehaviour
             {
                 Vector3 targetPos = BathroomDoor.transform.position;
                 LockOnToTargetObject(targetPos);
+                //GroundskeeperTextGraphic.SetActive(false);
+                //StartCoroutine(DelayUhhhhDialogue());
+                if (!UhhhMaybeYouShouldWaitPlayed)
+                {
+                    StartCoroutine(DelayUhhhhDialogue());
+                }
+                //UhhhhMaybeYouShouldWait.start();
             }
 		}
 
@@ -132,4 +147,14 @@ public class LockView : MonoBehaviour
         LockedWithVanessa = false;
         LockedWithGroundskeeper = false;
 	}
+
+    public IEnumerator DelayUhhhhDialogue()
+    {
+        UhhhMaybeYouShouldWaitPlayed = true;
+        yield return new WaitForSeconds(3.0f);
+        UhhhhMaybeYouShouldWait.start();
+        
+    }
+
+
 }
