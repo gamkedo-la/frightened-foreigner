@@ -26,6 +26,7 @@
 {e31f3597-e728-480a-8ff4-444c529fec74} event:/Words/Correct_Answer
 {d515d029-57d2-4877-a1dc-f5962fcddf67} event:/Words/Incorrect_Answer
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
+{bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {a5913a4e-618f-4e21-add3-32ea81914989} bus:/Master/Music

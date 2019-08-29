@@ -24,6 +24,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithGroundskeeper = false;
     public bool LockedWithBathroomAttendant = false;
     public bool LockedWithForint = false;
+    public bool LockedWithBathroomDoor = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -125,6 +126,11 @@ public class LockView : MonoBehaviour
         {
             LockedWithForint = true;
         }
+        if (hit.transform.name == "BathroomDoor")
+        {
+            LockedWithBathroomDoor = true;
+        }
+        
 
         // Does it have a RandomWords on it?
         randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
@@ -157,6 +163,7 @@ public class LockView : MonoBehaviour
         LockedWithVanessa = false;
         LockedWithGroundskeeper = false;
         LockedWithBathroomAttendant = false;
+        LockedWithBathroomDoor = false;
 	}
 
     public IEnumerator DelayUhhhhDialogue()
