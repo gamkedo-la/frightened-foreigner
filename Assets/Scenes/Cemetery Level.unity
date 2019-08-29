@@ -31004,6 +31004,8 @@ MonoBehaviour:
   bathroomAttendant: {fileID: 1716416023}
   candyTable: {fileID: 1959457123}
   candyBasket: {fileID: 1596007473}
+  Groundskeeper: {fileID: 2009396823}
+  thisTextGraphic: {fileID: 411975364}
 --- !u!1 &423392767
 GameObject:
   m_ObjectHideFlags: 0

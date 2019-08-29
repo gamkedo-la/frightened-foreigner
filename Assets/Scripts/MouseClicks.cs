@@ -51,6 +51,8 @@ public class MouseClicks: MonoBehaviour
 
     public FMOD.Studio.EventInstance LightningSound;
 
+    public GameObject Groundskeeper;
+    public GameObject thisTextGraphic;
     
 
     private void Awake()
@@ -203,7 +205,8 @@ public class MouseClicks: MonoBehaviour
         bathroomAttendant.SetActive(true);
         candyTable.SetActive(true);
         candyBasket.SetActive(true);
-        Debug.Log("Hello World");
+        
+        Groundskeeper.SetActive(false);
     }
 
     private void increaseGraininessOfGraphics()
