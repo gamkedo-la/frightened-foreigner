@@ -12,6 +12,7 @@ public class ForintInteraction : MonoBehaviour
     private FMOD.Studio.PLAYBACK_STATE LeaveForintOnTheGroundPlaybackState;
 
     private bool LeaveForintPlayedThisInteraction = false;
+    public GameObject textGraphic;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,10 @@ public class ForintInteraction : MonoBehaviour
         {
             LeaveForintOnTheGround.start();
             LeaveForintPlayedThisInteraction = true;
+        }
+        if (LockViewScript.LockedWithForint && DialogManager.BathroomAttendantSaidToGetForint)
+        {
+            textGraphic.SetActive(true);
         }
         if (!LockViewScript.LockedWithForint)
         {

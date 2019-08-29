@@ -10152,6 +10152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 534669902}
+  textGraphic: {fileID: 8247220394666061186}
 --- !u!1001 &131623615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76996,7 +76997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1716416024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79295,6 +79296,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69fd75e7cc4c0045bb3e1d86352c213, type: 3}
+--- !u!1 &8247220394666061186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8247220395213299889, guid: d69fd75e7cc4c0045bb3e1d86352c213,
+    type: 3}
+  m_PrefabInstance: {fileID: 8247220394666061185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8247220394666061187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247220394666061186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 722c359baa94e1a479069f69caaa8b6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomWordsScript: {fileID: 0}
+  temporaryPictureName: 
+  PostProccessingValue: {fileID: 0}
+  PlayerCamera: {fileID: 0}
+  bathroomDoor: {fileID: 0}
+  bathroomAttendant: {fileID: 0}
+  candyTable: {fileID: 0}
+  candyBasket: {fileID: 0}
+  Groundskeeper: {fileID: 0}
+  thisTextGraphic: {fileID: 8247220394666061186}
+  shovel: {fileID: 0}
 --- !u!4 &8795834081883211697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8795834081883211697, guid: ef351b114d7fa344fad68bad99132f03,
