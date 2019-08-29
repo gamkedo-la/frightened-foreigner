@@ -99,7 +99,7 @@ public class MouseClicks: MonoBehaviour
 
     void Update()
     {
-        if (!PauseGameScript.GamePaused)
+        if (!PauseGameScript.GamePaused)// if the game isn't paused
         {
            // Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
             if (Input.GetMouseButtonDown(1))    // right mouse button click
@@ -138,7 +138,12 @@ public class MouseClicks: MonoBehaviour
                         LockViewScript.bathroomCutSceneCameraPan = true; //camera pans to the bathroom
                         LightningSound.start();
                         StartCoroutine(delayAppearanceOfBathroomStuff());
+                        SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;
+                        LightScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
+                        increaseGraininessOfGraphics();
                     }
+
+
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
 
                     //Sprite GhostSoulSprite = Resources.Load<Sprite>("Images/ghost_soul");//load soul sprite
@@ -149,7 +154,7 @@ public class MouseClicks: MonoBehaviour
 
                     //RenderSettings.ambientIntensity = 0.1f;//make the game slightly darker to help add progressive creepy ambience
 
-                    LightScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
+                    
 
                     // postprocessing effect to make ambient creepier
                     //PPVScript.profile.TryGetSettings(out grainLayer);
@@ -157,24 +162,11 @@ public class MouseClicks: MonoBehaviour
                     //grainLayer = FindObjectOfType<Grain>();
                     //grainLayer = PPVScript.GetComponent<Grain>();
                     //ambientOcclusionLayer = FindObjectOfType<AmbientOcclusion>();
-                    PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
-                    PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
-                    PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
-                    //Debug.Log(ambientOcclusionLayer);
-                    GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
-                    VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
-                    if (GrainLayer.intensity > maxGrainIntensity)
-                    {
-                        GrainLayer.intensity.Override(maxGrainIntensity);
-                    }
-                    if (VignetteLayer.intensity > maxVignetteIntensity)
-                    {
-                        VignetteLayer.intensity.Override(maxVignetteIntensity);
-                    }
+                    
 
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
-                    SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;
+                    
                     Debug.Log(PostFirstPuzzleMusic);
                     //PostFirstPuzzleMusic.start();
                     
@@ -210,5 +202,23 @@ public class MouseClicks: MonoBehaviour
         candyTable.SetActive(true);
         candyBasket.SetActive(true);
         Debug.Log("Hello World");
+    }
+
+    private void increaseGraininessOfGraphics()
+    {
+        PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
+        PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
+        PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
+        //Debug.Log(ambientOcclusionLayer);
+        GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
+        VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
+        if (GrainLayer.intensity > maxGrainIntensity)
+        {
+            GrainLayer.intensity.Override(maxGrainIntensity);
+        }
+        if (VignetteLayer.intensity > maxVignetteIntensity)
+        {
+            VignetteLayer.intensity.Override(maxVignetteIntensity);
+        }
     }
 }//end of right click class
