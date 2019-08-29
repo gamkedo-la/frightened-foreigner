@@ -53,7 +53,7 @@ public class MouseClicks: MonoBehaviour
 
     public GameObject Groundskeeper;
     public GameObject thisTextGraphic;
-    
+    public GameObject shovel;
 
     private void Awake()
     {
@@ -207,6 +207,7 @@ public class MouseClicks: MonoBehaviour
         candyBasket.SetActive(true);
         
         Groundskeeper.SetActive(false);
+        shovel.SetActive(true);
     }
 
     private void increaseGraininessOfGraphics()

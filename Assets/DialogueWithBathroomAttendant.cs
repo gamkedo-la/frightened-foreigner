@@ -23,6 +23,13 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         {
             BathroomAttendantSaysHeNeedsForint.start();
             DialogManager.BathroomAttendantSaidToGetForint = true;
+            StartCoroutine(ChangeBathroomAttendantSprite());
         }
+    }
+
+    private IEnumerator ChangeBathroomAttendantSprite()
+    {
+        yield return new WaitForSeconds(6.0f);
+        GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Images/bathroomAttendantHinting");
     }
 }
