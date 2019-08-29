@@ -10033,8 +10033,9 @@ GameObject:
   - component: {fileID: 85502936}
   - component: {fileID: 85502938}
   - component: {fileID: 85502939}
+  - component: {fileID: 85502940}
   m_Layer: 0
-  m_Name: "p\xE9nz"
+  m_Name: forint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10138,6 +10139,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13.41, y: 11.4, z: 0.66}
   m_Center: {x: 1.16, y: 0, z: 0}
+--- !u!114 &85502940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85502935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65398736bab2af14091d9e41eb1cc6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 534669902}
 --- !u!1001 &131623615
 PrefabInstance:
   m_ObjectHideFlags: 0

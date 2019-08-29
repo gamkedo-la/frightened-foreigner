@@ -23,6 +23,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithVanessa = false;
     public bool LockedWithGroundskeeper = false;
     public bool LockedWithBathroomAttendant = false;
+    public bool LockedWithForint = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -119,6 +120,10 @@ public class LockView : MonoBehaviour
         if (hit.transform.name == "Bathroom Attendant")
         {
             LockedWithBathroomAttendant = true;
+        }
+        if (hit.transform.name == "forint")
+        {
+            LockedWithForint = true;
         }
 
         // Does it have a RandomWords on it?
