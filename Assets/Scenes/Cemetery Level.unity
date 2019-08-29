@@ -78421,13 +78421,14 @@ GameObject:
   - component: {fileID: 2107524687}
   - component: {fileID: 2107524689}
   - component: {fileID: 2107524691}
+  - component: {fileID: 2107524690}
   m_Layer: 0
-  m_Name: "f\xFCrd\u0151szoba"
+  m_Name: BathroomDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2107524687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78513,6 +78514,19 @@ MonoBehaviour:
   CurrentLengthOfTransferableList: 0
   RandomIntegerForTransferableListOfChoices: 0
   CurrentStringToAddToAnswerChoicesList: 
+--- !u!114 &2107524690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107524686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0fc737866e499449b506f8e7200f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCamera: {fileID: 534669902}
 --- !u!65 &2107524691
 BoxCollider:
   m_ObjectHideFlags: 0
