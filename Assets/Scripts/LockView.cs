@@ -11,7 +11,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private float damping = 1f;
 	[SerializeField] private LayerMask mask = 0;
 
-	private bool locked = false;
+	public bool locked = false;
 	public RandomWords randomWord = null;
 
     private GameObject TargetsTextGraphic;
@@ -130,6 +130,7 @@ public class LockView : MonoBehaviour
         {
             LockedWithBathroomDoor = true;
         }
+        
         
 
         // Does it have a RandomWords on it?

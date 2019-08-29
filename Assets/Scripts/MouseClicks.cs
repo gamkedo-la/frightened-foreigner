@@ -51,6 +51,8 @@ public class MouseClicks: MonoBehaviour
 
     public FMOD.Studio.EventInstance LightningSound;
 
+    
+
     private void Awake()
     {
         
@@ -102,7 +104,7 @@ public class MouseClicks: MonoBehaviour
         if (!PauseGameScript.GamePaused)// if the game isn't paused
         {
            // Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
-            if (Input.GetMouseButtonDown(1))    // right mouse button click
+            if (LockViewScript.locked && Input.GetMouseButtonDown(1))    // right mouse button click 
             {
                 ImageListIndex++;//move through the ImageList and cycle back to 0 at the end
                 if (ImageListIndex > ImageNameList.Count - 1)
