@@ -87,7 +87,6 @@ public class MouseClicks: MonoBehaviour
         SceneManagementScript = LevelChanger.GetComponent<SceneManagement>();
         TitleScreenMusic = SceneManagementScript.TitleScreenMusic;
         PostFirstPuzzleMusic = SceneManagementScript.PostFirstPuzzleMusic;
-        Debug.Log(PostFirstPuzzleMusic);
 
         //PostProccessingValue = GameObject.Find("PostProccessingVolume");
         //PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
@@ -171,7 +170,7 @@ public class MouseClicks: MonoBehaviour
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
                     
-                    Debug.Log(PostFirstPuzzleMusic);
+                    
                     //PostFirstPuzzleMusic.start();
                     
                     //Debug.Log(BasicBackGroundMusic.getParameterValue("FreedSouls", out float NewFreedSoulsValue, out float NewFreedSoulsFinalValue));//ONLY grabs the value from FMOD and outputs OK to Debug Log, see following function
