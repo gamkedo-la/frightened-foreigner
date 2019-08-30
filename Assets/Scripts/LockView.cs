@@ -34,6 +34,8 @@ public class LockView : MonoBehaviour
     public FMOD.Studio.EventInstance UhhhhMaybeYouShouldWait;
     public bool UhhhMaybeYouShouldWaitPlayed = false;
 
+    public GameObject ForintTextGraphic;
+
     void Start()
     {
         NPC = false;
@@ -52,10 +54,18 @@ public class LockView : MonoBehaviour
 
 		if ( locked )
 		{
-            if (randomWord)
+            if (randomWord )
             {
-                Vector3 targetPos = randomWord.gameObject.transform.position + randomWord.gameObject.transform.up * lookUpCorrection;
-                LockOnToTargetObject(targetPos);
+                if (!LockedWithForint)
+                {
+                    Vector3 targetPos = randomWord.gameObject.transform.position + randomWord.gameObject.transform.up * lookUpCorrection;
+                    LockOnToTargetObject(targetPos);
+                }
+                if (LockedWithForint)
+                {
+                    ForintTextGraphic.SetActive(true);
+                }
+                
 
 
                 //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
@@ -132,6 +142,7 @@ public class LockView : MonoBehaviour
         }
         
         
+        
 
         // Does it have a RandomWords on it?
         randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
@@ -165,6 +176,7 @@ public class LockView : MonoBehaviour
         LockedWithGroundskeeper = false;
         LockedWithBathroomAttendant = false;
         LockedWithBathroomDoor = false;
+        LockedWithForint = false;
 	}
 
     public IEnumerator DelayUhhhhDialogue()
@@ -172,7 +184,7 @@ public class LockView : MonoBehaviour
         UhhhMaybeYouShouldWaitPlayed = true;
         yield return new WaitForSeconds(3.0f);
         UhhhhMaybeYouShouldWait.start();
-        
+        bathroomCutSceneCameraPan = false;
     }
 
 
