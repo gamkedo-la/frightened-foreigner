@@ -50,6 +50,7 @@ public class MouseClicks: MonoBehaviour
     public GameObject candyBasket;
 
     public GameObject bathroomStuff;
+    public GameObject temporaryCemeteryWall;
 
     public FMOD.Studio.EventInstance LightningSound;
 
@@ -210,14 +211,10 @@ public class MouseClicks: MonoBehaviour
         public IEnumerator delayAppearanceOfBathroomStuff()
     {
         yield return new WaitForSeconds(2.0f);
-
-        //bathroomDoor.SetActive(true);
-        //bathroomAttendant.SetActive(true);
-        //candyTable.SetActive(true);
-        //candyBasket.SetActive(true);
-        bathroomStuff.SetActive(true);
-        Groundskeeper.SetActive(false);
-        shovel.SetActive(true);
+        bathroomStuff.SetActive(true);//bathroom magically appears after lightning
+        temporaryCemeteryWall.SetActive(false);
+        Groundskeeper.SetActive(false);//groundskeeper disappears
+        shovel.SetActive(true);//groundskeeper drops the shovel
     }
 
     private void increaseGraininessOfGraphics()
