@@ -77091,6 +77091,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 534669902}
+  bathroomDoor: {fileID: 2107524686}
 --- !u!1 &1718050978
 GameObject:
   m_ObjectHideFlags: 0
@@ -78529,13 +78530,14 @@ GameObject:
   - component: {fileID: 2107524689}
   - component: {fileID: 2107524691}
   - component: {fileID: 2107524690}
+  - component: {fileID: 2107524692}
   m_Layer: 0
   m_Name: BathroomDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2107524687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78647,6 +78649,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 11.87, z: 0.2}
   m_Center: {x: 0, y: 3.08, z: 0}
+--- !u!95 &2107524692
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107524686}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e77114200dced9348a3967359556687d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2138676596
 GameObject:
   m_ObjectHideFlags: 0
