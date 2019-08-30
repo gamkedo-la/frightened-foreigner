@@ -77214,6 +77214,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1794769438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794769439}
+  m_Layer: 0
+  m_Name: forint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1794769439
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794769438}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.056000233, y: 0.08199996, z: 1.02}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8247220394666061189}
+  m_Father: {fileID: 3304905925833801479}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831399848
 GameObject:
   m_ObjectHideFlags: 0
@@ -78748,6 +78779,7 @@ GameObject:
   - component: {fileID: 2146474476}
   - component: {fileID: 2146474475}
   - component: {fileID: 2146474474}
+  - component: {fileID: 2146474478}
   m_Layer: 5
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -78835,6 +78867,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2146474478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146474473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f089e39f9f4cc641aff46183e337bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Forint: {fileID: 85502935}
+  ForintTextGraphic: {fileID: 8247220394666061186}
 --- !u!1001 &2289240819435781392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79236,7 +79282,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 3304905925833801479}
+    m_TransformParent: {fileID: 1794769439}
     m_Modifications:
     - target: {fileID: 8247220395213299889, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
@@ -79251,17 +79297,17 @@ PrefabInstance:
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.056000233
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.08199972
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.0199976
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
@@ -79271,7 +79317,7 @@ PrefabInstance:
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
@@ -79281,7 +79327,7 @@ PrefabInstance:
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
         type: 3}
@@ -79352,7 +79398,7 @@ MonoBehaviour:
   RandomWordsScript: {fileID: 0}
   temporaryPictureName: 
   PostProccessingValue: {fileID: 0}
-  PlayerCamera: {fileID: 0}
+  PlayerCamera: {fileID: 534669902}
   bathroomDoor: {fileID: 0}
   bathroomAttendant: {fileID: 0}
   candyTable: {fileID: 0}
@@ -79360,6 +79406,34 @@ MonoBehaviour:
   Groundskeeper: {fileID: 0}
   thisTextGraphic: {fileID: 8247220394666061186}
   shovel: {fileID: 0}
+--- !u!114 &8247220394666061188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8247220394666061186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 75928651}
+  AnswerChoices: []
+  CorrectChoice: 
+  CurrentChoice: 
+  MasterListOfChoicesScript: {fileID: 0}
+  MasterListOfChoices: []
+  CurrentTransferableChoicesList: []
+  CurrentLengthOfTransferableList: 0
+  RandomIntegerForTransferableListOfChoices: 0
+  CurrentStringToAddToAnswerChoicesList: 
+--- !u!4 &8247220394666061189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8247220395213299888, guid: d69fd75e7cc4c0045bb3e1d86352c213,
+    type: 3}
+  m_PrefabInstance: {fileID: 8247220394666061185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8795834081883211697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8795834081883211697, guid: ef351b114d7fa344fad68bad99132f03,

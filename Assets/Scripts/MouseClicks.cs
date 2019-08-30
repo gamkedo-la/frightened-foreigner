@@ -55,6 +55,8 @@ public class MouseClicks: MonoBehaviour
     public GameObject thisTextGraphic;
     public GameObject shovel;
 
+    public FMOD.Studio.EventInstance makeItRainInTheBathroom;
+
     private void Awake()
     {
         
@@ -97,7 +99,7 @@ public class MouseClicks: MonoBehaviour
         GroundskeeperRespondsToCorrectAnswer = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse");
         LightningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
 
-
+        makeItRainInTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/makeItRainInTheBathroom");
     }
 
     void Update()
@@ -146,6 +148,12 @@ public class MouseClicks: MonoBehaviour
                         increaseGraininessOfGraphics();
                     }
 
+                    if (LockViewScript.LockedWithForint)
+                    {
+                        makeItRainInTheBathroom.start();
+                        InventoryItemManager.playerHasForint = true;
+                        
+                    }
 
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
 

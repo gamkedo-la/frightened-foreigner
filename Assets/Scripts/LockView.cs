@@ -64,6 +64,7 @@ public class LockView : MonoBehaviour
                 if (LockedWithForint)
                 {
                     ForintTextGraphic.SetActive(true);
+                    
                 }
                 
 

@@ -8,12 +8,16 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
     public GameObject PlayerCamera;
 
     public FMOD.Studio.EventInstance BathroomAttendantSaysHeNeedsForint;
+    public FMOD.Studio.EventInstance BathroomAttendantSaysThankYou;
+
+    private bool BathroomAttendantHasSaidThankYou = false;
 
     // Start is called before the first frame update
     void Start()
     {
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         BathroomAttendantSaysHeNeedsForint = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/forintNeededToEnter");
+        BathroomAttendantSaysThankYou = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/bathroomAttendantSaysThankYou");
     }
 
     // Update is called once per frame
@@ -24,6 +28,11 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             BathroomAttendantSaysHeNeedsForint.start();
             DialogManager.BathroomAttendantSaidToGetForint = true;
             StartCoroutine(ChangeBathroomAttendantSprite());
+        }
+        if (LockViewScript.LockedWithBathroomAttendant && InventoryItemManager.playerHasForint && !BathroomAttendantHasSaidThankYou)
+        {
+            BathroomAttendantSaysThankYou.start();
+            BathroomAttendantHasSaidThankYou = true;
         }
     }
 
