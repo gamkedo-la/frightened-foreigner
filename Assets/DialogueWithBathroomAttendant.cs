@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class DialogueWithBathroomAttendant : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
     private bool BathroomAttendantHasSaidThankYou = false;
 
     public GameObject bathroomDoor;
+    public PlayableDirector playerGoingIntoBathroomTimeline;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +38,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             BathroomAttendantSaysThankYou.start();
             BathroomAttendantHasSaidThankYou = true;
             bathroomDoor.GetComponent<Animator>().enabled = true;
+            playerGoingIntoBathroomTimeline.Play();
         }
     }
 
