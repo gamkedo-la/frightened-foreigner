@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18276438, g: 0.2015597, b: 0.3130412, a: 1}
+  m_IndirectSpecularColor: {r: 0.18276402, g: 0.20155933, b: 0.31304064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5230,6 +5230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: temporaryCemeteryWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487694329602623657, guid: 7b58558f219b99f4a9e91e45b2320aa2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7487694329602623659, guid: 7b58558f219b99f4a9e91e45b2320aa2,
         type: 3}
@@ -71870,7 +71875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596007473}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.975, z: 0.027999882}
+  m_LocalPosition: {x: 0, y: 4.975, z: -0.04}
   m_LocalScale: {x: 0.9285719, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1959457126}
@@ -77421,7 +77426,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716416023}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.87699986, y: -0.031000018, z: -1.1929998}
+  m_LocalPosition: {x: -1.08, y: -0.031000018, z: -1.09}
   m_LocalScale: {x: 0.16000006, y: 0.11, z: 1}
   m_Children: []
   m_Father: {fileID: 2000155266}
@@ -78229,8 +78234,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959457123}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.8319998, y: -0.30599993, z: 1.1539998}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.59, y: -0.30599993, z: 1.56}
   m_LocalScale: {x: 0.14000006, y: 0.12, z: 1}
   m_Children:
   - {fileID: 1596007476}
@@ -78432,7 +78437,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0
