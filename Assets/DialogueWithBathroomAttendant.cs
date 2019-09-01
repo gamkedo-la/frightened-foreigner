@@ -10,6 +10,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
 
     public FMOD.Studio.EventInstance BathroomAttendantSaysHeNeedsForint;
     public FMOD.Studio.EventInstance BathroomAttendantSaysThankYou;
+    public FMOD.Studio.EventInstance GottaGoGottaGoGottaGoGoGo;
 
     private bool BathroomAttendantHasSaidThankYou = false;
 
@@ -22,6 +23,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         BathroomAttendantSaysHeNeedsForint = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/forintNeededToEnter");
         BathroomAttendantSaysThankYou = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/bathroomAttendantSaysThankYou");
+        GottaGoGottaGoGottaGoGoGo = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/gottaGoGottaGoGottaGoGoGo");
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             BathroomAttendantSaysThankYou.start();
             BathroomAttendantHasSaidThankYou = true;
             bathroomDoor.GetComponent<Animator>().enabled = true;
-            playerGoingIntoBathroomTimeline.Play();
+            StartCoroutine(WaitForDoorToOpenBeforeGoingIn());
         }
     }
 
@@ -46,5 +48,12 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
     {
         yield return new WaitForSeconds(6.0f);
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Images/bathroomAttendantHinting");
+    }
+
+    private IEnumerator WaitForDoorToOpenBeforeGoingIn()
+    {
+        yield return new WaitForSeconds(1.25f);
+        playerGoingIntoBathroomTimeline.Play();
+        GottaGoGottaGoGottaGoGoGo.start();
     }
 }
