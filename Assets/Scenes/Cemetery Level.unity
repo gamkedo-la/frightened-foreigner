@@ -10118,6 +10118,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3304905925833801478}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &75928653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75928651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f4f037e973afe4b9fabf829811ab96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 1640351639}
 --- !u!95 &75928662
 Animator:
   serializedVersion: 3
@@ -20909,7 +20922,6 @@ GameObject:
   m_Component:
   - component: {fileID: 298419405}
   - component: {fileID: 298419404}
-  - component: {fileID: 298419403}
   m_Layer: 0
   m_Name: Sink
   m_TagString: Untagged
@@ -20917,18 +20929,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &298419403
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298419402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6450f9d26101b94ba97893b36d12233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &298419404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53414,7 +53414,6 @@ GameObject:
   m_Component:
   - component: {fileID: 998755172}
   - component: {fileID: 998755171}
-  - component: {fileID: 998755170}
   m_Layer: 0
   m_Name: Toilet
   m_TagString: Untagged
@@ -53422,18 +53421,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &998755170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998755169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6450f9d26101b94ba97893b36d12233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &998755171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -53616,6 +53603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1008936879}
   - component: {fileID: 1008936878}
+  - component: {fileID: 1008936877}
   m_Layer: 0
   m_Name: WashingHandsTimelineHolder
   m_TagString: Untagged
@@ -53623,6 +53611,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1008936877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008936876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f4f037e973afe4b9fabf829811ab96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 1640351639}
 --- !u!320 &1008936878
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -78437,7 +78438,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0

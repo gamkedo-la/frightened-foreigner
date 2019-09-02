@@ -28,9 +28,14 @@ public class SceneManagement : MonoBehaviour
 
     public FMOD.Studio.EventInstance PostFirstPuzzleMusic;
     static public FMOD.Studio.PLAYBACK_STATE PostFirstPuzzleMusicPlaybackState;
+     
 
     public float PostFirstPuzzleLayersFadeValue = 0f;
     public bool ShouldFadeInPostFirstLevelTrack = false;
+
+    public bool ShouldFadeInPostBathroomMusic = false;
+    public FMOD.Studio.EventInstance PostBathroomMusic;
+    static public FMOD.Studio.PLAYBACK_STATE PostBathroomMusicPlaybackState;
 
     private Scene CurrentScene;
 
@@ -42,6 +47,7 @@ public class SceneManagement : MonoBehaviour
         BlackFade = GameObject.Find("BlackFade");
 
         PostFirstPuzzleMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/firstPuzzleMusicBaseLayer");
+        PostBathroomMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/secondPuzzleMusicBase");
 
         TriggerLayerChangeScript = gameObject.GetComponent<TriggerLayerChange>();
     }
@@ -93,6 +99,25 @@ public class SceneManagement : MonoBehaviour
         {
             BackgroundMusicLayersFadeValue += 0.01f;
             TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
+        }
+        if (ShouldFadeInPostBathroomMusic)
+        {
+            PostBathroomMusic.getPlaybackState(out PostBathroomMusicPlaybackState);
+            if (PostBathroomMusicPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+            {
+                PostBathroomMusic.start();
+            }    
+            if (PostFirstPuzzleLayersFadeValue < 2)
+            {
+                Debug.Log(PostFirstPuzzleLayersFadeValue);
+                PostFirstPuzzleLayersFadeValue += 0.01f;
+                PostFirstPuzzleMusic.setParameterValue("PostFirstPuzzleLayersFadeValue", PostFirstPuzzleLayersFadeValue);
+            }
+            if (PostFirstPuzzleLayersFadeValue > 1.98f)
+            {
+                PostFirstPuzzleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+                
         }
     }
 

@@ -20,13 +20,16 @@ public class DoorScript : MonoBehaviour
 		if ( !other.CompareTag( "Player" )  )
 			return;
 
+        playerHasExploredTheCemetery = true;
+        
+    }
+
+    private void Update()
+    {
         if (BathroomCutsceneHasPlayed)
         {
             GetComponent<Animator>().enabled = true;
             GetComponent<Collider>().enabled = false;
         }
-
-        playerHasExploredTheCemetery = true;
-        
     }
 }

@@ -5,7 +5,7 @@
             <value>secondPuzzleMusicBase</value>
         </property>
         <property name="outputFormat">
-            <value>2</value>
+            <value>1</value>
         </property>
         <relationship name="folder">
             <destination>{8d48ac0e-6ed5-45e6-a334-d4172fae02d4}</destination>
@@ -699,7 +699,6 @@
     <object class="MixerBusEffectChain" id="{6a7cd46e-a34a-4626-ba4f-44b915f80d49}">
         <relationship name="effects">
             <destination>{c40aae89-aa2c-414e-bcb5-1af3e07a08c8}</destination>
-            <destination>{73c14aea-c248-423f-ad38-824957a3b24e}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{333b5880-b670-45b4-9036-5cae219e1fdf}"/>
@@ -878,7 +877,6 @@
     </object>
     <object class="MixerBusPanner" id="{4202ae28-aa80-4ff1-9927-fa335b91b518}"/>
     <object class="MixerBusFader" id="{c40aae89-aa2c-414e-bcb5-1af3e07a08c8}"/>
-    <object class="SpatialiserEffect" id="{73c14aea-c248-423f-ad38-824957a3b24e}"/>
     <object class="AutomationPoint" id="{a4fa0959-edb0-4df5-84b0-a7fd039c88a1}">
         <property name="position">
             <value>30</value>

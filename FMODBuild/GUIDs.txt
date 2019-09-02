@@ -1,5 +1,5 @@
-{4a03c3e4-ffbc-4f50-a131-64e9e7d90743} event:/Bathroom Cutscene/washingHands
 {64758456-4594-4ff5-9d04-f4f866c56bd0} event:/Bathroom Cutscene/gottaGoGottaGoGottaGoGoGo
+{4a03c3e4-ffbc-4f50-a131-64e9e7d90743} event:/Bathroom Cutscene/washingHands
 {86e4a367-52dd-41d7-ba80-794f6ad53e12} event:/Dialogue/BathroomAttendant/bathroomAttendantSaysThankYou
 {76557829-6fa9-4ffb-8fc7-6de2c01fc8be} event:/Dialogue/BathroomAttendant/forintNeededToEnter
 {bd4504da-04fd-4e7a-b41a-fba689ca3461} event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse
