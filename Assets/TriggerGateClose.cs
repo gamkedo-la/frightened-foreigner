@@ -25,8 +25,12 @@ public class TriggerGateClose : MonoBehaviour
 
     public FMOD.Studio.EventInstance vanessaSaysOMGAfterGateCloses;
     public FMOD.Studio.EventInstance shakeGateSound;
+    
+
 
     public FMOD.Studio.EventInstance loopingTurulSquawkSound;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +45,8 @@ public class TriggerGateClose : MonoBehaviour
         vanessaSaysOMGAfterGateCloses = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/OMGTheGateClosed");
         shakeGateSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/ShakingGate");
         loopingTurulSquawkSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/TurulSquawkingLoop");
+
+        
     }
 
     // Update is called once per frame
@@ -86,4 +92,6 @@ public class TriggerGateClose : MonoBehaviour
         loopingTurulSquawkSound.start();
         Debug.Log("Turul should be squawking");
     }
+
+    
 }

@@ -27,6 +27,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithBathroomAttendant = false;
     public bool LockedWithForint = false;
     public bool LockedWithBathroomDoor = false;
+    public bool LockedWithTurul = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -152,6 +153,10 @@ public class LockView : MonoBehaviour
         {
             LockedWithBathroomDoor = true;
         }
+        if (hit.transform.name == "Turul")
+        {
+            LockedWithTurul = true;
+        }
 
 
 
@@ -189,6 +194,7 @@ public class LockView : MonoBehaviour
         LockedWithBathroomAttendant = false;
         LockedWithBathroomDoor = false;
         LockedWithForint = false;
+        LockedWithTurul = false;
 	}
 
     public IEnumerator DelayUhhhhDialogue()

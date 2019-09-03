@@ -10205,7 +10205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
-  PostProccessingValue: {fileID: 0}
+  PostProccessingValue: {fileID: 1396926143}
 --- !u!114 &75928655 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3304905925775502163, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
@@ -71572,6 +71572,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4ff8a1d61b7ee4a8eadb8abbfd5b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bathroomCutsceneTimeline: {fileID: 75928651}
+  mainCamera: {fileID: 534669902}
 --- !u!65 &1506078314
 BoxCollider:
   m_ObjectHideFlags: 0
