@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class LockView : MonoBehaviour
 {
+	[SerializeField] private Image itemPreview = null;
 	[SerializeField] private Behaviour[] toDisable = null;
 	[SerializeField] private Transform character = null;
 	[SerializeField] private float maxTargetDistance = 5f;
 	[SerializeField] private float lookUpCorrection = 0.3f;
 	[SerializeField] private float damping = 1f;
 	[SerializeField] private LayerMask mask = 0;
+	[SerializeField] private PlayerItem itemInHand = PlayerItem.None;
 
 	public bool locked = false;
 	public RandomWords randomWord = null;
@@ -64,9 +66,9 @@ public class LockView : MonoBehaviour
                 if (LockedWithForint)
                 {
                     ForintTextGraphic.SetActive(true);
-                    
+
                 }
-                
+
 
 
                 //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
@@ -90,9 +92,18 @@ public class LockView : MonoBehaviour
                 //UhhhhMaybeYouShouldWait.start();
             }
 		}
-
-        
     }
+
+	public void HoldItem( PlayerItem item, Sprite image)
+	{
+		itemInHand = item;
+		itemPreview.sprite = image;
+
+		if ( image )
+			itemPreview.gameObject.SetActive( true );
+		else
+			itemPreview.gameObject.SetActive( false );
+	}
 
     public void LockOnToTargetObject(Vector3 targetPos)
     {
@@ -141,16 +152,16 @@ public class LockView : MonoBehaviour
         {
             LockedWithBathroomDoor = true;
         }
-        
-        
-        
+
+
+
 
         // Does it have a RandomWords on it?
         randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
 		if ( !randomWord && !NPC)
 			return;
 
-        
+
 
         // We got a winner!
         //Debug.Log( "Focusing on: " + randomWord.gameObject.name );

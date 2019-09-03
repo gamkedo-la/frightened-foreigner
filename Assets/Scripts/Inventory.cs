@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     private GameObject[] ArrayOfSlots;
 
     public GameObject slotHolder;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
         {
             ArrayOfSlots[i] = slotHolder.transform.GetChild(i).gameObject;
         }
-        
+
     }
 
     // Update is called once per frame
@@ -33,15 +33,15 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            
+
             if (!inventory.active)
             {
                 inventory.SetActive(true);
                 inventoryActive = true;
                 Time.timeScale = 0;
                 Cursor.lockState = CursorLockMode.None;
-                
-                
+
+
             } else
             {
                 inventory.SetActive(false);
@@ -52,4 +52,13 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+	public void Close()
+	{
+		inventory.SetActive( false );
+		inventoryActive = false;
+		Time.timeScale = 1;
+		Cursor.lockState = CursorLockMode.Confined;
+		Cursor.lockState = CursorLockMode.Locked;
+	}
 }

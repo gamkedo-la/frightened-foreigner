@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum PlayerItem
+{
+	None,
+	Phone,
+	Water,
+}
+
 public class InventoryItemManager : MonoBehaviour
 {
 
     //the player has this stuff at the beginning of the game
     public static bool playerHasWaterBottle = true;
     public static bool playerHasGuidebook = true;
-    
+
 
     //the player does not have this stuff at the beginning of the game
     public static bool playerHasForint = false;
@@ -18,7 +25,7 @@ public class InventoryItemManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

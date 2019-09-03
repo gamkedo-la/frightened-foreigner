@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18276402, g: 0.20155933, b: 0.31304064, a: 1}
+  m_IndirectSpecularColor: {r: 0.18276438, g: 0.2015597, b: 0.3130412, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5219,6 +5219,80 @@ Transform:
   m_Father: {fileID: 2037873658}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &43562789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 43562792}
+  - component: {fileID: 43562791}
+  - component: {fileID: 43562790}
+  m_Layer: 5
+  m_Name: Item in hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &43562790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43562789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &43562791
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43562789}
+  m_CullTransparentMesh: 0
+--- !u!224 &43562792
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43562789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2146474477}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 45.62}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &53689970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10132,6 +10206,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
   PostProccessingValue: {fileID: 0}
+--- !u!114 &75928655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3304905925775502163, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3304905925833801478}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75928651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f991874fdde12442a4672d1b348aabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &75928662
 Animator:
   serializedVersion: 3
@@ -15708,6 +15794,7 @@ GameObject:
   - component: {fileID: 209375483}
   - component: {fileID: 209375482}
   - component: {fileID: 209375484}
+  - component: {fileID: 209375485}
   m_Layer: 5
   m_Name: Slot 1 (3)
   m_TagString: Untagged
@@ -15813,9 +15900,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 209375482}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 209375485}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 75928655}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &209375485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209375480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ddb8e87c414142b75f7398134a472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockView: {fileID: 534669905}
+  item: 0
+  sprite: {fileID: 0}
 --- !u!1001 &217244335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15978,6 +16102,7 @@ GameObject:
   - component: {fileID: 234939295}
   - component: {fileID: 234939294}
   - component: {fileID: 234939296}
+  - component: {fileID: 234939297}
   m_Layer: 5
   m_Name: Slot 1 (5)
   m_TagString: Untagged
@@ -16083,9 +16208,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 234939294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 234939297}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 75928655}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &234939297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234939292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ddb8e87c414142b75f7398134a472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockView: {fileID: 534669905}
+  item: 0
+  sprite: {fileID: 0}
 --- !u!1001 &266691258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41180,6 +41342,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672bbaf33690d014b9953b0b7cc2e661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &534669905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3304905925833801478}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2c3cf9711426e48b7417f016348c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &536231569
 GameObject:
   m_ObjectHideFlags: 0
@@ -47538,7 +47712,7 @@ RectTransform:
   m_Children:
   - {fileID: 444568305}
   m_Father: {fileID: 2146474477}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -64220,6 +64394,7 @@ GameObject:
   - component: {fileID: 1135319259}
   - component: {fileID: 1135319258}
   - component: {fileID: 1135319260}
+  - component: {fileID: 1135319261}
   m_Layer: 5
   m_Name: Slot 1 (4)
   m_TagString: Untagged
@@ -64325,9 +64500,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1135319258}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1135319261}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 75928655}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1135319261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135319256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ddb8e87c414142b75f7398134a472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockView: {fileID: 534669905}
+  item: 0
+  sprite: {fileID: 0}
 --- !u!1 &1153608406
 GameObject:
   m_ObjectHideFlags: 0
@@ -70000,6 +70212,7 @@ GameObject:
   - component: {fileID: 1345000699}
   - component: {fileID: 1345000698}
   - component: {fileID: 1345000700}
+  - component: {fileID: 1345000701}
   m_Layer: 5
   m_Name: Slot 1 (2)
   m_TagString: Untagged
@@ -70105,9 +70318,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1345000698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1345000701}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 75928655}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1345000701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345000696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ddb8e87c414142b75f7398134a472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockView: {fileID: 534669905}
+  item: 0
+  sprite: {fileID: 0}
 --- !u!1001 &1348273424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77796,6 +78046,7 @@ GameObject:
   - component: {fileID: 1902540843}
   - component: {fileID: 1902540842}
   - component: {fileID: 1902540844}
+  - component: {fileID: 1902540845}
   m_Layer: 5
   m_Name: Slot 1 (1)
   m_TagString: Untagged
@@ -77901,9 +78152,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1902540842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1902540845}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 75928655}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1902540845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902540840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ddb8e87c414142b75f7398134a472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockView: {fileID: 534669905}
+  item: 2
+  sprite: {fileID: 21300000, guid: a407279a09094d34db53704ec8ee17c7, type: 3}
 --- !u!1001 &1951037702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79128,6 +79416,7 @@ GameObject:
   - component: {fileID: 2138676599}
   - component: {fileID: 2138676598}
   - component: {fileID: 2138676600}
+  - component: {fileID: 2138676601}
   m_Layer: 5
   m_Name: Slot 1
   m_TagString: Untagged
@@ -79233,9 +79522,46 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2138676598}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2138676601}
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 75928655}
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2138676601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138676596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ddb8e87c414142b75f7398134a472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockView: {fileID: 534669905}
+  item: 1
+  sprite: {fileID: 21300000, guid: 382ee34dce826d84da94d4c2359382dd, type: 3}
 --- !u!1 &2146474473
 GameObject:
   m_ObjectHideFlags: 0
@@ -79285,12 +79611,12 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -79327,6 +79653,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 43562792}
   - {fileID: 820510043}
   m_Father: {fileID: 0}
   m_RootOrder: 19
@@ -79585,6 +79912,11 @@ PrefabInstance:
       propertyPath: ForintTextGraphic
       value: 
       objectReference: {fileID: 8247220394666061186}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: itemPreview
+      value: 
+      objectReference: {fileID: 43562790}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b258cfa1de4a0cb4ca7989786d76a2a1, type: 3}
 --- !u!4 &3304905925833801479 stripped
