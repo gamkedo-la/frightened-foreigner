@@ -23,6 +23,8 @@ public class TriggerGateClose : MonoBehaviour
     private float maxGrainIntensity = 0.5f;
     private float maxVignetteIntensity = 0.45f;
 
+    public FMOD.Studio.EventInstance vanessaSaysOMGAfterGateCloses;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,7 @@ public class TriggerGateClose : MonoBehaviour
         Lights = GameObject.Find("Lights");
         LightsScript = Lights.GetComponent<ProgressiveLights>();
 
-        
+        vanessaSaysOMGAfterGateCloses = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/OMGTheGateClosed");
     }
 
     // Update is called once per frame
@@ -62,5 +64,10 @@ public class TriggerGateClose : MonoBehaviour
         {
             VignetteLayer.intensity.Override(maxVignetteIntensity);
         }
+    }
+
+    public void VanessaSaysOMGAfterTheGateCloses()
+    {
+        vanessaSaysOMGAfterGateCloses.start();
     }
 }
