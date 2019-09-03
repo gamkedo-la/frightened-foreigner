@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18276438, g: 0.2015597, b: 0.3130412, a: 1}
+  m_IndirectSpecularColor: {r: 0.18276402, g: 0.20155933, b: 0.31304064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -71429,6 +71429,7 @@ GameObject:
   - component: {fileID: 1506078308}
   - component: {fileID: 1506078307}
   - component: {fileID: 1506078313}
+  - component: {fileID: 1506078314}
   m_Layer: 0
   m_Name: Turul
   m_TagString: Untagged
@@ -71571,6 +71572,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e4ff8a1d61b7ee4a8eadb8abbfd5b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1506078314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506078306}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.88, y: 5.57, z: 0.2}
+  m_Center: {x: -0.17, y: 0, z: 0}
 --- !u!1 &1519496242
 GameObject:
   m_ObjectHideFlags: 0
