@@ -10131,6 +10131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
+  PostProccessingValue: {fileID: 0}
 --- !u!95 &75928662
 Animator:
   serializedVersion: 3
@@ -53624,6 +53625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
+  PostProccessingValue: {fileID: 1396926143}
 --- !u!320 &1008936878
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -78438,7 +78440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0

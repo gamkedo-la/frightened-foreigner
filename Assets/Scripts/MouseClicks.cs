@@ -217,7 +217,7 @@ public class MouseClicks: MonoBehaviour
         shovel.SetActive(true);//groundskeeper drops the shovel
     }
 
-    private void increaseGraininessOfGraphics()
+    public void increaseGraininessOfGraphics()
     {
         PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
