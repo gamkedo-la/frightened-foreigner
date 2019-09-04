@@ -29,6 +29,13 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         }
     }
 
+    public void emitLightningForCatPuzzle()
+    {
+        gameObject.transform.position = new Vector3(7.31f, 20.4f, -2.92f);
+        EmersionLightning.Emit(1);
+        Sparks.Emit(1);
+    }
+
     private IEnumerator DelayLightningStrikeForBathroom()
     {
         yield return new WaitForSeconds(1.75f);

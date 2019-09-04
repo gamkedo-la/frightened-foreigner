@@ -59,7 +59,7 @@ public class PuzzleManagement : MonoBehaviour
 
     public void JumpToCatPuzzle()
     {
-        PlayerIsDoingBathroomPuzzle = true;
+        PlayerIsDoingCatPuzzle = true;
 
         //scene changes
         DoorScript.playerHasExploredTheCemetery = true;

@@ -72291,7 +72291,6 @@ GameObject:
   - component: {fileID: 1506078311}
   - component: {fileID: 1506078310}
   - component: {fileID: 1506078309}
-  - component: {fileID: 1506078308}
   - component: {fileID: 1506078307}
   - component: {fileID: 1506078313}
   - component: {fileID: 1506078314}
@@ -72321,18 +72320,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1506078308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506078306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1dbc0fdded5d734fae59babaf1ae404, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1506078309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72436,6 +72423,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bathroomCutsceneTimeline: {fileID: 75928651}
   mainCamera: {fileID: 534669902}
+  lightningSystem: {fileID: 1116510223}
+  playerHasInteractedWithTurulThisPuzzle: 0
+  emersionLightningHasStruckThisPuzzle: 0
 --- !u!65 &1506078314
 BoxCollider:
   m_ObjectHideFlags: 0

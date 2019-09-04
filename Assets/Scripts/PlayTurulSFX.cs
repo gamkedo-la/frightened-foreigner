@@ -18,6 +18,11 @@ public class PlayTurulSFX : MonoBehaviour
 
     public FMOD.Studio.EventInstance TurulSaysMilkTejSound;
 
+    public GameObject lightningSystem;
+    private EmersionLightningEmmissionToggle lightningScript;
+    public bool playerHasInteractedWithTurulThisPuzzle = false;
+    public bool emersionLightningHasStruckThisPuzzle = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +35,8 @@ public class PlayTurulSFX : MonoBehaviour
         sceneManagementScript = LevelChanger.GetComponent<SceneManagement>();
 
         TurulSaysMilkTejSound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/milkTej");
+
+        lightningScript = lightningSystem.GetComponent<EmersionLightningEmmissionToggle>(); 
     }
 
     // Update is called once per frame
@@ -37,10 +44,21 @@ public class PlayTurulSFX : MonoBehaviour
     {
         if (LockViewScript.LockedWithTurul)
         {
-           
+            Debug.Log("inside locked with Turul");
+            Debug.Log(playerHasInteractedWithTurulThisPuzzle);
+            Debug.Log(emersionLightningHasStruckThisPuzzle);
+            Debug.Log(PuzzleManagement.PlayerIsDoingCatPuzzle);
             //sceneManagementScript.PostBathroomMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             TriggerGateClose.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            
+            if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCatPuzzle)
+            {
+                Debug.Log("inside catPuzzle");
+                
+                
+                lightningScript.emitLightningForCatPuzzle();
+                playerHasInteractedWithTurulThisPuzzle = true;
+                emersionLightningHasStruckThisPuzzle = true;
+            }
         }
     }
 
