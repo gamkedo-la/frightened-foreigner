@@ -39,10 +39,14 @@ public class LockView : MonoBehaviour
 
     public GameObject ForintTextGraphic;
 
+    public GameObject turul;
+    private PlayTurulSFX turulSFXScript;
+
     void Start()
     {
         NPC = false;
         UhhhhMaybeYouShouldWait = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/UhhhhMaybeYouShouldWait");
+        turulSFXScript = turul.GetComponent<PlayTurulSFX>();
     }
 
     void Update()
@@ -156,6 +160,10 @@ public class LockView : MonoBehaviour
         if (hit.transform.name == "Turul")
         {
             LockedWithTurul = true;
+            if (PuzzleManagement.PlayerIsDoingBathroomPuzzle)
+            {
+                turulSFXScript.TurulSaysMilkTejSound.start();
+            }
         }
 
 

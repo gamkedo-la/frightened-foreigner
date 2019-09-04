@@ -11,6 +11,7 @@
 {b5d0c0f7-86fb-4472-9846-386f80a92916} event:/Dialogue/Vanessa/OMGTheGateClosed
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
+{bef58491-b42d-4fd7-abe3-6a504295736f} event:/Dialogue/Turul/milkTej
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom

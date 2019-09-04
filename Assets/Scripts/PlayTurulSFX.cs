@@ -16,6 +16,8 @@ public class PlayTurulSFX : MonoBehaviour
     private GameObject LevelChanger;
     private SceneManagement sceneManagementScript;
 
+    public FMOD.Studio.EventInstance TurulSaysMilkTejSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class PlayTurulSFX : MonoBehaviour
 
         LevelChanger = GameObject.Find("LevelChanger");
         sceneManagementScript = LevelChanger.GetComponent<SceneManagement>();
+
+        TurulSaysMilkTejSound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/milkTej");
     }
 
     // Update is called once per frame
@@ -33,10 +37,10 @@ public class PlayTurulSFX : MonoBehaviour
     {
         if (LockViewScript.LockedWithTurul)
         {
-            Debug.Log("Turul should shut up");
+           
             //sceneManagementScript.PostBathroomMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            triggerGateCloseScript.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            triggerGateCloseScript.testSound.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            TriggerGateClose.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            
         }
     }
 

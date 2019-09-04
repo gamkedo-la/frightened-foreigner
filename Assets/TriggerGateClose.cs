@@ -28,7 +28,7 @@ public class TriggerGateClose : MonoBehaviour
     
 
 
-    public FMOD.Studio.EventInstance loopingTurulSquawkSound;
+    public static FMOD.Studio.EventInstance loopingTurulSquawkSound;
 
     
 
@@ -57,7 +57,7 @@ public class TriggerGateClose : MonoBehaviour
 
     public void triggerBathroomCutsceneBool()
     {
-        doorScript.BathroomCutsceneHasPlayed = true;
+        DoorScript.BathroomCutsceneHasPlayed = true;
         sceneManagementScript.ShouldFadeInPostBathroomMusic = true;
         LightsScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
 
@@ -93,5 +93,8 @@ public class TriggerGateClose : MonoBehaviour
         Debug.Log("Turul should be squawking");
     }
 
-    
+    public void turnOnCatPuzzle()
+    {
+        PuzzleManagement.PlayerIsDoingBathroomPuzzle = true;
+    }
 }

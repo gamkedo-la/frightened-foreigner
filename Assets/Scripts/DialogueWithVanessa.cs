@@ -59,7 +59,7 @@ public class DialogueWithVanessa : MonoBehaviour
     void Update()
     {
 
-        if (LockViewScript.LockedWithVanessa && !doorScript.playerHasExploredTheCemetery && !DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction)
+        if (LockViewScript.LockedWithVanessa && !DoorScript.playerHasExploredTheCemetery && !DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction)
         {
             TellPlayerToFindTheBathroom.start();
             DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = true;
@@ -77,7 +77,7 @@ public class DialogueWithVanessa : MonoBehaviour
             DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = false;
         }
 
-        if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && doorScript.playerHasExploredTheCemetery && !DialogManager.ITriedToFindTheBathroomPlayed)
+        if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && DoorScript.playerHasExploredTheCemetery && !DialogManager.ITriedToFindTheBathroomPlayed)
         {
             groundskeeper.SetActive(true);
             DialogManager.groundskeeperInvisible = false;

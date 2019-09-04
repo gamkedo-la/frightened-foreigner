@@ -2,12 +2,12 @@
 
 public class DoorScript : MonoBehaviour
 {
-    public bool BathroomCutsceneHasPlayed = false;
+    public static bool BathroomCutsceneHasPlayed = false;
     
     public GameObject vanessa;
     private DialogueWithVanessa DialogueWithVanessaScript;
 
-    public bool playerHasExploredTheCemetery = false;
+    public static bool playerHasExploredTheCemetery = false;
 
     private void Start()
     {

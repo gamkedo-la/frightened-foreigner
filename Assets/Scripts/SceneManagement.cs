@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneManagement : MonoBehaviour
 {
 
-     public FMOD.Studio.EventInstance TitleScreenMusic;
+     public static FMOD.Studio.EventInstance TitleScreenMusic;
     static public FMOD.Studio.PLAYBACK_STATE TitleScreenMusicPlaybackState;
 
     public GameObject SceneManagerFromHierarchy;
@@ -26,7 +26,7 @@ public class SceneManagement : MonoBehaviour
     private GameObject Part1Text;
     private TriggerLayerChange TriggerLayerChangeScript;
 
-    public FMOD.Studio.EventInstance PostFirstPuzzleMusic;
+    public static FMOD.Studio.EventInstance PostFirstPuzzleMusic;
     static public FMOD.Studio.PLAYBACK_STATE PostFirstPuzzleMusicPlaybackState;
      
 
@@ -34,7 +34,7 @@ public class SceneManagement : MonoBehaviour
     public bool ShouldFadeInPostFirstLevelTrack = false;
 
     public bool ShouldFadeInPostBathroomMusic = false;
-    public FMOD.Studio.EventInstance PostBathroomMusic;
+    public static FMOD.Studio.EventInstance PostBathroomMusic;
     static public FMOD.Studio.PLAYBACK_STATE PostBathroomMusicPlaybackState;
 
     private Scene CurrentScene;
@@ -109,7 +109,7 @@ public class SceneManagement : MonoBehaviour
             }    
             if (PostFirstPuzzleLayersFadeValue < 2)
             {
-                Debug.Log(PostFirstPuzzleLayersFadeValue);
+                
                 PostFirstPuzzleLayersFadeValue += 0.01f;
                 PostFirstPuzzleMusic.setParameterValue("PostFirstPuzzleLayersFadeValue", PostFirstPuzzleLayersFadeValue);
             }

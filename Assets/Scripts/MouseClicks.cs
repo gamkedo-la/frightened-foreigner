@@ -90,8 +90,8 @@ public class MouseClicks: MonoBehaviour
 
         LevelChanger = GameObject.Find("LevelChanger");
         SceneManagementScript = LevelChanger.GetComponent<SceneManagement>();
-        TitleScreenMusic = SceneManagementScript.TitleScreenMusic;
-        PostFirstPuzzleMusic = SceneManagementScript.PostFirstPuzzleMusic;
+        TitleScreenMusic = SceneManagement.TitleScreenMusic;
+        PostFirstPuzzleMusic = SceneManagement.PostFirstPuzzleMusic;
 
         //PostProccessingValue = GameObject.Find("PostProccessingVolume");
         //PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();

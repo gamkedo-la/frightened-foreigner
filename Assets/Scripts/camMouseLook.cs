@@ -27,6 +27,8 @@ public class camMouseLook : MonoBehaviour
 
     private Inventory InventoryScript;
 
+    public GameObject puzzleJumper;
+
     private void Awake()
     {
         PauseGameScript = GameObject.Find("GameController").GetComponent<PauseGame>();
@@ -56,7 +58,7 @@ public class camMouseLook : MonoBehaviour
     {
         gamePaused = PauseGameScript.GamePaused;
         //Debug.Log(gamePaused);
-        if (!gamePaused && !InventoryScript.inventoryActive)
+        if (!gamePaused && !InventoryScript.inventoryActive && !puzzleJumper.active)
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 

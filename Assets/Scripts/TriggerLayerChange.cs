@@ -13,7 +13,7 @@ public class TriggerLayerChange : MonoBehaviour
     private void Awake()
     {
         SceneManagementScript = GameObject.Find("LevelChanger").GetComponent<SceneManagement>();
-        TitleScreenMusic = SceneManagementScript.TitleScreenMusic;
+        TitleScreenMusic = SceneManagement.TitleScreenMusic;
     }
     // Start is called before the first frame update
     void Start()
