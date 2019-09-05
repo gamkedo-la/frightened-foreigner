@@ -15551,7 +15551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 164227135}
   m_LocalRotation: {x: -0.024768341, y: 0.052007843, z: -0.0005705126, w: 0.99833935}
-  m_LocalPosition: {x: -0.7142079, y: -0.0854221, z: 3.0994587}
+  m_LocalPosition: {x: -0.7142079, y: -0.0854221, z: 0.26}
   m_LocalScale: {x: 0.58858, y: 0.5885799, z: 0.58858013}
   m_Children: []
   m_Father: {fileID: 208646690}
@@ -15899,7 +15899,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208646689}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.25, y: 0.77, z: -11.0234585}
+  m_LocalPosition: {x: 3.25, y: 0.77, z: -7.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 164227136}
@@ -15918,8 +15918,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.69, y: 1, z: 1}
-  m_Center: {x: -0.41, y: -0.06, z: 2.99}
+  m_Size: {x: 2.45, y: 1.78, z: 1}
+  m_Center: {x: -0.48, y: -0.06, z: 0.12}
 --- !u!1 &209375480
 GameObject:
   m_ObjectHideFlags: 0
@@ -31505,6 +31505,8 @@ MonoBehaviour:
   Groundskeeper: {fileID: 2009396823}
   thisTextGraphic: {fileID: 411975364}
   shovel: {fileID: 1153608406}
+  Forint: {fileID: 0}
+  milk: {fileID: 0}
 --- !u!1 &423392767
 GameObject:
   m_ObjectHideFlags: 0
@@ -47642,6 +47644,8 @@ MonoBehaviour:
   Groundskeeper: {fileID: 2009396823}
   thisTextGraphic: {fileID: 720564501}
   shovel: {fileID: 1153608406}
+  Forint: {fileID: 0}
+  milk: {fileID: 1199333713}
 --- !u!212 &720564506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79355,7 +79359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897545431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.223, y: -0.048, z: 3.1}
+  m_LocalPosition: {x: -0.223, y: -0.048, z: 0.26}
   m_LocalScale: {x: 0.18, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 208646690}
@@ -81354,6 +81358,11 @@ PrefabInstance:
       propertyPath: catPuzzle
       value: 
       objectReference: {fileID: 208646689}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: lights
+      value: 
+      objectReference: {fileID: 61306315}
     - target: {fileID: 3304905925922805076, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: PauseCanvas
@@ -81656,6 +81665,8 @@ MonoBehaviour:
   Groundskeeper: {fileID: 0}
   thisTextGraphic: {fileID: 8247220394666061186}
   shovel: {fileID: 0}
+  Forint: {fileID: 85502935}
+  milk: {fileID: 0}
 --- !u!114 &8247220394666061188
 MonoBehaviour:
   m_ObjectHideFlags: 0

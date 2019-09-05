@@ -57,6 +57,8 @@ public class MouseClicks: MonoBehaviour
     public GameObject Groundskeeper;
     public GameObject thisTextGraphic;
     public GameObject shovel;
+    public GameObject Forint;
+    public GameObject milk;
 
     public FMOD.Studio.EventInstance makeItRainInTheBathroom;
 
@@ -138,9 +140,7 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
-                Debug.Log(temporaryPictureName);
-                Debug.Log(gameObject.transform.parent.name);
-                Debug.Log(LockView.LockedWithMilk);
+                
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
@@ -159,12 +159,15 @@ public class MouseClicks: MonoBehaviour
                     {
                         makeItRainInTheBathroom.start();
                         InventoryItemManager.playerHasForint = true;
-                        
-                    }
+                        LockViewScript.UnLockView();
+                        thisTextGraphic.SetActive(false);
+                        Forint.SetActive(false);
+                     }
                     if (LockView.LockedWithMilk)
                     {
                         InventoryItemManager.playerHasMilk = true;
-
+                        Debug.Log(InventoryItemManager.playerHasMilk);
+                        milk.SetActive(false);
                     }
 
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player

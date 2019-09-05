@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 public class LockView : MonoBehaviour
 {
@@ -47,16 +48,35 @@ public class LockView : MonoBehaviour
 
     public GameObject catPuzzle;
 
+    public GameObject lights;
+    private ProgressiveLights lightScript;
+
+    public GameObject postProcessingValue;
+    private PostProcessVolume PPVScript;
+    private Grain GrainLayer;
+    private Vignette VignetteLayer;
+    private float PPVMultiplier = 1.5f;
+    private float maxGrainIntensity = 0.5f;
+    private float maxVignetteIntensity = 0.45f;
+
+    private FMOD.Studio.PLAYBACK_STATE TurulSquawkingPlaybackState;
+
     void Start()
     {
         NPC = false;
         UhhhhMaybeYouShouldWait = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/UhhhhMaybeYouShouldWait");
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
+
+        lightScript = lights.GetComponent<ProgressiveLights>();
+        
     }
 
     void Update()
     {
-		if ( Input.GetKeyDown( KeyCode.Space ) )
+        TriggerGateClose.loopingTurulSquawkSound.getPlaybackState(out TurulSquawkingPlaybackState);
+        Debug.Log(TurulSquawkingPlaybackState);
+
+        if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
 			if ( locked )
 				UnLockView( );
@@ -115,9 +135,14 @@ public class LockView : MonoBehaviour
                     StartCoroutine(DelayUhhhhDialogue());
                 }
                 //UhhhhMaybeYouShouldWait.start();
-            }
+            }//end of bathroomCutScene
             
-		}
+            if (LockedWithTurul)
+            {
+                Vector3 targetPos = turul.transform.position;
+                LockOnToTargetObject(targetPos);
+            }
+		}//end of locked
         
     }
 
@@ -198,6 +223,9 @@ public class LockView : MonoBehaviour
             if (InventoryItemManager.playerHasMilk)
             {
                 catPuzzle.SetActive(false);
+                lightScript.MakeAmbientCreepier();
+                makeGraphicsGrainier();
+                TriggerGateClose.PlayLoopingTurulSquawk();
             }
         }
 
@@ -225,7 +253,7 @@ public class LockView : MonoBehaviour
 		locked = true;
 	}
 
-	private void UnLockView( )
+	public void UnLockView( )
 	{
 		foreach ( var item in toDisable )
 			item.enabled = true;
@@ -251,5 +279,21 @@ public class LockView : MonoBehaviour
         bathroomCutSceneCameraPan = false;
     }
 
-
+    private void makeGraphicsGrainier()
+    {
+        PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
+        PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
+        PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
+        //Debug.Log(ambientOcclusionLayer);
+        GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
+        VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
+        if (GrainLayer.intensity > maxGrainIntensity)
+        {
+            GrainLayer.intensity.Override(maxGrainIntensity);
+        }
+        if (VignetteLayer.intensity > maxVignetteIntensity)
+        {
+            VignetteLayer.intensity.Override(maxVignetteIntensity);
+        }
+    }
 }

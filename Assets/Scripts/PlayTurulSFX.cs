@@ -44,7 +44,7 @@ public class PlayTurulSFX : MonoBehaviour
     {
         if (LockViewScript.LockedWithTurul)
         {
-            
+            Debug.Log("Locked With Turul" + LockViewScript.LockedWithTurul);
             //sceneManagementScript.PostBathroomMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             TriggerGateClose.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCatPuzzle)

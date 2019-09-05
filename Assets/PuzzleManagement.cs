@@ -95,6 +95,16 @@ public class PuzzleManagement : MonoBehaviour
         TriggerGateClose.loopingTurulSquawkSound.start();
     }
 
+    public void JumpToSicknessPuzzle()
+    {
+        JumpToCatPuzzle();
+        PlayerIsDoingCatPuzzle = false;
+        PlayerIsDoingSicknessPuzzle = true;
+        lightsScript.MakeAmbientCreepier();
+        makeGraphicsGrainier();
+        TriggerGateClose.loopingTurulSquawkSound.start();
+    }
+
     private void makeGraphicsGrainier()
     {
         PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();

@@ -87,7 +87,7 @@ public class TriggerGateClose : MonoBehaviour
         shakeGateSound.start();
     }
 
-    public void PlayLoopingTurulSquawk()
+    public static void PlayLoopingTurulSquawk()
     {
         loopingTurulSquawkSound.start();
         Debug.Log("Turul should be squawking");
