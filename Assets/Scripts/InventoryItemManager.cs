@@ -19,9 +19,14 @@ public class InventoryItemManager : MonoBehaviour
 
     //the player does not have this stuff at the beginning of the game
     public static bool playerHasForint = false;
+    public static bool playerHasMilk = false;
 
-    public GameObject Forint;
+    public GameObject ForintInLevel;
     public GameObject ForintTextGraphic;
+
+    public GameObject MilkInLevel;
+    public GameObject MilkTextGraphic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +38,13 @@ public class InventoryItemManager : MonoBehaviour
     {
         if (playerHasForint)
         {
-            Forint.SetActive(false);//make the forint no longer visible in the cemetery when obtained
+            ForintInLevel.SetActive(false);//make the forint no longer visible in the cemetery when obtained
             ForintTextGraphic.SetActive(false); // text graphic no longer visible when the forint is obtained
+        }
+        if (playerHasMilk)
+        {
+            MilkInLevel.SetActive(false);
+            MilkTextGraphic.SetActive(false);
         }
     }
 }

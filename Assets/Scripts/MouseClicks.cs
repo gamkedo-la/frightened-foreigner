@@ -112,6 +112,7 @@ public class MouseClicks: MonoBehaviour
            // Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
             if (LockViewScript.locked && Input.GetMouseButtonDown(1))    // right mouse button click 
             {
+                
                 ImageListIndex++;//move through the ImageList and cycle back to 0 at the end
                 if (ImageListIndex > ImageNameList.Count - 1)
                 {
@@ -137,6 +138,9 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
+                Debug.Log(temporaryPictureName);
+                Debug.Log(gameObject.transform.parent.name);
+                Debug.Log(LockView.LockedWithMilk);
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
@@ -156,6 +160,11 @@ public class MouseClicks: MonoBehaviour
                         makeItRainInTheBathroom.start();
                         InventoryItemManager.playerHasForint = true;
                         
+                    }
+                    if (LockView.LockedWithMilk)
+                    {
+                        InventoryItemManager.playerHasMilk = true;
+
                     }
 
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player

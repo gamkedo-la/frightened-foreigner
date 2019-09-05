@@ -12,7 +12,7 @@ public class MasterListOfWordChoices : MonoBehaviour
         ListOfAllChoicesForGame.Add("fürdőszoba");//bathroom
         ListOfAllChoicesForGame.Add("Férfi");//Man
         ListOfAllChoicesForGame.Add("idő");//time
-        ListOfAllChoicesForGame.Add("nő");//woman
+        ListOfAllChoicesForGame.Add("tej");//milk
         ListOfAllChoicesForGame.Add("forint");//money
         
     }

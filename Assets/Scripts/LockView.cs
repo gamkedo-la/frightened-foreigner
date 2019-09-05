@@ -28,6 +28,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithForint = false;
     public bool LockedWithBathroomDoor = false;
     public bool LockedWithTurul = false;
+    public static bool LockedWithMilk = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -38,6 +39,7 @@ public class LockView : MonoBehaviour
     public bool UhhhMaybeYouShouldWaitPlayed = false;
 
     public GameObject ForintTextGraphic;
+    public GameObject MilkTextGraphic;
 
     public GameObject turul;
     private PlayTurulSFX turulSFXScript;
@@ -68,12 +70,26 @@ public class LockView : MonoBehaviour
                     Vector3 targetPos = randomWord.gameObject.transform.position + randomWord.gameObject.transform.up * lookUpCorrection;
                     LockOnToTargetObject(targetPos);
                 }
+                //toggle visibility of text graphics based on if player is focused on the object
+                //money/forint
                 if (LockedWithForint)
                 {
                     ForintTextGraphic.SetActive(true);
 
                 }
-
+                if (!LockedWithForint)
+                {
+                    ForintTextGraphic.SetActive(false);
+                }
+                //milk/tej
+                if (LockedWithMilk)
+                {
+                    MilkTextGraphic.SetActive(true);
+                }
+                if (!LockedWithMilk)
+                {
+                    MilkTextGraphic.SetActive(false);
+                }
 
 
                 //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
@@ -97,6 +113,7 @@ public class LockView : MonoBehaviour
                 //UhhhhMaybeYouShouldWait.start();
             }
 		}
+        
     }
 
 	public void HoldItem( PlayerItem item, Sprite image)
@@ -165,12 +182,17 @@ public class LockView : MonoBehaviour
                 turulSFXScript.TurulSaysMilkTejSound.start();
             }
         }
+        if (hit.transform.name == "Milk")
+        {
+            Debug.Log("Locked With Milk");
+            LockedWithMilk = true;
+        }
 
 
 
 
         // Does it have a RandomWords on it?
-        randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
+            randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
 		if ( !randomWord && !NPC)
 			return;
 
@@ -203,6 +225,8 @@ public class LockView : MonoBehaviour
         LockedWithBathroomDoor = false;
         LockedWithForint = false;
         LockedWithTurul = false;
+        LockedWithMilk = false;
+        Debug.Log("View Unlocked");
 	}
 
     public IEnumerator DelayUhhhhDialogue()

@@ -47562,13 +47562,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720564501}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.866506, y: 0.27980006, z: 10.15}
-  m_LocalScale: {x: -0.09450003, y: 0.044, z: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -7.966, y: 0.13, z: 1.787}
+  m_LocalScale: {x: -0.18, y: 0.13, z: 1}
   m_Children: []
   m_Father: {fileID: 1134082463}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &720564503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65982,9 +65982,8 @@ GameObject:
   - component: {fileID: 1199333716}
   - component: {fileID: 1199333715}
   - component: {fileID: 1199333714}
-  - component: {fileID: 1199333717}
-  - component: {fileID: 1199333718}
   - component: {fileID: 1199333719}
+  - component: {fileID: 1199333717}
   m_Layer: 0
   m_Name: Milk
   m_TagString: Untagged
@@ -66060,39 +66059,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199333713}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -7.943001, y: -0.53, z: 1.7969999}
-  m_LocalScale: {x: 0.28000012, y: 0.25, z: 1}
+  m_LocalPosition: {x: -7.943001, y: -0.53, z: 1.322}
+  m_LocalScale: {x: 0.31, y: 0.25, z: 1}
   m_Children:
   - {fileID: 1134082463}
   m_Father: {fileID: 2000155266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1199333717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199333713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 722c359baa94e1a479069f69caaa8b6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RandomWordsScript: {fileID: 0}
-  temporaryPictureName: 
-  PostProccessingValue: {fileID: 0}
-  PlayerCamera: {fileID: 534669902}
-  bathroomDoor: {fileID: 2107524686}
-  bathroomAttendant: {fileID: 1716416023}
-  candyTable: {fileID: 1959457123}
-  candyBasket: {fileID: 1596007473}
-  bathroomStuff: {fileID: 2000155265}
-  temporaryCemeteryWall: {fileID: 53689971}
-  Groundskeeper: {fileID: 2009396823}
-  thisTextGraphic: {fileID: 720564501}
-  shovel: {fileID: 1153608406}
---- !u!114 &1199333718
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81112,8 +81086,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f089e39f9f4cc641aff46183e337bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Forint: {fileID: 85502935}
+  ForintInLevel: {fileID: 0}
   ForintTextGraphic: {fileID: 8247220394666061186}
+  MilkInLevel: {fileID: 1199333713}
+  MilkTextGraphic: {fileID: 720564501}
 --- !u!1001 &2289240819435781392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81354,6 +81330,11 @@ PrefabInstance:
       propertyPath: turul
       value: 
       objectReference: {fileID: 1506078306}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: MilkTextGraphic
+      value: 
+      objectReference: {fileID: 720564501}
     - target: {fileID: 3304905925922805076, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: PauseCanvas
