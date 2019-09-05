@@ -12,6 +12,9 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     public GameObject PlayerCamera;
     private bool lightningEmitted = false;
 
+    public GameObject catPuzzle;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +34,9 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     public void emitLightningForCatPuzzle()
     {
-        gameObject.transform.position = new Vector3(7.31f, 20.4f, -2.92f);
-        EmersionLightning.Emit(1);
-        Sparks.Emit(1);
+        gameObject.transform.position = new Vector3(2.75f, 20.4f, -5.0f);
+        StartCoroutine(DelayLightningStrikeForCatPuzzle());
+        StartCoroutine(DelayAppearanceOfCatPuzzle());
     }
 
     private IEnumerator DelayLightningStrikeForBathroom()
@@ -45,4 +48,18 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         Sparks.Emit(1);
         lightningEmitted = true;
     }
+
+    private IEnumerator DelayLightningStrikeForCatPuzzle()
+    {
+        yield return new WaitForSeconds(1.75f);
+        EmersionLightning.Emit(1);
+        Sparks.Emit(1);
+    }
+
+    private IEnumerator DelayAppearanceOfCatPuzzle()
+    {
+        yield return new WaitForSeconds(2.75f);
+        catPuzzle.SetActive(true);
+    }
+
 }
