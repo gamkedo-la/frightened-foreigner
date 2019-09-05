@@ -15883,13 +15883,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 208646690}
+  - component: {fileID: 208646691}
   m_Layer: 0
   m_Name: CatPuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &208646690
 Transform:
   m_ObjectHideFlags: 0
@@ -15906,6 +15907,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &208646691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208646689}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.69, y: 1, z: 1}
+  m_Center: {x: -0.41, y: -0.06, z: 2.99}
 --- !u!1 &209375480
 GameObject:
   m_ObjectHideFlags: 0
@@ -81335,6 +81349,11 @@ PrefabInstance:
       propertyPath: MilkTextGraphic
       value: 
       objectReference: {fileID: 720564501}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: catPuzzle
+      value: 
+      objectReference: {fileID: 208646689}
     - target: {fileID: 3304905925922805076, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: PauseCanvas

@@ -29,6 +29,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithBathroomDoor = false;
     public bool LockedWithTurul = false;
     public static bool LockedWithMilk = false;
+    public bool LockedWithCatPuzzle = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -43,6 +44,8 @@ public class LockView : MonoBehaviour
 
     public GameObject turul;
     private PlayTurulSFX turulSFXScript;
+
+    public GameObject catPuzzle;
 
     void Start()
     {
@@ -92,6 +95,7 @@ public class LockView : MonoBehaviour
                 }
 
 
+
                 //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
                 //Quaternion rotationC = Quaternion.LookRotation(targetPos - character.position);
                 //rotationT = Quaternion.Slerp(transform.rotation, rotationT, Time.deltaTime * damping);
@@ -112,6 +116,7 @@ public class LockView : MonoBehaviour
                 }
                 //UhhhhMaybeYouShouldWait.start();
             }
+            
 		}
         
     }
@@ -187,6 +192,14 @@ public class LockView : MonoBehaviour
             Debug.Log("Locked With Milk");
             LockedWithMilk = true;
         }
+        if (hit.transform.name == "CatPuzzle")
+        {
+            LockedWithCatPuzzle = true;
+            if (InventoryItemManager.playerHasMilk)
+            {
+                catPuzzle.SetActive(false);
+            }
+        }
 
 
 
@@ -226,6 +239,7 @@ public class LockView : MonoBehaviour
         LockedWithForint = false;
         LockedWithTurul = false;
         LockedWithMilk = false;
+        LockedWithCatPuzzle = false;
         Debug.Log("View Unlocked");
 	}
 
