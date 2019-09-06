@@ -70,6 +70,9 @@ public class LockView : MonoBehaviour
     public GameObject bathroomCutsceneHolder;
     private TriggerGateClose gateCloseScript;
 
+    public GameObject candyPuzzle;
+    public bool candyPuzzleLightningCutscene = false;
+
     void Start()
     {
         NPC = false;
@@ -146,7 +149,7 @@ public class LockView : MonoBehaviour
                 //UhhhhMaybeYouShouldWait.start();
             }//end of bathroomCutScene
             
-            if (LockedWithTurul)
+            if (LockedWithTurul && !candyPuzzleLightningCutscene)
             {
                 Vector3 targetPos = turul.transform.position;
                 LockOnToTargetObject(targetPos);
@@ -155,6 +158,12 @@ public class LockView : MonoBehaviour
             if (sicknessPuzzleCutsceneWithFene)
             {
                 Vector3 targetPos = fene.transform.position;
+                LockOnToTargetObject(targetPos);
+            }
+            Debug.Log("candy puzzle lightning cutscene active: " + candyPuzzleLightningCutscene);
+            if (candyPuzzleLightningCutscene)
+            {
+                Vector3 targetPos = candyPuzzle.transform.position;
                 LockOnToTargetObject(targetPos);
             }
         }//end of locked

@@ -90,7 +90,7 @@ public class TriggerGateClose : MonoBehaviour
     public void PlayLoopingTurulSquawk()
     {
         loopingTurulSquawkSound.start();
-        Debug.Log("Turul should be squawking");
+        //Debug.Log("Turul should be squawking");
     }
 
     public void turnOnCatPuzzle()

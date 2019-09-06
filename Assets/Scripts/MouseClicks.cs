@@ -150,8 +150,8 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
-                Debug.Log("temporary picture name: " + temporaryPictureName);
-                Debug.Log("parents name: " + gameObject.transform.parent.name);
+               // Debug.Log("temporary picture name: " + temporaryPictureName);
+               // Debug.Log("parents name: " + gameObject.transform.parent.name);
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper

@@ -66,6 +66,13 @@ public class PlayTurulSFX : MonoBehaviour
                 playerHasInteractedWithTurulThisPuzzle = true;
                 emersionLightningHasStruckThisPuzzle = true;
             }
+            if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCandyPuzzle)
+            {
+                LockViewScript.candyPuzzleLightningCutscene = true;
+                lightningScript.emitLightningForCandyPuzzle();
+                playerHasInteractedWithTurulThisPuzzle = true;
+                emersionLightningHasStruckThisPuzzle = true;
+            }
         }
     }
 
