@@ -15890,7 +15890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &208646690
 Transform:
   m_ObjectHideFlags: 0
@@ -80107,7 +80107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0
@@ -81104,7 +81104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f089e39f9f4cc641aff46183e337bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForintInLevel: {fileID: 0}
+  ForintInLevel: {fileID: 85502935}
   ForintTextGraphic: {fileID: 8247220394666061186}
   MilkInLevel: {fileID: 1199333713}
   MilkTextGraphic: {fileID: 720564501}
@@ -81363,6 +81363,16 @@ PrefabInstance:
       propertyPath: lights
       value: 
       objectReference: {fileID: 61306315}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: postProcessingValue
+      value: 
+      objectReference: {fileID: 1396926143}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: bathroomCutsceneHolder
+      value: 
+      objectReference: {fileID: 1008936876}
     - target: {fileID: 3304905925922805076, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: PauseCanvas

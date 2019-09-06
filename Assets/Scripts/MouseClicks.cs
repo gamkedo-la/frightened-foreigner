@@ -166,7 +166,7 @@ public class MouseClicks: MonoBehaviour
                     if (LockView.LockedWithMilk)
                     {
                         InventoryItemManager.playerHasMilk = true;
-                        Debug.Log(InventoryItemManager.playerHasMilk);
+                        //Debug.Log(InventoryItemManager.playerHasMilk);
                         milk.SetActive(false);
                     }
 

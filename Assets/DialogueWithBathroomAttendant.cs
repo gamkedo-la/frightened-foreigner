@@ -41,6 +41,8 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             BathroomAttendantHasSaidThankYou = true;
             bathroomDoor.GetComponent<Animator>().enabled = true;
             StartCoroutine(WaitForDoorToOpenBeforeGoingIn());
+            PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
+            PuzzleManagement.PlayerIsDoingCatPuzzle = true;
         }
     }
 

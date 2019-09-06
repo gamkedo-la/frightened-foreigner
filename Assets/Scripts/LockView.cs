@@ -61,6 +61,9 @@ public class LockView : MonoBehaviour
 
     private FMOD.Studio.PLAYBACK_STATE TurulSquawkingPlaybackState;
 
+    public GameObject bathroomCutsceneHolder;
+    private TriggerGateClose gateCloseScript;
+
     void Start()
     {
         NPC = false;
@@ -68,13 +71,13 @@ public class LockView : MonoBehaviour
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
 
         lightScript = lights.GetComponent<ProgressiveLights>();
-        
+        gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
     }
 
     void Update()
     {
         TriggerGateClose.loopingTurulSquawkSound.getPlaybackState(out TurulSquawkingPlaybackState);
-        Debug.Log(TurulSquawkingPlaybackState);
+        //Debug.Log(TurulSquawkingPlaybackState);
 
         if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
@@ -225,7 +228,7 @@ public class LockView : MonoBehaviour
                 catPuzzle.SetActive(false);
                 lightScript.MakeAmbientCreepier();
                 makeGraphicsGrainier();
-                TriggerGateClose.PlayLoopingTurulSquawk();
+                gateCloseScript.PlayLoopingTurulSquawk();
             }
         }
 
