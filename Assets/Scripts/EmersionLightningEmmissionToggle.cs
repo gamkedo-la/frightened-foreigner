@@ -70,7 +70,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     //sickness puzzle, currently the 'second' puzzle
     public void emitLightningForSicknessPuzzle()
     {
-        gameObject.transform.position = new Vector3(-2.96f, 20.4f, 5.86f);
+        gameObject.transform.position = new Vector3(-2.96f, 20.4f, 8.59f);
         StartCoroutine(DelayLightningStrikeForSicknessPuzzle());
         StartCoroutine(DelayAppearanceOfFene());
     }
