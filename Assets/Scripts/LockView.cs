@@ -73,6 +73,8 @@ public class LockView : MonoBehaviour
     public GameObject candyPuzzle;
     public bool candyPuzzleLightningCutscene = false;
 
+    
+
     void Start()
     {
         NPC = false;
@@ -135,7 +137,8 @@ public class LockView : MonoBehaviour
 
                 //transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
                 //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
-            }
+            }//end of random word condition
+
             if (bathroomCutSceneCameraPan)
             {
                 Vector3 targetPos = BathroomDoor.transform.position;
