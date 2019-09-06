@@ -35,6 +35,9 @@ public class LockView : MonoBehaviour
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
 
+    public bool sicknessPuzzleCutsceneWithFene = false;
+
+    public GameObject fene;
     public GameObject GroundskeeperTextGraphic;
 
     public FMOD.Studio.EventInstance UhhhhMaybeYouShouldWait;
@@ -145,7 +148,13 @@ public class LockView : MonoBehaviour
                 Vector3 targetPos = turul.transform.position;
                 LockOnToTargetObject(targetPos);
             }
-		}//end of locked
+
+            if (sicknessPuzzleCutsceneWithFene)
+            {
+                Vector3 targetPos = fene.transform.position;
+                LockOnToTargetObject(targetPos);
+            }
+        }//end of locked
         
     }
 
@@ -210,9 +219,13 @@ public class LockView : MonoBehaviour
         if (hit.transform.name == "Turul")
         {
             LockedWithTurul = true;
-            if (PuzzleManagement.PlayerIsDoingBathroomPuzzle)
+            if (PuzzleManagement.PlayerIsDoingCatPuzzle)
             {
                 turulSFXScript.TurulSaysMilkTejSound.start();
+            }
+            if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !turulSFXScript.playerHasInteractedWithTurulThisPuzzle && !turulSFXScript.emersionLightningHasStruckThisPuzzle)
+            {
+                
             }
         }
         if (hit.transform.name == "Milk")
@@ -229,6 +242,11 @@ public class LockView : MonoBehaviour
                 lightScript.MakeAmbientCreepier();
                 makeGraphicsGrainier();
                 gateCloseScript.PlayLoopingTurulSquawk();
+                PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
+                PuzzleManagement.PlayerIsDoingCatPuzzle = false;
+                PuzzleManagement.PlayerIsDoingSicknessPuzzle = true;
+                turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
+                turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
             }
         }
 

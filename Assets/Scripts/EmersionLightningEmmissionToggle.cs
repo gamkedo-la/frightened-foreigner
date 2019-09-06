@@ -13,6 +13,8 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     private bool lightningEmitted = false;
 
     public GameObject catPuzzle;
+
+    public GameObject fene;
     
 
     // Start is called before the first frame update
@@ -32,13 +34,8 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         }
     }
 
-    public void emitLightningForCatPuzzle()
-    {
-        gameObject.transform.position = new Vector3(2.75f, 20.4f, -5.0f);
-        StartCoroutine(DelayLightningStrikeForCatPuzzle());
-        StartCoroutine(DelayAppearanceOfCatPuzzle());
-    }
-
+    
+    //intro bathroom puzzle
     private IEnumerator DelayLightningStrikeForBathroom()
     {
         yield return new WaitForSeconds(1.75f);
@@ -47,6 +44,14 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         EmersionLightning.Emit(1);
         Sparks.Emit(1);
         lightningEmitted = true;
+    }
+
+    //cat/milk puzzle, currently the 'first' puzzle
+    public void emitLightningForCatPuzzle()
+    {
+        gameObject.transform.position = new Vector3(2.75f, 20.4f, -5.0f);
+        StartCoroutine(DelayLightningStrikeForCatPuzzle());
+        StartCoroutine(DelayAppearanceOfCatPuzzle());
     }
 
     private IEnumerator DelayLightningStrikeForCatPuzzle()
@@ -60,6 +65,27 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     {
         yield return new WaitForSeconds(2.75f);
         catPuzzle.SetActive(true);
+    }
+
+    //sickness puzzle, currently the 'second' puzzle
+    public void emitLightningForSicknessPuzzle()
+    {
+        gameObject.transform.position = new Vector3(-2.96f, 20.4f, 5.86f);
+        StartCoroutine(DelayLightningStrikeForSicknessPuzzle());
+        StartCoroutine(DelayAppearanceOfFene());
+    }
+
+    private IEnumerator DelayLightningStrikeForSicknessPuzzle()
+    {
+        yield return new WaitForSeconds(1.0f);
+        EmersionLightning.Emit(1);
+        Sparks.Emit(1);
+    }
+
+    private IEnumerator DelayAppearanceOfFene()
+    {
+        yield return new WaitForSeconds(2.0f);
+        fene.SetActive(true);
     }
 
 }
