@@ -24,6 +24,7 @@ public class LockView : MonoBehaviour
     private bool NPC;
 
     public bool LockedWithVanessa = false;
+    public bool LockedWithCharlie = false;
     public bool LockedWithGroundskeeper = false;
     public bool LockedWithBathroomAttendant = false;
     public bool LockedWithForint = false;
@@ -42,6 +43,8 @@ public class LockView : MonoBehaviour
 
     public FMOD.Studio.EventInstance UhhhhMaybeYouShouldWait;
     public bool UhhhMaybeYouShouldWaitPlayed = false;
+
+    public GameObject charliesTextGraphic;
 
     public GameObject ForintTextGraphic;
     public GameObject MilkTextGraphic;
@@ -200,6 +203,14 @@ public class LockView : MonoBehaviour
         {
             LockedWithVanessa = true;
         }
+        if (hit.transform.name == "Charlie")
+        {
+            LockedWithCharlie = true;
+            if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
+            {
+                charliesTextGraphic.SetActive(true);
+            }
+        }
         if (hit.transform.name == "Groundskeeper")
         {
             LockedWithGroundskeeper = true;
@@ -289,7 +300,8 @@ public class LockView : MonoBehaviour
         LockedWithTurul = false;
         LockedWithMilk = false;
         LockedWithCatPuzzle = false;
-        Debug.Log("View Unlocked");
+        
+        //Debug.Log("View Unlocked");
 	}
 
     public IEnumerator DelayUhhhhDialogue()

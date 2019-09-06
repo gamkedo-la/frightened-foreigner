@@ -46,9 +46,9 @@ public class PlayTurulSFX : MonoBehaviour
         {
             //Debug.Log("Locked With Turul" + LockViewScript.LockedWithTurul);
             //sceneManagementScript.PostBathroomMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            Debug.Log("player has interacted with turul: " + playerHasInteractedWithTurulThisPuzzle);
-            Debug.Log("lightning has struck: " + emersionLightningHasStruckThisPuzzle);
-            Debug.Log("player is doing cat puzzle: " + PuzzleManagement.PlayerIsDoingCatPuzzle);
+            //Debug.Log("player has interacted with turul: " + playerHasInteractedWithTurulThisPuzzle);
+            //Debug.Log("lightning has struck: " + emersionLightningHasStruckThisPuzzle);
+            //Debug.Log("player is doing cat puzzle: " + PuzzleManagement.PlayerIsDoingCatPuzzle);
             TriggerGateClose.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCatPuzzle)
             {
