@@ -16256,7 +16256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227375228}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.34, y: 3.76, z: -1.98}
+  m_LocalPosition: {x: 0.34, y: 3.76, z: -0.25}
   m_LocalScale: {x: -1.61, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1552811769}
@@ -16286,7 +16286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 75928651}
   AnswerChoices: []
   CorrectChoice: 
   CurrentChoice: 
@@ -16323,6 +16323,9 @@ MonoBehaviour:
   shovel: {fileID: 1153608406}
   Forint: {fileID: 0}
   milk: {fileID: 0}
+  charlie: {fileID: 826827365}
+  turul: {fileID: 1506078306}
+  bathroomCutsceneHolder: {fileID: 1008936876}
 --- !u!212 &227375233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31650,6 +31653,9 @@ MonoBehaviour:
   shovel: {fileID: 1153608406}
   Forint: {fileID: 0}
   milk: {fileID: 0}
+  charlie: {fileID: 0}
+  turul: {fileID: 0}
+  bathroomCutsceneHolder: {fileID: 0}
 --- !u!1 &423392767
 GameObject:
   m_ObjectHideFlags: 0
@@ -47789,6 +47795,9 @@ MonoBehaviour:
   shovel: {fileID: 1153608406}
   Forint: {fileID: 0}
   milk: {fileID: 1199333713}
+  charlie: {fileID: 0}
+  turul: {fileID: 0}
+  bathroomCutsceneHolder: {fileID: 0}
 --- !u!212 &720564506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -48591,7 +48600,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 826827369}
-  - component: {fileID: 826827368}
   - component: {fileID: 826827367}
   - component: {fileID: 826827366}
   - component: {fileID: 826827370}
@@ -48663,20 +48671,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!64 &826827368
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826827365}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &826827369
 Transform:
   m_ObjectHideFlags: 0
@@ -48717,7 +48711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493fa77f66a3724a8c456fbda0b4b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 75928651}
   AnswerChoices: []
   CorrectChoice: 
   CurrentChoice: 
@@ -54516,7 +54510,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998755169}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -6.943, y: -0.11199999, z: 0.5749998}
+  m_LocalPosition: {x: -7.771, y: -0.11199999, z: 0.5749998}
   m_LocalScale: {x: 0.37000012, y: 0.21, z: 1}
   m_Children: []
   m_Father: {fileID: 2000155266}
@@ -66259,7 +66253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199333713}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -7.943001, y: -0.53, z: 1.322}
+  m_LocalPosition: {x: -7.257, y: -0.53, z: 1.398}
   m_LocalScale: {x: 0.31, y: 0.25, z: 1}
   m_Children:
   - {fileID: 1134082463}
@@ -73314,7 +73308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552811768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.53, y: 0.26, z: -2.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 227375229}
@@ -80320,7 +80314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0
@@ -86748,6 +86742,9 @@ MonoBehaviour:
   shovel: {fileID: 0}
   Forint: {fileID: 85502935}
   milk: {fileID: 0}
+  charlie: {fileID: 0}
+  turul: {fileID: 0}
+  bathroomCutsceneHolder: {fileID: 0}
 --- !u!114 &8247220394666061188
 MonoBehaviour:
   m_ObjectHideFlags: 0

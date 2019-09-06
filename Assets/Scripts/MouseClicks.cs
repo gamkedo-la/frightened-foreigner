@@ -59,8 +59,15 @@ public class MouseClicks: MonoBehaviour
     public GameObject shovel;
     public GameObject Forint;
     public GameObject milk;
+    public GameObject charlie;
+    public GameObject turul;
+
+    private PlayTurulSFX turulSFXScript;
 
     public FMOD.Studio.EventInstance makeItRainInTheBathroom;
+
+    public GameObject bathroomCutsceneHolder;
+    private TriggerGateClose gateCloseScript;
 
     private void Awake()
     {
@@ -105,6 +112,9 @@ public class MouseClicks: MonoBehaviour
         LightningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
 
         makeItRainInTheBathroom = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/makeItRainInTheBathroom");
+
+        turulSFXScript = turul.GetComponent<PlayTurulSFX>();
+        gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
     }
 
     void Update()
@@ -140,7 +150,8 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
-                
+                Debug.Log("temporary picture name: " + temporaryPictureName);
+                Debug.Log("parents name: " + gameObject.transform.parent.name);
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
@@ -168,6 +179,15 @@ public class MouseClicks: MonoBehaviour
                         InventoryItemManager.playerHasMilk = true;
                         //Debug.Log(InventoryItemManager.playerHasMilk);
                         milk.SetActive(false);
+                    }
+                    if (LockViewScript.LockedWithCharlie)
+                    {
+                        charlie.SetActive(false);
+                        PuzzleManagement.PlayerIsDoingSicknessPuzzle = false;
+                        PuzzleManagement.PlayerIsDoingCandyPuzzle = true;
+                        turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
+                        turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
+                        gateCloseScript.PlayLoopingTurulSquawk();
                     }
 
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
