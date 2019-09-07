@@ -32,6 +32,8 @@ public class LockView : MonoBehaviour
     public bool LockedWithTurul = false;
     public static bool LockedWithMilk = false;
     public bool LockedWithCatPuzzle = false;
+    public bool LockedWithCandyBowl = false;
+    public bool LockedWithCandyPuzzle = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -73,7 +75,7 @@ public class LockView : MonoBehaviour
     public GameObject candyPuzzle;
     public bool candyPuzzleLightningCutscene = false;
 
-    
+    public GameObject candyBowlTextGraphic;
 
     void Start()
     {
@@ -127,7 +129,15 @@ public class LockView : MonoBehaviour
                 {
                     MilkTextGraphic.SetActive(false);
                 }
-
+                if (LockedWithCandyBowl && !InventoryItemManager.playerHasCandy)
+                {
+                    candyBowlTextGraphic.SetActive(true);
+                }
+                if (!LockedWithCandyBowl)
+                {
+                    candyBowlTextGraphic.SetActive(false);
+                }
+                
 
 
                 //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
@@ -272,6 +282,27 @@ public class LockView : MonoBehaviour
                 turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
             }
         }
+        if (hit.transform.name == "Candy Bowl")
+        {
+            LockedWithCandyBowl = true;
+
+        }
+        if (hit.transform.name == "CandyPuzzle")
+        {
+            Debug.Log(InventoryItemManager.playerHasCandy);
+            LockedWithCandyPuzzle = true;
+            if (InventoryItemManager.playerHasCandy)
+            {
+                candyPuzzle.SetActive(false);
+                lightScript.MakeAmbientCreepier();
+                makeGraphicsGrainier();
+                gateCloseScript.PlayLoopingTurulSquawk();
+                PuzzleManagement.PlayerIsDoingCandyPuzzle = false;
+                PuzzleManagement.PlayerIsDoingElementsPuzzle = true;
+                turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
+                turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
+            }
+        }
 
 
 
@@ -312,6 +343,10 @@ public class LockView : MonoBehaviour
         LockedWithTurul = false;
         LockedWithMilk = false;
         LockedWithCatPuzzle = false;
+        LockedWithCandyBowl = false;
+        LockedWithCandyPuzzle = false;
+        LockedWithCharlie = false;
+        
         
         //Debug.Log("View Unlocked");
 	}

@@ -20,6 +20,7 @@ public class InventoryItemManager : MonoBehaviour
     //the player does not have this stuff at the beginning of the game
     public static bool playerHasForint = false;
     public static bool playerHasMilk = false;
+    public static bool playerHasCandy = false;
 
     public GameObject ForintInLevel;
     public GameObject ForintTextGraphic;

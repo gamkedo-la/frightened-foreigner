@@ -152,6 +152,8 @@ public class MouseClicks: MonoBehaviour
             {
                // Debug.Log("temporary picture name: " + temporaryPictureName);
                // Debug.Log("parents name: " + gameObject.transform.parent.name);
+
+
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
@@ -188,6 +190,12 @@ public class MouseClicks: MonoBehaviour
                         turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
                         turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
                         gateCloseScript.PlayLoopingTurulSquawk();
+                    }
+                    if (LockViewScript.LockedWithCandyBowl)
+                    {
+                        thisTextGraphic.SetActive(false);
+                        InventoryItemManager.playerHasCandy = true;
+                        
                     }
 
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
