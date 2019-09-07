@@ -34,6 +34,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithCatPuzzle = false;
     public bool LockedWithCandyBowl = false;
     public bool LockedWithCandyPuzzle = false;
+    public bool LockedWithSink = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -78,6 +79,8 @@ public class LockView : MonoBehaviour
     public GameObject candyBowlTextGraphic;
 
     public GameObject shovel;
+
+    public GameObject sink;
 
     void Start()
     {
@@ -309,6 +312,11 @@ public class LockView : MonoBehaviour
         {
             InventoryItemManager.playerHasShovel = true;
             shovel.SetActive(false);
+        }
+        if (hit.transform.name == "Sink" && itemInHand == PlayerItem.Water)
+        {
+            InventoryItemManager.playerHasFullWaterBottle = true;
+           
         }
 
 

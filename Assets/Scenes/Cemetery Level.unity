@@ -21524,6 +21524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 298419405}
   - component: {fileID: 298419404}
+  - component: {fileID: 298419403}
   m_Layer: 0
   m_Name: Sink
   m_TagString: Untagged
@@ -21531,6 +21532,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &298419403
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298419402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.37, y: 5.81, z: 1.42}
+  m_Center: {x: 0.28, y: 0.38, z: 0}
 --- !u!212 &298419404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -80791,7 +80805,7 @@ GameObject:
   - component: {fileID: 1902540844}
   - component: {fileID: 1902540845}
   m_Layer: 5
-  m_Name: Slot 1 (1)
+  m_Name: WaterBottleSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81471,7 +81485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0
@@ -87632,6 +87646,11 @@ PrefabInstance:
       propertyPath: slotHolder
       value: 
       objectReference: {fileID: 444568304}
+    - target: {fileID: 3304905925775502163, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: waterBottleSlot
+      value: 
+      objectReference: {fileID: 1902540840}
     - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: BathroomDoor
@@ -87707,6 +87726,11 @@ PrefabInstance:
       propertyPath: shovel
       value: 
       objectReference: {fileID: 1153608406}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: sink
+      value: 
+      objectReference: {fileID: 298419402}
     - target: {fileID: 3304905925922805076, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: PauseCanvas

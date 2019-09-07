@@ -14,6 +14,7 @@ public class InventoryItemManager : MonoBehaviour
 
     //the player has this stuff at the beginning of the game
     public static bool playerHasWaterBottle = true;
+    public static bool playerHasFullWaterBottle = false;
     public static bool playerHasGuidebook = true;
 
 

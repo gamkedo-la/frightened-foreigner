@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -12,6 +13,15 @@ public class Inventory : MonoBehaviour
     private GameObject[] ArrayOfSlots;
 
     public GameObject slotHolder;
+
+    public GameObject waterBottleSlot;
+    private Image waterBottleImageComponent;
+    public Sprite fullWaterBottlePicture;
+
+    public GameObject playerCamera;
+    private LockView lockViewScript;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +36,8 @@ public class Inventory : MonoBehaviour
             ArrayOfSlots[i] = slotHolder.transform.GetChild(i).gameObject;
         }
 
+        waterBottleImageComponent = waterBottleSlot.GetComponent<Image>();
+        lockViewScript = playerCamera.GetComponent<LockView>();
     }
 
     // Update is called once per frame
@@ -50,6 +62,12 @@ public class Inventory : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Confined;
                 Cursor.lockState = CursorLockMode.Locked;
             }
+        }
+        if (InventoryItemManager.playerHasFullWaterBottle)
+        {
+            
+            waterBottleImageComponent.sprite = fullWaterBottlePicture;
+            lockViewScript.HoldItem()
         }
     }
 
