@@ -109,5 +109,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         candyPuzzle.SetActive(true);
+        LockViewScript.candyPuzzleLightningCutscene = false;
+        LockViewScript.LockedWithTurul = false;
     }
 }

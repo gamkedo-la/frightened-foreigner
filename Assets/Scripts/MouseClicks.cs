@@ -182,7 +182,7 @@ public class MouseClicks: MonoBehaviour
                     }
                     if (LockViewScript.LockedWithCharlie)
                     {
-                        charlie.SetActive(false);
+                        thisTextGraphic.SetActive(false);
                         PuzzleManagement.PlayerIsDoingSicknessPuzzle = false;
                         PuzzleManagement.PlayerIsDoingCandyPuzzle = true;
                         turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;

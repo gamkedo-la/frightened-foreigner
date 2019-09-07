@@ -11,7 +11,7 @@ public class MasterListOfWordChoices : MonoBehaviour
     {
         ListOfAllChoicesForGame.Add("fürdőszoba");//bathroom
         ListOfAllChoicesForGame.Add("gyógyszert");//medicine
-        ListOfAllChoicesForGame.Add("idő");//time
+        ListOfAllChoicesForGame.Add("cukorkát");//candy
         ListOfAllChoicesForGame.Add("tej");//milk
         ListOfAllChoicesForGame.Add("forint");//money
         

@@ -163,7 +163,7 @@ public class LockView : MonoBehaviour
                 Vector3 targetPos = fene.transform.position;
                 LockOnToTargetObject(targetPos);
             }
-            Debug.Log("candy puzzle lightning cutscene active: " + candyPuzzleLightningCutscene);
+           
             if (candyPuzzleLightningCutscene)
             {
                 Vector3 targetPos = candyPuzzle.transform.position;

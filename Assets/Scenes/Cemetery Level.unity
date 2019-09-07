@@ -73561,6 +73561,7 @@ GameObject:
   - component: {fileID: 1596007476}
   - component: {fileID: 1596007475}
   - component: {fileID: 1596007474}
+  - component: {fileID: 1596007477}
   m_Layer: 0
   m_Name: Candy Bowl
   m_TagString: Untagged
@@ -73642,6 +73643,19 @@ Transform:
   m_Father: {fileID: 1959457126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!65 &1596007477
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596007473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.69, y: 7.17, z: 0.20000005}
+  m_Center: {x: 0, y: -0.15, z: 0}
 --- !u!1001 &1596072769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80394,7 +80408,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0
