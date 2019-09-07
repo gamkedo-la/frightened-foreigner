@@ -21,6 +21,7 @@ public class InventoryItemManager : MonoBehaviour
     public static bool playerHasForint = false;
     public static bool playerHasMilk = false;
     public static bool playerHasCandy = false;
+    public static bool playerHasShovel = false;
 
     public GameObject ForintInLevel;
     public GameObject ForintTextGraphic;

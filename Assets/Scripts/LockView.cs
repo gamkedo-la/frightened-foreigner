@@ -77,6 +77,8 @@ public class LockView : MonoBehaviour
 
     public GameObject candyBowlTextGraphic;
 
+    public GameObject shovel;
+
     void Start()
     {
         NPC = false;
@@ -302,6 +304,11 @@ public class LockView : MonoBehaviour
                 turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
                 turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
             }
+        }
+        if (hit.transform.name == "Shovel")
+        {
+            InventoryItemManager.playerHasShovel = true;
+            shovel.SetActive(false);
         }
 
 
