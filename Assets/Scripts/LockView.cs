@@ -82,6 +82,12 @@ public class LockView : MonoBehaviour
 
     public GameObject sink;
 
+    public GameObject waterBottleSlot;
+    private SelectItem waterBottleSlotSelectItemScript;
+    private Inventory inventoryScript;
+    public Sprite fullWaterBottleSprite;
+
+
     void Start()
     {
         NPC = false;
@@ -90,6 +96,9 @@ public class LockView : MonoBehaviour
 
         lightScript = lights.GetComponent<ProgressiveLights>();
         gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
+
+        waterBottleSlotSelectItemScript = waterBottleSlot.GetComponent<SelectItem>();
+        inventoryScript = GetComponent<Inventory>();
     }
 
     void Update()
@@ -316,7 +325,7 @@ public class LockView : MonoBehaviour
         if (hit.transform.name == "Sink" && itemInHand == PlayerItem.Water)
         {
             InventoryItemManager.playerHasFullWaterBottle = true;
-           
+            HoldItem(PlayerItem.Water, fullWaterBottleSprite);
         }
 
 

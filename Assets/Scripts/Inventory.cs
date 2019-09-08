@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
     public GameObject slotHolder;
 
     public GameObject waterBottleSlot;
+    private SelectItem waterBottleSelectItemScript;
     private Image waterBottleImageComponent;
     public Sprite fullWaterBottlePicture;
 
@@ -38,6 +39,8 @@ public class Inventory : MonoBehaviour
 
         waterBottleImageComponent = waterBottleSlot.GetComponent<Image>();
         lockViewScript = playerCamera.GetComponent<LockView>();
+
+        waterBottleSelectItemScript = waterBottleSlot.GetComponent<SelectItem>();
     }
 
     // Update is called once per frame
@@ -67,7 +70,7 @@ public class Inventory : MonoBehaviour
         {
             
             waterBottleImageComponent.sprite = fullWaterBottlePicture;
-            //lockViewScript.HoldItem();
+            
         }
     }
 

@@ -5399,7 +5399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &57867778
 Transform:
   m_ObjectHideFlags: 0
@@ -81485,7 +81485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0
@@ -87742,6 +87742,17 @@ PrefabInstance:
       propertyPath: sink
       value: 
       objectReference: {fileID: 298419402}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: waterBottleSlot
+      value: 
+      objectReference: {fileID: 1902540840}
+    - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: fullWaterBottleSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ab06aea41bc68a4eb6d60dc276e7e2b,
+        type: 3}
     - target: {fileID: 3304905925922805076, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: PauseCanvas
