@@ -58,7 +58,10 @@ public class MouseClicks: MonoBehaviour
     public GameObject thisTextGraphic;
     public GameObject shovel;
     public GameObject Forint;
+
     public GameObject milk;
+    private holdMyInventorySprite holdMySpriteScript;
+
     public GameObject charlie;
     public GameObject turul;
 
@@ -68,6 +71,10 @@ public class MouseClicks: MonoBehaviour
 
     public GameObject bathroomCutsceneHolder;
     private TriggerGateClose gateCloseScript;
+
+    public GameObject character;
+    private Inventory charactersInventoryScript;
+    
 
     private void Awake()
     {
@@ -115,6 +122,9 @@ public class MouseClicks: MonoBehaviour
 
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
         gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
+
+        charactersInventoryScript = character.GetComponent<Inventory>();
+        holdMySpriteScript = milk.GetComponent<holdMyInventorySprite>();
     }
 
     void Update()
@@ -181,6 +191,7 @@ public class MouseClicks: MonoBehaviour
                         InventoryItemManager.playerHasMilk = true;
                         //Debug.Log(InventoryItemManager.playerHasMilk);
                         milk.SetActive(false);
+                        charactersInventoryScript.addObtainedItemPictureToNextAvailableSlot(holdMySpriteScript.myInventorySprite);
                     }
                     if (LockViewScript.LockedWithCharlie)
                     {

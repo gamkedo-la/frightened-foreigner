@@ -16080,7 +16080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 182.75, y: -370}
+  m_AnchoredPosition: {x: 320.46985, y: -408.45834}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &209375482
@@ -16481,6 +16481,7 @@ MonoBehaviour:
   charlie: {fileID: 826827365}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
+  character: {fileID: 0}
 --- !u!212 &227375233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16565,7 +16566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 582.75, y: -370}
+  m_AnchoredPosition: {x: 720.46985, y: -408.45834}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &234939294
@@ -31931,6 +31932,7 @@ MonoBehaviour:
   charlie: {fileID: 826827365}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
+  character: {fileID: 0}
 --- !u!1 &423392767
 GameObject:
   m_ObjectHideFlags: 0
@@ -48391,6 +48393,7 @@ MonoBehaviour:
   charlie: {fileID: 0}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
+  character: {fileID: 75928651}
 --- !u!212 &720564506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49139,7 +49142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &820510043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49689,6 +49692,7 @@ MonoBehaviour:
   charlie: {fileID: 826827365}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
+  character: {fileID: 0}
 --- !u!212 &842389670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -66274,7 +66278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 382.75, y: -370}
+  m_AnchoredPosition: {x: 520.46985, y: -408.45834}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135319258
@@ -67024,6 +67028,7 @@ GameObject:
   - component: {fileID: 1199333714}
   - component: {fileID: 1199333719}
   - component: {fileID: 1199333717}
+  - component: {fileID: 1199333718}
   m_Layer: 0
   m_Name: Milk
   m_TagString: Untagged
@@ -67128,6 +67133,19 @@ MonoBehaviour:
   CurrentLengthOfTransferableList: 0
   RandomIntegerForTransferableListOfChoices: 0
   CurrentStringToAddToAnswerChoicesList: 
+--- !u!114 &1199333718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199333713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61a2f1f1d76ee8f40bc6d54179001052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myInventorySprite: {fileID: 21300000, guid: acb666ead30945e47bad80130cf05b56, type: 3}
 --- !u!65 &1199333719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72276,7 +72294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 582.75, y: -170}
+  m_AnchoredPosition: {x: 720.46985, y: -208.45834}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345000698
@@ -80545,6 +80563,7 @@ MonoBehaviour:
   charlie: {fileID: 0}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
+  character: {fileID: 0}
 --- !u!1 &1831399848
 GameObject:
   m_ObjectHideFlags: 0
@@ -80827,7 +80846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 382.75, y: -170}
+  m_AnchoredPosition: {x: 520.46985, y: -208.45834}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902540842
@@ -87192,7 +87211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 182.75, y: -170}
+  m_AnchoredPosition: {x: 320.46985, y: -208.45834}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138676598
@@ -87333,7 +87352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2146474474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88060,6 +88079,7 @@ MonoBehaviour:
   charlie: {fileID: 0}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
+  character: {fileID: 0}
 --- !u!114 &8247220394666061188
 MonoBehaviour:
   m_ObjectHideFlags: 0

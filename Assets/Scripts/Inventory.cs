@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
 
     public GameObject playerCamera;
     private LockView lockViewScript;
+
     
 
 
@@ -43,6 +44,18 @@ public class Inventory : MonoBehaviour
         waterBottleSelectItemScript = waterBottleSlot.GetComponent<SelectItem>();
     }
 
+    public void addObtainedItemPictureToNextAvailableSlot(Sprite inventoryImageSprite)
+    {
+        for (int i = 0; i < NumberOfSlots; i++)
+        {
+            if (ArrayOfSlots[i].GetComponent<Image>().sprite == null)
+            {
+                ArrayOfSlots[i].GetComponent<Image>().sprite = inventoryImageSprite;
+                return;
+            }
+        }
+    }
+    
     // Update is called once per frame
     void Update()
     {
