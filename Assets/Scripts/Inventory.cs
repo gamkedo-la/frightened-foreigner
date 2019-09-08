@@ -67,7 +67,7 @@ public class Inventory : MonoBehaviour
         {
             
             waterBottleImageComponent.sprite = fullWaterBottlePicture;
-            lockViewScript.HoldItem()
+            //lockViewScript.HoldItem();
         }
     }
 
