@@ -87651,6 +87651,17 @@ PrefabInstance:
       propertyPath: waterBottleSlot
       value: 
       objectReference: {fileID: 1902540840}
+    - target: {fileID: 3304905925775502163, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: fullWaterBottlePicture
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ab06aea41bc68a4eb6d60dc276e7e2b,
+        type: 3}
+    - target: {fileID: 3304905925775502163, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 534669902}
     - target: {fileID: 3304905925922805077, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
         type: 3}
       propertyPath: BathroomDoor
