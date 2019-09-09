@@ -1,22 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum PlayerItem
 {
 	None,
 	Phone,
-	Water,
+	WaterBottleEmpty,
+	WaterBottleFull,
+	Forint,
+	Milk,
+	Candy,
+	Shovel,
 }
 
 public class InventoryItemManager : MonoBehaviour
 {
+	public GameObject[] buttons;
 
-    //the player has this stuff at the beginning of the game
+   //the player has this stuff at the beginning of the game
     public static bool playerHasWaterBottle = true;
     public static bool playerHasFullWaterBottle = false;
     public static bool playerHasGuidebook = true;
-
 
     //the player does not have this stuff at the beginning of the game
     public static bool playerHasForint = false;
@@ -30,13 +33,17 @@ public class InventoryItemManager : MonoBehaviour
     public GameObject MilkInLevel;
     public GameObject MilkTextGraphic;
 
-    // Start is called before the first frame update
-    void Start()
+    void FixedUpdate()
     {
+		buttons[0].SetActive( playerHasGuidebook );
+		buttons[1].SetActive( playerHasWaterBottle );
+		buttons[2].SetActive( playerHasFullWaterBottle );
+		buttons[3].SetActive( playerHasForint );
+		buttons[4].SetActive( playerHasMilk );
+		buttons[5].SetActive( playerHasCandy );
+		buttons[6].SetActive( playerHasShovel );
+}
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (playerHasForint)
@@ -69,11 +76,31 @@ public class InventoryItemManager : MonoBehaviour
 			break;
 
 			case PlayerItem.Phone:
-				playerHasGuidebook = hasItem;
+			playerHasGuidebook = hasItem;
 			break;
 
-			case PlayerItem.Water:
-				playerHasWaterBottle = hasItem;
+			case PlayerItem.WaterBottleEmpty:
+			playerHasWaterBottle = hasItem;
+			break;
+
+			case PlayerItem.WaterBottleFull:
+			playerHasFullWaterBottle = hasItem;
+			break;
+
+			case PlayerItem.Forint:
+			playerHasForint = hasItem;
+			break;
+
+			case PlayerItem.Milk:
+			playerHasMilk = hasItem;
+			break;
+
+			case PlayerItem.Candy:
+			playerHasCandy = hasItem;
+			break;
+
+			case PlayerItem.Shovel:
+			playerHasShovel = hasItem;
 			break;
 
 			default:

@@ -322,10 +322,10 @@ public class LockView : MonoBehaviour
             InventoryItemManager.playerHasShovel = true;
             shovel.SetActive(false);
         }
-        if (hit.transform.name == "Sink" && itemInHand == PlayerItem.Water)
+        if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
         {
             InventoryItemManager.playerHasFullWaterBottle = true;
-            HoldItem(PlayerItem.Water, fullWaterBottleSprite);
+            HoldItem(PlayerItem.WaterBottleEmpty, fullWaterBottleSprite);
         }
 
 		// Did we hit something we can interact with?
