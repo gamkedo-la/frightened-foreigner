@@ -2,9 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Events;
 
 public class LockView : MonoBehaviour
 {
+	[SerializeField] private InventoryItemManager inventory = null;
 	[SerializeField] private Image itemPreview = null;
 	[SerializeField] private Behaviour[] toDisable = null;
 	[SerializeField] private Transform character = null;
@@ -13,6 +15,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private float damping = 1f;
 	[SerializeField] private LayerMask mask = 0;
 	[SerializeField] private PlayerItem itemInHand = PlayerItem.None;
+	[SerializeField] private UnityEvent usePhone = null;
 
 	public bool locked = false;
 	public RandomWords randomWord = null;
@@ -151,8 +154,6 @@ public class LockView : MonoBehaviour
                 {
                     candyBowlTextGraphic.SetActive(false);
                 }
-                
-
 
                 //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
                 //Quaternion rotationC = Quaternion.LookRotation(targetPos - character.position);
@@ -175,7 +176,7 @@ public class LockView : MonoBehaviour
                 }
                 //UhhhhMaybeYouShouldWait.start();
             }//end of bathroomCutScene
-            
+
             if (LockedWithTurul && !candyPuzzleLightningCutscene)
             {
                 Vector3 targetPos = turul.transform.position;
@@ -187,14 +188,13 @@ public class LockView : MonoBehaviour
                 Vector3 targetPos = fene.transform.position;
                 LockOnToTargetObject(targetPos);
             }
-           
+
             if (candyPuzzleLightningCutscene)
             {
                 Vector3 targetPos = candyPuzzle.transform.position;
                 LockOnToTargetObject(targetPos);
             }
         }//end of locked
-        
     }
 
 	public void HoldItem( PlayerItem item, Sprite image)
@@ -272,7 +272,7 @@ public class LockView : MonoBehaviour
             }
             if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !turulSFXScript.playerHasInteractedWithTurulThisPuzzle && !turulSFXScript.emersionLightningHasStruckThisPuzzle)
             {
-                
+
             }
         }
         if (hit.transform.name == "Milk")
@@ -328,15 +328,29 @@ public class LockView : MonoBehaviour
             HoldItem(PlayerItem.Water, fullWaterBottleSprite);
         }
 
+		// Did we hit something we can interact with?
+		ItemInteraction interaction = hit.collider.gameObject.GetComponent<ItemInteraction>( );
+		if ( interaction )
+		{
+			PlayerItem returnedItem = interaction.TryInteracting( itemInHand );
 
+			if ( returnedItem != itemInHand )
+			{
+				inventory.RemoveItem( itemInHand );
+				HoldItem( PlayerItem.None, null );
+				inventory.GiveItem( returnedItem );
+			}
+		}
+		else if (itemInHand == PlayerItem.Phone)
+		{
+			usePhone.Invoke( );
+		}
 
 
         // Does it have a RandomWords on it?
-            randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
+        randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
 		if ( !randomWord && !NPC)
 			return;
-
-
 
         // We got a winner!
         //Debug.Log( "Focusing on: " + randomWord.gameObject.name );
@@ -370,8 +384,8 @@ public class LockView : MonoBehaviour
         LockedWithCandyBowl = false;
         LockedWithCandyPuzzle = false;
         LockedWithCharlie = false;
-        
-        
+
+
         //Debug.Log("View Unlocked");
 	}
 

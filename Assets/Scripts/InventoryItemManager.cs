@@ -50,4 +50,35 @@ public class InventoryItemManager : MonoBehaviour
             MilkTextGraphic.SetActive(false);
         }
     }
+
+	public void GiveItem( PlayerItem recivedItem )
+	{
+		SetItem( recivedItem, true );
+	}
+
+	public void RemoveItem( PlayerItem itemToRemove )
+	{
+		SetItem( itemToRemove, false );
+	}
+
+	private void SetItem( PlayerItem item, bool hasItem )
+	{
+		switch ( item )
+		{
+			case PlayerItem.None:
+			break;
+
+			case PlayerItem.Phone:
+				playerHasGuidebook = hasItem;
+			break;
+
+			case PlayerItem.Water:
+				playerHasWaterBottle = hasItem;
+			break;
+
+			default:
+			Debug.LogError( "I don't know this item!" );
+			break;
+		}
+	}
 }
