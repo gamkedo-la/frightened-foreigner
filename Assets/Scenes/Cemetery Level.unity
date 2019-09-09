@@ -16292,7 +16292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockView: {fileID: 534669905}
   item: 4
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: d37e08f98c0acef458644dde18f47151, type: 3}
 --- !u!1001 &217244335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16778,7 +16778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockView: {fileID: 534669905}
   item: 6
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 4e589d4a4871bf14fb22cfcfb221fdb8, type: 3}
 --- !u!1 &259813382
 GameObject:
   m_ObjectHideFlags: 0
@@ -71582,7 +71582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockView: {fileID: 534669905}
   item: 5
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: acb666ead30945e47bad80130cf05b56, type: 3}
 --- !u!1 &1153608406
 GameObject:
   m_ObjectHideFlags: 0
@@ -77598,7 +77598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockView: {fileID: 534669905}
   item: 3
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 6ab06aea41bc68a4eb6d60dc276e7e2b, type: 3}
 --- !u!1001 &1348273424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85968,7 +85968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockView: {fileID: 534669905}
   item: 7
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 589c82ea7e926af448ad79cdc8b8d611, type: 3}
 --- !u!114 &1897073501
 MonoBehaviour:
   m_ObjectHideFlags: 0
