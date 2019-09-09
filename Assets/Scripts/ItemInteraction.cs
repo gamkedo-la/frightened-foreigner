@@ -8,6 +8,7 @@ public class ItemInteraction : MonoBehaviour
 	[SerializeField] private PlayerItem returnItem = PlayerItem.None;
 	[SerializeField] private UnityEvent doIntereaction = null;
 	[SerializeField] private UnityEvent giveHint = null;
+    
 
     public PlayerItem TryInteracting( PlayerItem itemInHand )
     {

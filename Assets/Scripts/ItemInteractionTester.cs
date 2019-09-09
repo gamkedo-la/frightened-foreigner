@@ -2,16 +2,16 @@
 
 public class ItemInteractionTester : MonoBehaviour
 {
-	[SerializeField] private string success = "Thanks!";
-	[SerializeField] private string hint = "I'm thirsty...";
+	[SerializeField] private string correctItemResponse = "Thanks!";
+	[SerializeField] private string wrongItemResponse = "I don't want that.";
 
 	public void ShowHint()
 	{
-		Debug.Log( hint );
+		Debug.Log( wrongItemResponse );
 	}
 
 	public void ShowSuccess( )
 	{
-		Debug.Log( success );
+		Debug.Log(correctItemResponse);
 	}
 }
