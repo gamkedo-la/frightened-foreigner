@@ -44,7 +44,8 @@ public class InventoryItemManager : MonoBehaviour
 		buttons[4].SetActive( playerHasMilk );
 		buttons[5].SetActive( playerHasCandy );
 		buttons[6].SetActive( playerHasShovel );
-        buttons[7].SetActive(playerHasMedicine);
+		buttons[7].SetActive( playerHasMedicine );
+		buttons[8].SetActive( true );
 }
 
     void Update()
