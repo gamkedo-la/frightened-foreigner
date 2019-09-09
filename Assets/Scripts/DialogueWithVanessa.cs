@@ -58,40 +58,44 @@ public class DialogueWithVanessa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (LockViewScript.LockedWithVanessa && !DoorScript.playerHasExploredTheCemetery && !DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction)
+        if (!LockView.AnItemIsBeingHeld)
         {
-            TellPlayerToFindTheBathroom.start();
-            DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = true;
-            forceBathroomPuzzleDialogueScript.timeLeft = 180.0f;
-            dialogText = "WASD - Forward, Left, Back, Right movement" + Environment.NewLine +
-                        "Mouse movement -First person eyesight movement" + Environment.NewLine +
-                        "Left Click - Submit answer" + Environment.NewLine +
-                        "Right Click - Scroll through word choices" + Environment.NewLine +
-                        "r key - repeat the target word";
-            tutorialUIScript.openDialog(dialogText);
-        }
-
-        if (!LockViewScript.LockedWithVanessa)
-        {
-            DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = false;
-        }
-
-        if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && DoorScript.playerHasExploredTheCemetery && !DialogManager.ITriedToFindTheBathroomPlayed)
-        {
-            groundskeeper.SetActive(true);
-            DialogManager.groundskeeperInvisible = false;
-            ITriedToFindTheBathroom.start();
-            DialogManager.ITriedToFindTheBathroomPlayed = true;
-            StartCoroutine(CameraShakeScript.DelayedCameraShakeForGroundskeeperLightning());
-        }
 
 
-        if (LockViewScript.LockedWithVanessa && DialogManager.PlayerHasAskedWhereTheBathroomIs && !DialogManager.HeDoesntKnowEnglishHasPlayed)
-        {
-            HeDoesntKnowEnglish.start();
-            DialogManager.HeDoesntKnowEnglishHasPlayed = true;
-            learnedFurduszoba = true;
+            if (LockViewScript.LockedWithVanessa && !DoorScript.playerHasExploredTheCemetery && !DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction)
+            {
+                TellPlayerToFindTheBathroom.start();
+                DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = true;
+                forceBathroomPuzzleDialogueScript.timeLeft = 180.0f;
+                dialogText = "WASD - Forward, Left, Back, Right movement" + Environment.NewLine +
+                            "Mouse movement -First person eyesight movement" + Environment.NewLine +
+                            "Left Click - Submit answer" + Environment.NewLine +
+                            "Right Click - Scroll through word choices" + Environment.NewLine +
+                            "r key - repeat the target word";
+                tutorialUIScript.openDialog(dialogText);
+            }
+
+            if (!LockViewScript.LockedWithVanessa)
+            {
+                DialogManager.PlayerHasBeenToldToFindBathroomThisInteraction = false;
+            }
+
+            if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && DoorScript.playerHasExploredTheCemetery && !DialogManager.ITriedToFindTheBathroomPlayed)
+            {
+                groundskeeper.SetActive(true);
+                DialogManager.groundskeeperInvisible = false;
+                ITriedToFindTheBathroom.start();
+                DialogManager.ITriedToFindTheBathroomPlayed = true;
+                StartCoroutine(CameraShakeScript.DelayedCameraShakeForGroundskeeperLightning());
+            }
+
+
+            if (LockViewScript.LockedWithVanessa && DialogManager.PlayerHasAskedWhereTheBathroomIs && !DialogManager.HeDoesntKnowEnglishHasPlayed)
+            {
+                HeDoesntKnowEnglish.start();
+                DialogManager.HeDoesntKnowEnglishHasPlayed = true;
+                learnedFurduszoba = true;
+            }
         }
     }
 }

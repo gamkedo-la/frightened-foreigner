@@ -90,6 +90,7 @@ public class LockView : MonoBehaviour
     private Inventory inventoryScript;
     public Sprite fullWaterBottleSprite;
 
+    public static bool AnItemIsBeingHeld = false;
 
     void Start()
     {
@@ -201,11 +202,20 @@ public class LockView : MonoBehaviour
 	{
 		itemInHand = item;
 		itemPreview.sprite = image;
+        
 
-		if ( image )
-			itemPreview.gameObject.SetActive( true );
-		else
-			itemPreview.gameObject.SetActive( false );
+		if ( image)
+        {
+            itemPreview.gameObject.SetActive(true);
+            AnItemIsBeingHeld = true;
+        }
+
+        else
+        {
+            itemPreview.gameObject.SetActive(false);
+            AnItemIsBeingHeld = false;
+        }
+			
 	}
 
     public void LockOnToTargetObject(Vector3 targetPos)

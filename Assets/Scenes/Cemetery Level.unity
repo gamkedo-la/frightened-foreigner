@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18276438, g: 0.2015597, b: 0.3130412, a: 1}
+  m_IndirectSpecularColor: {r: 0.18276402, g: 0.20155933, b: 0.31304064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -48310,6 +48310,8 @@ GameObject:
   - component: {fileID: 681154858}
   - component: {fileID: 681154859}
   - component: {fileID: 681154860}
+  - component: {fileID: 681154862}
+  - component: {fileID: 681154861}
   m_Layer: 0
   m_Name: Vanessa
   m_TagString: NPC
@@ -48436,6 +48438,67 @@ MonoBehaviour:
   learnedFurduszoba: 0
   TutorialUIHolder: {fileID: 1191243112}
   tutorialUIScript: {fileID: 0}
+--- !u!114 &681154861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681154854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c689cb8b887254db86f1fc44486161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctItemResponse: Thanks!
+  wrongItemResponse: I don't want that.
+--- !u!114 &681154862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681154854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71770b4ecb767f4393c95387119a428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItem: 0
+  returnDifferentItem: 0
+  returnItem: 0
+  doIntereaction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 681154861}
+        m_MethodName: ShowSuccess
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  giveHint:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 681154861}
+        m_MethodName: ShowHint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &682768471
 PrefabInstance:
   m_ObjectHideFlags: 0
