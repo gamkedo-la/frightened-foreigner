@@ -10,6 +10,7 @@ public enum PlayerItem
 	Milk,
 	Candy,
 	Shovel,
+    Medicine,
 }
 
 public class InventoryItemManager : MonoBehaviour
@@ -26,6 +27,7 @@ public class InventoryItemManager : MonoBehaviour
     public static bool playerHasMilk = false;
     public static bool playerHasCandy = false;
     public static bool playerHasShovel = false;
+    public static bool playerHasMedicine = false;
 
     public GameObject ForintInLevel;
     public GameObject ForintTextGraphic;
@@ -42,6 +44,7 @@ public class InventoryItemManager : MonoBehaviour
 		buttons[4].SetActive( playerHasMilk );
 		buttons[5].SetActive( playerHasCandy );
 		buttons[6].SetActive( playerHasShovel );
+        buttons[7].SetActive(playerHasMedicine);
 }
 
     void Update()
@@ -102,6 +105,10 @@ public class InventoryItemManager : MonoBehaviour
 			case PlayerItem.Shovel:
 			playerHasShovel = hasItem;
 			break;
+
+            case PlayerItem.Medicine:
+            playerHasMedicine = hasItem;
+            break;
 
 			default:
 			Debug.LogError( "I don't know this item!" );

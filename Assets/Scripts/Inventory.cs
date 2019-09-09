@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
     {
         inventoryActive = false;
 
-        NumberOfSlots = 6;
+        NumberOfSlots = 7;
         ArrayOfSlots = new GameObject[NumberOfSlots];
 
         for (int i = 0; i < NumberOfSlots; i++)
