@@ -1011,6 +1011,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 27.9
+    functionName: particleGhostAppears
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 29.216667
     functionName: VanessaSaysOMGAfterTheGateCloses
     data: 

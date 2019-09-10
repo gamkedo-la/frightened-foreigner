@@ -339,10 +339,10 @@ public class LockView : MonoBehaviour
         }
 
 		// Did we hit something we can interact with?
-		ItemInteraction interaction = hit.collider.gameObject.GetComponent<ItemInteraction>( );
-		if ( interaction )
+		ItemInteraction interactionScript = hit.collider.gameObject.GetComponent<ItemInteraction>( );
+		if ( interactionScript )
 		{
-			PlayerItem returnedItem = interaction.TryInteracting( itemInHand );
+			PlayerItem returnedItem = interactionScript.TryInteracting( itemInHand );
 
 			if ( returnedItem != itemInHand )
 			{

@@ -25,6 +25,8 @@ public class TriggerGateClose : MonoBehaviour
 
     public FMOD.Studio.EventInstance vanessaSaysOMGAfterGateCloses;
     public FMOD.Studio.EventInstance shakeGateSound;
+
+    public GameObject ghost;
     
 
 
@@ -96,5 +98,10 @@ public class TriggerGateClose : MonoBehaviour
     public void turnOnCatPuzzle()
     {
         PuzzleManagement.PlayerIsDoingBathroomPuzzle = true;
+    }
+
+    public void particleGhostAppears()
+    {
+        ghost.SetActive(true);
     }
 }

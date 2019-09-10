@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18276438, g: 0.2015597, b: 0.3130412, a: 1}
+  m_IndirectSpecularColor: {r: 0.18276402, g: 0.20155933, b: 0.31304064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10328,6 +10328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
   PostProccessingValue: {fileID: 1396926143}
+  ghost: {fileID: 335644470}
 --- !u!114 &75928655 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3304905925775502163, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
@@ -27131,7 +27132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &335644471
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -60836,6 +60837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
   PostProccessingValue: {fileID: 1396926143}
+  ghost: {fileID: 335644470}
 --- !u!320 &1008936878
 PlayableDirector:
   m_ObjectHideFlags: 0
