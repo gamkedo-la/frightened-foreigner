@@ -36,6 +36,8 @@
 {9b47f662-18b8-45ba-8b77-dcf1ea2a1a61} event:/Words/Bathroom_Furdoszoba
 {e31f3597-e728-480a-8ff4-444c529fec74} event:/Words/Correct_Answer
 {d515d029-57d2-4877-a1dc-f5962fcddf67} event:/Words/Incorrect_Answer
+{ea69f7c0-bb4c-4432-a02e-25dee3621f81} event:/CatPuzzle/PleasedCat
+{964bb35c-135d-46a7-ab7f-59afd3c6a87d} event:/CatPuzzle/DispleasedCat
 {4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {a5913a4e-618f-4e21-add3-32ea81914989} bus:/Master/Music

@@ -295,15 +295,7 @@ public class LockView : MonoBehaviour
             LockedWithCatPuzzle = true;
             if (InventoryItemManager.playerHasMilk)
             {
-                catPuzzle.SetActive(false);
-                lightScript.MakeAmbientCreepier();
-                makeGraphicsGrainier();
-                gateCloseScript.PlayLoopingTurulSquawk();
-                PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
-                PuzzleManagement.PlayerIsDoingCatPuzzle = false;
-                PuzzleManagement.PlayerIsDoingSicknessPuzzle = true;
-                turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
-                turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
+                
             }
         }
         if (hit.transform.name == "Candy Bowl")
@@ -407,7 +399,7 @@ public class LockView : MonoBehaviour
         bathroomCutSceneCameraPan = false;
     }
 
-    private void makeGraphicsGrainier()
+    public void makeGraphicsGrainier()
     {
         PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
