@@ -11,6 +11,10 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
     public FMOD.Studio.EventInstance BathroomAttendantSaysHeNeedsForint;
     public FMOD.Studio.EventInstance BathroomAttendantSaysThankYou;
     public FMOD.Studio.EventInstance GottaGoGottaGoGottaGoGoGo;
+    public FMOD.Studio.EventInstance RepeatForint;
+
+    
+
 
     private bool BathroomAttendantHasSaidThankYou = false;
 
@@ -24,6 +28,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         BathroomAttendantSaysHeNeedsForint = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/forintNeededToEnter");
         BathroomAttendantSaysThankYou = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/bathroomAttendantSaysThankYou");
         GottaGoGottaGoGottaGoGoGo = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/gottaGoGottaGoGottaGoGoGo");
+        RepeatForint = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/RepeatForint");
     }
 
     // Update is called once per frame
@@ -35,15 +40,8 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             DialogManager.BathroomAttendantSaidToGetForint = true;
             StartCoroutine(ChangeBathroomAttendantSprite());
         }
-        if (LockViewScript.LockedWithBathroomAttendant && InventoryItemManager.playerHasForint && !BathroomAttendantHasSaidThankYou)
-        {
-            BathroomAttendantSaysThankYou.start();
-            BathroomAttendantHasSaidThankYou = true;
-            bathroomDoor.GetComponent<Animator>().enabled = true;
-            StartCoroutine(WaitForDoorToOpenBeforeGoingIn());
-            PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
-            PuzzleManagement.PlayerIsDoingCatPuzzle = true;
-        }
+        
+        
     }
 
     private IEnumerator ChangeBathroomAttendantSprite()
@@ -57,5 +55,25 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         yield return new WaitForSeconds(1.25f);
         playerGoingIntoBathroomTimeline.Play();
         GottaGoGottaGoGottaGoGoGo.start();
+    }
+
+    public void OpenBathroomDoor()
+    {
+        BathroomAttendantSaysThankYou.start();
+        BathroomAttendantHasSaidThankYou = true;
+        bathroomDoor.GetComponent<Animator>().enabled = true;
+        StartCoroutine(WaitForDoorToOpenBeforeGoingIn());
+        PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
+        PuzzleManagement.PlayerIsDoingCatPuzzle = true;
+        LockViewScript.HoldItem(PlayerItem.None, null);
+    }
+
+    public void BathroomAttendantRepeatsForint()
+    {
+        if (DialogManager.BathroomAttendantSaidToGetForint)
+        {
+            RepeatForint.start();
+            
+        }     
     }
 }
