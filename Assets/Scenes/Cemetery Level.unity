@@ -16266,7 +16266,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &208646690
 Transform:
   m_ObjectHideFlags: 0
@@ -27198,7 +27198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &335644471
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -54720,6 +54720,7 @@ GameObject:
   - component: {fileID: 826827366}
   - component: {fileID: 826827370}
   - component: {fileID: 826827371}
+  - component: {fileID: 826827368}
   m_Layer: 0
   m_Name: Charlie
   m_TagString: Untagged
@@ -54787,6 +54788,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &826827368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826827365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1759637b61275ae4fb9314d76592333d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &826827369
 Transform:
   m_ObjectHideFlags: 0
@@ -87299,7 +87312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2000155266
 Transform:
   m_ObjectHideFlags: 0

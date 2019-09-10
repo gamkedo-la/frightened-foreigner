@@ -13,6 +13,11 @@
 {b5d0c0f7-86fb-4472-9846-386f80a92916} event:/Dialogue/Vanessa/OMGTheGateClosed
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
+{b48c0485-0c53-4149-b70b-68b76959748c} event:/Dialogue/Charlie/AskingForMedicine
+{afe668e7-a144-4021-a1be-4a86b9ad20e4} event:/Dialogue/Charlie/CorrectWordForMedicine
+{63df5a52-d972-4ab2-ae60-5a5dbcf56368} event:/Dialogue/Charlie/IncorrectWordForMedicine
+{08faa348-87f2-43bb-a266-1e2463487ae1} event:/Dialogue/Charlie/IDontFeelWell
+{3828a951-92c8-414e-848a-4bfbce4b62f1} event:/Dialogue/Charlie/StillDontKnowWordForMedicine
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom

@@ -195,10 +195,13 @@ public class MouseClicks: MonoBehaviour
                     }
                     if (LockViewScript.LockedWithCharlie)
                     {
+                        DialogueWithCharlie.CorrectWordForMedicineResponse.start();
                         thisTextGraphic.SetActive(false);
                         PuzzleManagement.PlayerIsDoingSicknessPuzzle = false;
+                        //StartCoroutine(delayTransitionOutOfSicknessPuzzle());
                         PuzzleManagement.PlayerIsDoingCandyPuzzle = true;
                         InventoryItemManager.playerHasMedicine = true;
+                        
                         //turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
                         //turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
                         //gateCloseScript.PlayLoopingTurulSquawk();
@@ -248,7 +251,11 @@ public class MouseClicks: MonoBehaviour
                         GroundskeeperRespondsToIncorrectAnswer.start();
                         
                     }
-                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Incorrect_Answer");//negative aural feedback to player for an incorrect answer              
+                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Incorrect_Answer");//negative aural feedback to player for an incorrect answer    
+                    if (LockViewScript.LockedWithCharlie)
+                    {
+                        DialogueWithCharlie.IncorrectWordForMedicineResponse.start();
+                    }
                 }
 
             }//end of left click
@@ -286,4 +293,6 @@ public class MouseClicks: MonoBehaviour
             VignetteLayer.intensity.Override(maxVignetteIntensity);
         }
     }
+
+    
 }//end of right click class

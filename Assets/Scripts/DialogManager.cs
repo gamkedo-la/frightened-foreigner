@@ -13,4 +13,5 @@ public class DialogManager : MonoBehaviour
     public static bool HeDoesntKnowEnglishHasPlayed = false;
     public static bool learnedFurduszoba = false;
     public static bool BathroomAttendantSaidToGetForint = false;
+    public static bool PlayerHasAskedForMedicine = false;
 }

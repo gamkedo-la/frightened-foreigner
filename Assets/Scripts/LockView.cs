@@ -254,7 +254,21 @@ public class LockView : MonoBehaviour
             LockedWithCharlie = true;
             if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
             {
+
                 charliesTextGraphic.SetActive(true);
+                 if (!DialogManager.PlayerHasAskedForMedicine)
+                {
+                    DialogueWithCharlie.AskingForMedicine.start();
+                    DialogManager.PlayerHasAskedForMedicine = true;
+                } 
+                 else
+                {
+                    DialogueWithCharlie.StillDontKnowWordForMedicine.start();
+                }
+            }
+            else
+            {
+                DialogueWithCharlie.IDontFeelWell.start();
             }
         }
         if (hit.transform.name == "Groundskeeper")
