@@ -202,9 +202,9 @@ public class MouseClicks: MonoBehaviour
                         PuzzleManagement.PlayerIsDoingCandyPuzzle = true;
                         InventoryItemManager.playerHasMedicine = true;
                         
-                        //turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
-                        //turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
-                        //gateCloseScript.PlayLoopingTurulSquawk();
+                        turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
+                        turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
+                        gateCloseScript.PlayLoopingTurulSquawk();
                     }
                     if (LockViewScript.LockedWithCandyBowl)
                     {

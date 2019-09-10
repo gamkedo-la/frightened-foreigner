@@ -15750,6 +15750,8 @@ GameObject:
   - component: {fileID: 168931272}
   - component: {fileID: 168931271}
   - component: {fileID: 168931273}
+  - component: {fileID: 168931275}
+  - component: {fileID: 168931274}
   m_Layer: 0
   m_Name: CandyPuzzle
   m_TagString: Untagged
@@ -15832,6 +15834,69 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16.89, y: 6.04, z: 3.09}
   m_Center: {x: 0.34, y: 0, z: -0.54}
+--- !u!114 &168931274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168931270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0212ce5c51a61014aa4c433edd7f5420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turul: {fileID: 1506078306}
+  lights: {fileID: 61306315}
+  bathroomCutsceneTimeline: {fileID: 1008936876}
+  playerCamera: {fileID: 534669902}
+--- !u!114 &168931275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168931270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71770b4ecb767f4393c95387119a428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredItem: 6
+  returnDifferentItem: 0
+  returnItem: 0
+  doIntereaction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 168931274}
+        m_MethodName: CandyPuzzleSolvedResponse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  giveHint:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 168931274}
+        m_MethodName: CandyPuzzleIncorrectResponse
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0

@@ -321,17 +321,7 @@ public class LockView : MonoBehaviour
         {
             Debug.Log(InventoryItemManager.playerHasCandy);
             LockedWithCandyPuzzle = true;
-            if (InventoryItemManager.playerHasCandy)
-            {
-                candyPuzzle.SetActive(false);
-                lightScript.MakeAmbientCreepier();
-                makeGraphicsGrainier();
-                gateCloseScript.PlayLoopingTurulSquawk();
-                PuzzleManagement.PlayerIsDoingCandyPuzzle = false;
-                PuzzleManagement.PlayerIsDoingElementsPuzzle = true;
-                turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
-                turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
-            }
+            
         }
         if (hit.transform.name == "Shovel")
         {
