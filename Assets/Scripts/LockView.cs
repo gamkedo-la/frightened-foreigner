@@ -178,7 +178,7 @@ public class LockView : MonoBehaviour
                 //UhhhhMaybeYouShouldWait.start();
             }//end of bathroomCutScene
 
-            if (LockedWithTurul && !candyPuzzleLightningCutscene)
+            if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene)
             {
                 Vector3 targetPos = turul.transform.position;
                 LockOnToTargetObject(targetPos);
@@ -294,9 +294,9 @@ public class LockView : MonoBehaviour
             {
                 turulSFXScript.TurulSaysMilkTejSound.start();
             }
-            if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !turulSFXScript.playerHasInteractedWithTurulThisPuzzle && !turulSFXScript.emersionLightningHasStruckThisPuzzle)
+            if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
             {
-
+                turulSFXScript.TurulSaysMedicineSound.start();
             }
         }
         if (hit.transform.name == "Milk")
