@@ -19,6 +19,7 @@
 {3f3b99f8-8e0e-4bff-8310-e4e261fb8463} event:/Dialogue/Player/WheresTheBathroom
 {bef58491-b42d-4fd7-abe3-6a504295736f} event:/Dialogue/Turul/milkTej
 {2f84a51c-ce47-4bd1-b2db-5782e2f0722f} event:/Dialogue/Turul/medicine
+{a9847e29-50c0-4b86-a237-8ce989a647da} event:/Dialogue/Turul/candy
 {d0bdba2f-aa98-4376-81d2-1b6464a14b7e} event:/Dialogue/Vanessa/AskIfSheKnowsWordForBathroom
 {b5d0c0f7-86fb-4472-9846-386f80a92916} event:/Dialogue/Vanessa/OMGTheGateClosed
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom

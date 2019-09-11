@@ -18,6 +18,7 @@ public class PlayTurulSFX : MonoBehaviour
 
     public FMOD.Studio.EventInstance TurulSaysMilkTejSound;
     public FMOD.Studio.EventInstance TurulSaysMedicineSound;
+    public FMOD.Studio.EventInstance TurulSaysCandySound;
 
     public GameObject lightningSystem;
     private EmersionLightningEmmissionToggle lightningScript;
@@ -37,6 +38,7 @@ public class PlayTurulSFX : MonoBehaviour
 
         TurulSaysMilkTejSound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/milkTej");
         TurulSaysMedicineSound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/medicine");
+        TurulSaysCandySound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/candy");
 
         lightningScript = lightningSystem.GetComponent<EmersionLightningEmmissionToggle>(); 
     }
