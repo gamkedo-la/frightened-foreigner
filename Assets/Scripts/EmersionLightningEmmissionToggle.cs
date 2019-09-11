@@ -17,6 +17,8 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     public GameObject fene;
 
     public GameObject candyPuzzle;
+
+    public GameObject elementsPuzzle;
     
 
     // Start is called before the first frame update
@@ -110,6 +112,28 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         candyPuzzle.SetActive(true);
         LockViewScript.candyPuzzleLightningCutscene = false;
+        LockViewScript.LockedWithTurul = false;
+    }
+
+    public void emitLightningForElementsPuzzle()
+    {
+        gameObject.transform.position = new Vector3(4.056602f, 20.4f, -1.619036f);
+        StartCoroutine(DelayLightningStrikeForElementsPuzzle());
+        StartCoroutine(DelayAppearanceOfElementsPuzzle());
+    }
+
+    private IEnumerator DelayLightningStrikeForElementsPuzzle()
+    {
+        yield return new WaitForSeconds(1.0f);
+        EmersionLightning.Emit(1);
+        Sparks.Emit(1);
+    }
+
+    private IEnumerator DelayAppearanceOfElementsPuzzle()
+    {
+        yield return new WaitForSeconds(2.0f);
+        elementsPuzzle.SetActive(true);
+        LockViewScript.elementsPuzzleLightningCutscene = false;
         LockViewScript.LockedWithTurul = false;
     }
 }

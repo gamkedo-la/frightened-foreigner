@@ -78,6 +78,8 @@ public class LockView : MonoBehaviour
 
     public GameObject candyPuzzle;
     public bool candyPuzzleLightningCutscene = false;
+    public GameObject elementsPuzzle;
+    public bool elementsPuzzleLightningCutscene = false;
 
     public GameObject candyBowlTextGraphic;
 
@@ -178,7 +180,7 @@ public class LockView : MonoBehaviour
                 //UhhhhMaybeYouShouldWait.start();
             }//end of bathroomCutScene
 
-            if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene)
+            if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
             {
                 Vector3 targetPos = turul.transform.position;
                 LockOnToTargetObject(targetPos);
@@ -193,6 +195,13 @@ public class LockView : MonoBehaviour
             if (candyPuzzleLightningCutscene)
             {
                 Vector3 targetPos = candyPuzzle.transform.position;
+                LockOnToTargetObject(targetPos);
+            }
+            
+            if (elementsPuzzleLightningCutscene)
+            {
+                LockedWithTurul = false;
+                Vector3 targetPos = elementsPuzzle.transform.position;
                 LockOnToTargetObject(targetPos);
             }
         }//end of locked

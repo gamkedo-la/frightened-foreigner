@@ -9,7 +9,13 @@ public class PuzzleManagement : MonoBehaviour
     public static bool PlayerIsDoingCatPuzzle = false;
     public static bool PlayerIsDoingSicknessPuzzle = false;
     public static bool PlayerIsDoingCandyPuzzle = false;
+
     public static bool PlayerIsDoingElementsPuzzle = false;
+    public static bool FlowerPotSolved = false;
+    public static bool WaterBasinSolved = false;
+    public static bool PinwheelSolved = false;
+    public static bool TorchSolved = false;
+
 
     public GameObject puzzleJumper;
 

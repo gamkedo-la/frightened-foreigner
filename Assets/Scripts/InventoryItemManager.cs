@@ -11,6 +11,9 @@ public enum PlayerItem
 	Candy,
 	Shovel,
     Medicine,
+    Dirt,
+    Lighter,
+    Fan,
 }
 
 public class InventoryItemManager : MonoBehaviour
@@ -28,6 +31,9 @@ public class InventoryItemManager : MonoBehaviour
     public static bool playerHasCandy = false;
     public static bool playerHasShovel = false;
     public static bool playerHasMedicine = false;
+    public static bool playerHasDirt = false;
+    public static bool playerHasFan = false;
+    public static bool playerHasLighter = false;
 
     public GameObject ForintInLevel;
     public GameObject ForintTextGraphic;
@@ -45,7 +51,10 @@ public class InventoryItemManager : MonoBehaviour
 		buttons[5].SetActive( playerHasCandy );
 		buttons[6].SetActive( playerHasShovel );
 		buttons[7].SetActive( playerHasMedicine );
-		buttons[8].SetActive( true );
+        buttons[8].SetActive(playerHasDirt);
+        buttons[9].SetActive(playerHasFan);
+        buttons[10].SetActive(playerHasLighter);
+		buttons[11].SetActive( true );
 }
 
     void Update()
@@ -111,7 +120,19 @@ public class InventoryItemManager : MonoBehaviour
             playerHasMedicine = hasItem;
             break;
 
-			default:
+            case PlayerItem.Dirt:
+                playerHasDirt = hasItem;
+                break;
+
+            case PlayerItem.Fan:
+                playerHasFan = hasItem;
+                break;
+
+            case PlayerItem.Lighter:
+                playerHasLighter = hasItem;
+                break;
+
+            default:
 			Debug.LogError( "I don't know this item!" );
 			break;
 		}
