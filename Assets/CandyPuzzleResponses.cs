@@ -49,7 +49,8 @@ public class CandyPuzzleResponses : MonoBehaviour
         gateCloseScript.PlayLoopingTurulSquawk();
         PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
         PuzzleManagement.PlayerIsDoingCatPuzzle = false;
-        PuzzleManagement.PlayerIsDoingSicknessPuzzle = true;
+        PuzzleManagement.PlayerIsDoingElementsPuzzle = true;
+        PuzzleManagement.PlayerIsDoingCandyPuzzle = false;
         turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
         turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
         gameObject.SetActive(false);

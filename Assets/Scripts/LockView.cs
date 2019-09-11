@@ -302,6 +302,10 @@ public class LockView : MonoBehaviour
             {
                 turulSFXScript.TurulSaysCandySound.start();
             }
+            if (PuzzleManagement.PlayerIsDoingElementsPuzzle)
+            {
+                turulSFXScript.TurulSaysFireWaterEarthWindSound.start();
+            }
                 
         }
         if (hit.transform.name == "Milk")
