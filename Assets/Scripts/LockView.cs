@@ -24,7 +24,8 @@ public class LockView : MonoBehaviour
     //private GameObject TargetHit;
 
     private RaycastHit hit;
-    private bool NPC;
+    private bool NPC = false;
+    private bool Ground = false;
 
     public bool LockedWithVanessa = false;
     public bool LockedWithCharlie = false;
@@ -248,7 +249,7 @@ public class LockView : MonoBehaviour
         Debug.Log(character.transform.position);
         Debug.Log(hit.collider.gameObject.transform.position);
         // Is it within out max distance?
-        if ( Vector3.Distance( character.transform.position, hit.collider.gameObject.transform.position ) > maxTargetDistance )
+        if (Vector3.Distance(character.transform.position, hit.collider.gameObject.transform.position) > 10.0f )
 			return;
         
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
@@ -257,6 +258,11 @@ public class LockView : MonoBehaviour
         {
             NPC = true;
         }
+        if (hit.transform.tag == "Ground")
+        {
+            Ground = true;
+        }
+        
 
         if (hit.transform.name == "Vanessa")
         {
@@ -350,11 +356,11 @@ public class LockView : MonoBehaviour
             InventoryItemManager.playerHasShovel = true;
             shovel.SetActive(false);
         }
-        if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
+        /*if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
         {
             InventoryItemManager.playerHasFullWaterBottle = true;
             HoldItem(PlayerItem.WaterBottleEmpty, fullWaterBottleSprite);
-        }
+        }*/
 
 		// Did we hit something we can interact with?
 		ItemInteraction interactionScript = hit.collider.gameObject.GetComponent<ItemInteraction>( );
@@ -377,7 +383,7 @@ public class LockView : MonoBehaviour
 
         // Does it have a RandomWords on it?
         randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
-		if ( !randomWord && !NPC)
+		if ( !randomWord && !NPC && !Ground)
 			return;
 
         // We got a winner!
@@ -413,7 +419,7 @@ public class LockView : MonoBehaviour
         LockedWithCandyPuzzle = false;
         LockedWithCharlie = false;
 
-
+        NPC = false;
         //Debug.Log("View Unlocked");
 	}
 

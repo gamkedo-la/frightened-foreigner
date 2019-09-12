@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{d72cb6d0-09fd-447a-b2bb-5df48b1e685b}">
+        <property name="assetPath">
+            <value>sinkDoesntCare.WAV</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>2.8023582766439907</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f38dd8eb-579e-4a3d-8c38-10be1402fa2b}</destination>
+        </relationship>
+    </object>
+</objects>
