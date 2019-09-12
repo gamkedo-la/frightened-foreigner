@@ -10,7 +10,6 @@ public enum PlayerItem
 	Milk,
 	Candy,
 	Shovel,
-    Medicine,
     Dirt,
     Lighter,
     Fan,
@@ -50,11 +49,11 @@ public class InventoryItemManager : MonoBehaviour
 		buttons[4].SetActive( playerHasMilk );
 		buttons[5].SetActive( playerHasCandy );
 		buttons[6].SetActive( playerHasShovel );
-		buttons[7].SetActive( playerHasMedicine );
-        buttons[8].SetActive(playerHasDirt);
-        buttons[9].SetActive(playerHasFan);
-        buttons[10].SetActive(playerHasLighter);
-		buttons[11].SetActive( true );
+		
+        buttons[7].SetActive(playerHasDirt);
+        buttons[8].SetActive(playerHasFan);
+        buttons[9].SetActive(playerHasLighter);
+		buttons[10].SetActive( true );
 }
 
     void Update()
@@ -115,10 +114,6 @@ public class InventoryItemManager : MonoBehaviour
 			case PlayerItem.Shovel:
 			playerHasShovel = hasItem;
 			break;
-
-            case PlayerItem.Medicine:
-            playerHasMedicine = hasItem;
-            break;
 
             case PlayerItem.Dirt:
                 playerHasDirt = hasItem;
