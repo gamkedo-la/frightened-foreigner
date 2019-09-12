@@ -80,7 +80,7 @@ public class InventoryItemManager : MonoBehaviour
 		SetItem( itemToRemove, false );
 	}
 
-	private void SetItem( PlayerItem item, bool hasItem )
+	public void SetItem( PlayerItem item, bool hasItem )
 	{
 		switch ( item )
 		{

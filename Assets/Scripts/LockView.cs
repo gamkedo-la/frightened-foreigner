@@ -95,6 +95,9 @@ public class LockView : MonoBehaviour
 
     public static bool AnItemIsBeingHeld = false;
 
+    public GameObject InventoryCanvas;
+    private InventoryItemManager inventoryItemManagerScript;
+
     void Start()
     {
         NPC = false;
@@ -106,6 +109,8 @@ public class LockView : MonoBehaviour
 
         waterBottleSlotSelectItemScript = waterBottleSlot.GetComponent<SelectItem>();
         inventoryScript = GetComponent<Inventory>();
+
+        inventoryItemManagerScript = InventoryCanvas.GetComponent<InventoryItemManager>();
     }
 
     void Update()
@@ -276,6 +281,12 @@ public class LockView : MonoBehaviour
         if (hit.transform.name == "Vanessa")
         {
             LockedWithVanessa = true;
+            if (PuzzleManagement.PlayerIsDoingElementsPuzzle && !InventoryItemManager.playerHasFan)
+            {
+                InventoryItemManager.playerHasFan = true;
+                inventoryItemManagerScript.SetItem(PlayerItem.Fan, true);
+                Debug.Log("You should have the fan in your inventory");
+            }
         }
         if (hit.transform.name == "Charlie")
         {
@@ -293,6 +304,11 @@ public class LockView : MonoBehaviour
                 {
                     DialogueWithCharlie.StillDontKnowWordForMedicine.start();
                 }
+            } else if (PuzzleManagement.PlayerIsDoingElementsPuzzle && !InventoryItemManager.playerHasLighter)
+                {
+                InventoryItemManager.playerHasLighter = true;
+                inventoryItemManagerScript.SetItem(PlayerItem.Lighter, true);
+                Debug.Log("You should have the lighter in your inventory");
             }
             else
             {
