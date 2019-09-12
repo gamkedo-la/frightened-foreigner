@@ -10,7 +10,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private Image itemPreview = null;
 	[SerializeField] private Behaviour[] toDisable = null;
 	[SerializeField] private Transform character = null;
-	[SerializeField] private float maxTargetDistance = 5f;
+	[SerializeField] private float maxTargetDistance = 7f;
 	[SerializeField] private float lookUpCorrection = 0.3f;
 	[SerializeField] private float damping = 1f;
 	[SerializeField] private LayerMask mask = 0;
@@ -240,15 +240,19 @@ public class LockView : MonoBehaviour
 
 	private void TryToLockView( )
 	{
+        
 		// Did we hit something?
 		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out RaycastHit hit, Mathf.Infinity, mask ) )
 			return;
-
-		// Is it within out max distance?
-		if ( Vector3.Distance( character.transform.position, hit.collider.gameObject.transform.position ) > maxTargetDistance )
+        Debug.Log(hit);
+        Debug.Log(character.transform.position);
+        Debug.Log(hit.collider.gameObject.transform.position);
+        // Is it within out max distance?
+        if ( Vector3.Distance( character.transform.position, hit.collider.gameObject.transform.position ) > maxTargetDistance )
 			return;
-
+        
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
+       // Debug.Log(hit);
         if (hit.transform.tag == "NPC")
         {
             NPC = true;

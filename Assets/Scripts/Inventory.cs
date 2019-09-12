@@ -16,7 +16,9 @@ public class Inventory : MonoBehaviour
 
     public GameObject waterBottleSlot;
     private SelectItem waterBottleSelectItemScript;
+
     private Image waterBottleImageComponent;
+
     public Sprite fullWaterBottlePicture;
 
     public GameObject playerCamera;
@@ -42,6 +44,8 @@ public class Inventory : MonoBehaviour
         lockViewScript = playerCamera.GetComponent<LockView>();
 
         waterBottleSelectItemScript = waterBottleSlot.GetComponent<SelectItem>();
+
+        fullWaterBottlePicture = Resources.Load<Sprite>("Images/Inventory Images/FullWaterBottle");
     }
 
     public void addObtainedItemPictureToNextAvailableSlot(Sprite inventoryImageSprite)

@@ -72207,7 +72207,7 @@ MonoBehaviour:
   catPuzzle: {fileID: 208646689}
   fene: {fileID: 2080057647}
   candyPuzzle: {fileID: 168931270}
-  elementsPuzzle: {fileID: 2107215363}
+  elementsPuzzle: {fileID: 57867777}
 --- !u!1001 &1126078377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79868,7 +79868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506078306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.809, y: 1.007, z: 8.27}
+  m_LocalPosition: {x: 4.97, y: 1.007, z: 8.27}
   m_LocalScale: {x: 0.24, y: 0.11, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81015,7 +81015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71770b4ecb767f4393c95387119a428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem: 0
+  requiredItem: 7
   returnDifferentItem: 1
   returnItem: 9
   doIntereaction:
@@ -94541,6 +94541,41 @@ PrefabInstance:
       propertyPath: puzzleJumper
       value: 
       objectReference: {fileID: 1061227178}
+    - target: {fileID: 3304905925922805079, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9671047
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304905925922805079, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.037174273
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304905925922805079, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.018199928
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304905925922805079, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0006876217
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304905925922805079, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.9991428
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304905925922805079, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24978018
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304905925922805079, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.68856525
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b258cfa1de4a0cb4ca7989786d76a2a1, type: 3}
 --- !u!4 &3304905925833801479 stripped
