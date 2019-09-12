@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{a9ae37b6-e3e5-4aa9-973d-5adad6ac0af3}">
+        <property name="assetPath">
+            <value>igen (2).WAV</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>1.5847619047619048</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f38dd8eb-579e-4a3d-8c38-10be1402fa2b}</destination>
+        </relationship>
+    </object>
+</objects>

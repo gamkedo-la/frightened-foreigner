@@ -58,10 +58,7 @@ public class PlayTurulSFX : MonoBehaviour
             //Debug.Log("player is doing cat puzzle: " + PuzzleManagement.PlayerIsDoingCatPuzzle);
             TriggerGateClose.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCatPuzzle)
-            {
-                Debug.Log("inside catPuzzle");
-                
-                
+            {                    
                 lightningScript.emitLightningForCatPuzzle();
                 playerHasInteractedWithTurulThisPuzzle = true;
                 emersionLightningHasStruckThisPuzzle = true;

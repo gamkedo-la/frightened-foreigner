@@ -243,17 +243,26 @@ public class LockView : MonoBehaviour
 	{
         
 		// Did we hit something?
-		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out RaycastHit hit, Mathf.Infinity, mask ) )
-			return;
-        Debug.Log(hit);
-        Debug.Log(character.transform.position);
-        Debug.Log(hit.collider.gameObject.transform.position);
+		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out RaycastHit hit, Mathf.Infinity, mask ))
+        {
+            Debug.Log("Lock View Hit Nothing/Went to infinity");
+            return;
+        }
+			
+        
+        //Debug.Log(character.transform.position);
+        //Debug.Log(hit.collider.gameObject.transform.position);
+
         // Is it within out max distance?
-        if (Vector3.Distance(character.transform.position, hit.collider.gameObject.transform.position) > 10.0f )
-			return;
+        if (Vector3.Distance(character.transform.position, hit.collider.gameObject.transform.position) > 10.0f)
+        {
+            Debug.Log("Lock View Hit " + hit.transform.name + ", but it is beyond the max distance");
+            return;
+        }
+			
         
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
-       // Debug.Log(hit);
+        Debug.Log("Lock View hit " + hit.transform.name);
         if (hit.transform.tag == "NPC")
         {
             NPC = true;

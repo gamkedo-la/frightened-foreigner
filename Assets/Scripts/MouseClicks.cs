@@ -124,7 +124,7 @@ public class MouseClicks: MonoBehaviour
         gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
 
         charactersInventoryScript = character.GetComponent<Inventory>();
-        holdMySpriteScript = milk.GetComponent<holdMyInventorySprite>();
+        
     }
 
     void Update()

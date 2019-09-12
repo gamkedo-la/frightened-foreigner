@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
     {
         inventoryActive = false;
 
-        NumberOfSlots = 13;
+        NumberOfSlots = 12;
         ArrayOfSlots = new GameObject[NumberOfSlots];
 
         for (int i = 0; i < NumberOfSlots; i++)
@@ -40,12 +40,12 @@ public class Inventory : MonoBehaviour
             ArrayOfSlots[i] = slotHolder.transform.GetChild(i).gameObject;
         }
 
-        waterBottleImageComponent = waterBottleSlot.GetComponent<Image>();
+        
         lockViewScript = playerCamera.GetComponent<LockView>();
 
         waterBottleSelectItemScript = waterBottleSlot.GetComponent<SelectItem>();
 
-        fullWaterBottlePicture = Resources.Load<Sprite>("Images/Inventory Images/FullWaterBottle");
+        
     }
 
     public void addObtainedItemPictureToNextAvailableSlot(Sprite inventoryImageSprite)
@@ -83,12 +83,7 @@ public class Inventory : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
-        if (InventoryItemManager.playerHasFullWaterBottle)
-        {
-            
-            waterBottleImageComponent.sprite = fullWaterBottlePicture;
-            
-        }
+        
     }
 
 	public void Close()

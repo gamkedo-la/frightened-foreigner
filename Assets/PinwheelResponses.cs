@@ -6,11 +6,15 @@ public class PinwheelResponses : MonoBehaviour
 {
 
     public FMOD.Studio.EventInstance TurulSaysWindSound;
+    public FMOD.Studio.EventInstance TurulSaysIgenSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
         TurulSaysWindSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/wind");
+        TurulSaysIgenSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/igen");
+
     }
 
     // Update is called once per frame
@@ -22,6 +26,9 @@ public class PinwheelResponses : MonoBehaviour
     public void CorrectInteraction()
     {
         PuzzleManagement.PinwheelSolved = true;
+        Debug.Log("Pinwheel Solved!");
+        TurulSaysIgenSound.start();
+
     }
 
     public void IncorrectResponse()

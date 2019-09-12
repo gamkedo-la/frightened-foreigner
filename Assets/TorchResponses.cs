@@ -6,11 +6,15 @@ public class TorchResponses : MonoBehaviour
 {
 
     public FMOD.Studio.EventInstance TurulSaysFireSound;
+    public FMOD.Studio.EventInstance TurulSaysIgenSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
         TurulSaysFireSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/fire");
+        TurulSaysIgenSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/igen");
+
     }
 
     // Update is called once per frame
@@ -22,6 +26,9 @@ public class TorchResponses : MonoBehaviour
     public void CorrectInteraction()
     {
         PuzzleManagement.TorchSolved = true;
+        Debug.Log("Torch Solved!");
+        TurulSaysIgenSound.start();
+
     }
 
     public void IncorrectResponse()

@@ -17019,7 +17019,7 @@ MonoBehaviour:
   charlie: {fileID: 826827365}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
-  character: {fileID: 0}
+  character: {fileID: 75928651}
 --- !u!212 &227375233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -32356,7 +32356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71770b4ecb767f4393c95387119a428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem: 9
+  requiredItem: 8
   returnDifferentItem: 0
   returnItem: 0
   doIntereaction:
@@ -37546,7 +37546,7 @@ MonoBehaviour:
   charlie: {fileID: 826827365}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
-  character: {fileID: 0}
+  character: {fileID: 75928651}
 --- !u!1 &423392767
 GameObject:
   m_ObjectHideFlags: 0
@@ -42755,7 +42755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71770b4ecb767f4393c95387119a428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem: 11
+  requiredItem: 10
   returnDifferentItem: 0
   returnItem: 0
   doIntereaction:
@@ -48409,7 +48409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71770b4ecb767f4393c95387119a428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredItem: 10
+  requiredItem: 9
   returnDifferentItem: 0
   returnItem: 0
   doIntereaction:
@@ -49088,7 +49088,6 @@ GameObject:
   - component: {fileID: 681154859}
   - component: {fileID: 681154860}
   - component: {fileID: 681154862}
-  - component: {fileID: 681154861}
   m_Layer: 0
   m_Name: Vanessa
   m_TagString: NPC
@@ -49215,20 +49214,6 @@ MonoBehaviour:
   learnedFurduszoba: 0
   TutorialUIHolder: {fileID: 1191243112}
   tutorialUIScript: {fileID: 0}
---- !u!114 &681154861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681154854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c689cb8b887254db86f1fc44486161, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  correctItemResponse: Thanks!
-  wrongItemResponse: I don't want that.
 --- !u!114 &681154862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49247,7 +49232,7 @@ MonoBehaviour:
   doIntereaction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 681154861}
+      - m_Target: {fileID: 0}
         m_MethodName: ShowSuccess
         m_Mode: 1
         m_Arguments:
@@ -49263,7 +49248,7 @@ MonoBehaviour:
   giveHint:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 681154861}
+      - m_Target: {fileID: 0}
         m_MethodName: ShowHint
         m_Mode: 1
         m_Arguments:
@@ -55664,7 +55649,7 @@ MonoBehaviour:
   charlie: {fileID: 826827365}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
-  character: {fileID: 0}
+  character: {fileID: 75928651}
 --- !u!212 &842389670
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86805,7 +86790,7 @@ MonoBehaviour:
   charlie: {fileID: 0}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
-  character: {fileID: 0}
+  character: {fileID: 75928651}
 --- !u!1 &1831399848
 GameObject:
   m_ObjectHideFlags: 0
@@ -94785,7 +94770,7 @@ MonoBehaviour:
   charlie: {fileID: 0}
   turul: {fileID: 1506078306}
   bathroomCutsceneHolder: {fileID: 1008936876}
-  character: {fileID: 0}
+  character: {fileID: 75928651}
 --- !u!114 &8247220394666061188
 MonoBehaviour:
   m_ObjectHideFlags: 0
