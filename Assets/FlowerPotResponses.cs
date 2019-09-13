@@ -7,6 +7,7 @@ public class FlowerPotResponses : MonoBehaviour
 
     public FMOD.Studio.EventInstance TurulSaysEarthSound;
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
+    public GameObject dirt;
 
 
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class FlowerPotResponses : MonoBehaviour
         PuzzleManagement.FlowerPotSolved = true;
         Debug.Log("Flower Pot Solved");
         TurulSaysIgenSound.start();
-
+        dirt.SetActive(true);
     }
 
     public void IncorrectResponse()

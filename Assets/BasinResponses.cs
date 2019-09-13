@@ -7,6 +7,7 @@ public class BasinResponses : MonoBehaviour
 
     public FMOD.Studio.EventInstance TurulSaysWaterSound;
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
+    public GameObject water;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class BasinResponses : MonoBehaviour
         PuzzleManagement.WaterBasinSolved = true;
         Debug.Log("Water Basin Solved");
         TurulSaysIgenSound.start();
+        water.SetActive(true);
     }
 
     public void IncorrectResponse()

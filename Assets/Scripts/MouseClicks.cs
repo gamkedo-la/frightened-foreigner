@@ -191,7 +191,7 @@ public class MouseClicks: MonoBehaviour
                         InventoryItemManager.playerHasMilk = true;
                         //Debug.Log(InventoryItemManager.playerHasMilk);
                         milk.SetActive(false);
-                        charactersInventoryScript.addObtainedItemPictureToNextAvailableSlot(holdMySpriteScript.myInventorySprite);
+                        //charactersInventoryScript.addObtainedItemPictureToNextAvailableSlot(holdMySpriteScript.myInventorySprite);
                     }
                     if (LockViewScript.LockedWithCharlie)
                     {
