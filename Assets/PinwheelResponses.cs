@@ -28,7 +28,7 @@ public class PinwheelResponses : MonoBehaviour
         PuzzleManagement.PinwheelSolved = true;
         Debug.Log("Pinwheel Solved!");
         TurulSaysIgenSound.start();
-
+        GetComponent<Animator>().enabled = true;
     }
 
     public void IncorrectResponse()
