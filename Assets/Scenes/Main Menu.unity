@@ -691,9 +691,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 1111111
+  far clip plane: 1111111
+  field of view: 61
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2943,6 +2943,7 @@ MonoBehaviour:
   BackgroundMusicLayersFadeValue: 0
   PostFirstPuzzleLayersFadeValue: 0
   ShouldFadeInPostFirstLevelTrack: 0
+  ShouldFadeInPostBathroomMusic: 0
 --- !u!114 &1194000406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5205,6 +5206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseMenuCanvas: {fileID: 1919963853}
   AudioSettingsCanvas: {fileID: 1697121807}
+  TutorialUIHolder: {fileID: 0}
   GamePaused: 0
 --- !u!4 &2117885488
 Transform:
