@@ -5,7 +5,7 @@
             <value>TurulSquawkingLoop</value>
         </property>
         <property name="outputFormat">
-            <value>1</value>
+            <value>2</value>
         </property>
         <relationship name="folder">
             <destination>{8ac5c845-fb1f-4f36-8f4f-4c400c72f98f}</destination>
@@ -100,9 +100,6 @@
         </relationship>
     </object>
     <object class="EventMixerGroup" id="{fbb36540-8cf7-47d2-b92c-5c560998e0be}">
-        <property name="volume">
-            <value>-7.5</value>
-        </property>
         <property name="name">
             <value>Audio 1</value>
         </property>
@@ -133,6 +130,7 @@
     <object class="MixerBusEffectChain" id="{c4891ed4-c433-4605-83e7-b377cfea07c1}">
         <relationship name="effects">
             <destination>{38d2bca7-55bd-4e8f-be53-71a586db473b}</destination>
+            <destination>{03d6c660-1e56-48c9-8fb5-7bb3769f59a7}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{85e24408-bf33-4663-8da8-c5ca44c53098}"/>
@@ -144,5 +142,13 @@
     </object>
     <object class="MixerBusPanner" id="{43a88181-1650-41b2-a273-6e4e3d7ccbe9}"/>
     <object class="MixerBusFader" id="{38d2bca7-55bd-4e8f-be53-71a586db473b}"/>
+    <object class="SpatialiserEffect" id="{03d6c660-1e56-48c9-8fb5-7bb3769f59a7}">
+        <property name="minimumDistance">
+            <value>10000</value>
+        </property>
+        <property name="maximumDistance">
+            <value>10000</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{77831064-eae5-4945-a653-b076adaa3983}"/>
 </objects>

@@ -20,6 +20,7 @@ public class PlayTurulSFX : MonoBehaviour
     public FMOD.Studio.EventInstance TurulSaysMedicineSound;
     public FMOD.Studio.EventInstance TurulSaysCandySound;
     public FMOD.Studio.EventInstance TurulSaysFireWaterEarthWindSound;
+    public FMOD.Studio.EventInstance TurulLoopsSquawk;
 
 
     public GameObject lightningSystem;
@@ -42,6 +43,7 @@ public class PlayTurulSFX : MonoBehaviour
         TurulSaysMedicineSound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/medicine");
         TurulSaysCandySound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/candy");
         TurulSaysFireWaterEarthWindSound = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Turul/fireWaterEarthWind");
+        TurulLoopsSquawk = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/TurulSquawkingLoop");
 
         lightningScript = lightningSystem.GetComponent<EmersionLightningEmmissionToggle>(); 
     }
@@ -56,7 +58,8 @@ public class PlayTurulSFX : MonoBehaviour
             //Debug.Log("player has interacted with turul: " + playerHasInteractedWithTurulThisPuzzle);
             //Debug.Log("lightning has struck: " + emersionLightningHasStruckThisPuzzle);
             //Debug.Log("player is doing cat puzzle: " + PuzzleManagement.PlayerIsDoingCatPuzzle);
-            TriggerGateClose.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            //TriggerGateClose.loopingTurulSquawkSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            TurulLoopsSquawk.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCatPuzzle)
             {                    
                 lightningScript.emitLightningForCatPuzzle();

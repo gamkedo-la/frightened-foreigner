@@ -37,9 +37,13 @@ public class PuzzleManagement : MonoBehaviour
     public GameObject wallInFrontOfBathroom;
     public GameObject bathroomDoor;
 
+    public GameObject turul;
+    private PlayTurulSFX turulSFXScript;
+
     private void Start()
     {
         lightsScript = lights.GetComponent<ProgressiveLights>();
+        turulSFXScript = turul.GetComponent<PlayTurulSFX>();
     }
 
     private void Update()
@@ -98,7 +102,8 @@ public class PuzzleManagement : MonoBehaviour
         SceneManagement.PostBathroomMusic.start();
 
         //make turul squawk
-        TriggerGateClose.loopingTurulSquawkSound.start();
+        //TriggerGateClose.loopingTurulSquawkSound.start();
+        turulSFXScript.TurulLoopsSquawk.start();
     }
 
     public void JumpToSicknessPuzzle()
@@ -108,7 +113,8 @@ public class PuzzleManagement : MonoBehaviour
         PlayerIsDoingSicknessPuzzle = true;
         lightsScript.MakeAmbientCreepier();
         makeGraphicsGrainier();
-        TriggerGateClose.loopingTurulSquawkSound.start();
+        //TriggerGateClose.loopingTurulSquawkSound.start();
+        turulSFXScript.TurulLoopsSquawk.start();
     }
 
     private void makeGraphicsGrainier()

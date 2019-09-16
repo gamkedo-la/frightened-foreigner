@@ -98,11 +98,16 @@ public class LockView : MonoBehaviour
     public GameObject InventoryCanvas;
     private InventoryItemManager inventoryItemManagerScript;
 
+    public FMOD.Studio.EventInstance IHaveAShovel;
+
+
     void Start()
     {
         NPC = false;
         UhhhhMaybeYouShouldWait = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/UhhhhMaybeYouShouldWait");
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
+
+        IHaveAShovel = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveAShovel");
 
         lightScript = lights.GetComponent<ProgressiveLights>();
         gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
@@ -115,7 +120,7 @@ public class LockView : MonoBehaviour
 
     void Update()
     {
-        TriggerGateClose.loopingTurulSquawkSound.getPlaybackState(out TurulSquawkingPlaybackState);
+        turulSFXScript.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
         //Debug.Log(TurulSquawkingPlaybackState);
 
         if ( Input.GetKeyDown( KeyCode.Space ) )
@@ -380,6 +385,7 @@ public class LockView : MonoBehaviour
         {
             InventoryItemManager.playerHasShovel = true;
             shovel.SetActive(false);
+            IHaveAShovel.start();
         }
         /*if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
         {

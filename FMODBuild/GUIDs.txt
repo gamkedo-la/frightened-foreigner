@@ -34,6 +34,7 @@
 {d3e55628-9b2e-4570-9186-853cfea8ca39} event:/ItemInteractions/IHaveDirt
 {222d89b7-14a1-463a-b68c-e52d37042b60} event:/ItemInteractions/IHaveWater
 {93763e5a-a0dd-43f7-b920-9c20cf128f30} event:/ItemInteractions/SinkDoesntCare
+{171295a2-9235-44a3-b1cf-4940617c44f4} event:/ItemInteractions/IHaveAShovel
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom

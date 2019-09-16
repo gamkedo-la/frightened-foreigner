@@ -46,8 +46,9 @@ public class CatPuzzleResponses : MonoBehaviour
         
         lightsScript.MakeAmbientCreepier();
         lockViewScript.makeGraphicsGrainier();
-        
-        gateCloseScript.PlayLoopingTurulSquawk();
+
+        //gateCloseScript.PlayLoopingTurulSquawk();
+        turulSFXScript.TurulLoopsSquawk.start();
         PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
         PuzzleManagement.PlayerIsDoingCatPuzzle = false;
         PuzzleManagement.PlayerIsDoingSicknessPuzzle = true;

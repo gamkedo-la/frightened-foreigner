@@ -204,7 +204,8 @@ public class MouseClicks: MonoBehaviour
                         
                         turulSFXScript.playerHasInteractedWithTurulThisPuzzle = false;
                         turulSFXScript.emersionLightningHasStruckThisPuzzle = false;
-                        gateCloseScript.PlayLoopingTurulSquawk();
+                        //gateCloseScript.PlayLoopingTurulSquawk();
+                        turulSFXScript.TurulLoopsSquawk.start();
                     }
                     if (LockViewScript.LockedWithCandyBowl)
                     {
