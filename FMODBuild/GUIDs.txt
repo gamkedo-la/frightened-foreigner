@@ -49,7 +49,6 @@
 {646afc85-2002-4caf-b76d-ab7931096245} event:/Music/titleTransitionTwoV1
 {112fe70b-3426-4507-8f46-f679984abc89} event:/SFX/Ambience
 {63f79db1-1012-47ed-a9c3-64f988f3a31c} event:/SFX/Lightning
-{8da8b126-78cc-4c7e-97f9-c4f12c15d712} event:/SFX/PitchRandomizedSound
 {2648964c-bea3-4479-85f4-554a4bb08650} event:/SFX/RightClickScrollThroughWords
 {244e9f9e-2305-4fad-b9f6-262d3cb9fb7f} event:/SFX/ShakingGate
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
@@ -61,6 +60,6 @@
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {a5913a4e-618f-4e21-add3-32ea81914989} bus:/Master/Music
 {66b5e267-4ab2-4f33-98c9-b3d192d436f3} bus:/Master/SFX
-{4ceb91b6-4ce3-4ecd-8fc3-88894cf9b30b} bus:/Master/Words
+{4ceb91b6-4ce3-4ecd-8fc3-88894cf9b30b} bus:/Master/Dialogue
 {7f11b81c-4d1e-4f60-a9ad-e1ef7a47be5b} bus:/Reverb
 {b1c3f9c2-5418-405a-913e-c8334fe8f0f1} bank:/Master Bank
