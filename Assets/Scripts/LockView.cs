@@ -100,6 +100,7 @@ public class LockView : MonoBehaviour
 
     public FMOD.Studio.EventInstance IHaveAShovel;
 
+    public GameObject bathroomAttendant;
 
     void Start()
     {
@@ -176,6 +177,7 @@ public class LockView : MonoBehaviour
 
                 //transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
                 //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
+
             }//end of random word condition
 
             if (bathroomCutSceneCameraPan)
@@ -213,6 +215,11 @@ public class LockView : MonoBehaviour
             {
                 LockedWithTurul = false;
                 Vector3 targetPos = elementsPuzzle.transform.position;
+                LockOnToTargetObject(targetPos);
+            }
+            if (LockedWithBathroomAttendant)
+            {
+                Vector3 targetPos = bathroomAttendant.transform.position;
                 LockOnToTargetObject(targetPos);
             }
         }//end of locked

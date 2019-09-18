@@ -56,7 +56,10 @@
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {a70ed5bb-5607-44dd-bc19-75dc08ac2a9c} event:/SFX/3DAttenuationTest
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
-{a96a8a21-ad3e-4433-9f99-cdee618e20c6} event:/SFX/FeneCutScene
+{a96a8a21-ad3e-4433-9f99-cdee618e20c6} event:/SFX/FeneLaughs
+{7c9aed8d-b09c-42e9-8442-41c84a762c1d} event:/SFX/FeneScurries
+{d8a24d2e-904e-43e2-bbb5-2a24ce1a13cf} event:/SFX/FenePukes
+{83642a49-3215-4b89-a573-1e3ef73b4663} event:/SFX/FeneFliesAway
 {9b47f662-18b8-45ba-8b77-dcf1ea2a1a61} event:/Words/Bathroom_Furdoszoba
 {e31f3597-e728-480a-8ff4-444c529fec74} event:/Words/Correct_Answer
 {d515d029-57d2-4877-a1dc-f5962fcddf67} event:/Words/Incorrect_Answer

@@ -39,6 +39,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             BathroomAttendantSaysHeNeedsForint.start();
             DialogManager.BathroomAttendantSaidToGetForint = true;
             StartCoroutine(ChangeBathroomAttendantSprite());
+            LockViewScript.LockedWithBathroomAttendant = false;
         }
         
         

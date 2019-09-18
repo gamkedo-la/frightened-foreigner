@@ -19,13 +19,17 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     public GameObject candyPuzzle;
 
     public GameObject elementsPuzzle;
-    
+
+    public FMOD.Studio.EventInstance baseLightningSound;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         EmersionLightning = gameObject.GetComponent<ParticleSystem>();
         LockViewScript = PlayerCamera.GetComponent<LockView>();
+        baseLightningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
     }
 
     // Update is called once per frame
@@ -53,6 +57,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     //cat/milk puzzle, currently the 'first' puzzle
     public void emitLightningForCatPuzzle()
     {
+        baseLightningSound.start();
         gameObject.transform.position = new Vector3(2.75f, 20.4f, -5.0f);
         StartCoroutine(DelayLightningStrikeForCatPuzzle());
         StartCoroutine(DelayAppearanceOfCatPuzzle());
@@ -74,6 +79,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     //sickness puzzle, currently the 'second' puzzle
     public void emitLightningForSicknessPuzzle()
     {
+        baseLightningSound.start();
         gameObject.transform.position = new Vector3(-2.96f, 20.4f, 8.59f);
         StartCoroutine(DelayLightningStrikeForSicknessPuzzle());
         StartCoroutine(DelayAppearanceOfFene());
@@ -88,13 +94,14 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     private IEnumerator DelayAppearanceOfFene()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.5f);
         fene.SetActive(true);
     }
 
     //candy puzzle, currently the 'third' puzzle
     public void emitLightningForCandyPuzzle()
     {
+        baseLightningSound.start();
         gameObject.transform.position = new Vector3(10.42f, 20.4f, 4.84f);
         StartCoroutine(DelayLightningStrikeForCandyPuzzle());
         StartCoroutine(DelayAppearanceOfCandyPuzzle());
@@ -117,6 +124,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     public void emitLightningForElementsPuzzle()
     {
+        baseLightningSound.start();
         gameObject.transform.position = new Vector3(4.056602f, 20.4f, -1.619036f);
         StartCoroutine(DelayLightningStrikeForElementsPuzzle());
         StartCoroutine(DelayAppearanceOfElementsPuzzle());
@@ -136,4 +144,6 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         LockViewScript.elementsPuzzleLightningCutscene = false;
         LockViewScript.LockedWithTurul = false;
     }
+
+    
 }

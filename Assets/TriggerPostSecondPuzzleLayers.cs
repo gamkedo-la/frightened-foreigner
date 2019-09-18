@@ -45,7 +45,7 @@ public class TriggerPostSecondPuzzleLayers : MonoBehaviour
                     break;
                 case "postSecondPuzzleVocalsLayerTrigger":
                     PostBathroomMusic.setParameterValue("VocalsIn", 1f);
-                    Debug.Log("Ghost should be singing");
+                    
                     break;
             }
         }
@@ -78,7 +78,7 @@ public class TriggerPostSecondPuzzleLayers : MonoBehaviour
                     break;
                 case "postSecondPuzzleVocalsLayerTrigger":
                     PostBathroomMusic.setParameterValue("VocalsIn", 0f);
-                    Debug.Log("Ghost should stop singing");
+                    
                     break;
             }
         }
