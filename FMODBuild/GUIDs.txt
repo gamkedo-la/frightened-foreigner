@@ -56,6 +56,7 @@
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {a70ed5bb-5607-44dd-bc19-75dc08ac2a9c} event:/SFX/3DAttenuationTest
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
+{a96a8a21-ad3e-4433-9f99-cdee618e20c6} event:/SFX/FeneCutScene
 {9b47f662-18b8-45ba-8b77-dcf1ea2a1a61} event:/Words/Bathroom_Furdoszoba
 {e31f3597-e728-480a-8ff4-444c529fec74} event:/Words/Correct_Answer
 {d515d029-57d2-4877-a1dc-f5962fcddf67} event:/Words/Incorrect_Answer
