@@ -103,7 +103,7 @@ public class PuzzleManagement : MonoBehaviour
 
         //make turul squawk
         //TriggerGateClose.loopingTurulSquawkSound.start();
-        turulSFXScript.TurulLoopsSquawk.start();
+        PlayLoopingSquawk.TurulLoopsSquawk.start();
     }
 
     public void JumpToSicknessPuzzle()
@@ -114,7 +114,7 @@ public class PuzzleManagement : MonoBehaviour
         lightsScript.MakeAmbientCreepier();
         makeGraphicsGrainier();
         //TriggerGateClose.loopingTurulSquawkSound.start();
-        turulSFXScript.TurulLoopsSquawk.start();
+        PlayLoopingSquawk.TurulLoopsSquawk.start();
     }
 
     private void makeGraphicsGrainier()

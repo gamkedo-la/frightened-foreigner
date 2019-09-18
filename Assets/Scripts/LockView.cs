@@ -120,7 +120,7 @@ public class LockView : MonoBehaviour
 
     void Update()
     {
-        turulSFXScript.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
+        PlayLoopingSquawk.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
         //Debug.Log(TurulSquawkingPlaybackState);
 
         if ( Input.GetKeyDown( KeyCode.Space ) )
@@ -338,6 +338,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "Turul")
         {
+            Debug.Log("Locked with Turul");
             LockedWithTurul = true;
             if (PuzzleManagement.PlayerIsDoingCatPuzzle)
             {

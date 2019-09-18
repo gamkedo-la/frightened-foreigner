@@ -10487,6 +10487,7 @@ MonoBehaviour:
   door: {fileID: 1640351639}
   PostProccessingValue: {fileID: 1396926143}
   ghost: {fileID: 335644470}
+  turul: {fileID: 1506078306}
 --- !u!114 &75928655 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3304905925775502163, guid: b258cfa1de4a0cb4ca7989786d76a2a1,
@@ -27851,7 +27852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &335644471
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -57473,6 +57474,49 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &933888829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933888831}
+  - component: {fileID: 933888830}
+  m_Layer: 0
+  m_Name: LoopingSquawkHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &933888830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933888829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f58e3be3dbd4446b6c70a6510496b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &933888831
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933888829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.469, y: 1.59, z: -1.453}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 40
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &946629906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67783,6 +67827,7 @@ MonoBehaviour:
   door: {fileID: 1640351639}
   PostProccessingValue: {fileID: 1396926143}
   ghost: {fileID: 335644470}
+  turul: {fileID: 1506078306}
 --- !u!320 &1008936878
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -67920,6 +67965,7 @@ GameObject:
   - component: {fileID: 1016909386}
   - component: {fileID: 1016909385}
   - component: {fileID: 1016909384}
+  - component: {fileID: 1016909387}
   m_Layer: 0
   m_Name: Owl
   m_TagString: Untagged
@@ -68000,6 +68046,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016909382}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1016909387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016909382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/SFX/3DAttenuationTest
+  PlayEvent: 0
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1019852029
 GameObject:
   m_ObjectHideFlags: 0

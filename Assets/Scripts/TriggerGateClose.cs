@@ -27,12 +27,13 @@ public class TriggerGateClose : MonoBehaviour
     public FMOD.Studio.EventInstance shakeGateSound;
 
     public GameObject ghost;
-    
 
 
+    public GameObject turul;
+    private PlayTurulSFX turulSFXScript;
     public static FMOD.Studio.EventInstance loopingTurulSquawkSound;
+    FMOD.Studio.PLAYBACK_STATE loopingTurulPlaybackState;
 
-    
 
     // Start is called before the first frame update
     void Start()
@@ -46,15 +47,17 @@ public class TriggerGateClose : MonoBehaviour
 
         vanessaSaysOMGAfterGateCloses = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/OMGTheGateClosed");
         shakeGateSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/ShakingGate");
-        loopingTurulSquawkSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/TurulSquawkingLoop");
 
-        
+        turulSFXScript = turul.GetComponent<PlayTurulSFX>();
+        //loopingTurulSquawkSound = turulSFXScript.TurulLoopsSquawk;
+        //loopingTurulSquawkSound.start();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       // loopingTurulSquawkSound.getPlaybackState(out loopingTurulPlaybackState);
+       // Debug.Log("Turul squawking loop is " + loopingTurulPlaybackState);
     }
 
     public void triggerBathroomCutsceneBool()
@@ -91,8 +94,12 @@ public class TriggerGateClose : MonoBehaviour
 
     public void PlayLoopingTurulSquawk()
     {
-        loopingTurulSquawkSound.start();
-        //Debug.Log("Turul should be squawking");
+        PlayLoopingSquawk.TurulLoopsSquawk = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/TurulSquawkingLoop");
+        var turuls3DPosition = FMODUnity.RuntimeUtils.To3DAttributes(turul.transform.position);
+        PlayLoopingSquawk.TurulLoopsSquawk.set3DAttributes(turuls3DPosition);
+        PlayLoopingSquawk.TurulLoopsSquawk.start();
+        //PlayLoopingSquawk.TurulLoopsSquawk.start();
+        Debug.Log("Turul should be squawking");
     }
 
     public void turnOnCatPuzzle()
