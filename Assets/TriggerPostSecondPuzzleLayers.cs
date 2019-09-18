@@ -43,6 +43,10 @@ public class TriggerPostSecondPuzzleLayers : MonoBehaviour
                 case "postSecondPuzzleMetalsLayerTrigger":
                     PostBathroomMusic.setParameterValue("MetalsIn", 1f);
                     break;
+                case "postSecondPuzzleVocalsLayerTrigger":
+                    PostBathroomMusic.setParameterValue("VocalsIn", 1f);
+                    Debug.Log("Ghost should be singing");
+                    break;
             }
         }
         
@@ -71,6 +75,10 @@ public class TriggerPostSecondPuzzleLayers : MonoBehaviour
                     break;
                 case "postSecondPuzzleMetalsLayerTrigger":
                     PostBathroomMusic.setParameterValue("MetalsIn", 0f);
+                    break;
+                case "postSecondPuzzleVocalsLayerTrigger":
+                    PostBathroomMusic.setParameterValue("VocalsIn", 0f);
+                    Debug.Log("Ghost should stop singing");
                     break;
             }
         }
