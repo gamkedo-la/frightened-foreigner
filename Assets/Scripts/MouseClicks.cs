@@ -74,7 +74,9 @@ public class MouseClicks: MonoBehaviour
 
     public GameObject character;
     private Inventory charactersInventoryScript;
-    
+
+    public FMOD.Studio.EventInstance IHaveMilk;
+
 
     private void Awake()
     {
@@ -124,7 +126,10 @@ public class MouseClicks: MonoBehaviour
         gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
 
         charactersInventoryScript = character.GetComponent<Inventory>();
-        
+
+        IHaveMilk = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveMilk");
+
+
     }
 
     void Update()
@@ -191,6 +196,7 @@ public class MouseClicks: MonoBehaviour
                         InventoryItemManager.playerHasMilk = true;
                         //Debug.Log(InventoryItemManager.playerHasMilk);
                         milk.SetActive(false);
+                        IHaveMilk.start();
                         //charactersInventoryScript.addObtainedItemPictureToNextAvailableSlot(holdMySpriteScript.myInventorySprite);
                     }
                     if (LockViewScript.LockedWithCharlie)
