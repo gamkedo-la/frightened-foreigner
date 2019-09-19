@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class DialogueWithBathroomAttendant : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
 
     public GameObject bathroomDoor;
     public PlayableDirector playerGoingIntoBathroomTimeline;
+    private AnimationCurve washingHandsAnimationCurve;
+    private Keyframe[] arrayOfWasingHandsKeyframes;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +32,8 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         BathroomAttendantSaysThankYou = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/bathroomAttendantSaysThankYou");
         GottaGoGottaGoGottaGoGoGo = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/gottaGoGottaGoGottaGoGoGo");
         RepeatForint = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/RepeatForint");
+
+       
     }
 
     // Update is called once per frame
@@ -39,7 +44,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             BathroomAttendantSaysHeNeedsForint.start();
             DialogManager.BathroomAttendantSaidToGetForint = true;
             StartCoroutine(ChangeBathroomAttendantSprite());
-            LockViewScript.LockedWithBathroomAttendant = false;
+            //LockViewScript.LockedWithBathroomAttendant = false;
         }
         
         
