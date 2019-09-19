@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-public class DialogueWithBathroomAttendant : MonoBehaviour
+public class DialogueWithBathroomAttendant : MonoBehaviour 
 {
     private LockView LockViewScript;
     public GameObject PlayerCamera;
@@ -14,14 +14,17 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
     public FMOD.Studio.EventInstance GottaGoGottaGoGottaGoGoGo;
     public FMOD.Studio.EventInstance RepeatForint;
 
-    
-
-
     private bool BathroomAttendantHasSaidThankYou = false;
 
     public GameObject bathroomDoor;
     public PlayableDirector playerGoingIntoBathroomTimeline;
-    private AnimationCurve washingHandsAnimationCurve;
+    
+    
+    public TimelineAsset bathroomCutsceneTimeline;
+    private TrackAsset bathroomCutsceneTimelineTrack;
+    private IEnumerable bathroomCutsceneTimelineClip;
+    private Vector3 bathroomCutsceneStartingPosition;
+    private Vector3 bathroomCutsceneStartingRotation;
     private Keyframe[] arrayOfWasingHandsKeyframes;
 
     // Start is called before the first frame update
@@ -33,7 +36,9 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         GottaGoGottaGoGottaGoGoGo = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/gottaGoGottaGoGottaGoGoGo");
         RepeatForint = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/RepeatForint");
 
-       
+        bathroomCutsceneTimelineTrack = bathroomCutsceneTimeline.GetOutputTrack(0);
+        bathroomCutsceneTimelineClip = bathroomCutsceneTimelineTrack.GetClips();
+        
     }
 
     // Update is called once per frame
@@ -82,4 +87,6 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
             
         }     
     }
+
+    
 }

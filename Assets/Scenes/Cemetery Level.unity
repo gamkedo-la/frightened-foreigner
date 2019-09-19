@@ -93256,6 +93256,8 @@ MonoBehaviour:
   PlayerCamera: {fileID: 534669902}
   bathroomDoor: {fileID: 2107524686}
   playerGoingIntoBathroomTimeline: {fileID: 1008936878}
+  bathroomCutsceneTimeline: {fileID: 11400000, guid: 68ac762f4a3cc304a9ddf76dec121ef0,
+    type: 2}
 --- !u!114 &1716416029
 MonoBehaviour:
   m_ObjectHideFlags: 0
