@@ -76,6 +76,7 @@ public class MouseClicks: MonoBehaviour
     private Inventory charactersInventoryScript;
 
     public FMOD.Studio.EventInstance IHaveMilk;
+    public FMOD.Studio.EventInstance IHaveCandy;
 
 
     private void Awake()
@@ -128,7 +129,7 @@ public class MouseClicks: MonoBehaviour
         charactersInventoryScript = character.GetComponent<Inventory>();
 
         IHaveMilk = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveMilk");
-
+        IHaveCandy = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveCandy");
 
     }
 
@@ -217,7 +218,7 @@ public class MouseClicks: MonoBehaviour
                     {
                         thisTextGraphic.SetActive(false);
                         InventoryItemManager.playerHasCandy = true;
-                        
+                        IHaveCandy.start();
                     }
 
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player

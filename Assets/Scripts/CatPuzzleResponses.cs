@@ -47,6 +47,7 @@ public class CatPuzzleResponses : MonoBehaviour
 
     public void CatPuzzleSolvedResponse()
     {
+        catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("OnOff", 0f);
         PleasedCat.start();
         
         lightsScript.MakeAmbientCreepier();

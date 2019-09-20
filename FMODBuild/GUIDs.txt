@@ -2,6 +2,7 @@
 {4a03c3e4-ffbc-4f50-a131-64e9e7d90743} event:/Bathroom Cutscene/washingHands
 {bf5bfef3-ab45-4e07-b9ae-df24f9b3bd34} event:/CandyPuzzle/Cackle
 {f2353828-5641-47a2-8fd0-373c8fefea25} event:/CandyPuzzle/ThankYou
+{0f222f7a-0a18-41a2-be7d-161e50af006a} event:/CandyPuzzle/lightCackleLoop
 {964bb35c-135d-46a7-ab7f-59afd3c6a87d} event:/CatPuzzle/DispleasedCat
 {ea69f7c0-bb4c-4432-a02e-25dee3621f81} event:/CatPuzzle/PleasedCat
 {8015ad2c-c92e-4259-be28-f4676ed714d1} event:/CatPuzzle/CatPuzzleLoop
@@ -37,6 +38,7 @@
 {58b03ea3-af7c-4fea-b597-2f0b7659c3fd} event:/ItemInteractions/IHaveMilk
 {222d89b7-14a1-463a-b68c-e52d37042b60} event:/ItemInteractions/IHaveWater
 {93763e5a-a0dd-43f7-b920-9c20cf128f30} event:/ItemInteractions/SinkDoesntCare
+{8412dd3f-6cbb-4d01-8ced-4a6b0ba4e3c4} event:/ItemInteractions/IHaveCandy
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom

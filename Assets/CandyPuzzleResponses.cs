@@ -21,6 +21,9 @@ public class CandyPuzzleResponses : MonoBehaviour
     public GameObject playerCamera;
     private LockView lockViewScript;
 
+    public GameObject candyPuzzleLoopTriggerObject;
+    private PlayCandyPuzzleLoop candyPuzzleLoopScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,8 @@ public class CandyPuzzleResponses : MonoBehaviour
 
         gateCloseScript = bathroomCutsceneTimeline.GetComponent<TriggerGateClose>();
         lockViewScript = playerCamera.GetComponent<LockView>();
+
+        candyPuzzleLoopScript = candyPuzzleLoopTriggerObject.GetComponent<PlayCandyPuzzleLoop>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,7 @@ public class CandyPuzzleResponses : MonoBehaviour
 
     public void CandyPuzzleSolvedResponse()
     {
+        candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("OnOff", 0f);
         SavedChild.start();
         lightsScript.MakeAmbientCreepier();
         lockViewScript.makeGraphicsGrainier();
@@ -61,5 +67,14 @@ public class CandyPuzzleResponses : MonoBehaviour
     public void CandyPuzzleIncorrectResponse()
     {
         WickedWitchCackle.start();
+        Debug.Log("Should hear cat sound");
+        candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("OnOff", 0f);
+        StartCoroutine(delayCandyPuzzleLoopSound());
+    }
+
+    private IEnumerator delayCandyPuzzleLoopSound()
+    {
+        yield return new WaitForSeconds(3.25f);
+        candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("OnOff", 1f);
     }
 }
