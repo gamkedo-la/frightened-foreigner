@@ -372,11 +372,8 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "CatPuzzle")
         {
-            LockedWithCatPuzzle = true;
-            if (InventoryItemManager.playerHasMilk)
-            {
-                
-            }
+            
+            
         }
         if (hit.transform.name == "Candy Bowl")
         {

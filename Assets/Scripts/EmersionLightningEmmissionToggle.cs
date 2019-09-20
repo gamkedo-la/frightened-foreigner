@@ -22,7 +22,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     public FMOD.Studio.EventInstance baseLightningSound;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         EmersionLightning = gameObject.GetComponent<ParticleSystem>();
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         baseLightningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
+        
     }
 
     // Update is called once per frame

@@ -21,6 +21,9 @@ public class CatPuzzleResponses : MonoBehaviour
     public GameObject playerCamera;
     private LockView lockViewScript;
 
+    public GameObject catPuzzleLoopTriggerObject;
+    private PlayCatPuzzleLoop catPuzzleLoopScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,8 @@ public class CatPuzzleResponses : MonoBehaviour
 
         gateCloseScript = bathroomCutsceneTimeline.GetComponent<TriggerGateClose>();
         lockViewScript = playerCamera.GetComponent<LockView>();
+
+        catPuzzleLoopScript = catPuzzleLoopTriggerObject.GetComponent<PlayCatPuzzleLoop>();
     }
 
     // Update is called once per frame
@@ -60,6 +65,14 @@ public class CatPuzzleResponses : MonoBehaviour
 
     public void CatPuzzleIncorrectResponse()
     {
+        catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("OnOff", 0f);
+        StartCoroutine(delayCatPuzzleLoopSound());
         DispleasedCat.start();
+    }
+
+    private IEnumerator delayCatPuzzleLoopSound()
+    {
+        yield return new WaitForSeconds(3.25f);
+        catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("OnOff", 1f);
     }
 }
