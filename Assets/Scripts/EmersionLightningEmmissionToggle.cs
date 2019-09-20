@@ -87,7 +87,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     private IEnumerator DelayLightningStrikeForSicknessPuzzle()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         EmersionLightning.Emit(1);
         Sparks.Emit(1);
     }
@@ -109,14 +109,14 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     private IEnumerator DelayLightningStrikeForCandyPuzzle()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         EmersionLightning.Emit(1);
         Sparks.Emit(1);
     }
 
     private IEnumerator DelayAppearanceOfCandyPuzzle()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.5f);
         candyPuzzle.SetActive(true);
         LockViewScript.candyPuzzleLightningCutscene = false;
         LockViewScript.LockedWithTurul = false;
@@ -132,14 +132,14 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     private IEnumerator DelayLightningStrikeForElementsPuzzle()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
         EmersionLightning.Emit(1);
         Sparks.Emit(1);
     }
 
     private IEnumerator DelayAppearanceOfElementsPuzzle()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.5f);
         elementsPuzzle.SetActive(true);
         LockViewScript.elementsPuzzleLightningCutscene = false;
         LockViewScript.LockedWithTurul = false;
