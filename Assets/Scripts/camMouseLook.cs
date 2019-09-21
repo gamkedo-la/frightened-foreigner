@@ -9,7 +9,7 @@ public class camMouseLook : MonoBehaviour
     public bool useAngleFix = false;
 
     private PauseGame PauseGameScript;
-    private bool gamePaused;
+    private bool GamePaused = false;
 
     Vector2 mouselook; //change per frame in mouse movement
     Vector2 smoothV; //smoothing of changes
@@ -33,7 +33,7 @@ public class camMouseLook : MonoBehaviour
     {
         PauseGameScript = GameObject.Find("GameController").GetComponent<PauseGame>();
         InventoryScript = GameObject.Find("Character").GetComponent<Inventory>();
-        gamePaused = PauseGameScript.GamePaused;
+        GamePaused = PauseGameScript.GamePaused;
     }
 
     // Start is called before the first frame update
@@ -56,9 +56,9 @@ public class camMouseLook : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        gamePaused = PauseGameScript.GamePaused;
+        GamePaused = PauseGameScript.GamePaused;
         //Debug.Log(gamePaused);
-        if (!gamePaused && !InventoryScript.inventoryActive && !puzzleJumper.active)
+        if (!GamePaused && !InventoryScript.inventoryActive && !puzzleJumper.active)
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
