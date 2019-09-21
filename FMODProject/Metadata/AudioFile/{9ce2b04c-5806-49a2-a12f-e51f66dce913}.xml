@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{9ce2b04c-5806-49a2-a12f-e51f66dce913}">
+        <property name="assetPath">
+            <value>cementFootStep4.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.62498866213151927</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f38dd8eb-579e-4a3d-8c38-10be1402fa2b}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1076,6 +1076,27 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: turnOnFootsteps
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.4833333
+    functionName: turnOffFootsteps
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 25.916666
+    functionName: turnOnFootsteps
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 27.7
     functionName: triggerBathroomCutsceneBool
     data: 
@@ -1090,6 +1111,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 28.166666
+    functionName: turnOffFootsteps
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 29.216667
     functionName: VanessaSaysOMGAfterTheGateCloses
     data: 
@@ -1097,8 +1125,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 30.65
+    functionName: turnOnFootsteps
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 31.6
     functionName: PlayShakeGateSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 34
+    functionName: turnOffFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

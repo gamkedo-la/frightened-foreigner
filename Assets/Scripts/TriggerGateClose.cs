@@ -111,4 +111,14 @@ public class TriggerGateClose : MonoBehaviour
     {
         ghost.SetActive(true);
     }
+
+    public void turnOffFootsteps()
+    {
+        characterController.PlayerIsWalking = false;
+    }
+
+    public void turnOnFootsteps()
+    {
+        characterController.PlayerIsWalking = true;
+    }
 }

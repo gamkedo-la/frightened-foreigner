@@ -70,6 +70,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
 
     public void OpenBathroomDoor()
     {
+        //characterController.PlayerIsWalking = false;
         BathroomAttendantSaysThankYou.start();
         BathroomAttendantHasSaidThankYou = true;
         bathroomDoor.GetComponent<Animator>().enabled = true;

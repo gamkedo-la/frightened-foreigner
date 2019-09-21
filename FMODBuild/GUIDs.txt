@@ -64,6 +64,7 @@
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
 {e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
+{d2e14bc1-4318-4e26-bb14-0a4c29535629} event:/SFX/Footsteps
 {4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {4ceb91b6-4ce3-4ecd-8fc3-88894cf9b30b} bus:/Master/Dialogue
