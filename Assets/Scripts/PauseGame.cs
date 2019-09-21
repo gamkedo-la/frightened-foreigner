@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PauseGame : MonoBehaviour
 {
@@ -8,6 +10,9 @@ public class PauseGame : MonoBehaviour
     public Transform AudioSettingsCanvas;
     public GameObject TutorialUIHolder;
     public bool GamePaused = false;
+
+
+    private Scene CurrentScene;
 
     private void Awake()
     {
@@ -25,7 +30,12 @@ public class PauseGame : MonoBehaviour
     {
         if (Input.GetKeyDown("p"))// && !TutorialUIHolder.GetComponent<TutorialUIScript>().isDialogActive
         {
-            TogglePauseMenu();
+            CurrentScene = SceneManager.GetActiveScene();
+            if (CurrentScene.name == "Cemetery Level")
+            {
+                TogglePauseMenu();
+            }
+            
         }
     }
 

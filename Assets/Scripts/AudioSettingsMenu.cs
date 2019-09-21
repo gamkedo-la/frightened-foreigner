@@ -8,16 +8,18 @@ public class AudioSettingsMenu : MonoBehaviour
 
     FMOD.Studio.Bus MasterBus;
     FMOD.Studio.Bus MusicBus;
-    FMOD.Studio.Bus WordsBus;
+    FMOD.Studio.Bus DialogueBus;
     FMOD.Studio.Bus SFXBus;
 
     float MasterBusVolume = 1.0f;
     float MusicBusVolume = 1.0f;
-    float WordsBusVolume = 1.0f;
+    float DialogueBusVolume = 1.0f;
     float SFXBusVolume = 1.0f;
 
     FMOD.Studio.EventInstance SFXVolumeTestEvent;
-    FMOD.Studio.EventInstance WordsVolumeTestEvent;
+    FMOD.Studio.EventInstance DialogueVolumeTestEvent;
+
+
 
     public GameObject AudioSettingsManagerFromHierarchy;
 
@@ -27,11 +29,13 @@ public class AudioSettingsMenu : MonoBehaviour
     {
         MasterBus = FMODUnity.RuntimeManager.GetBus("bus:/Master");
         MusicBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Music");
-        WordsBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Words");
+        DialogueBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/Dialogue");
         SFXBus = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
 
         SFXVolumeTestEvent = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/RightClickScrollThroughWords");
-        WordsVolumeTestEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Words/Correct_Answer");
+        DialogueVolumeTestEvent = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/BathroomAttendant/RepeatForint");
+
+
     }
 
     // Start is called before the first frame update
@@ -45,7 +49,7 @@ public class AudioSettingsMenu : MonoBehaviour
     {
         MasterBus.setVolume(MasterBusVolume);
         MusicBus.setVolume(MusicBusVolume);
-        WordsBus.setVolume(WordsBusVolume);
+        DialogueBus.setVolume(DialogueBusVolume);
         SFXBus.setVolume(SFXBusVolume);
     }
 
@@ -57,9 +61,9 @@ public class AudioSettingsMenu : MonoBehaviour
     {
         MusicBusVolume = newMusicVolume;
     }
-    public void GrabWordsVolumeFromGameplay(float newWordsVolume)
+    public void GrabDialogueVolumeFromGameplay(float newDialogueVolume)
     {
-        WordsBusVolume = newWordsVolume;
+        DialogueBusVolume = newDialogueVolume;
     }
     public void GrabSFXVolumeFromGameplay(float newSFXVolume)
     {
@@ -78,15 +82,15 @@ public class AudioSettingsMenu : MonoBehaviour
         }
     }
 
-    public void PlayWordsVolumeTest(float newWordsVolume)
+    public void PlayDialogueVolumeTest(float newWordsVolume)
     {
-        WordsBusVolume = newWordsVolume;
+        DialogueBusVolume = newWordsVolume;
 
-        FMOD.Studio.PLAYBACK_STATE WordsPlaybackState;
-        WordsVolumeTestEvent.getPlaybackState(out WordsPlaybackState);
-        if (WordsPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        FMOD.Studio.PLAYBACK_STATE DialoguePlaybackState;
+        DialogueVolumeTestEvent.getPlaybackState(out DialoguePlaybackState);
+        if (DialoguePlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING)
         {
-            WordsVolumeTestEvent.start();
+            DialogueVolumeTestEvent.start();
         }
     }
 
