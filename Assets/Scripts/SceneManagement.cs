@@ -9,6 +9,7 @@ public class SceneManagement : MonoBehaviour
      public static FMOD.Studio.EventInstance TitleScreenMusic;
     static public FMOD.Studio.PLAYBACK_STATE TitleScreenMusicPlaybackState;
 
+
     public GameObject SceneManagerFromHierarchy;
     public GameObject AudioSettingsCanvasFromHierarchy;
     public GameObject AudioSettingsManagerFromHierarchy;
@@ -123,6 +124,8 @@ public class SceneManagement : MonoBehaviour
 
     public void TransitionsForCemeteryLevelFromIntroCutscene()
     {
+        PlayUISounds.UISelectionGhostVoiceSound.start();
+
         Part1Text = GameObject.Find("Part1 Text");
         TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
 
@@ -156,6 +159,7 @@ public class SceneManagement : MonoBehaviour
 
     public void TransitionToIntroCutscene()
     {
+        PlayUISounds.UISelectionGhostVoiceSound.start();
         LevelChangerAnimator.Play("FadeOut");
         ShouldFadeInSopranos = true;       
     }

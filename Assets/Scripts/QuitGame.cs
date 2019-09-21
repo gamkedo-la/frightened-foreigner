@@ -8,6 +8,7 @@ public class QuitGame : MonoBehaviour
     {
         // This won't work in WebGL
         // Debug.Log("Attempting to quit");
+        PlayUISounds.UISelectionGhostVoiceSound.start();
         Application.Quit();
     }
 }

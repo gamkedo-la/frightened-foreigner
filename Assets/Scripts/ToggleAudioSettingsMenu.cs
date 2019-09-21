@@ -34,7 +34,8 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
 
     public void toggleAudioSettingsMenu()
     {
-        
+        PlayUISounds.UISelectionGhostVoiceSound.start();
+
         if (audioSettingsCanvas.activeInHierarchy == false)//if the audio settings menu is inactive
         {
             audioSettingsCanvas.SetActive(true);//make the audio settings menu active, then check.....

@@ -1,11 +1,11 @@
 {64758456-4594-4ff5-9d04-f4f866c56bd0} event:/Bathroom Cutscene/gottaGoGottaGoGottaGoGoGo
 {4a03c3e4-ffbc-4f50-a131-64e9e7d90743} event:/Bathroom Cutscene/washingHands
 {bf5bfef3-ab45-4e07-b9ae-df24f9b3bd34} event:/CandyPuzzle/Cackle
-{f2353828-5641-47a2-8fd0-373c8fefea25} event:/CandyPuzzle/ThankYou
 {0f222f7a-0a18-41a2-be7d-161e50af006a} event:/CandyPuzzle/lightCackleLoop
+{f2353828-5641-47a2-8fd0-373c8fefea25} event:/CandyPuzzle/ThankYou
+{8015ad2c-c92e-4259-be28-f4676ed714d1} event:/CatPuzzle/CatPuzzleLoop
 {964bb35c-135d-46a7-ab7f-59afd3c6a87d} event:/CatPuzzle/DispleasedCat
 {ea69f7c0-bb4c-4432-a02e-25dee3621f81} event:/CatPuzzle/PleasedCat
-{8015ad2c-c92e-4259-be28-f4676ed714d1} event:/CatPuzzle/CatPuzzleLoop
 {86e4a367-52dd-41d7-ba80-794f6ad53e12} event:/Dialogue/BathroomAttendant/bathroomAttendantSaysThankYou
 {76557829-6fa9-4ffb-8fc7-6de2c01fc8be} event:/Dialogue/BathroomAttendant/forintNeededToEnter
 {0e982ef2-7791-4caa-8f13-a69a8e2403f0} event:/Dialogue/BathroomAttendant/RepeatForint
@@ -34,11 +34,11 @@
 {20daac79-206a-443e-b379-1efd06641b2c} event:/ElementsPuzzle/wind
 {9473d203-599f-40e4-87f5-f8dd4f3f4e7e} event:/ItemInteractions/GroundDoesntCare
 {171295a2-9235-44a3-b1cf-4940617c44f4} event:/ItemInteractions/IHaveAShovel
+{8412dd3f-6cbb-4d01-8ced-4a6b0ba4e3c4} event:/ItemInteractions/IHaveCandy
 {d3e55628-9b2e-4570-9186-853cfea8ca39} event:/ItemInteractions/IHaveDirt
 {58b03ea3-af7c-4fea-b597-2f0b7659c3fd} event:/ItemInteractions/IHaveMilk
 {222d89b7-14a1-463a-b68c-e52d37042b60} event:/ItemInteractions/IHaveWater
 {93763e5a-a0dd-43f7-b920-9c20cf128f30} event:/ItemInteractions/SinkDoesntCare
-{8412dd3f-6cbb-4d01-8ced-4a6b0ba4e3c4} event:/ItemInteractions/IHaveCandy
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom
@@ -63,6 +63,7 @@
 {244e9f9e-2305-4fad-b9f6-262d3cb9fb7f} event:/SFX/ShakingGate
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
+{e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
 {9b47f662-18b8-45ba-8b77-dcf1ea2a1a61} event:/Words/Bathroom_Furdoszoba
 {e31f3597-e728-480a-8ff4-444c529fec74} event:/Words/Correct_Answer
 {d515d029-57d2-4877-a1dc-f5962fcddf67} event:/Words/Incorrect_Answer
