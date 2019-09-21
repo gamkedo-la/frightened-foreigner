@@ -65,7 +65,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-
+            PlayUISounds.UISelectionGhostVoiceSound.start();
             if (!inventory.active)
             {
                 inventory.SetActive(true);
@@ -88,7 +88,9 @@ public class Inventory : MonoBehaviour
 
 	public void Close()
 	{
-		inventory.SetActive( false );
+        PlayUISounds.UISelectionGhostVoiceSound.start();
+
+        inventory.SetActive( false );
 		inventoryActive = false;
 		Time.timeScale = 1;
 		Cursor.lockState = CursorLockMode.Confined;

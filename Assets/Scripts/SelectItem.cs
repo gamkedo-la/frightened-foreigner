@@ -14,6 +14,8 @@ public class SelectItem : MonoBehaviour
 
     public void Select()
     {
-		lockView.HoldItem( item, sprite );
+        PlayUISounds.UISelectionGhostVoiceSound.start();
+
+        lockView.HoldItem( item, sprite );
     }
 }
