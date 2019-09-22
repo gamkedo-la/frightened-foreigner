@@ -34,6 +34,11 @@ public class TriggerGateClose : MonoBehaviour
     public static FMOD.Studio.EventInstance loopingTurulSquawkSound;
     FMOD.Studio.PLAYBACK_STATE loopingTurulPlaybackState;
 
+    public static FMOD.Studio.EventInstance bathroomCutsceneBathroomFootsteps;
+    public static FMOD.Studio.EventInstance bathroomCutsceneGroundFootsteps;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +56,9 @@ public class TriggerGateClose : MonoBehaviour
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
         //loopingTurulSquawkSound = turulSFXScript.TurulLoopsSquawk;
         //loopingTurulSquawkSound.start();
+
+        bathroomCutsceneBathroomFootsteps = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/BathroomFootsteps");
+        bathroomCutsceneGroundFootsteps = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/GroundFootsteps");
     }
 
     // Update is called once per frame
@@ -112,13 +120,23 @@ public class TriggerGateClose : MonoBehaviour
         ghost.SetActive(true);
     }
 
-    public void turnOffFootsteps()
+    public void turnOffBathroomFootsteps()
     {
-        characterController.PlayerIsWalking = false;
+        bathroomCutsceneBathroomFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
-    public void turnOnFootsteps()
+    public void turnOnBathroomFootsteps()
     {
-        characterController.PlayerIsWalking = true;
+        bathroomCutsceneBathroomFootsteps.start();
+    }
+
+    public void turnOffGroundFootsteps()
+    {
+        bathroomCutsceneGroundFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+    }
+
+    public void turnOnGroundFootsteps()
+    {
+        bathroomCutsceneGroundFootsteps.start();
     }
 }

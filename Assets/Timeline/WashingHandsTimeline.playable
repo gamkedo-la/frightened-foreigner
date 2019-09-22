@@ -1077,21 +1077,35 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: turnOnFootsteps
+    functionName: turnOnGroundFootsteps
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.0166667
+    functionName: turnOffGroundFootsteps
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.25
+    functionName: turnOnBathroomFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.4833333
-    functionName: turnOffFootsteps
+    functionName: turnOffBathroomFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 25.916666
-    functionName: turnOnFootsteps
+    functionName: turnOnBathroomFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1111,8 +1125,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 28.166666
-    functionName: turnOffFootsteps
+  - time: 27.95
+    functionName: turnOffBathroomFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1125,8 +1139,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 30.65
-    functionName: turnOnFootsteps
+  - time: 30.466667
+    functionName: turnOnGroundFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1139,8 +1153,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 34
-    functionName: turnOffFootsteps
+  - time: 33.866665
+    functionName: turnOffGroundFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
