@@ -2,6 +2,7 @@
 {4a03c3e4-ffbc-4f50-a131-64e9e7d90743} event:/Bathroom Cutscene/washingHands
 {c30e6d3e-801a-42bc-a207-4bf426b9f135} event:/Bathroom Cutscene/BathroomFootsteps
 {640e5e1d-3aa7-4108-9bda-56652bdfe19e} event:/Bathroom Cutscene/GroundFootsteps
+{9991f949-ee34-4b0a-82bc-471ba84fcb68} event:/Bathroom Cutscene/OneShotGroundStep
 {bf5bfef3-ab45-4e07-b9ae-df24f9b3bd34} event:/CandyPuzzle/Cackle
 {0f222f7a-0a18-41a2-be7d-161e50af006a} event:/CandyPuzzle/lightCackleLoop
 {f2353828-5641-47a2-8fd0-373c8fefea25} event:/CandyPuzzle/ThankYou

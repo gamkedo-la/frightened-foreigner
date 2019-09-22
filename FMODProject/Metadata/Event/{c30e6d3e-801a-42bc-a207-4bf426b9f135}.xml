@@ -5,7 +5,7 @@
             <value>BathroomFootsteps</value>
         </property>
         <property name="outputFormat">
-            <value>1</value>
+            <value>2</value>
         </property>
         <relationship name="folder">
             <destination>{a5b63760-8534-4012-b33a-ecf867897c6e}</destination>
@@ -147,6 +147,7 @@
     <object class="MixerBusEffectChain" id="{a48cd7f3-d248-43ad-ad8f-6de38606834a}">
         <relationship name="effects">
             <destination>{b1a27a0a-5fbd-4ab3-a1ff-7820b484d16d}</destination>
+            <destination>{2b766d7d-2212-4aa0-a1b4-f01d45bc9fa5}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{44e0e4f2-cc9c-4967-9010-297c3699b247}"/>
@@ -230,6 +231,11 @@
     </object>
     <object class="MixerBusPanner" id="{927e7f83-e75a-4898-8487-4b133f9206fe}"/>
     <object class="MixerBusFader" id="{b1a27a0a-5fbd-4ab3-a1ff-7820b484d16d}"/>
+    <object class="SpatialiserEffect" id="{2b766d7d-2212-4aa0-a1b4-f01d45bc9fa5}">
+        <property name="maximumDistance">
+            <value>5</value>
+        </property>
+    </object>
     <object class="AutomationPoint" id="{fc01b8c5-9517-453f-82c0-9182401f3a7d}">
         <property name="position">
             <value>0</value>

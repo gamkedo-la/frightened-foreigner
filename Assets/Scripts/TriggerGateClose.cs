@@ -34,9 +34,9 @@ public class TriggerGateClose : MonoBehaviour
     public static FMOD.Studio.EventInstance loopingTurulSquawkSound;
     FMOD.Studio.PLAYBACK_STATE loopingTurulPlaybackState;
 
-    public static FMOD.Studio.EventInstance bathroomCutsceneBathroomFootsteps;
-    public static FMOD.Studio.EventInstance bathroomCutsceneGroundFootsteps;
 
+    public GameObject footstepsHolderObject;
+    private BathroomCutsceneFootstepsControl bathroomCutceneFootstepsScript;
 
 
 
@@ -57,8 +57,7 @@ public class TriggerGateClose : MonoBehaviour
         //loopingTurulSquawkSound = turulSFXScript.TurulLoopsSquawk;
         //loopingTurulSquawkSound.start();
 
-        bathroomCutsceneBathroomFootsteps = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/BathroomFootsteps");
-        bathroomCutsceneGroundFootsteps = FMODUnity.RuntimeManager.CreateInstance("event:/Bathroom Cutscene/GroundFootsteps");
+        bathroomCutceneFootstepsScript = footstepsHolderObject.GetComponent<BathroomCutsceneFootstepsControl>();
     }
 
     // Update is called once per frame
@@ -120,23 +119,29 @@ public class TriggerGateClose : MonoBehaviour
         ghost.SetActive(true);
     }
 
-    public void turnOffBathroomFootsteps()
+    public void bathroomFloorFootStepsOn()
     {
-        bathroomCutsceneBathroomFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        bathroomCutceneFootstepsScript.turnOnBathroomFootsteps();
     }
 
-    public void turnOnBathroomFootsteps()
+    public void bathroomFloorFootStepsOff()
     {
-        bathroomCutsceneBathroomFootsteps.start();
+        bathroomCutceneFootstepsScript.turnOffBathroomFootsteps();
     }
 
-    public void turnOffGroundFootsteps()
+    public void groundFootStepsOn()
     {
-        bathroomCutsceneGroundFootsteps.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        bathroomCutceneFootstepsScript.turnOnGroundFootsteps();
     }
 
-    public void turnOnGroundFootsteps()
+    public void groundFootStepsOff()
     {
-        bathroomCutsceneGroundFootsteps.start();
+        bathroomCutceneFootstepsScript.turnOffGroundFootsteps();
+    }
+
+    public void playOneShotGroundFootstep()
+    {
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Bathroom Cutscene/OneShotGroundStep");
     }
 }

@@ -5,7 +5,7 @@
             <value>Footsteps</value>
         </property>
         <property name="outputFormat">
-            <value>1</value>
+            <value>2</value>
         </property>
         <relationship name="folder">
             <destination>{8ac5c845-fb1f-4f36-8f4f-4c400c72f98f}</destination>
@@ -108,9 +108,6 @@
         </relationship>
     </object>
     <object class="EventMixerMaster" id="{5c2e554b-d75d-4044-9f3a-ce2d699f0425}">
-        <property name="volume">
-            <value>-5</value>
-        </property>
         <relationship name="effectChain">
             <destination>{8b06532b-a9a2-48a3-bd13-fa5b871719ef}</destination>
         </relationship>
@@ -251,6 +248,7 @@
     <object class="MixerBusEffectChain" id="{8b06532b-a9a2-48a3-bd13-fa5b871719ef}">
         <relationship name="effects">
             <destination>{3942d2e5-17a2-473c-b5ae-c3173fe1e4ec}</destination>
+            <destination>{233a8bc0-82cd-4a52-b0c3-fd19f31b59c1}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{45692ec8-4517-4d3d-afee-0e87827c67bc}"/>
@@ -415,6 +413,11 @@
     </object>
     <object class="MixerBusPanner" id="{565ca79a-f5c1-4564-83c8-a56486d3063f}"/>
     <object class="MixerBusFader" id="{3942d2e5-17a2-473c-b5ae-c3173fe1e4ec}"/>
+    <object class="SpatialiserEffect" id="{233a8bc0-82cd-4a52-b0c3-fd19f31b59c1}">
+        <property name="maximumDistance">
+            <value>5</value>
+        </property>
+    </object>
     <object class="AutomationPoint" id="{be878d32-a49a-411b-b303-f71b030fea57}">
         <property name="position">
             <value>0</value>

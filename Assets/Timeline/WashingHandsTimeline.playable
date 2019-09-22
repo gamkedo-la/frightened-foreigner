@@ -1076,22 +1076,36 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.25
-    functionName: turnOnBathroomFootsteps
+  - time: 0.48333332
+    functionName: playOneShotGroundFootstep
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.2333333
+    functionName: bathroomFloorFootStepsOn
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.4833333
-    functionName: turnOffBathroomFootsteps
+    functionName: bathroomFloorFootStepsOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 25.916666
-    functionName: turnOnBathroomFootsteps
+    functionName: bathroomFloorFootStepsOn
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 27.5
+    functionName: bathroomFloorFootStepsOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1104,15 +1118,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 27.9
+  - time: 28.3
     functionName: particleGhostAppears
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 27.95
-    functionName: turnOffBathroomFootsteps
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1125,8 +1132,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 30.466667
-    functionName: turnOnGroundFootsteps
+  - time: 30.95
+    functionName: groundFootStepsOn
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -1139,8 +1146,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 33.866665
-    functionName: turnOffGroundFootsteps
+  - time: 34.35
+    functionName: groundFootStepsOff
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

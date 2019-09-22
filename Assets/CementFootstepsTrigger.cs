@@ -13,12 +13,12 @@ public class CementFootstepsTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        characterController.Footsteps.setParameterValue("SwitchSteps", 2.0f);
+        PlayFootsteps.Footsteps.setParameterValue("SwitchSteps", 2.0f);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        characterController.Footsteps.setParameterValue("SwitchSteps", 0f);
+        PlayFootsteps.Footsteps.setParameterValue("SwitchSteps", 0f);
 
     }
 
