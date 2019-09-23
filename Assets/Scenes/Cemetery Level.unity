@@ -49530,6 +49530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondPuzzleLayerTriggerObject: {fileID: 627583261}
+  mausoleum: {fileID: 592585104}
 --- !u!1001 &634478464
 PrefabInstance:
   m_ObjectHideFlags: 0
