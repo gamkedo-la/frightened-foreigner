@@ -24,7 +24,7 @@ public class PlayFootsteps : MonoBehaviour
         Footsteps.set3DAttributes(feet3DPosition);
         if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d"))
         {
-            Debug.Log("Player is Walking");
+            //Debug.Log("Player is Walking");
             PlayerIsWalking = true;
         }
         if (Input.GetKeyUp("w") || Input.GetKeyUp("a") || Input.GetKeyUp("s") || Input.GetKeyUp("d"))
@@ -33,10 +33,10 @@ public class PlayFootsteps : MonoBehaviour
         }
 
         Footsteps.getPlaybackState(out FootstepsPlaybackState);
-        Debug.Log(FootstepsPlaybackState);
+        //Debug.Log(FootstepsPlaybackState);
         if (PlayerIsWalking && FootstepsPlaybackState != FMOD.Studio.PLAYBACK_STATE.PLAYING && FootstepsPlaybackState != FMOD.Studio.PLAYBACK_STATE.STARTING)
         {
-            Debug.Log("Footsteps should be audible");
+            //Debug.Log("Footsteps should be audible");
             Footsteps.start();
         }
         else if (!PlayerIsWalking)
