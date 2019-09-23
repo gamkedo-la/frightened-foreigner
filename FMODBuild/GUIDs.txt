@@ -30,7 +30,9 @@
 {b5d0c0f7-86fb-4472-9846-386f80a92916} event:/Dialogue/Vanessa/OMGTheGateClosed
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
+{6e1fbde4-61d4-487b-a5e8-aa18a70449b6} event:/Dialogue/youLookSick
 {ac6a9d81-290a-4ba6-8637-cfbbf351c271} event:/ElementsPuzzle/earth
+{1500c3e5-2713-4617-9cda-919b68db62e6} event:/ElementsPuzzle/fillingWaterBasin
 {414ab1df-6503-4950-a7fa-7c3858394b46} event:/ElementsPuzzle/fire
 {72e4d960-e20c-4f13-ab66-6b2bde7e677a} event:/ElementsPuzzle/igen
 {c2850efe-9901-4b81-b5dc-d2aec4b8892b} event:/ElementsPuzzle/water
@@ -45,6 +47,7 @@
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom
+{7d1de353-db89-4844-9406-e690fde9c23b} event:/Monologue/feelingSick
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
 {118077e6-62c8-4f84-88cf-aebc269d80bb} event:/Music/firstPuzzleMusicBaseLayer
 {38603b31-4e90-4c9b-b178-f72d7f72f039} event:/Music/firstPuzzleMusicFourthLayer

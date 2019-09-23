@@ -7,6 +7,8 @@ public class BasinResponses : MonoBehaviour
 
     public FMOD.Studio.EventInstance TurulSaysWaterSound;
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
+    public FMOD.Studio.EventInstance FillingBasinSound;
+
     public GameObject water;
 
     // Start is called before the first frame update
@@ -14,6 +16,7 @@ public class BasinResponses : MonoBehaviour
     {
         TurulSaysWaterSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/water");
         TurulSaysIgenSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/igen");
+        FillingBasinSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/fillingWaterBasin");
     }
 
     // Update is called once per frame
@@ -27,6 +30,7 @@ public class BasinResponses : MonoBehaviour
         PuzzleManagement.WaterBasinSolved = true;
         Debug.Log("Water Basin Solved");
         TurulSaysIgenSound.start();
+        FillingBasinSound.start();
         water.SetActive(true);
     }
 
