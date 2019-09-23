@@ -7,6 +7,7 @@ public class TriggerGateClose : MonoBehaviour
 {
 
     public GameObject door;
+    public GameObject activeStatusAudioManager;
     private DoorScript doorScript;
 
     private SceneManagement sceneManagementScript;
@@ -45,6 +46,12 @@ public class TriggerGateClose : MonoBehaviour
     {
         doorScript = door.GetComponent<DoorScript>();
         levelChanger = GameObject.Find("LevelChanger");
+		if (!levelChanger)
+		{
+			Instantiate( activeStatusAudioManager );
+			levelChanger = GameObject.Find("LevelChanger");
+		}
+
         sceneManagementScript = levelChanger.GetComponent<SceneManagement>();
 
         Lights = GameObject.Find("Lights");

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18276402, g: 0.20155933, b: 0.31304064, a: 1}
+  m_IndirectSpecularColor: {r: 0.18276438, g: 0.2015597, b: 0.3130412, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10450,6 +10450,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
+  activeStatusAudioManager: {fileID: 990104130130654026, guid: b6099f1c6ebee0142989d40d07f9ec99,
+    type: 3}
   PostProccessingValue: {fileID: 1396926143}
   ghost: {fileID: 335644470}
   turul: {fileID: 1506078306}
@@ -67927,6 +67929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 1640351639}
+  activeStatusAudioManager: {fileID: 0}
   PostProccessingValue: {fileID: 1396926143}
   ghost: {fileID: 335644470}
   turul: {fileID: 1506078306}
