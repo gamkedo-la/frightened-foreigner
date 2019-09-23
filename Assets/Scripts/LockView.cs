@@ -279,7 +279,7 @@ public class LockView : MonoBehaviour
 			
         
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
-        Debug.Log("Lock View hit " + hit.transform.name);
+        //Debug.Log("Lock View hit " + hit.transform.name);
         if (hit.transform.tag == "NPC")
         {
             NPC = true;

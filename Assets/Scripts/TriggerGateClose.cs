@@ -113,7 +113,7 @@ public class TriggerGateClose : MonoBehaviour
         PlayLoopingSquawk.TurulLoopsSquawk.set3DAttributes(turuls3DPosition);
         PlayLoopingSquawk.TurulLoopsSquawk.start();
         //PlayLoopingSquawk.TurulLoopsSquawk.start();
-        Debug.Log("Turul should be squawking");
+        
     }
 
     public void turnOnCatPuzzle()

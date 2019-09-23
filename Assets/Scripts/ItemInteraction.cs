@@ -12,7 +12,7 @@ public class ItemInteraction : MonoBehaviour
 
     public PlayerItem TryInteracting( PlayerItem itemInHand )
     {
-        Debug.Log("The game thinks the " + itemInHand + " is in your hand.");
+       // Debug.Log("The game thinks the " + itemInHand + " is in your hand.");
 		if ( requiredItem == itemInHand )
 		{
 			doIntereaction.Invoke( );
