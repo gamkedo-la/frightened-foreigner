@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TriggerPostSecondPuzzleLayers : MonoBehaviour
 {
-    private FMOD.Studio.EventInstance PostBathroomMusic;
+    public FMOD.Studio.EventInstance PostBathroomMusic;
     private FMOD.Studio.PLAYBACK_STATE PostBathroomMusicPlayback;
     private bool isPostBathroomMusicPlaying;
 

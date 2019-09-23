@@ -49425,6 +49425,7 @@ GameObject:
   - component: {fileID: 627583264}
   - component: {fileID: 627583263}
   - component: {fileID: 627583266}
+  - component: {fileID: 627583267}
   m_Layer: 0
   m_Name: postSecondPuzzlePercLayerTrigger
   m_TagString: Untagged
@@ -49516,6 +49517,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762b39f3c6fc7974d988c6e8852b22e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &627583267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627583261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb59c232a03bd44fb6c23e6f1b990d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondPuzzleLayerTriggerObject: {fileID: 627583261}
 --- !u!1001 &634478464
 PrefabInstance:
   m_ObjectHideFlags: 0
