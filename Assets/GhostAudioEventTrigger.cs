@@ -8,7 +8,7 @@ using System;
 public class GhostAudioEventTrigger : MonoBehaviour
 {
 
-    public GameObject secondPuzzleLayerTriggerObject;
+    /*public GameObject secondPuzzleLayerTriggerObject;
     private TriggerPostSecondPuzzleLayers secondPuzzleLayerTriggerScript;
 
     private FMOD.Studio.EventInstance postBathroomMusic;
@@ -50,5 +50,5 @@ public class GhostAudioEventTrigger : MonoBehaviour
             flickerScript.flickerOff();
         }
         return FMOD.RESULT.OK;
-    }
+    }*/
 }

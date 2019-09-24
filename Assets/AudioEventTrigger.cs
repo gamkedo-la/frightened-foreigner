@@ -43,7 +43,7 @@ public class AudioEventTrigger : MonoBehaviour
         //Debug.Log("Callback triggered");
         
         var parameter = (FMOD.Studio.TIMELINE_MARKER_PROPERTIES)Marshal.PtrToStructure(parameterPtr, typeof(FMOD.Studio.TIMELINE_MARKER_PROPERTIES));
-        Debug.Log("Parameter name: " + parameter.name);
+        //Debug.Log("Parameter name: " + parameter.name);
         if (parameter.name == "Percussion Hit")
         {
             mausoleumShakeAnimation.Play(0);

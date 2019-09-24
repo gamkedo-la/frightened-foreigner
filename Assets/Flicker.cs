@@ -33,7 +33,7 @@ public class Flicker : MonoBehaviour
         }
 
 
-        Debug.Log(lightComponent.intensity);
+
 
         //testing light functionality
         if (Input.GetKeyDown("l"))//allows player to navigate out of the game space

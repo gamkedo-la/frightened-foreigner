@@ -45,9 +45,9 @@
 {222d89b7-14a1-463a-b68c-e52d37042b60} event:/ItemInteractions/IHaveWater
 {93763e5a-a0dd-43f7-b920-9c20cf128f30} event:/ItemInteractions/SinkDoesntCare
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
+{7d1de353-db89-4844-9406-e690fde9c23b} event:/Monologue/feelingSick
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom
-{7d1de353-db89-4844-9406-e690fde9c23b} event:/Monologue/feelingSick
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
 {118077e6-62c8-4f84-88cf-aebc269d80bb} event:/Music/firstPuzzleMusicBaseLayer
 {38603b31-4e90-4c9b-b178-f72d7f72f039} event:/Music/firstPuzzleMusicFourthLayer

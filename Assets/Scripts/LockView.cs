@@ -345,7 +345,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "Turul")
         {
-            Debug.Log("Locked with Turul");
+            //Debug.Log("Locked with Turul");
             LockedWithTurul = true;
             if (PuzzleManagement.PlayerIsDoingCatPuzzle)
             {
@@ -367,7 +367,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "Milk")
         {
-            Debug.Log("Locked With Milk");
+            //Debug.Log("Locked With Milk");
             LockedWithMilk = true;
         }
         if (hit.transform.name == "CatPuzzle")
