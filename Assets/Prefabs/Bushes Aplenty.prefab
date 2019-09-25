@@ -61787,6 +61787,7 @@ GameObject:
   - component: {fileID: 5067996845639869588}
   - component: {fileID: 5067996845639869590}
   - component: {fileID: 5067996845639869589}
+  - component: {fileID: 3600794283821279713}
   m_Layer: 0
   m_Name: bush 1
   m_TagString: Untagged
@@ -66528,6 +66529,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &3600794283821279713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067996845639869587}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.163822, y: 2.13, z: 5.267576}
+  m_Center: {x: 0.13501869, y: 0, z: 0.09202372}
 --- !u!1 &5067996845906984345
 GameObject:
   m_ObjectHideFlags: 0
