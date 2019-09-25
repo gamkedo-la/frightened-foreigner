@@ -14,6 +14,15 @@ public class CameraShake : MonoBehaviour
 
     Vector3 originalPosition;
 
+    public GameObject gateSideClouds;
+    private StormControls gateSideStormControlScript;
+    public GameObject sicknessSideClouds;
+    private StormControls sicknessSideStormControlsScript;
+    public GameObject playerGraveSideClouds;
+    private StormControls playerGraveSideStormControlsScript;
+    public GameObject bathroomSideClouds;
+    private StormControls bathroomSideStormControlsScript;
+
     private void Awake()
     {
         CamerasTransform = GetComponent(typeof(Transform)) as Transform;
@@ -22,8 +31,10 @@ public class CameraShake : MonoBehaviour
     
     void Start()
     {
-        
-
+        gateSideStormControlScript = gateSideClouds.GetComponent<StormControls>();
+        sicknessSideStormControlsScript = sicknessSideClouds.GetComponent<StormControls>();
+        playerGraveSideStormControlsScript = playerGraveSideClouds.GetComponent<StormControls>();
+        bathroomSideStormControlsScript = bathroomSideClouds.GetComponent<StormControls>();
     }
 
     // Update is called once per frame
@@ -57,5 +68,9 @@ public class CameraShake : MonoBehaviour
     {
         yield return new WaitForSeconds(6.6f);
         ResetShakeSettings();
+        gateSideStormControlScript.activateMe();
+        sicknessSideStormControlsScript.activateMe();
+        playerGraveSideStormControlsScript.activateMe();
+        bathroomSideStormControlsScript.activateMe();
     }
 }
