@@ -24,7 +24,11 @@ public class StartCutscene : MonoBehaviour
         float startTime = Time.time; // while loop start time
         while (Time.time - startTime < lookAtTurulTime)
         {
-            var targetRotation = Quaternion.LookRotation(targetObject.position - player.transform.position);
+            // rotates the player only on y axis
+            Vector3 lookAtTarget = new Vector3(targetObject.position.x,
+                                               player.transform.position.y,
+                                               targetObject.position.z);
+            var targetRotation = Quaternion.LookRotation(lookAtTarget - player.transform.position);
 
             // Smoother look at action
             player.transform.rotation = Quaternion.Slerp(player.transform.rotation,
