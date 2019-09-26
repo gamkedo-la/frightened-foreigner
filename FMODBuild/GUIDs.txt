@@ -60,6 +60,7 @@
 {646afc85-2002-4caf-b76d-ab7931096245} event:/Music/titleTransitionTwoV1
 {a70ed5bb-5607-44dd-bc19-75dc08ac2a9c} event:/SFX/3DAttenuationTest
 {112fe70b-3426-4507-8f46-f679984abc89} event:/SFX/Ambience
+{ef1238d8-6be6-429b-b240-a43e85936f8d} event:/SFX/BatChirps
 {f39c0936-2865-4c0f-a282-42aa9e63692f} event:/SFX/BushPush
 {83642a49-3215-4b89-a573-1e3ef73b4663} event:/SFX/FeneFliesAway
 {a96a8a21-ad3e-4433-9f99-cdee618e20c6} event:/SFX/FeneLaughs
@@ -67,13 +68,13 @@
 {7c9aed8d-b09c-42e9-8442-41c84a762c1d} event:/SFX/FeneScurries
 {d2e14bc1-4318-4e26-bb14-0a4c29535629} event:/SFX/Footsteps
 {63f79db1-1012-47ed-a9c3-64f988f3a31c} event:/SFX/Lightning
+{07f10a00-9ae7-4456-90a1-3cb1c1a2f8b7} event:/SFX/OwlHoots1
+{fffc9c53-58ca-4bde-935f-9f5cfc7e0b82} event:/SFX/OwlHoots2
 {2648964c-bea3-4479-85f4-554a4bb08650} event:/SFX/RightClickScrollThroughWords
 {244e9f9e-2305-4fad-b9f6-262d3cb9fb7f} event:/SFX/ShakingGate
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
 {e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
-{07f10a00-9ae7-4456-90a1-3cb1c1a2f8b7} event:/SFX/OwlHoots1
-{fffc9c53-58ca-4bde-935f-9f5cfc7e0b82} event:/SFX/OwlHoots2
 {4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {4ceb91b6-4ce3-4ecd-8fc3-88894cf9b30b} bus:/Master/Dialogue
