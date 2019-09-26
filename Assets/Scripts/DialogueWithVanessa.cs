@@ -34,7 +34,7 @@ public class DialogueWithVanessa : MonoBehaviour
 
     private CameraShake CameraShakeScript;
 
-    
+    public GameObject stormSystem;
 
     // Start is called before the first frame update
     void Start()

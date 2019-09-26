@@ -39,8 +39,13 @@ public class TriggerGateClose : MonoBehaviour
     public GameObject footstepsHolderObject;
     private BathroomCutsceneFootstepsControl bathroomCutceneFootstepsScript;
 
+    public GameObject stormSystem;
+    private Animator stormSystemAnimator;
 
-
+    private void Awake()
+    {
+        stormSystemAnimator = stormSystem.GetComponent<Animator>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +84,7 @@ public class TriggerGateClose : MonoBehaviour
         DoorScript.BathroomCutsceneHasPlayed = true;
         sceneManagementScript.ShouldFadeInPostBathroomMusic = true;
         LightsScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
-
+        stormSystemAnimator.Play("Storm Convergence 2");
         PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
