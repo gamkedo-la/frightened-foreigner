@@ -78,10 +78,12 @@ public class MouseClicks: MonoBehaviour
     public FMOD.Studio.EventInstance IHaveMilk;
     public FMOD.Studio.EventInstance IHaveCandy;
 
+    public GameObject stormSystem;
+    private Animator stormSystemAnimator;
 
     private void Awake()
     {
-        
+        stormSystemAnimator = stormSystem.GetComponent<Animator>();
     }
 
     // Use this for initialization
@@ -174,6 +176,7 @@ public class MouseClicks: MonoBehaviour
                 {
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
                     {
+                        stormSystemAnimator.enabled = true;
                         GroundskeeperRespondsToCorrectAnswer.start(); //groundskeeper says 'there' in Hungarian
                         LockViewScript.randomWord = null;
                         LockViewScript.bathroomCutSceneCameraPan = true; //camera pans to the bathroom

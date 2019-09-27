@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{b3834f2c-aa53-4389-9441-3d663451905e}">
+        <property name="assetPath">
+            <value>batSqueak11.wav</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>0.75</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{f38dd8eb-579e-4a3d-8c38-10be1402fa2b}</destination>
+        </relationship>
+    </object>
+</objects>
