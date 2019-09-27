@@ -81,9 +81,13 @@ public class MouseClicks: MonoBehaviour
     public GameObject stormSystem;
     private Animator stormSystemAnimator;
 
+    public GameObject stormSystemSoundHolder;
+    private StormSoundControls stormSoundControlsScript;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
+        stormSoundControlsScript = stormSystemSoundHolder.GetComponent<StormSoundControls>();
     }
 
     // Use this for initialization
@@ -177,6 +181,7 @@ public class MouseClicks: MonoBehaviour
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
                     {
                         stormSystemAnimator.enabled = true;
+                        stormSoundControlsScript.StormSoundInstance.start();
                         GroundskeeperRespondsToCorrectAnswer.start(); //groundskeeper says 'there' in Hungarian
                         LockViewScript.randomWord = null;
                         LockViewScript.bathroomCutSceneCameraPan = true; //camera pans to the bathroom

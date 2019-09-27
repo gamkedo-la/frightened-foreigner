@@ -72,6 +72,7 @@
 {fffc9c53-58ca-4bde-935f-9f5cfc7e0b82} event:/SFX/OwlHoots2
 {2648964c-bea3-4479-85f4-554a4bb08650} event:/SFX/RightClickScrollThroughWords
 {244e9f9e-2305-4fad-b9f6-262d3cb9fb7f} event:/SFX/ShakingGate
+{75639493-dd9b-4707-8417-b060e2813fed} event:/SFX/Storm
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
 {e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
