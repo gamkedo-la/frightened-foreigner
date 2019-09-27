@@ -18,4 +18,9 @@ public class StormSoundControls : MonoBehaviour
     {
         
     }
+
+    public void increaseThunderAndRainIntensityAfterBathroomCutscene()
+    {
+        StormSoundInstance.setParameterValue("StormIntensity", 1f);
+    }
 }
