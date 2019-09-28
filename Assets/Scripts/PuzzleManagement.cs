@@ -5,7 +5,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class PuzzleManagement : MonoBehaviour
 {
-    public static bool PlayerIsDoingBathroomPuzzle = false;
+    public static bool PlayerIsDoingBathroomPuzzle = true;
+    public static bool PlayerIsDoingMoneyPuzzle = false;
     public static bool PlayerIsDoingCatPuzzle = false;
     public static bool PlayerIsDoingSicknessPuzzle = false;
     public static bool PlayerIsDoingCandyPuzzle = false;

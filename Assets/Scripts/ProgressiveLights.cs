@@ -52,6 +52,8 @@ public class ProgressiveLights : MonoBehaviour
         if (fogShouldBeGettingFoggier)
         {
             Debug.Log("Should be getting foggier");
+            Debug.Log("Bathroom Puzzle? " + PuzzleManagement.PlayerIsDoingBathroomPuzzle);
+            Debug.Log("Cat Puzzle?" + PuzzleManagement.PlayerIsDoingCatPuzzle);
             if (PuzzleManagement.PlayerIsDoingBathroomPuzzle && RenderSettings.fogEndDistance > afterBathroomLightningFogAmount)
             {
                 RenderSettings.fogEndDistance -= fogGradient;
@@ -62,12 +64,12 @@ public class ProgressiveLights : MonoBehaviour
                 fogShouldBeGettingFoggier = false;
             }//end of check fogginess value       
             
-            if (!PuzzleManagement.PlayerIsDoingBathroomPuzzle && RenderSettings.fogEndDistance > bathroomCutsceneFogAmount)
+            if (PuzzleManagement.PlayerIsDoingCatPuzzle && RenderSettings.fogEndDistance > bathroomCutsceneFogAmount)
             {
                 RenderSettings.fogEndDistance -= bathroomCutsceneFogGradient;
                 Debug.Log("fogEndDistance: " + RenderSettings.fogEndDistance);
             }
-            else if (!PuzzleManagement.PlayerIsDoingBathroomPuzzle && RenderSettings.fogEndDistance <= bathroomCutsceneFogAmount)
+            else if (PuzzleManagement.PlayerIsDoingCatPuzzle && RenderSettings.fogEndDistance <= bathroomCutsceneFogAmount)
             {
                 fogShouldBeGettingFoggier = false;
             }//end of check fogginess value 
