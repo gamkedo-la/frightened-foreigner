@@ -181,6 +181,7 @@ public class MouseClicks: MonoBehaviour
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
                     {
                         stormSystemAnimator.enabled = true;
+                        ProgressiveLights.turnOnFog();
                         stormSoundControlsScript.StormSoundInstance.start();
                         GroundskeeperRespondsToCorrectAnswer.start(); //groundskeeper says 'there' in Hungarian
                         LockViewScript.randomWord = null;

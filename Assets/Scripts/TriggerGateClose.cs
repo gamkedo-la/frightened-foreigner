@@ -86,6 +86,7 @@ public class TriggerGateClose : MonoBehaviour
     public void triggerBathroomCutsceneBool()
     {
         DoorScript.BathroomCutsceneHasPlayed = true;
+        ProgressiveLights.fogShouldBeGettingFoggier = true;
         stormSoundControlsScript.increaseThunderAndRainIntensityAfterBathroomCutscene();
         sceneManagementScript.ShouldFadeInPostBathroomMusic = true;
         LightsScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
