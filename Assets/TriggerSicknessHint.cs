@@ -33,7 +33,7 @@ public class TriggerSicknessHint : MonoBehaviour
 
         if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !hintHasBeenGiven)
         {
-            Debug.Log("Player should hear hint");
+            
             youDontLookWellHint.start();
             hintHasBeenGiven = true;
         }

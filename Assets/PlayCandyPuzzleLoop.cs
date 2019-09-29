@@ -32,14 +32,14 @@ public class PlayCandyPuzzleLoop : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         candyPuzzleLoopSound.start();
-        Debug.Log("Should hear cat sound");
+        
         candyPuzzleLoopSound.setParameterValue("OnOff", 1f);
     }
 
     private void OnTriggerExit(Collider other)
     {
         //catPuzzleLoopSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        Debug.Log("Should not hear cat sound");
+        
         candyPuzzleLoopSound.setParameterValue("OnOff", 0f);
     }
 }

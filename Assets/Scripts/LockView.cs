@@ -382,7 +382,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "CandyPuzzle")
         {
-            Debug.Log(InventoryItemManager.playerHasCandy);
+            
             LockedWithCandyPuzzle = true;
             
         }
