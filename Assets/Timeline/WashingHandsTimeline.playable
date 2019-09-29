@@ -1125,6 +1125,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 28.483334
+    functionName: switchStillClockToMovingClock
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 28.483334
+    functionName: switchBlankGravesToEngravedGraves
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 29.216667
     functionName: VanessaSaysOMGAfterTheGateCloses
     data: 

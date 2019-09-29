@@ -28,6 +28,10 @@ public class TriggerGateClose : MonoBehaviour
     public FMOD.Studio.EventInstance shakeGateSound;
 
     public GameObject ghost;
+    public GameObject stillClock;
+    public GameObject clock;
+    public GameObject BlankGraves;
+    public GameObject EngravedGraves;
 
 
     public GameObject turul;
@@ -135,6 +139,18 @@ public class TriggerGateClose : MonoBehaviour
     public void particleGhostAppears()
     {
         ghost.SetActive(true);
+    }
+
+    public void switchStillClockToMovingClock()
+    {
+        stillClock.SetActive(false);
+        clock.SetActive(true);
+    }
+
+    public void switchBlankGravesToEngravedGraves()
+    {
+        BlankGraves.SetActive(false);
+        EngravedGraves.SetActive(true);
     }
 
     public void bathroomFloorFootStepsOn()

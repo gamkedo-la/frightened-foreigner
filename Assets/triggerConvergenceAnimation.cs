@@ -11,7 +11,7 @@ public class triggerConvergenceAnimation : MonoBehaviour
     void Start()
     {
         cloudConvergenceAnimator = GetComponent<Animator>();
-        cloudConvergenceAnimator.SetBool("convergence2Bool", false);
+        //cloudConvergenceAnimator.SetBool("convergence2Bool", false);
     }
 
     // Update is called once per frame
