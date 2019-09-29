@@ -42,7 +42,7 @@ public class BushPushSoundTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Player entered bush zone");
+        
         BushPushSound.start();
     }
 
