@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 
     public bool inventoryActive;
 
+    public GameObject guidebook;
     public GameObject inventory;
     private int NumberOfSlots;
     private GameObject[] ArrayOfSlots;
@@ -24,7 +25,7 @@ public class Inventory : MonoBehaviour
     public GameObject playerCamera;
     private LockView lockViewScript;
 
-    
+
 
 
     // Start is called before the first frame update
@@ -40,12 +41,12 @@ public class Inventory : MonoBehaviour
             ArrayOfSlots[i] = slotHolder.transform.GetChild(i).gameObject;
         }
 
-        
+
         lockViewScript = playerCamera.GetComponent<LockView>();
 
         waterBottleSelectItemScript = waterBottleSlot.GetComponent<SelectItem>();
 
-        
+
     }
 
     public void addObtainedItemPictureToNextAvailableSlot(Sprite inventoryImageSprite)
@@ -59,7 +60,7 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -83,14 +84,27 @@ public class Inventory : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
-        
+
     }
+
+	public void ShowGuideBook( )
+	{
+		inventory.SetActive( false );
+		guidebook.SetActive( true );
+	}
+
+	public void HideGuideBook( )
+	{
+		inventory.SetActive( true );
+		guidebook.SetActive( false );
+	}
 
 	public void Close()
 	{
         PlayUISounds.UISelectionGhostVoiceSound.start();
 
         inventory.SetActive( false );
+		guidebook.SetActive( false );
 		inventoryActive = false;
 		Time.timeScale = 1;
 		Cursor.lockState = CursorLockMode.Confined;
