@@ -9,7 +9,7 @@ public class PauseGame : MonoBehaviour
     public Transform PauseMenuCanvas;
     public Transform AudioSettingsCanvas;
     public GameObject TutorialUIHolder;
-    public bool GamePaused = false;
+    public static bool GamePaused = false;
 
 
     private Scene CurrentScene;

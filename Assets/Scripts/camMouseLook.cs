@@ -33,7 +33,7 @@ public class camMouseLook : MonoBehaviour
     {
         PauseGameScript = GameObject.Find("GameController").GetComponent<PauseGame>();
         InventoryScript = GameObject.Find("Character").GetComponent<Inventory>();
-        GamePaused = PauseGameScript.GamePaused;
+        GamePaused = PauseGame.GamePaused;
     }
 
     // Start is called before the first frame update
@@ -56,7 +56,7 @@ public class camMouseLook : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-        GamePaused = PauseGameScript.GamePaused;
+        GamePaused = PauseGame.GamePaused;
         //Debug.Log(gamePaused);
         if (!GamePaused && !InventoryScript.inventoryActive && !puzzleJumper.active)
         {

@@ -10,11 +10,14 @@ public class StartCutscene : MonoBehaviour
     [SerializeField] float lookAtTheGateTime = 1f;
     [SerializeField] float lookAtTurulTime = 4f;
 
+    public GameObject tutorialUIHolder;
+
     void Start() // disable player control scripts at start
     {
         player.GetComponent<characterController>().enabled = false;
         player.GetComponentInChildren<camMouseLook>().enabled = false;
         StartCoroutine(PlayCutscene());
+        StartCoroutine(ShowControlsScreen());
     }
 
     IEnumerator PlayCutscene()
@@ -39,5 +42,14 @@ public class StartCutscene : MonoBehaviour
         // enable player controller scripts after while loop
         player.GetComponent<characterController>().enabled = true;
         player.GetComponentInChildren<camMouseLook>().enabled = true;
+    }
+
+    IEnumerator ShowControlsScreen()
+    {
+        yield return new WaitForSeconds(lookAtTheGateTime + lookAtTurulTime);
+        tutorialUIHolder.SetActive(true);
+        PauseGame.GamePaused = true;
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

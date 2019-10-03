@@ -141,7 +141,7 @@ public class MouseClicks: MonoBehaviour
 
     void Update()
     {
-        if (!PauseGameScript.GamePaused)// if the game isn't paused
+        if (!PauseGame.GamePaused)// if the game isn't paused
         {
            // Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
             if (LockViewScript.locked && Input.GetMouseButtonDown(1))    // right mouse button click 

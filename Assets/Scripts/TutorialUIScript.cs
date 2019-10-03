@@ -9,6 +9,9 @@ public class TutorialUIScript : MonoBehaviour
     public GameObject dialogCanvas;
     public GameObject dialogTextObject;
     private Text dialogText;
+
+    
+
     // Update is called once per frame
     private void Start()
     {
@@ -20,6 +23,17 @@ public class TutorialUIScript : MonoBehaviour
         {
             closeDialog();
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (isDialogActive)
+            {
+                closeDialog();
+            }
+            if (!isDialogActive)
+            {
+                openDialog(dialogText.text);
+            }
+        }
     }
     public void openDialog(string text)
     {
@@ -28,6 +42,7 @@ public class TutorialUIScript : MonoBehaviour
         dialogText.text = text;
         isDialogActive = true;
         dialogCanvas.SetActive(true);
+        PauseGame.GamePaused = true;
     }
     public void closeDialog()
     {
@@ -36,5 +51,6 @@ public class TutorialUIScript : MonoBehaviour
         Time.timeScale = 1;
         isDialogActive = false;
         dialogCanvas.SetActive(false);
+        PauseGame.GamePaused = false;
     }
 }
