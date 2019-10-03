@@ -10,28 +10,34 @@ public class TutorialUIScript : MonoBehaviour
     public GameObject dialogTextObject;
     private Text dialogText;
 
-    
+    private FMOD.Studio.EventInstance UISound;
 
     // Update is called once per frame
     private void Start()
     {
         dialogText = dialogTextObject.GetComponent<Text>();
+        UISound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/UIGhostVoice");
     }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             closeDialog();
+            UISound.start();
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (isDialogActive)
             {
                 closeDialog();
+                UISound.start();
+
             }
             if (!isDialogActive)
             {
                 openDialog(dialogText.text);
+                UISound.start();
+
             }
         }
     }
@@ -43,6 +49,8 @@ public class TutorialUIScript : MonoBehaviour
         isDialogActive = true;
         dialogCanvas.SetActive(true);
         PauseGame.GamePaused = true;
+        UISound.start();
+
     }
     public void closeDialog()
     {
@@ -52,5 +60,7 @@ public class TutorialUIScript : MonoBehaviour
         isDialogActive = false;
         dialogCanvas.SetActive(false);
         PauseGame.GamePaused = false;
+        UISound.start();
+
     }
 }
