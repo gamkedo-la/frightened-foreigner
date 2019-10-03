@@ -78,7 +78,7 @@ public class SceneManagement : MonoBehaviour
         }
         if (ShouldFadeInGlock && BackgroundMusicLayersFadeValue < 3)
         {
-            BackgroundMusicLayersFadeValue += 0.005f;
+            BackgroundMusicLayersFadeValue += 0.01f;
             TitleScreenMusic.setParameterValue("BackgroundMusicLayerManageValue", BackgroundMusicLayersFadeValue);
         }
         if (TriggerLayerChangeScript.ShouldTransitionToBassoonPart && BackgroundMusicLayersFadeValue < 4)
