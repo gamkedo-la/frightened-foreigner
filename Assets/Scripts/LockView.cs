@@ -42,6 +42,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithCandyPuzzle = false;
     public bool LockedWithSink = false;
     public bool LockedWithBlankGrave = false;
+    public bool LockedWithLock = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -194,7 +195,7 @@ public class LockView : MonoBehaviour
                 //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
 
             }//end of random word condition
-            else 
+            else //if locked with something that is not a random word puzzle
             {
                 Debug.Log("else condition of lockView update");
                 Vector3 targetPos = hit.transform.position;
@@ -420,9 +421,14 @@ public class LockView : MonoBehaviour
             shovel.SetActive(false);
             IHaveAShovel.start();
         }
-        if (hit.transform.name == "VanessasBlankGrave")
+        if (hit.transform.name == "VanessasBlankGrave" || hit.transform.name == "PlayersBlankGrave" || hit.transform.name == "CharliesBlankGrave")
         {
             LockedWithBlankGrave = true;
+            ambientInteractable = true;
+        }
+        if (hit.transform.name == "Lock")
+        {
+            LockedWithLock = true;
             ambientInteractable = true;
         }
         /*if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
@@ -480,8 +486,8 @@ public class LockView : MonoBehaviour
 		locked = true;
         if (locked)
         {
-            Debug.Log("successful lock");
-            Debug.Log("object name: " + hit.transform.name);
+            Debug.Log("successful lock with: " + hit.transform.name);
+            
         }
         else
         {
