@@ -25,8 +25,9 @@ public class LockView : MonoBehaviour
     //private GameObject TargetHit;
 
     private RaycastHit hit;
-    private bool NPC = false;
-    private bool Ground = false;
+    private bool lockedWithNPC = false;
+    private bool lockedWithGround = false;
+    private bool ambientInteractable = false;
 
     public bool LockedWithVanessa = false;
     public bool LockedWithCharlie = false;
@@ -40,6 +41,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithCandyBowl = false;
     public bool LockedWithCandyPuzzle = false;
     public bool LockedWithSink = false;
+    public bool LockedWithBlankGrave = false;
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -105,7 +107,7 @@ public class LockView : MonoBehaviour
 
     void Start()
     {
-        NPC = false;
+        lockedWithNPC = false;
         UhhhhMaybeYouShouldWait = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/UhhhhMaybeYouShouldWait");
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
 
@@ -123,11 +125,12 @@ public class LockView : MonoBehaviour
     void Update()
     {
         PlayLoopingSquawk.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
-        Debug.Log("locked " + locked);
-        Debug.Log("random word " + randomWord);
+        //Debug.Log("locked " + locked);
+       // Debug.Log("random word " + randomWord);
 
         if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
+            Debug.Log("locked check on space key down " + locked);
 			if ( locked )
 				UnLockView( );
 			else
@@ -191,28 +194,17 @@ public class LockView : MonoBehaviour
                 //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
 
             }//end of random word condition
-
-            if (!randomWordBool && !bathroomCutSceneCameraPan)
+            else 
             {
+                Debug.Log("else condition of lockView update");
                 Vector3 targetPos = hit.transform.position;
                 LockOnToTargetObject(targetPos);
                 Debug.Log("inside non random word lock");
             }
 
-            if (bathroomCutSceneCameraPan)
-            {
-                LockedWithGroundskeeper = false;
-                Vector3 targetPos = BathroomDoor.transform.position;
-                LockOnToTargetObject(targetPos);
-                
-                if (!UhhhMaybeYouShouldWaitPlayed)
-                {
-                    StartCoroutine(DelayUhhhhDialogue());
-                }
-                
-            }//end of bathroomCutScene
+            
 
-            if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
+            /*if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
             {
                 Vector3 targetPos = turul.transform.position;
                 LockOnToTargetObject(targetPos);
@@ -240,9 +232,21 @@ public class LockView : MonoBehaviour
             {
                 Vector3 targetPos = bathroomAttendant.transform.position;
                 LockOnToTargetObject(targetPos);
-            }
+            }*/
 
-            
+            if (bathroomCutSceneCameraPan)
+            {
+                LockedWithGroundskeeper = false;
+                Vector3 targetPos = BathroomDoor.transform.position;
+                LockOnToTargetObject(targetPos);
+
+                if (!UhhhMaybeYouShouldWaitPlayed)
+                {
+                    StartCoroutine(DelayUhhhhDialogue());
+                }
+
+            }//end of bathroomCutScene
+
         }//end of locked
     }
 
@@ -279,6 +283,7 @@ public class LockView : MonoBehaviour
 
 	private void TryToLockView( )
 	{
+        Debug.Log("reached TryToLockView");
         
 		// Did we hit something?
 		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out RaycastHit hit, Mathf.Infinity, mask ))
@@ -300,14 +305,14 @@ public class LockView : MonoBehaviour
 			
         
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
-        //Debug.Log("Lock View hit " + hit.transform.name);
+        Debug.Log("Lock View raycast hit " + hit.transform.name);
         if (hit.transform.tag == "NPC")
         {
-            NPC = true;
+            lockedWithNPC = true;
         }
         if (hit.transform.tag == "Ground")
         {
-            Ground = true;
+            lockedWithGround = true;
         }
         
 
@@ -415,6 +420,11 @@ public class LockView : MonoBehaviour
             shovel.SetActive(false);
             IHaveAShovel.start();
         }
+        if (hit.transform.name == "VanessasBlankGrave")
+        {
+            LockedWithBlankGrave = true;
+            ambientInteractable = true;
+        }
         /*if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
         {
             InventoryItemManager.playerHasFullWaterBottle = true;
@@ -453,7 +463,7 @@ public class LockView : MonoBehaviour
         
 
         //return if we hit something not interactable
-		if ( !randomWord && !NPC && !Ground)
+		if ( !randomWordBool && !lockedWithNPC && !lockedWithGround && !ambientInteractable)
 			return;
 
         // We got a winner!
@@ -468,7 +478,17 @@ public class LockView : MonoBehaviour
 			item.enabled = false;
 
 		locked = true;
-        Debug.Log("object name: " + hit.transform.name);
+        if (locked)
+        {
+            Debug.Log("successful lock");
+            Debug.Log("object name: " + hit.transform.name);
+        }
+        else
+        {
+            Debug.Log("unsuccessful lock");
+        }
+        
+        
 	}
 
 	public void UnLockView( )
@@ -490,11 +510,13 @@ public class LockView : MonoBehaviour
         LockedWithCandyPuzzle = false;
         LockedWithCharlie = false;
         LockedWithSink = false;
+        LockedWithBlankGrave = false;
 
-    NPC = false;
+        lockedWithNPC = false;
         randomWord = null;
-        Ground = false;
+        lockedWithGround = false;
         randomWordBool = false;
+        ambientInteractable = false;
         //Debug.Log("View Unlocked");
 	}
 
