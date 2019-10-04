@@ -1682,20 +1682,20 @@ MonoBehaviour:
     and milk puzzle, bug fixes, foot steps, fog system, various sfx with FMOD integration\n\u2022
     Kornel - Inventory selection, guidebook functionality, giving/exchanging items
     support, camera focus feature, magic door closing, usable gate, wall/fence prefabs,
-    randomized placement script, mausoleum animation hookup, assorted bug fixes\n\u2022
-    Bar\u0131\u015F \xDCnl\xFCer - dynamic menu resizing, cemetary intro cutscene,
-    cutscene camera code improvements, UI layout tweaks, intro text dynamic placement\n\u2022
-    Christer \"McFunkypants\" Kaitila - sprite art (animated bat, cat, web, owl, grass,
-    mushrooms, rock, spooky bushes, trees) and related integration\n\u2022 Bar\u0131\u015F
-    K\xF6kl\xFC - Ambient light changes with progress, webGL postprocessing troubleshooting,
-    control and prompt UIs, centralized dialog script, bathroom scene\n\u2022 Tyler
-    Funk - Camera look adjustments, mouse click script, mausoleum wall draft\n\u2022
-    Alan Zaring - Title screen music and audio transitions, music after the first
-    puzzle\n\u2022 Jaime Rivas - Puzzle music (including tracks, layers, related FMOD
-    events), trigger zones for puzzle music\n\u2022 Cyriel De Neve - Menu exit button
-    (only shows when testing native builds), adjustments to black fade on menu\n\nGame
-    made by members of HomeTeam GameDev.\nFind more free games or apply to join us
-    at HomeTeamGameDev.com"
+    randomized placement script, mausoleum animation hookup, assorted bug fixes, gameplay
+    direction\n\u2022 Bar\u0131\u015F \xDCnl\xFCer - dynamic menu resizing, cemetary
+    intro cutscene, cutscene camera code improvements, UI layout tweaks, intro text
+    dynamic placement\n\u2022 Christer \"McFunkypants\" Kaitila - sprite art (animated
+    bat, cat, web, owl, grass, mushrooms, rock, spooky bushes, trees) and related
+    integration\n\u2022 Bar\u0131\u015F K\xF6kl\xFC - Ambient light changes with progress,
+    webGL postprocessing troubleshooting, control and prompt UIs, centralized dialog
+    script, bathroom scene, story writing\n\u2022 Tyler Funk - Camera look adjustments,
+    mouse click script, mausoleum wall draft\n\u2022 Alan Zaring - Title screen music
+    and audio transitions, music after the first puzzle\n\u2022 Jaime Rivas - Puzzle
+    music (including tracks, layers, related FMOD events), trigger zones for puzzle
+    music\n\u2022 Cyriel De Neve - Menu exit button (only shows when testing native
+    builds), adjustments to black fade on menu\n\nGame made by members of HomeTeam
+    GameDev.\nFind more free games or apply to join us at HomeTeamGameDev.com"
 --- !u!222 &1596092190
 CanvasRenderer:
   m_ObjectHideFlags: 0
