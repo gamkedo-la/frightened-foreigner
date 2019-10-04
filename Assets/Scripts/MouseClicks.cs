@@ -185,6 +185,7 @@ public class MouseClicks: MonoBehaviour
                         stormSoundControlsScript.StormSoundInstance.start();
                         GroundskeeperRespondsToCorrectAnswer.start(); //groundskeeper says 'there' in Hungarian
                         LockViewScript.randomWord = null;
+                        LockViewScript.randomWordBool = false;
                         LockViewScript.bathroomCutSceneCameraPan = true; //camera pans to the bathroom
                         LightningSound.start();
                         StartCoroutine(delayAppearanceOfBathroomStuff());

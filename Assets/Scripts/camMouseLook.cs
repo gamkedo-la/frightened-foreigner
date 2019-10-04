@@ -29,11 +29,14 @@ public class camMouseLook : MonoBehaviour
 
     public GameObject puzzleJumper;
 
+    private LockView lockViewScript;
+
     private void Awake()
     {
         PauseGameScript = GameObject.Find("GameController").GetComponent<PauseGame>();
         InventoryScript = GameObject.Find("Character").GetComponent<Inventory>();
         GamePaused = PauseGame.GamePaused;
+        lockViewScript = gameObject.GetComponent<LockView>();
     }
 
     // Start is called before the first frame update
@@ -58,7 +61,7 @@ public class camMouseLook : MonoBehaviour
     {
         GamePaused = PauseGame.GamePaused;
         //Debug.Log(gamePaused);
-        if (!GamePaused && !InventoryScript.inventoryActive && !puzzleJumper.active)
+        if (!GamePaused && !InventoryScript.inventoryActive && !puzzleJumper.active && !lockViewScript.locked)
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 

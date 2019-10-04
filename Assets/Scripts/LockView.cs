@@ -19,6 +19,7 @@ public class LockView : MonoBehaviour
 
 	public bool locked = false;
 	public RandomWords randomWord = null;
+    public bool randomWordBool = false;
 
     private GameObject TargetsTextGraphic;
     //private GameObject TargetHit;
@@ -122,7 +123,8 @@ public class LockView : MonoBehaviour
     void Update()
     {
         PlayLoopingSquawk.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
-        //Debug.Log(TurulSquawkingPlaybackState);
+        Debug.Log("locked " + locked);
+        Debug.Log("random word " + randomWord);
 
         if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
@@ -134,7 +136,9 @@ public class LockView : MonoBehaviour
 
 		if ( locked )
 		{
-            if (randomWord )
+            Debug.Log("random word " + randomWord);
+            Debug.Log("randomWordBool" + randomWordBool);
+            if (randomWordBool )
             {
                 if (!LockedWithForint)
                 {
@@ -142,16 +146,22 @@ public class LockView : MonoBehaviour
                     LockOnToTargetObject(targetPos);
                 }
                 //toggle visibility of text graphics based on if player is focused on the object
+
+                
+
                 //money/forint
                 if (LockedWithForint)
                 {
-                    ForintTextGraphic.SetActive(true);
+                    //Vector3 targetPos = 
+                    //ForintTextGraphic.SetActive(true);
 
                 }
                 if (!LockedWithForint)
                 {
                     ForintTextGraphic.SetActive(false);
                 }
+
+
                 //milk/tej
                 if (LockedWithMilk)
                 {
@@ -161,6 +171,8 @@ public class LockView : MonoBehaviour
                 {
                     MilkTextGraphic.SetActive(false);
                 }
+
+                //candy/cukorkat
                 if (LockedWithCandyBowl && !InventoryItemManager.playerHasCandy)
                 {
                     candyBowlTextGraphic.SetActive(true);
@@ -180,17 +192,24 @@ public class LockView : MonoBehaviour
 
             }//end of random word condition
 
+            if (!randomWordBool && !bathroomCutSceneCameraPan)
+            {
+                Vector3 targetPos = hit.transform.position;
+                LockOnToTargetObject(targetPos);
+                Debug.Log("inside non random word lock");
+            }
+
             if (bathroomCutSceneCameraPan)
             {
+                LockedWithGroundskeeper = false;
                 Vector3 targetPos = BathroomDoor.transform.position;
                 LockOnToTargetObject(targetPos);
-                //GroundskeeperTextGraphic.SetActive(false);
-                //StartCoroutine(DelayUhhhhDialogue());
+                
                 if (!UhhhMaybeYouShouldWaitPlayed)
                 {
                     StartCoroutine(DelayUhhhhDialogue());
                 }
-                //UhhhhMaybeYouShouldWait.start();
+                
             }//end of bathroomCutScene
 
             if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
@@ -222,6 +241,8 @@ public class LockView : MonoBehaviour
                 Vector3 targetPos = bathroomAttendant.transform.position;
                 LockOnToTargetObject(targetPos);
             }
+
+            
         }//end of locked
     }
 
@@ -300,6 +321,7 @@ public class LockView : MonoBehaviour
                 Debug.Log("You should have the fan in your inventory");
             }
         }
+
         if (hit.transform.name == "Charlie")
         {
             LockedWithCharlie = true;
@@ -327,6 +349,7 @@ public class LockView : MonoBehaviour
                 DialogueWithCharlie.IDontFeelWell.start();
             }
         }
+
         if (hit.transform.name == "Groundskeeper")
         {
             LockedWithGroundskeeper = true;
@@ -372,8 +395,8 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "CatPuzzle")
         {
-            
-            
+
+            LockedWithCatPuzzle = true;
         }
         if (hit.transform.name == "Candy Bowl")
         {
@@ -418,7 +441,18 @@ public class LockView : MonoBehaviour
 
 
         // Does it have a RandomWords on it?
-        randomWord = hit.collider.gameObject.GetComponent<RandomWords>( );
+        if (hit.collider.gameObject.GetComponent<RandomWords>() != null)
+        {
+            randomWord = hit.collider.gameObject.GetComponent<RandomWords>();
+            randomWordBool = true;
+        } else
+        {
+            randomWord = null;
+            randomWordBool = false;
+        }
+        
+
+        //return if we hit something not interactable
 		if ( !randomWord && !NPC && !Ground)
 			return;
 
@@ -434,6 +468,7 @@ public class LockView : MonoBehaviour
 			item.enabled = false;
 
 		locked = true;
+        Debug.Log("object name: " + hit.transform.name);
 	}
 
 	public void UnLockView( )
@@ -442,7 +477,7 @@ public class LockView : MonoBehaviour
 			item.enabled = true;
 
 		locked = false;
-
+        
         LockedWithVanessa = false;
         LockedWithGroundskeeper = false;
         LockedWithBathroomAttendant = false;
@@ -454,8 +489,12 @@ public class LockView : MonoBehaviour
         LockedWithCandyBowl = false;
         LockedWithCandyPuzzle = false;
         LockedWithCharlie = false;
+        LockedWithSink = false;
 
-        NPC = false;
+    NPC = false;
+        randomWord = null;
+        Ground = false;
+        randomWordBool = false;
         //Debug.Log("View Unlocked");
 	}
 

@@ -10,20 +10,20 @@ public class DialogueWithVanessa : MonoBehaviour
     public GameObject PlayerCamera;
 
     public GameObject groundskeeper;
-    //public bool groundskeeperInvisible = true;
+    
     private DialogueWithGroundskeeper dialogueWithGroundskeeperScript;
 
     public GameObject door;
     private DoorScript doorScript;
 
     public FMOD.Studio.EventInstance TellPlayerToFindTheBathroom;
-    //private bool PlayerHasBeenToldToFindBathroomThisInteraction = false;
+    
 
     public FMOD.Studio.EventInstance ITriedToFindTheBathroom;
-    //public bool ITriedToFindTheBathroomPlayed = false;
+    
 
     public FMOD.Studio.EventInstance HeDoesntKnowEnglish;
-    //public bool HeDoesntKnowEnglishHasPlayed = false;
+    
     public bool learnedFurduszoba = false;
 
     public GameObject TutorialUIHolder;
