@@ -157,7 +157,8 @@ public class LockView : MonoBehaviour
     {
         PlayLoopingSquawk.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
         //Debug.Log("locked " + locked);
-       // Debug.Log("random word " + randomWord);
+        // Debug.Log("random word " + randomWord);
+        Debug.Log("bathroom cutscene camera pan: " + bathroomCutSceneCameraPan);
 
         if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
@@ -225,7 +226,8 @@ public class LockView : MonoBehaviour
                 //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
 
             }//end of random word condition
-            else //if locked with something that is not a random word puzzle
+
+         else if (locked && !bathroomCutSceneCameraPan)//if locked with something that is not a random word puzzle
             {
                 Debug.Log("else condition of lockView update");
                 Vector3 targetPos = hit.transform.position;
@@ -265,16 +267,17 @@ public class LockView : MonoBehaviour
                 LockOnToTargetObject(targetPos);
             }*/
 
-            if (bathroomCutSceneCameraPan)
-            {
-                LockedWithGroundskeeper = false;
-                Vector3 targetPos = BathroomDoor.transform.position;
-                LockOnToTargetObject(targetPos);
+        else if (locked && bathroomCutSceneCameraPan)
+          {
+             Debug.Log("inside bathroom cutscene camera pan of lockViewScript");
+             LockedWithGroundskeeper = false;
+             Vector3 targetPos = BathroomDoor.transform.position;
+            LockOnToTargetObject(targetPos);
 
-                if (!UhhhMaybeYouShouldWaitPlayed)
-                {
-                    StartCoroutine(DelayUhhhhDialogue());
-                }
+            if (!UhhhMaybeYouShouldWaitPlayed)
+             {
+                StartCoroutine(DelayUhhhhDialogue());
+             }
 
             }//end of bathroomCutScene
 
