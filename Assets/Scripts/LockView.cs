@@ -47,7 +47,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithStillClock = false;
     public bool LockedWithCreepyClock = false;
     public bool LockedWithTreeOfLife = false;
-    
+
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -158,16 +158,7 @@ public class LockView : MonoBehaviour
         PlayLoopingSquawk.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
         //Debug.Log("locked " + locked);
        // Debug.Log("random word " + randomWord);
-
-        if ( Input.GetKeyDown( KeyCode.Space ) )
-		{
-            Debug.Log("locked check on space key down " + locked);
-			if ( locked )
-				UnLockView( );
-			else
-				TryToLockView( );
-		}
-
+	   /*
 		if ( locked )
 		{
             Debug.Log("random word " + randomWord);
@@ -181,12 +172,12 @@ public class LockView : MonoBehaviour
                 }
                 //toggle visibility of text graphics based on if player is focused on the object
 
-                
+
 
                 //money/forint
                 if (LockedWithForint)
                 {
-                    //Vector3 targetPos = 
+                    //Vector3 targetPos =
                     //ForintTextGraphic.SetActive(true);
 
                 }
@@ -233,7 +224,7 @@ public class LockView : MonoBehaviour
                 Debug.Log("inside non random word lock");
             }
 
-            
+
 
             /*if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
             {
@@ -252,7 +243,7 @@ public class LockView : MonoBehaviour
                 Vector3 targetPos = candyPuzzle.transform.position;
                 LockOnToTargetObject(targetPos);
             }
-            
+
             if (elementsPuzzleLightningCutscene)
             {
                 LockedWithTurul = false;
@@ -264,7 +255,7 @@ public class LockView : MonoBehaviour
                 Vector3 targetPos = bathroomAttendant.transform.position;
                 LockOnToTargetObject(targetPos);
             }*/
-
+			/*
             if (bathroomCutSceneCameraPan)
             {
                 LockedWithGroundskeeper = false;
@@ -279,13 +270,22 @@ public class LockView : MonoBehaviour
             }//end of bathroomCutScene
 
         }//end of locked
-    }
+		*/
+		if ( Input.GetKeyDown( KeyCode.Space ) )
+		{
+			Debug.Log( "locked check on space key down " + locked );
+			if ( locked )
+				UnLockView( );
+			else
+				TryToLockView( );
+		}
+	}
 
 	public void HoldItem( PlayerItem item, Sprite image)
 	{
 		itemInHand = item;
 		itemPreview.sprite = image;
-        
+
 
 		if ( image)
         {
@@ -298,7 +298,7 @@ public class LockView : MonoBehaviour
             itemPreview.gameObject.SetActive(false);
             AnItemIsBeingHeld = false;
         }
-			
+
 	}
 
     public void LockOnToTargetObject(Vector3 targetPos)
@@ -315,15 +315,15 @@ public class LockView : MonoBehaviour
 	private void TryToLockView( )
 	{
         Debug.Log("reached TryToLockView");
-        
+
 		// Did we hit something?
-		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out RaycastHit hit, Mathf.Infinity, mask ))
+		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out hit, Mathf.Infinity, mask ))
         {
             Debug.Log("Lock View Hit Nothing/Went to infinity");
             return;
         }
-			
-        
+
+
         //Debug.Log(character.transform.position);
         //Debug.Log(hit.collider.gameObject.transform.position);
 
@@ -333,8 +333,8 @@ public class LockView : MonoBehaviour
             Debug.Log("Lock View Hit " + hit.transform.name + ", but it is beyond the max distance");
             return;
         }
-			
-        
+
+
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
         Debug.Log("Lock View raycast hit " + hit.transform.name);
         if (hit.transform.tag == "NPC")
@@ -345,7 +345,7 @@ public class LockView : MonoBehaviour
         {
             lockedWithGround = true;
         }
-        
+
 
         if (hit.transform.name == "Vanessa")
         {
@@ -369,7 +369,7 @@ public class LockView : MonoBehaviour
                 {
                     DialogueWithCharlie.AskingForMedicine.start();
                     DialogManager.PlayerHasAskedForMedicine = true;
-                } 
+                }
                  else
                 {
                     DialogueWithCharlie.StillDontKnowWordForMedicine.start();
@@ -426,7 +426,7 @@ public class LockView : MonoBehaviour
             {
                 turulSFXScript.TurulSaysFireWaterEarthWindSound.start();
             }
-                
+
         }
         if (hit.transform.name == "Milk")
         {
@@ -445,9 +445,9 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "CandyPuzzle")
         {
-            
+
             LockedWithCandyPuzzle = true;
-            
+
         }
         if (hit.transform.name == "Shovel")
         {
@@ -461,7 +461,7 @@ public class LockView : MonoBehaviour
             ambientInteractable = true;
             BlankGraveComment.start();
         }
-        
+
         if (hit.transform.name == "GraveFront" || hit.transform.name == "Charlies Grave" || hit.transform.name == "Vanessas Grave")
         {
             FilledInGravesComment.start();
@@ -491,7 +491,7 @@ public class LockView : MonoBehaviour
             {
                 BangingMausoleumComment.start();
             }
-            
+
         }
 
         if (hit.transform.name == "GhostParticleSystem")
@@ -551,7 +551,7 @@ public class LockView : MonoBehaviour
             randomWord = null;
             randomWordBool = false;
         }
-        
+
 
         //return if we hit something not interactable
 		if ( !randomWordBool && !lockedWithNPC && !lockedWithGround && !ambientInteractable)
@@ -572,14 +572,14 @@ public class LockView : MonoBehaviour
         if (locked)
         {
             Debug.Log("successful lock with: " + hit.transform.name);
-            
+
         }
         else
         {
             Debug.Log("unsuccessful lock");
         }
-        
-        
+
+
 	}
 
 	public void UnLockView( )
@@ -588,7 +588,7 @@ public class LockView : MonoBehaviour
 			item.enabled = true;
 
 		locked = false;
-        
+
         LockedWithVanessa = false;
         LockedWithGroundskeeper = false;
         LockedWithBathroomAttendant = false;
