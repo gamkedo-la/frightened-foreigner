@@ -158,7 +158,7 @@ public class LockView : MonoBehaviour
         PlayLoopingSquawk.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
         //Debug.Log("locked " + locked);
        // Debug.Log("random word " + randomWord);
-	   /*
+
 		if ( locked )
 		{
             Debug.Log("random word " + randomWord);
@@ -255,7 +255,7 @@ public class LockView : MonoBehaviour
                 Vector3 targetPos = bathroomAttendant.transform.position;
                 LockOnToTargetObject(targetPos);
             }*/
-			/*
+
             if (bathroomCutSceneCameraPan)
             {
                 LockedWithGroundskeeper = false;
@@ -270,7 +270,7 @@ public class LockView : MonoBehaviour
             }//end of bathroomCutScene
 
         }//end of locked
-		*/
+
 		if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
 			Debug.Log( "locked check on space key down " + locked );
