@@ -43,6 +43,11 @@ public class LockView : MonoBehaviour
     public bool LockedWithSink = false;
     public bool LockedWithBlankGrave = false;
     public bool LockedWithLock = false;
+    public bool LockedWithMausoleum = false;
+    public bool LockedWithStillClock = false;
+    public bool LockedWithCreepyClock = false;
+    public bool LockedWithTreeOfLife = false;
+    
 
     public GameObject BathroomDoor;
     public bool bathroomCutSceneCameraPan = false;
@@ -77,6 +82,14 @@ public class LockView : MonoBehaviour
     private float maxVignetteIntensity = 0.45f;
 
     private FMOD.Studio.PLAYBACK_STATE TurulSquawkingPlaybackState;
+    public FMOD.Studio.EventInstance TurulSingleSquawk;
+    public FMOD.Studio.EventInstance LockComment;
+    public FMOD.Studio.EventInstance StillMausoleumComment;
+    public FMOD.Studio.EventInstance StillClockComment;
+    public FMOD.Studio.EventInstance BlankGraveComment;
+    public FMOD.Studio.EventInstance TreeOfLifeComment;
+
+
 
     public GameObject bathroomCutsceneHolder;
     private TriggerGateClose gateCloseScript;
@@ -111,8 +124,14 @@ public class LockView : MonoBehaviour
         lockedWithNPC = false;
         UhhhhMaybeYouShouldWait = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/UhhhhMaybeYouShouldWait");
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
+        TurulSingleSquawk = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/TurulSquawk");
+        LockComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/LockComment");
+        StillMausoleumComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/StillMausoleumComment");
+        StillClockComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/StillClockComment");
+        BlankGraveComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/GraveWithoutWordsComment");
+        TreeOfLifeComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/TreeOfLife");
 
-        IHaveAShovel = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveAShovel");
+    IHaveAShovel = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveAShovel");
 
         lightScript = lights.GetComponent<ProgressiveLights>();
         gateCloseScript = bathroomCutsceneHolder.GetComponent<TriggerGateClose>();
@@ -376,6 +395,10 @@ public class LockView : MonoBehaviour
         {
             //Debug.Log("Locked with Turul");
             LockedWithTurul = true;
+            if (PuzzleManagement.PlayerIsDoingBathroomPuzzle)
+            {
+                TurulSingleSquawk.start();
+            }
             if (PuzzleManagement.PlayerIsDoingCatPuzzle)
             {
                 turulSFXScript.TurulSaysMilkTejSound.start();
@@ -425,11 +448,38 @@ public class LockView : MonoBehaviour
         {
             LockedWithBlankGrave = true;
             ambientInteractable = true;
+            BlankGraveComment.start();
         }
+        
+
         if (hit.transform.name == "Lock")
         {
             LockedWithLock = true;
             ambientInteractable = true;
+            LockComment.start();
+        }
+        if (hit.transform.name == "Left Wall" || hit.transform.name == "Right Wall" || hit.transform.name == "Front Wall" || hit.transform.name == "Back Wall")
+        {
+            LockedWithMausoleum = true;
+            ambientInteractable = true;
+            StillMausoleumComment.start();
+        }
+        if (hit.transform.name == "stillClock")
+        {
+            LockedWithStillClock = true;
+            ambientInteractable = true;
+            StillClockComment.start();
+        }
+        if (hit.transform.name == "CreepyClock")
+        {
+            LockedWithCreepyClock = true;
+            ambientInteractable = true;
+        }
+        if (hit.transform.name == "Tree of Life")
+        {
+            LockedWithTreeOfLife = true;
+            ambientInteractable = true;
+            TreeOfLifeComment.start();
         }
         /*if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
         {
@@ -517,6 +567,11 @@ public class LockView : MonoBehaviour
         LockedWithCharlie = false;
         LockedWithSink = false;
         LockedWithBlankGrave = false;
+        LockedWithLock = false;
+        LockedWithMausoleum = false;
+        LockedWithStillClock = false;
+        LockedWithCreepyClock = false;
+        LockedWithTreeOfLife = false;
 
         lockedWithNPC = false;
         randomWord = null;

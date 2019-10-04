@@ -46,8 +46,13 @@
 {93763e5a-a0dd-43f7-b920-9c20cf128f30} event:/ItemInteractions/SinkDoesntCare
 {bd18b049-6825-4bf9-aa60-1d1131ec6777} event:/Monologue/BathroomDoorHint
 {7d1de353-db89-4844-9406-e690fde9c23b} event:/Monologue/feelingSick
+{03b12596-35f4-4cb5-ab69-9413db78a7e8} event:/Monologue/GraveWithoutWordsComment
 {d1a03a8d-988e-4f8e-b89a-4e55ab055b84} event:/Monologue/LeaveForintOnTheGround
+{3d9d29ef-9ad0-4d02-85b5-8d9996cc9f27} event:/Monologue/LockComment
 {a924d54a-c11a-4a10-ba79-51ce94d85f90} event:/Monologue/makeItRainInTheBathroom
+{b2d22afb-4a39-4d85-af4e-dc380e17d740} event:/Monologue/StillMausoleumComment
+{b8bd581e-41bd-4273-a6e6-32424b635410} event:/Monologue/TreeOfLife
+{3e594d9f-d48e-4257-843b-aff51d0f2e9b} event:/Monologue/StillClockComment
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
 {118077e6-62c8-4f84-88cf-aebc269d80bb} event:/Music/firstPuzzleMusicBaseLayer
 {38603b31-4e90-4c9b-b178-f72d7f72f039} event:/Music/firstPuzzleMusicFourthLayer
