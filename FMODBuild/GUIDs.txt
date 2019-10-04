@@ -53,6 +53,10 @@
 {b2d22afb-4a39-4d85-af4e-dc380e17d740} event:/Monologue/StillMausoleumComment
 {b8bd581e-41bd-4273-a6e6-32424b635410} event:/Monologue/TreeOfLife
 {3e594d9f-d48e-4257-843b-aff51d0f2e9b} event:/Monologue/StillClockComment
+{085f2a93-2a24-4921-a44e-3302f1b1401a} event:/Monologue/IgnoreTheGhostComment
+{bdc11a1b-054c-4e04-bfa5-3369d466473e} event:/Monologue/FilledInGravesComment
+{91ef1215-cc81-4c10-a635-588156d376e9} event:/Monologue/CreepyClockComment
+{e238593f-bf80-4656-80f5-af7adfc04f98} event:/Monologue/BangingMausoleumComment
 {3af19c1e-d826-4e0d-be5b-c5f1dfa6a1ce} event:/Music/BasicBackgroundMusic
 {118077e6-62c8-4f84-88cf-aebc269d80bb} event:/Music/firstPuzzleMusicBaseLayer
 {38603b31-4e90-4c9b-b178-f72d7f72f039} event:/Music/firstPuzzleMusicFourthLayer

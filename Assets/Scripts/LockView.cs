@@ -88,6 +88,10 @@ public class LockView : MonoBehaviour
     public FMOD.Studio.EventInstance StillClockComment;
     public FMOD.Studio.EventInstance BlankGraveComment;
     public FMOD.Studio.EventInstance TreeOfLifeComment;
+    public FMOD.Studio.EventInstance BangingMausoleumComment;
+    public FMOD.Studio.EventInstance CreepyClockComment;
+    public FMOD.Studio.EventInstance FilledInGravesComment;
+    public FMOD.Studio.EventInstance IgnoreTheGhostComment;
 
 
 
@@ -130,6 +134,13 @@ public class LockView : MonoBehaviour
         StillClockComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/StillClockComment");
         BlankGraveComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/GraveWithoutWordsComment");
         TreeOfLifeComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/TreeOfLife");
+        BangingMausoleumComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/BangingMausoleumComment");
+        CreepyClockComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/CreepyClockComment");
+        FilledInGravesComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/FilledInGravesComment");
+        IgnoreTheGhostComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/IgnoreTheGhostComment");
+
+
+
 
     IHaveAShovel = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveAShovel");
 
@@ -451,8 +462,18 @@ public class LockView : MonoBehaviour
             BlankGraveComment.start();
         }
         
+        if (hit.transform.name == "GraveFront" || hit.transform.name == "Charlies Grave" || hit.transform.name == "Vanessas Grave")
+        {
+            FilledInGravesComment.start();
+        }
 
-        if (hit.transform.name == "Lock")
+        if (hit.transform.name == "CreepyClock")
+        {
+            CreepyClockComment.start();
+        }
+
+
+            if (hit.transform.name == "Lock")
         {
             LockedWithLock = true;
             ambientInteractable = true;
@@ -462,8 +483,22 @@ public class LockView : MonoBehaviour
         {
             LockedWithMausoleum = true;
             ambientInteractable = true;
-            StillMausoleumComment.start();
+            if (PuzzleManagement.PlayerIsDoingBathroomPuzzle)
+            {
+                StillMausoleumComment.start();
+            }
+            else
+            {
+                BangingMausoleumComment.start();
+            }
+            
         }
+
+        if (hit.transform.name == "GhostParticleSystem")
+        {
+            IgnoreTheGhostComment.start();
+        }
+
         if (hit.transform.name == "stillClock")
         {
             LockedWithStillClock = true;
