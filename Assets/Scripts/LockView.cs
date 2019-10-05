@@ -677,7 +677,8 @@ public class LockView : MonoBehaviour
         lockedWithGround = false;
         randomWordBool = false;
         ambientInteractable = false;
-        
+
+        charliesTextGraphic.SetActive(false);
 	}
 
     public IEnumerator DelayUhhhhDialogue()
