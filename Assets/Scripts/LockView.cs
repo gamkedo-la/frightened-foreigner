@@ -130,6 +130,9 @@ public class LockView : MonoBehaviour
     public GameObject controlsLockedReminder;
     public GameObject elementsPuzzleLockViewTarget;
 
+    public FMOD.Studio.EventInstance obtainLighterFromCharlieComment;
+    public FMOD.Studio.EventInstance obtainFanFromVanessaComment;
+
     void Start()
     {
         lockedWithNPC = false;
@@ -146,7 +149,8 @@ public class LockView : MonoBehaviour
         FilledInGravesComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/FilledInGravesComment");
         IgnoreTheGhostComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/IgnoreTheGhostComment");
 
-
+        obtainLighterFromCharlieComment = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/ObtainLighterComment");
+            obtainFanFromVanessaComment = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/ObtainFanComment");
 
 
     IHaveAShovel = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveAShovel");
@@ -416,6 +420,7 @@ public class LockView : MonoBehaviour
             if (PuzzleManagement.PlayerIsDoingElementsPuzzle && !InventoryItemManager.playerHasFan)
             {
                 InventoryItemManager.playerHasFan = true;
+                obtainFanFromVanessaComment.start();
                 inventoryItemManagerScript.SetItem(PlayerItem.Fan, true);
                 Debug.Log("You should have the fan in your inventory");
             }
@@ -441,6 +446,7 @@ public class LockView : MonoBehaviour
                 {
                 InventoryItemManager.playerHasLighter = true;
                 inventoryItemManagerScript.SetItem(PlayerItem.Lighter, true);
+                obtainLighterFromCharlieComment.start();
                 Debug.Log("You should have the lighter in your inventory");
             }
             else

@@ -22,6 +22,8 @@
 {22951b32-251e-45fb-b8fd-419b10882e02} event:/Dialogue/Player/ITriedToFindTheBathroom
 {79090859-d682-499d-b5f8-1ab99ec3ec08} event:/Dialogue/Player/UhhhhMaybeYouShouldWait
 {3f3b99f8-8e0e-4bff-8310-e4e261fb8463} event:/Dialogue/Player/WheresTheBathroom
+{8b8bfb69-2fbb-49bd-b74e-636f48d34c8d} event:/Dialogue/Player/ObtainLighterComment
+{69981a0e-2fef-4ccc-8094-8d121eae72e9} event:/Dialogue/Player/ObtainFanComment
 {a9847e29-50c0-4b86-a237-8ce989a647da} event:/Dialogue/Turul/candy
 {d9c0335f-5546-4669-9e3c-389ab71362bb} event:/Dialogue/Turul/fireWaterEarthWind
 {2f84a51c-ce47-4bd1-b2db-5782e2f0722f} event:/Dialogue/Turul/medicine
