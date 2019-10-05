@@ -139,6 +139,7 @@
         <relationship name="modulators">
             <destination>{ade90da5-3523-4341-ac77-b1f759c7fe0f}</destination>
             <destination>{252cc0e7-1fe5-47be-bddb-8a35a35fc2d5}</destination>
+            <destination>{5bfbc3db-3103-4747-b6ae-9afedcdd68ab}</destination>
         </relationship>
         <relationship name="fadeInCurve">
             <destination>{91d3d9eb-b128-43cb-8fe5-13b9f13a7da3}</destination>
@@ -290,6 +291,20 @@
         </property>
         <property name="amount">
             <value>5.20833302</value>
+        </property>
+    </object>
+    <object class="ADSRModulator" id="{5bfbc3db-3103-4747-b6ae-9afedcdd68ab}">
+        <property name="nameOfPropertyBeingModulated">
+            <value>volume</value>
+        </property>
+        <property name="initialValue">
+            <value>-80</value>
+        </property>
+        <property name="attackTime">
+            <value>0</value>
+        </property>
+        <property name="releaseTime">
+            <value>3826.92383</value>
         </property>
     </object>
     <object class="FadeCurve" id="{91d3d9eb-b128-43cb-8fe5-13b9f13a7da3}">
@@ -470,7 +485,7 @@
     </object>
     <object class="AutomationPoint" id="{198b2c08-e58e-4bb5-9d14-5f7a431cc361}">
         <property name="position">
-            <value>0.10000000000000001</value>
+            <value>0.029999999999999999</value>
         </property>
         <property name="value">
             <value>1</value>
@@ -478,7 +493,7 @@
     </object>
     <object class="AutomationPoint" id="{982a1dd1-971f-4003-a0fa-f152bea9d086}">
         <property name="position">
-            <value>0.10000000000000001</value>
+            <value>0.25</value>
         </property>
         <property name="value">
             <value>1</value>
