@@ -128,6 +128,7 @@ public class LockView : MonoBehaviour
     public bool checkHit = true;
 
     public GameObject controlsLockedReminder;
+    public GameObject elementsPuzzleLockViewTarget;
 
     void Start()
     {
@@ -266,7 +267,7 @@ public class LockView : MonoBehaviour
                     //elements puzzle before lightning
                     if (PuzzleManagement.PlayerIsDoingElementsPuzzle && !EmersionLightningEmmissionToggle.elementsLightningEmitted)
                     {
-                        LockOnToTargetObject(elementsPuzzle.transform.position);
+                        LockOnToTargetObject(elementsPuzzleLockViewTarget.transform.position);
                     }
                     //elements puzzle after lightning
                     if (PuzzleManagement.PlayerIsDoingElementsPuzzle && EmersionLightningEmmissionToggle.elementsLightningEmitted)
