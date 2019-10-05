@@ -15,6 +15,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     public GameObject catPuzzle;
 
     public GameObject fene;
+    private PlayFeneSFX feneSFXScript;
 
     public GameObject candyPuzzle;
 
@@ -27,13 +28,16 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     public static bool candyLightningEmitted = false;
     public static bool elementsLightningEmitted = false;
 
+    public FMOD.Studio.EventInstance FeneLaughs;
+
     // Start is called before the first frame update
     void Start()
     {
+        FeneLaughs = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/FeneLaughs");
         EmersionLightning = gameObject.GetComponent<ParticleSystem>();
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         baseLightningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
-        
+        feneSFXScript = fene.GetComponent<PlayFeneSFX>();
     }
 
     // Update is called once per frame
@@ -43,6 +47,11 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         if (LockViewScript.bathroomLightningCutSceneCameraPan && !lightningEmitted)
         {
             StartCoroutine(DelayLightningStrikeForBathroom());
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            FeneLaughs.start();
         }
     }
 
@@ -102,9 +111,15 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         fene.SetActive(true);
-        sicknessLightningEmitted = true;
-        LockViewScript.UnLockView();
+        //feneSFXScript.PlayFeneLaughs();
+        FeneLaughs.start();
+    }
 
+    private IEnumerator DelayTurnOffLockViewForFene()
+    {
+        yield return new WaitForSeconds(11.0f);
+            sicknessLightningEmitted = true;
+        LockViewScript.UnLockView();
     }
 
     //candy puzzle, currently the 'third' puzzle
