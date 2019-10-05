@@ -10,6 +10,8 @@ public class InteractWithBathroomDoor : MonoBehaviour
     private FMOD.Studio.EventInstance BathroomDoorMonologue;
     private FMOD.Studio.PLAYBACK_STATE BathroomDoorMonologuePlaybackState;
 
+    private FMOD.Studio.EventInstance BathroomDoorOpeningSound;
+
     private bool BathroomDoorMonologuePlayedThisInteraction = false;
 
 
@@ -18,6 +20,7 @@ public class InteractWithBathroomDoor : MonoBehaviour
     {
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         BathroomDoorMonologue = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/BathroomDoorHint");
+        BathroomDoorOpeningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/BathroomDoopOpening");
     }
 
     // Update is called once per frame
@@ -34,5 +37,10 @@ public class InteractWithBathroomDoor : MonoBehaviour
         {
             BathroomDoorMonologuePlayedThisInteraction = false;
         }
+    }
+
+    public void playBathroomDoorOpeningSound()
+    {
+        BathroomDoorOpeningSound.start();
     }
 }

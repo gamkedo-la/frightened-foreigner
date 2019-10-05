@@ -88,6 +88,7 @@
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
 {e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
+{f3fda296-29fe-47fe-87dc-4f8ff4863488} event:/SFX/bathroomDoopOpening
 {3a802529-3b24-4b8b-a356-ccb7f747d3e5} event:/GuideBook/sicknessPuzzle
 {4bcfd053-4a85-4aa6-9ae3-3283536750f3} event:/GuideBook/candyPuzzle
 {15eae6f8-3af6-4932-aebd-d17bfa89581a} event:/GuideBook/catPuzzle
