@@ -136,7 +136,9 @@ public class TriggerGateClose : MonoBehaviour
     public void turnOnCatPuzzle()
     {
         PuzzleManagement.PlayerIsDoingBathroomPuzzle = true;
+        lockViewScript.UnLockView();
         lockViewScript.checkHit = true;
+        
     }
 
     public void particleGhostAppears()

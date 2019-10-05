@@ -48,6 +48,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithStillClock = false;
     public bool LockedWithCreepyClock = false;
     public bool LockedWithTreeOfLife = false;
+    public bool LockedWithEngravedGrave = false;
 
 
     public GameObject BathroomDoor;
@@ -471,6 +472,8 @@ public class LockView : MonoBehaviour
 
         if (hit.transform.name == "GraveFront" || hit.transform.name == "Charlies Grave" || hit.transform.name == "Vanessas Grave")
         {
+            LockedWithEngravedGrave = true;
+            ambientInteractable = true;
             FilledInGravesComment.start();
         }
 
@@ -608,6 +611,8 @@ public class LockView : MonoBehaviour
         LockedWithStillClock = false;
         LockedWithCreepyClock = false;
         LockedWithTreeOfLife = false;
+        LockedWithEngravedGrave = false;
+
 
         lockedWithNPC = false;
         randomWord = null;
