@@ -31,6 +31,7 @@
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
 {6e1fbde4-61d4-487b-a5e8-aa18a70449b6} event:/Dialogue/youLookSick
+{4ecdc3be-9c62-4a9b-a37c-998c1a6c3748} event:/Dialogue/fanAndLighterHints
 {ac6a9d81-290a-4ba6-8637-cfbbf351c271} event:/ElementsPuzzle/earth
 {1500c3e5-2713-4617-9cda-919b68db62e6} event:/ElementsPuzzle/fillingWaterBasin
 {414ab1df-6503-4950-a7fa-7c3858394b46} event:/ElementsPuzzle/fire
@@ -87,6 +88,10 @@
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
 {e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
+{3a802529-3b24-4b8b-a356-ccb7f747d3e5} event:/GuideBook/sicknessPuzzle
+{4bcfd053-4a85-4aa6-9ae3-3283536750f3} event:/GuideBook/candyPuzzle
+{15eae6f8-3af6-4932-aebd-d17bfa89581a} event:/GuideBook/catPuzzle
+{cea00c09-d26b-403f-80f3-1ca3ebf1cd3c} event:/GuideBook/elementsPuzzle
 {4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {4ceb91b6-4ce3-4ecd-8fc3-88894cf9b30b} bus:/Master/Dialogue

@@ -5,8 +5,11 @@ using UnityEngine;
 public class TriggerSicknessHint : MonoBehaviour
 {
 
-    private bool hintHasBeenGiven = false;
+    private bool sicknessHintHasBeenGiven = false;
+    private bool lighterAndFanHintsHaveBeenGiven = false;
     private FMOD.Studio.EventInstance youDontLookWellHint;
+    private FMOD.Studio.EventInstance lighterAndFanHints;
+
 
     void Awake()
     {
@@ -14,6 +17,7 @@ public class TriggerSicknessHint : MonoBehaviour
         box.isTrigger = true;
 
         youDontLookWellHint = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/youLookSick");
+        lighterAndFanHints = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/fanAndLighterHints");
     }
 
     // Start is called before the first frame update
@@ -31,11 +35,16 @@ public class TriggerSicknessHint : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !hintHasBeenGiven)
+        if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !sicknessHintHasBeenGiven)
         {
             
             youDontLookWellHint.start();
-            hintHasBeenGiven = true;
+            sicknessHintHasBeenGiven = true;
+        }
+        if (PuzzleManagement.PlayerIsDoingElementsPuzzle && !lighterAndFanHintsHaveBeenGiven)
+        {
+            lighterAndFanHints.start();
+            lighterAndFanHintsHaveBeenGiven = true;
         }
     }
 

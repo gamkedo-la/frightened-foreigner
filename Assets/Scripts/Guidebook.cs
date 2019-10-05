@@ -5,10 +5,17 @@ public class Guidebook : MonoBehaviour
 	[SerializeField] private GameObject[] pages = null;
 
 	private int currentPage = 0;
+    private FMOD.Studio.EventInstance candyPuzzleGuidebookSound;
+    private FMOD.Studio.EventInstance catPuzzleGuidebookSound;
+    private FMOD.Studio.EventInstance elementsPuzzleGuidebookSound;
+    private FMOD.Studio.EventInstance sicknessPuzzleGuidebookSound;
 
     void Start()
     {
-
+        candyPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/candyPuzzle");
+        catPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/catPuzzle");
+        elementsPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/elementsPuzzle");
+        sicknessPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/sicknessPuzzle");
     }
 
     void Update()
@@ -21,17 +28,21 @@ public class Guidebook : MonoBehaviour
 		// TODO: Stebs, here you can add all the FMOD sounds
 		switch ( pageNumber )
 		{
-			case 1:
+			case 1: candyPuzzleGuidebookSound.start();
 			break;
 
-			case 2:
+			case 2: catPuzzleGuidebookSound.start();
 			break;
 
 			case 3:
-			break;
+                elementsPuzzleGuidebookSound.start();
+
+            break;
 
 			case 4:
-			break;
+                sicknessPuzzleGuidebookSound.start();
+
+            break;
 
 			default:
 			break;
