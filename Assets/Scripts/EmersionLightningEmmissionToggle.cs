@@ -152,7 +152,8 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     public void emitLightningForElementsPuzzle()
     {
         baseLightningSound.start();
-        gameObject.transform.position = new Vector3(4.056602f, 20.4f, -1.619036f);
+        gameObject.transform.position = new Vector3(4.77f, 20.4f, 0.79f);
+        
         StartCoroutine(DelayLightningStrikeForElementsPuzzle());
         StartCoroutine(DelayAppearanceOfElementsPuzzle());
     }
