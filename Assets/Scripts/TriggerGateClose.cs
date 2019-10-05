@@ -52,11 +52,14 @@ public class TriggerGateClose : MonoBehaviour
     public GameObject playerCamera;
     private LockView lockViewScript;
 
+    public static FMOD.Studio.EventInstance gateCreakAndLockSound;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
         stormSoundControlsScript = stormSystemSoundHolder.GetComponent<StormSoundControls>();
         lockViewScript = playerCamera.GetComponent<LockView>();
+        gateCreakAndLockSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/GateCreakAndLock");
     }
     // Start is called before the first frame update
     void Start()
@@ -93,6 +96,7 @@ public class TriggerGateClose : MonoBehaviour
     {
         DoorScript.BathroomCutsceneHasPlayed = true;
         ProgressiveLights.fogShouldBeGettingFoggier = true;
+        gateCreakAndLockSound.start();
         stormSoundControlsScript.increaseThunderAndRainIntensityAfterBathroomCutscene();
         sceneManagementScript.ShouldFadeInPostBathroomMusic = true;
         LightsScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
