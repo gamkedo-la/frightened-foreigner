@@ -14,7 +14,13 @@ public class MasterListOfWordChoices : MonoBehaviour
         ListOfAllChoicesForGame.Add("cukorkát");//candy
         ListOfAllChoicesForGame.Add("tej");//milk
         ListOfAllChoicesForGame.Add("forint");//money
-        
+        ListOfAllChoicesForGame.Add("Tűz");//fire
+        ListOfAllChoicesForGame.Add("szél");//wind
+        ListOfAllChoicesForGame.Add("föld");//earth
+        ListOfAllChoicesForGame.Add("víz");//water
+
+
+
     }
 
     void Start()
