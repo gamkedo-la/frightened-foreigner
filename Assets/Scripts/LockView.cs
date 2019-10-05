@@ -127,6 +127,8 @@ public class LockView : MonoBehaviour
 
     public bool checkHit = true;
 
+    public GameObject controlsLockedReminder;
+
     void Start()
     {
         lockedWithNPC = false;
@@ -625,6 +627,7 @@ public class LockView : MonoBehaviour
 			item.enabled = false;
 
 		locked = true;
+        controlsLockedReminder.SetActive(true);
         if (locked)
         {
             Debug.Log("successful lock with: " + hit.transform.name);
@@ -642,6 +645,8 @@ public class LockView : MonoBehaviour
 	{
 		foreach ( var item in toDisable )
 			item.enabled = true;
+
+        controlsLockedReminder.SetActive(false);
 
 		locked = false;
 
