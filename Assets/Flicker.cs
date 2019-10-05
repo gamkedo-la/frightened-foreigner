@@ -7,7 +7,7 @@ using UnityEngine;
 public class Flicker : MonoBehaviour
 {
 
-    public GameObject thisLight;
+    
     private Light lightComponent;
     private bool lightIsOn = false;
     
@@ -15,7 +15,7 @@ public class Flicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lightComponent = thisLight.GetComponent<Light>();
+        lightComponent = gameObject.GetComponent<Light>();
         lightComponent.intensity = 0.0f;
     }
 
@@ -40,14 +40,12 @@ public class Flicker : MonoBehaviour
         {
             if (!lightIsOn)
             {
-                //flickerOn();
-                //Debug.Log(lightComponent.intensity);
+                
                 lightIsOn = true;
             }
             else if (lightIsOn)
             {
-                //flickerOff();
-                //Debug.Log(lightComponent.intensity);
+                
 
                 lightIsOn = false;
             }

@@ -24,12 +24,7 @@ public class ToggleAudioSettingsMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if ("Cemetery Level" == SceneManager.GetActiveScene().name && audioSettingsCanvas == null)
-        //{ 
-        //    Debug.Log("inside update of ToggleAudio");
         
-        //    audioSettingsCanvas = GameObject.Find("AudioSettingsCanvas");
-        //}
     }
 
     public void toggleAudioSettingsMenu()

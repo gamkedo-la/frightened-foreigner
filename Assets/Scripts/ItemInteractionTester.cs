@@ -12,6 +12,6 @@ public class ItemInteractionTester : MonoBehaviour
 
 	public void ShowSuccess( )
 	{
-		//Debug.Log(correctItemResponse);
+		
 	}
 }

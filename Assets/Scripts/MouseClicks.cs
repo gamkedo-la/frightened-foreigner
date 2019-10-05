@@ -84,6 +84,8 @@ public class MouseClicks: MonoBehaviour
     public GameObject stormSystemSoundHolder;
     private StormSoundControls stormSoundControlsScript;
 
+    
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
@@ -118,9 +120,7 @@ public class MouseClicks: MonoBehaviour
         TitleScreenMusic = SceneManagement.TitleScreenMusic;
         PostFirstPuzzleMusic = SceneManagement.PostFirstPuzzleMusic;
 
-        //PostProccessingValue = GameObject.Find("PostProccessingVolume");
-        //PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
-        //Debug.Log(PostProccessingValue);
+        
 
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         GroundskeeperRespondsToIncorrectAnswer = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse");
@@ -143,7 +143,7 @@ public class MouseClicks: MonoBehaviour
     {
         if (!PauseGame.GamePaused)// if the game isn't paused
         {
-           // Debug.Log(PostProccessingValue.GetComponent<PostProcessVolume>());
+           
             if (LockViewScript.locked && Input.GetMouseButtonDown(1))    // right mouse button click 
             {
                 
@@ -172,8 +172,7 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
-               // Debug.Log("temporary picture name: " + temporaryPictureName);
-               // Debug.Log("parents name: " + gameObject.transform.parent.name);
+               
 
 
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
@@ -186,7 +185,10 @@ public class MouseClicks: MonoBehaviour
                         GroundskeeperRespondsToCorrectAnswer.start(); //groundskeeper says 'there' in Hungarian
                         LockViewScript.randomWord = null;
                         LockViewScript.randomWordBool = false;
-                        LockViewScript.bathroomCutSceneCameraPan = true; //camera pans to the bathroom
+                        LockViewScript.LockedWithGroundskeeper = false;
+                        LockViewScript.bathroomLightningCutSceneCameraPan = true; //camera pans to the bathroom
+                        LockViewScript.checkHit = false;
+                        
                         LightningSound.start();
                         StartCoroutine(delayAppearanceOfBathroomStuff());
                         SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;
@@ -198,14 +200,14 @@ public class MouseClicks: MonoBehaviour
                     {
                         makeItRainInTheBathroom.start();
                         InventoryItemManager.playerHasForint = true;
-                        LockViewScript.UnLockView();
+                        
                         thisTextGraphic.SetActive(false);
                         Forint.SetActive(false);
                      }
                     if (LockView.LockedWithMilk)
                     {
                         InventoryItemManager.playerHasMilk = true;
-                        //Debug.Log(InventoryItemManager.playerHasMilk);
+                       
                         milk.SetActive(false);
                         IHaveMilk.start();
                         //charactersInventoryScript.addObtainedItemPictureToNextAvailableSlot(holdMySpriteScript.myInventorySprite);
@@ -231,34 +233,15 @@ public class MouseClicks: MonoBehaviour
                         IHaveCandy.start();
                     }
 
-                    //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Correct_Answer");//positive aural feedback for player
-
-                    //Sprite GhostSoulSprite = Resources.Load<Sprite>("Images/ghost_soul");//load soul sprite
-                    
-                    //GhostSoul.GetComponent<SpriteRenderer>().sprite = GhostSoulSprite;//soul sprite becomes visible
-                    
-                    //GhostSoulVisible = true;//set bool to trigger float to heaven movement in the function/conditional at the bottom of this script
-
-                    //RenderSettings.ambientIntensity = 0.1f;//make the game slightly darker to help add progressive creepy ambience
-
-                    
-
-                    // postprocessing effect to make ambient creepier
-                    //PPVScript.profile.TryGetSettings(out grainLayer);
-                    //PPVScript.profile.TryGetSettings(out ambientOcclusionLayer);
-                    //grainLayer = FindObjectOfType<Grain>();
-                    //grainLayer = PPVScript.GetComponent<Grain>();
-                    //ambientOcclusionLayer = FindObjectOfType<AmbientOcclusion>();
                     
 
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
                     
                     
-                    //PostFirstPuzzleMusic.start();
                     
-                    //Debug.Log(BasicBackGroundMusic.getParameterValue("FreedSouls", out float NewFreedSoulsValue, out float NewFreedSoulsFinalValue));//ONLY grabs the value from FMOD and outputs OK to Debug Log, see following function
-                    //Debug.Log(NewFreedSoulsValue);//displays actual value after being grabbed in the previous function
+                    
+                    
 
                 }
                 else //incorrect answer choice
@@ -292,6 +275,7 @@ public class MouseClicks: MonoBehaviour
         temporaryCemeteryWall.SetActive(false);
         Groundskeeper.SetActive(false);//groundskeeper disappears
         shovel.SetActive(true);//groundskeeper drops the shovel
+        
     }
 
     public void increaseGraininessOfGraphics()
@@ -299,7 +283,7 @@ public class MouseClicks: MonoBehaviour
         PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
-        //Debug.Log(ambientOcclusionLayer);
+        
         GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
         VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
         if (GrainLayer.intensity > maxGrainIntensity)

@@ -114,7 +114,7 @@ public class PuzzleManagement : MonoBehaviour
         PlayerIsDoingSicknessPuzzle = true;
         lightsScript.MakeAmbientCreepier();
         makeGraphicsGrainier();
-        //TriggerGateClose.loopingTurulSquawkSound.start();
+        
         PlayLoopingSquawk.TurulLoopsSquawk.start();
     }
 
@@ -123,7 +123,7 @@ public class PuzzleManagement : MonoBehaviour
         PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
-        //Debug.Log(ambientOcclusionLayer);
+        
         GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
         VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
         if (GrainLayer.intensity > maxGrainIntensity)

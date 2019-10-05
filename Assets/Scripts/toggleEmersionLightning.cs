@@ -19,7 +19,7 @@ public class toggleEmersionLightning : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L) && !emersionLightningParticleSystem.activeInHierarchy)
         {
             emersionLightningParticleSystem.SetActive(true);
-            Debug.Log("Hello L Key");
+           
         }
         else if (Input.GetKeyDown(KeyCode.L) && emersionLightningParticleSystem.activeInHierarchy)
         {

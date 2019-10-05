@@ -29,7 +29,7 @@ public class BushPushSoundTrigger : MonoBehaviour
     {
         if (Input.GetKeyDown("w") || Input.GetKeyDown("a") || Input.GetKeyDown("s") || Input.GetKeyDown("d"))
         {
-            //Debug.Log("Player is Walking");
+            
             PlayerIsWalking = true;
         }
         if (Input.GetKeyUp("w") || Input.GetKeyUp("a") || Input.GetKeyUp("s") || Input.GetKeyUp("d"))

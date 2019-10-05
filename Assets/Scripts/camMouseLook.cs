@@ -59,7 +59,7 @@ public class camMouseLook : MonoBehaviour
 	void Update()
     {
         GamePaused = PauseGame.GamePaused;
-        //Debug.Log(gamePaused);
+        
         if (!GamePaused && !InventoryScript.inventoryActive && !puzzleJumper.active && !lockViewScript.locked)
         {
             var mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));

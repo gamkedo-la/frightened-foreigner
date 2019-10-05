@@ -78,6 +78,8 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
         PuzzleManagement.PlayerIsDoingCatPuzzle = true;
         LockViewScript.HoldItem(PlayerItem.None, null);
+        LockViewScript.LockedWithBathroomAttendant = false;
+        
     }
 
     public void BathroomAttendantRepeatsForint()

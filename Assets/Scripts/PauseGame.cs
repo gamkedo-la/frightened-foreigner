@@ -42,7 +42,7 @@ public class PauseGame : MonoBehaviour
     public void TogglePauseMenu()
     {
         PlayUISounds.UISelectionGhostVoiceSound.start();
-        Debug.Log("Should be toggling");
+       
         if (PauseMenuCanvas.gameObject.activeInHierarchy == false)
         {
             GamePaused = true;

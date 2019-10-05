@@ -49,10 +49,14 @@ public class TriggerGateClose : MonoBehaviour
     public GameObject stormSystemSoundHolder;
     private StormSoundControls stormSoundControlsScript;
 
+    public GameObject playerCamera;
+    private LockView lockViewScript;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
         stormSoundControlsScript = stormSystemSoundHolder.GetComponent<StormSoundControls>();
+        lockViewScript = playerCamera.GetComponent<LockView>();
     }
     // Start is called before the first frame update
     void Start()
@@ -74,8 +78,7 @@ public class TriggerGateClose : MonoBehaviour
         shakeGateSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/ShakingGate");
 
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
-        //loopingTurulSquawkSound = turulSFXScript.TurulLoopsSquawk;
-        //loopingTurulSquawkSound.start();
+        
 
         bathroomCutceneFootstepsScript = footstepsHolderObject.GetComponent<BathroomCutsceneFootstepsControl>();
     }
@@ -83,8 +86,7 @@ public class TriggerGateClose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // loopingTurulSquawkSound.getPlaybackState(out loopingTurulPlaybackState);
-       // Debug.Log("Turul squawking loop is " + loopingTurulPlaybackState);
+       
     }
 
     public void triggerBathroomCutsceneBool()
@@ -98,7 +100,7 @@ public class TriggerGateClose : MonoBehaviour
         PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
-        //Debug.Log(ambientOcclusionLayer);
+        
         GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
         VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
         if (GrainLayer.intensity > maxGrainIntensity)
@@ -134,6 +136,7 @@ public class TriggerGateClose : MonoBehaviour
     public void turnOnCatPuzzle()
     {
         PuzzleManagement.PlayerIsDoingBathroomPuzzle = true;
+        lockViewScript.checkHit = true;
     }
 
     public void particleGhostAppears()

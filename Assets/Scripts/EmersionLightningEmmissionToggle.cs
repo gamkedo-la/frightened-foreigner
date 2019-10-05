@@ -37,7 +37,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     void Update()
     {
         
-        if (LockViewScript.bathroomCutSceneCameraPan && !lightningEmitted)
+        if (LockViewScript.bathroomLightningCutSceneCameraPan && !lightningEmitted)
         {
             StartCoroutine(DelayLightningStrikeForBathroom());
         }

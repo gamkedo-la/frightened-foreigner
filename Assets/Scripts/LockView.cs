@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.Events;
+using UnityEngine.Assertions;
 
 public class LockView : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class LockView : MonoBehaviour
     private GameObject TargetsTextGraphic;
     //private GameObject TargetHit;
 
-    private RaycastHit hit;
+    public RaycastHit hit;
     private bool lockedWithNPC = false;
     private bool lockedWithGround = false;
     private bool ambientInteractable = false;
@@ -50,7 +51,7 @@ public class LockView : MonoBehaviour
 
 
     public GameObject BathroomDoor;
-    public bool bathroomCutSceneCameraPan = false;
+    public bool bathroomLightningCutSceneCameraPan = false;
 
     public bool sicknessPuzzleCutsceneWithFene = false;
 
@@ -123,6 +124,8 @@ public class LockView : MonoBehaviour
 
     public GameObject bathroomAttendant;
 
+    public bool checkHit = true;
+
     void Start()
     {
         lockedWithNPC = false;
@@ -151,19 +154,18 @@ public class LockView : MonoBehaviour
         inventoryScript = GetComponent<Inventory>();
 
         inventoryItemManagerScript = InventoryCanvas.GetComponent<InventoryItemManager>();
+        
     }
 
     void Update()
     {
         PlayLoopingSquawk.TurulLoopsSquawk.getPlaybackState(out TurulSquawkingPlaybackState);
-        //Debug.Log("locked " + locked);
-        // Debug.Log("random word " + randomWord);
-        Debug.Log("bathroom cutscene camera pan: " + bathroomCutSceneCameraPan);
+        
+
 
 		if ( locked )
 		{
-            Debug.Log("random word " + randomWord);
-            Debug.Log("randomWordBool" + randomWordBool);
+            
             if (randomWordBool )
             {
                 if (!LockedWithForint)
@@ -218,38 +220,38 @@ public class LockView : MonoBehaviour
 
             }//end of random word condition
 
-         else if (locked && !bathroomCutSceneCameraPan)//if locked with something that is not a random word puzzle
+         else if (!bathroomLightningCutSceneCameraPan && checkHit)//if locked with something that is not a random word puzzle
             {
-                Debug.Log("else condition of lockView update");
+                
                 Vector3 targetPos = hit.transform.position;
                 LockOnToTargetObject(targetPos);
-                Debug.Log("inside non random word lock");
+                
             }
 
 
 
             /*if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
             {
-                Vector3 targetPos = turul.transform.position;
+                targetPos = turul.transform.position;
                 LockOnToTargetObject(targetPos);
             }
 
             if (sicknessPuzzleCutsceneWithFene)
             {
-                Vector3 targetPos = fene.transform.position;
+                 targetPos = fene.transform.position;
                 LockOnToTargetObject(targetPos);
             }
 
             if (candyPuzzleLightningCutscene)
             {
-                Vector3 targetPos = candyPuzzle.transform.position;
+                 targetPos = candyPuzzle.transform.position;
                 LockOnToTargetObject(targetPos);
             }
 
             if (elementsPuzzleLightningCutscene)
             {
                 LockedWithTurul = false;
-                Vector3 targetPos = elementsPuzzle.transform.position;
+                targetPos = elementsPuzzle.transform.position;
                 LockOnToTargetObject(targetPos);
             }
             if (LockedWithBathroomAttendant)
@@ -258,9 +260,9 @@ public class LockView : MonoBehaviour
                 LockOnToTargetObject(targetPos);
             }*/
 
-        else if (locked && bathroomCutSceneCameraPan)
+        else if (bathroomLightningCutSceneCameraPan)
           {
-             Debug.Log("inside bathroom cutscene camera pan of lockViewScript");
+             
              LockedWithGroundskeeper = false;
              Vector3 targetPos = BathroomDoor.transform.position;
             LockOnToTargetObject(targetPos);
@@ -268,6 +270,7 @@ public class LockView : MonoBehaviour
             if (!UhhhMaybeYouShouldWaitPlayed)
              {
                 StartCoroutine(DelayUhhhhDialogue());
+                    StartCoroutine(UnlockViewAfterBathroomLightningCutscene());
              }
 
             }//end of bathroomCutScene
@@ -276,7 +279,8 @@ public class LockView : MonoBehaviour
 
 		if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
-			Debug.Log( "locked check on space key down " + locked );
+			Debug.Log( "locked " + locked );
+            Debug.Log("checkHit " + checkHit);
 			if ( locked )
 				UnLockView( );
 			else
@@ -317,18 +321,18 @@ public class LockView : MonoBehaviour
 
 	private void TryToLockView( )
 	{
-        Debug.Log("reached TryToLockView");
+        
 
 		// Did we hit something?
 		if ( !Physics.Raycast( transform.position, transform.TransformDirection( Vector3.forward ), out hit, Mathf.Infinity, mask ))
         {
+            
             Debug.Log("Lock View Hit Nothing/Went to infinity");
             return;
         }
 
 
-        //Debug.Log(character.transform.position);
-        //Debug.Log(hit.collider.gameObject.transform.position);
+        
 
         // Is it within out max distance?
         if (Vector3.Distance(character.transform.position, hit.collider.gameObject.transform.position) > 10.0f)
@@ -339,7 +343,7 @@ public class LockView : MonoBehaviour
 
 
         Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit);
-        Debug.Log("Lock View raycast hit " + hit.transform.name);
+        
         if (hit.transform.tag == "NPC")
         {
             lockedWithNPC = true;
@@ -407,7 +411,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "Turul")
         {
-            //Debug.Log("Locked with Turul");
+            
             LockedWithTurul = true;
             if (PuzzleManagement.PlayerIsDoingBathroomPuzzle)
             {
@@ -433,7 +437,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "Milk")
         {
-            //Debug.Log("Locked With Milk");
+            
             LockedWithMilk = true;
         }
         if (hit.transform.name == "CatPuzzle")
@@ -560,13 +564,7 @@ public class LockView : MonoBehaviour
 		if ( !randomWordBool && !lockedWithNPC && !lockedWithGround && !ambientInteractable)
 			return;
 
-        // We got a winner!
-        //Debug.Log( "Focusing on: " + randomWord.gameObject.name );
-
-        //TargetHit = randomWord.gameObject;
-        //Debug.Log(TargetHit);
-        //TargetsTextGraphic = randomWord.gameObject.transform.Find("TextGraphic").gameObject;
-        //TargetsTextGraphic.SetActive(true);
+        
 
         foreach ( var item in toDisable )
 			item.enabled = false;
@@ -616,7 +614,7 @@ public class LockView : MonoBehaviour
         lockedWithGround = false;
         randomWordBool = false;
         ambientInteractable = false;
-        //Debug.Log("View Unlocked");
+        
 	}
 
     public IEnumerator DelayUhhhhDialogue()
@@ -624,7 +622,15 @@ public class LockView : MonoBehaviour
         UhhhMaybeYouShouldWaitPlayed = true;
         yield return new WaitForSeconds(3.0f);
         UhhhhMaybeYouShouldWait.start();
-        bathroomCutSceneCameraPan = false;
+        bathroomLightningCutSceneCameraPan = false;
+        LockedWithGroundskeeper = false;
+        
+    }
+
+    public IEnumerator UnlockViewAfterBathroomLightningCutscene()
+    {
+        yield return new WaitForSeconds(17.0f);
+        UnLockView();
     }
 
     public void makeGraphicsGrainier()
@@ -632,7 +638,7 @@ public class LockView : MonoBehaviour
         PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
-        //Debug.Log(ambientOcclusionLayer);
+        
         GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
         VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
         if (GrainLayer.intensity > maxGrainIntensity)
