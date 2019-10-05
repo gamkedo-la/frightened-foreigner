@@ -8,7 +8,12 @@ public class ItemInteraction : MonoBehaviour
 	[SerializeField] private PlayerItem returnItem = PlayerItem.None;
 	[SerializeField] private UnityEvent doIntereaction = null;
 	[SerializeField] private UnityEvent giveHint = null;
-    
+    public FMOD.Studio.EventInstance generalIncorrectAnswerOrInteractionComment;
+
+    private void Awake()
+    {
+        generalIncorrectAnswerOrInteractionComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/ThatDidntWork");
+    }
 
     public PlayerItem TryInteracting( PlayerItem itemInHand )
     {
@@ -25,6 +30,7 @@ public class ItemInteraction : MonoBehaviour
 		else
 		{
 			giveHint.Invoke( );
+            generalIncorrectAnswerOrInteractionComment.start();
 			return itemInHand;
 		}
 	}

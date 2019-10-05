@@ -84,12 +84,13 @@ public class MouseClicks: MonoBehaviour
     public GameObject stormSystemSoundHolder;
     private StormSoundControls stormSoundControlsScript;
 
-    
+    public FMOD.Studio.EventInstance generalIncorrectAnswerOrInteractionComment;
 
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
         stormSoundControlsScript = stormSystemSoundHolder.GetComponent<StormSoundControls>();
+        generalIncorrectAnswerOrInteractionComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/ThatDidntWork");
     }
 
     // Use this for initialization
@@ -253,9 +254,14 @@ public class MouseClicks: MonoBehaviour
                         
                     }
                     //FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Incorrect_Answer");//negative aural feedback to player for an incorrect answer    
-                    if (LockViewScript.LockedWithCharlie)
+                    else if (LockViewScript.LockedWithCharlie)
                     {
                         DialogueWithCharlie.IncorrectWordForMedicineResponse.start();
+                    }
+
+                    else
+                    {
+                        generalIncorrectAnswerOrInteractionComment.start();
                     }
                 }
 
