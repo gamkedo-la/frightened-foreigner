@@ -22,7 +22,10 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     public FMOD.Studio.EventInstance baseLightningSound;
 
-    
+    public static bool catLightningEmitted = false;
+    public static bool sicknessLightningEmitted = false;
+    public static bool candyLightningEmitted = false;
+    public static bool elementsLightningEmitted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +78,8 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     {
         yield return new WaitForSeconds(2.75f);
         catPuzzle.SetActive(true);
+        catLightningEmitted = true;
+        LockViewScript.UnLockView();
     }
 
     //sickness puzzle, currently the 'second' puzzle
@@ -97,6 +102,9 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         fene.SetActive(true);
+        sicknessLightningEmitted = true;
+        LockViewScript.UnLockView();
+
     }
 
     //candy puzzle, currently the 'third' puzzle
@@ -121,6 +129,9 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         candyPuzzle.SetActive(true);
         LockViewScript.candyPuzzleLightningCutscene = false;
         LockViewScript.LockedWithTurul = false;
+        candyLightningEmitted = true;
+        LockViewScript.UnLockView();
+
     }
 
     public void emitLightningForElementsPuzzle()
@@ -144,7 +155,10 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
         elementsPuzzle.SetActive(true);
         LockViewScript.elementsPuzzleLightningCutscene = false;
         LockViewScript.LockedWithTurul = false;
+        elementsLightningEmitted = true;
+        LockViewScript.UnLockView();
+
     }
 
-    
+
 }

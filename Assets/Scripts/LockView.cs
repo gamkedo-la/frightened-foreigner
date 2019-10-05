@@ -225,27 +225,76 @@ public class LockView : MonoBehaviour
             {
                 
                 Vector3 targetPos = hit.transform.position;
-                LockOnToTargetObject(targetPos);
+
+                if (hit.transform.name == "Turul")
+                {
+                    //cat puzzle before lightning
+                    if (PuzzleManagement.PlayerIsDoingCatPuzzle && !EmersionLightningEmmissionToggle.catLightningEmitted)
+                    {
+                        LockOnToTargetObject(catPuzzle.transform.position);
+                    }
+                    //cat puzzle after lightning
+                    if (PuzzleManagement.PlayerIsDoingCatPuzzle && EmersionLightningEmmissionToggle.catLightningEmitted)
+                    {
+                        LockOnToTargetObject(targetPos);
+                    }
+
+                    //sickness puzzle before lightning
+                    if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !EmersionLightningEmmissionToggle.sicknessLightningEmitted)
+                    {
+                        LockOnToTargetObject(fene.transform.position);
+                    }
+                    //sickness puzzle after lightning
+                    if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && EmersionLightningEmmissionToggle.sicknessLightningEmitted)
+                    {
+                        LockOnToTargetObject(targetPos);
+                    }
+
+                    //candy puzzle before lightning
+                    if (PuzzleManagement.PlayerIsDoingCandyPuzzle && !EmersionLightningEmmissionToggle.candyLightningEmitted)
+                    {
+                        LockOnToTargetObject(candyPuzzle.transform.position);
+                    }
+                    //candy puzzle after lightning
+                    if (PuzzleManagement.PlayerIsDoingCandyPuzzle && EmersionLightningEmmissionToggle.candyLightningEmitted)
+                    {
+                        LockOnToTargetObject(targetPos);
+                    }
+
+                    //elements puzzle before lightning
+                    if (PuzzleManagement.PlayerIsDoingElementsPuzzle && !EmersionLightningEmmissionToggle.elementsLightningEmitted)
+                    {
+                        LockOnToTargetObject(elementsPuzzle.transform.position);
+                    }
+                    //elements puzzle after lightning
+                    if (PuzzleManagement.PlayerIsDoingElementsPuzzle && EmersionLightningEmmissionToggle.elementsLightningEmitted)
+                    {
+                        LockOnToTargetObject(targetPos);
+                    }
+                }
+                else
+                {
+                    LockOnToTargetObject(targetPos);
+                }
                 
-            }
+                
+         }
 
-
-
-            /*if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
+           /* if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
             {
-                targetPos = turul.transform.position;
+                VectargetPos = turul.transform.position;
                 LockOnToTargetObject(targetPos);
             }
 
             if (sicknessPuzzleCutsceneWithFene)
             {
-                 targetPos = fene.transform.position;
+                targetPos = fene.transform.position;
                 LockOnToTargetObject(targetPos);
             }
 
             if (candyPuzzleLightningCutscene)
             {
-                 targetPos = candyPuzzle.transform.position;
+                targetPos = candyPuzzle.transform.position;
                 LockOnToTargetObject(targetPos);
             }
 
@@ -259,7 +308,10 @@ public class LockView : MonoBehaviour
             {
                 Vector3 targetPos = bathroomAttendant.transform.position;
                 LockOnToTargetObject(targetPos);
-            }*/
+            }
+            else*/
+
+            
 
         else if (bathroomLightningCutSceneCameraPan)
           {
