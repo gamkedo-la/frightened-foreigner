@@ -679,6 +679,7 @@ public class LockView : MonoBehaviour
         ambientInteractable = false;
 
         charliesTextGraphic.SetActive(false);
+        ForintTextGraphic.SetActive(false);
 	}
 
     public IEnumerator DelayUhhhhDialogue()
