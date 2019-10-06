@@ -48,6 +48,8 @@ public class PuzzleManagement : MonoBehaviour
     public GameObject turul;
     private PlayTurulSFX turulSFXScript;
 
+    public GameObject placeholderEndingTextUI;
+
     private void Start()
     {
         lightsScript = lights.GetComponent<ProgressiveLights>();
@@ -77,6 +79,7 @@ public class PuzzleManagement : MonoBehaviour
         if (NumberOfFullElementsPuzzlesSolved == 4)
         {
             Debug.Log("Ending cutscene goes here");
+            placeholderEndingTextUI.SetActive(true);
         }
     }
 
