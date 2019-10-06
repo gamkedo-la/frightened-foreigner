@@ -68,6 +68,15 @@ public class InventoryItemManager : MonoBehaviour
             MilkInLevel.SetActive(false);
             MilkTextGraphic.SetActive(false);
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            playerHasFullWaterBottle = true;
+            playerHasDirt = true;
+            playerHasFan = true;
+            playerHasLighter = true;
+            PuzzleManagement.PlayerIsDoingElementsPuzzle = true;
+        }
     }
 
 	public void GiveItem( PlayerItem recivedItem )
