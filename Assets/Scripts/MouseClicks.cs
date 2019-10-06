@@ -178,11 +178,14 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
-               
 
 
+                //Debug.Log("temporary picture name: " + temporaryPictureName);
+                //Debug.Log("parent object name: " + gameObject.transform.parent.name);
+                
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
+                    Debug.Log("Definitely a correct answer");
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
                     {
                         stormSystemAnimator.enabled = true;
@@ -244,11 +247,44 @@ public class MouseClicks: MonoBehaviour
 
                     FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
-                    
-                    
-                    
-                    
-                    
+                    Debug.Log("reached just before puzzle checks");
+                    Debug.Log(thisTextGraphic);
+                    if (LockViewScript.LockedWithBasin && !PuzzleManagement.WaterWordSolved)
+                    {
+                        PuzzleManagement.WaterWordSolved = true;
+                        PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
+                        thisTextGraphic.SetActive(false);
+                        Debug.Log("inside correct answer for water");
+                        LockViewScript.LockedWithBasin = false;
+                    }
+                    if (LockViewScript.LockedWithFlowerPot && !PuzzleManagement.EarthWordSolved)
+                    {
+                        PuzzleManagement.EarthWordSolved = true;
+                        PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
+                        thisTextGraphic.SetActive(false);
+                        Debug.Log("inside correct answer for flower pot");
+                        LockViewScript.LockedWithFlowerPot = false;
+                    }
+                    Debug.Log("Locked with torch?: " + LockViewScript.LockedWithTorch + " and FireWordSolved?: " + PuzzleManagement.FireWordSolved);
+                    if (LockViewScript.LockedWithTorch && !PuzzleManagement.FireWordSolved)
+                    {
+                        PuzzleManagement.FireWordSolved = true;
+                        PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
+                        thisTextGraphic.SetActive(false);
+                        Debug.Log("inside correct answer for fire");
+                        LockViewScript.LockedWithTorch = false;
+                    }
+                    if (LockViewScript.LockedWithPinwheel && !PuzzleManagement.WindWordSolved)
+                    {
+                        PuzzleManagement.WindWordSolved = true;
+                        PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
+                        thisTextGraphic.SetActive(false);
+                        Debug.Log("inside correct answer for wind");
+                        LockViewScript.LockedWithPinwheel = false;
+                    }
+
+
+
 
                 }
                 else //incorrect answer choice

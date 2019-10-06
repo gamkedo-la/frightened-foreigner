@@ -50,6 +50,13 @@ public class LockView : MonoBehaviour
     public bool LockedWithTreeOfLife = false;
     public bool LockedWithEngravedGrave = false;
 
+    //elements puzzle
+    public bool LockedWithFlowerPot = false;
+    public bool LockedWithBasin = false;
+    public bool LockedWithPinwheel = false;
+    public bool LockedWithTorch = false;
+    
+
 
     public GameObject BathroomDoor;
     public bool bathroomLightningCutSceneCameraPan = false;
@@ -587,11 +594,23 @@ public class LockView : MonoBehaviour
             ambientInteractable = true;
             TreeOfLifeComment.start();
         }
-        /*if (hit.transform.name == "Sink" && itemInHand == PlayerItem.WaterBottleEmpty)
+        
+        if (hit.transform.name == "FlowerPot")
         {
-            InventoryItemManager.playerHasFullWaterBottle = true;
-            HoldItem(PlayerItem.WaterBottleEmpty, fullWaterBottleSprite);
-        }*/
+            LockedWithFlowerPot = true;
+        }
+        if (hit.transform.name == "Torch")
+        {
+            LockedWithTorch = true;
+        }
+        if (hit.transform.name == "PinwheelLeafs")
+        {
+            LockedWithPinwheel = true;
+        }
+        if (hit.transform.name == "Basin")
+        {
+            LockedWithBasin = true;
+        }
 
 		// Did we hit something we can interact with?
 		ItemInteraction interactionScript = hit.collider.gameObject.GetComponent<ItemInteraction>( );
@@ -676,6 +695,10 @@ public class LockView : MonoBehaviour
         LockedWithCreepyClock = false;
         LockedWithTreeOfLife = false;
         LockedWithEngravedGrave = false;
+        LockedWithBasin = false;
+        LockedWithTorch = false;
+        LockedWithPinwheel = false;
+        LockedWithFlowerPot = false;
 
 
         lockedWithNPC = false;

@@ -17,6 +17,13 @@ public class PuzzleManagement : MonoBehaviour
     public static bool PinwheelSolved = false;
     public static bool TorchSolved = false;
 
+    public static bool EarthWordSolved = false;
+    public static bool WaterWordSolved = false;
+    public static bool WindWordSolved = false;
+    public static bool FireWordSolved = false;
+
+    public static int NumberOfFullElementsPuzzlesSolved = 0;
+
 
     public GameObject puzzleJumper;
 
@@ -65,6 +72,11 @@ public class PuzzleManagement : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
+        }
+
+        if (NumberOfFullElementsPuzzlesSolved == 4)
+        {
+            Debug.Log("Ending cutscene goes here");
         }
     }
 
