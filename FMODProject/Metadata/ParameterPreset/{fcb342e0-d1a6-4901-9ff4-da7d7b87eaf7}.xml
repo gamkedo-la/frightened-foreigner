@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{fcb342e0-d1a6-4901-9ff4-da7d7b87eaf7}">
+        <property name="name">
+            <value>mausoleumRain</value>
+        </property>
+        <relationship name="folder">
+            <destination>{1a59ad89-e9d1-46d8-a764-8bc770f8f5b4}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{1d381816-8323-4401-b5a4-329cdc93b291}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{1d381816-8323-4401-b5a4-329cdc93b291}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

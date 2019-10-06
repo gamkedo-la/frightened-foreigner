@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="ParameterPreset" id="{33d3a7d2-f3ad-466b-9694-058fda1be6be}">
+        <property name="name">
+            <value>bushRain</value>
+        </property>
+        <relationship name="folder">
+            <destination>{1a59ad89-e9d1-46d8-a764-8bc770f8f5b4}</destination>
+        </relationship>
+        <relationship name="parameter">
+            <destination>{86e913ec-c249-4ae0-bb23-919dbde48d8a}</destination>
+        </relationship>
+    </object>
+    <object class="GameParameter" id="{86e913ec-c249-4ae0-bb23-919dbde48d8a}">
+        <property name="initialValue">
+            <value>0</value>
+        </property>
+    </object>
+</objects>

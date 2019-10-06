@@ -54,12 +54,19 @@ public class TriggerGateClose : MonoBehaviour
 
     public static FMOD.Studio.EventInstance gateCreakAndLockSound;
 
+    public GameObject generalRainSoundHolder;
+    private GeneralRainSoundsScript generalRainSoundScript;
+
+    public GameObject mausoleumRainHolder;
+    public GameObject BushRainSoundHolder;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
         stormSoundControlsScript = stormSystemSoundHolder.GetComponent<StormSoundControls>();
         lockViewScript = playerCamera.GetComponent<LockView>();
         gateCreakAndLockSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/GateCreakAndLock");
+        generalRainSoundScript = generalRainSoundHolder.GetComponent<GeneralRainSoundsScript>();
     }
     // Start is called before the first frame update
     void Start()
@@ -97,6 +104,9 @@ public class TriggerGateClose : MonoBehaviour
         DoorScript.BathroomCutsceneHasPlayed = true;
         ProgressiveLights.fogShouldBeGettingFoggier = true;
         gateCreakAndLockSound.start();
+        generalRainSoundScript.generalRainSounds.setParameterValue("rainTypes", 2);
+        mausoleumRainHolder.SetActive(true);
+        BushRainSoundHolder.SetActive(true);
         stormSoundControlsScript.increaseThunderAndRainIntensityAfterBathroomCutscene();
         sceneManagementScript.ShouldFadeInPostBathroomMusic = true;
         LightsScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience

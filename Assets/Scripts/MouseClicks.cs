@@ -86,11 +86,16 @@ public class MouseClicks: MonoBehaviour
 
     public FMOD.Studio.EventInstance generalIncorrectAnswerOrInteractionComment;
 
+    public GameObject generalRainSoundHolder;
+    private GeneralRainSoundsScript generalRainSoundScript;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
         stormSoundControlsScript = stormSystemSoundHolder.GetComponent<StormSoundControls>();
         generalIncorrectAnswerOrInteractionComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/ThatDidntWork");
+        generalRainSoundScript = generalRainSoundHolder.GetComponent<GeneralRainSoundsScript>();
+
     }
 
     // Use this for initialization
@@ -184,6 +189,7 @@ public class MouseClicks: MonoBehaviour
                         ProgressiveLights.turnOnFog();
                         stormSoundControlsScript.StormSoundInstance.start();
                         GroundskeeperRespondsToCorrectAnswer.start(); //groundskeeper says 'there' in Hungarian
+                        generalRainSoundScript.generalRainSounds.setParameterValue("rainTypes", 1);
                         LockViewScript.randomWord = null;
                         LockViewScript.randomWordBool = false;
                         LockViewScript.LockedWithGroundskeeper = false;

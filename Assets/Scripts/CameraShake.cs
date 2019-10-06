@@ -23,6 +23,9 @@ public class CameraShake : MonoBehaviour
     public GameObject bathroomSideClouds;
     private StormControls bathroomSideStormControlsScript;
 
+    public GameObject generalRainSoundHolder;
+    private GeneralRainSoundsScript generalRainSoundScript;
+
     private void Awake()
     {
         CamerasTransform = GetComponent(typeof(Transform)) as Transform;
@@ -35,6 +38,7 @@ public class CameraShake : MonoBehaviour
         sicknessSideStormControlsScript = sicknessSideClouds.GetComponent<StormControls>();
         playerGraveSideStormControlsScript = playerGraveSideClouds.GetComponent<StormControls>();
         bathroomSideStormControlsScript = bathroomSideClouds.GetComponent<StormControls>();
+        generalRainSoundScript = generalRainSoundHolder.GetComponent<GeneralRainSoundsScript>();
     }
 
     // Update is called once per frame
@@ -72,5 +76,6 @@ public class CameraShake : MonoBehaviour
         sicknessSideStormControlsScript.activateMe();
         playerGraveSideStormControlsScript.activateMe();
         bathroomSideStormControlsScript.activateMe();
+        generalRainSoundScript.generalRainSounds.start();
     }
 }
