@@ -9,7 +9,7 @@ public class BasinResponses : MonoBehaviour
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
     public FMOD.Studio.EventInstance FillingBasinSound;
 
-    public GameObject water;
+    public GameObject FilledBasin;
     public GameObject BasinTextGraphic;
 
     public GameObject playerCamera;
@@ -37,8 +37,10 @@ public class BasinResponses : MonoBehaviour
         TurulSaysIgenSound.start();
         FillingBasinSound.start();
         BasinTextGraphic.SetActive(true);
-        water.SetActive(true);
+        
         lockViewScript.LockOnToTargetObject(gameObject.transform.position);
+        FilledBasin.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void IncorrectResponse()

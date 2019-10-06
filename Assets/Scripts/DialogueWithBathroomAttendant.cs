@@ -66,6 +66,7 @@ public class DialogueWithBathroomAttendant : MonoBehaviour
         yield return new WaitForSeconds(1.25f);
         playerGoingIntoBathroomTimeline.Play();
         GottaGoGottaGoGottaGoGoGo.start();
+        gameObject.SetActive(false);
     }
 
     public void OpenBathroomDoor()

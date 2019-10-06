@@ -89,12 +89,15 @@ public class MouseClicks: MonoBehaviour
     public GameObject generalRainSoundHolder;
     private GeneralRainSoundsScript generalRainSoundScript;
 
+    public FMOD.Studio.EventInstance TurulSaysIgenSound;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
         stormSoundControlsScript = stormSystemSoundHolder.GetComponent<StormSoundControls>();
         generalIncorrectAnswerOrInteractionComment = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/ThatDidntWork");
         generalRainSoundScript = generalRainSoundHolder.GetComponent<GeneralRainSoundsScript>();
+        TurulSaysIgenSound = FMODUnity.RuntimeManager.CreateInstance("event:/ElementsPuzzle/igen");
 
     }
 
@@ -198,7 +201,7 @@ public class MouseClicks: MonoBehaviour
                         LockViewScript.LockedWithGroundskeeper = false;
                         LockViewScript.bathroomLightningCutSceneCameraPan = true; //camera pans to the bathroom
                         LockViewScript.checkHit = false;
-                        
+                        //Groundskeeper.SetActive(false);
                         LightningSound.start();
                         StartCoroutine(delayAppearanceOfBathroomStuff());
                         SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;
@@ -256,6 +259,7 @@ public class MouseClicks: MonoBehaviour
                         thisTextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for water");
                         LockViewScript.LockedWithBasin = false;
+                        TurulSaysIgenSound.start();
                     }
                     if (LockViewScript.LockedWithFlowerPot && !PuzzleManagement.EarthWordSolved)
                     {
@@ -264,6 +268,8 @@ public class MouseClicks: MonoBehaviour
                         thisTextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for flower pot");
                         LockViewScript.LockedWithFlowerPot = false;
+                        TurulSaysIgenSound.start();
+
                     }
                     Debug.Log("Locked with torch?: " + LockViewScript.LockedWithTorch + " and FireWordSolved?: " + PuzzleManagement.FireWordSolved);
                     if (LockViewScript.LockedWithTorch && !PuzzleManagement.FireWordSolved)
@@ -273,6 +279,8 @@ public class MouseClicks: MonoBehaviour
                         thisTextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for fire");
                         LockViewScript.LockedWithTorch = false;
+                        TurulSaysIgenSound.start();
+
                     }
                     if (LockViewScript.LockedWithPinwheel && !PuzzleManagement.WindWordSolved)
                     {
@@ -281,6 +289,8 @@ public class MouseClicks: MonoBehaviour
                         thisTextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for wind");
                         LockViewScript.LockedWithPinwheel = false;
+                        TurulSaysIgenSound.start();
+
                     }
 
 
