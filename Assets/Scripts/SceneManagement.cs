@@ -124,44 +124,48 @@ public class SceneManagement : MonoBehaviour
 
     public void TransitionsForCemeteryLevelFromIntroCutscene()
     {
-        PlayUISounds.UISelectionGhostVoiceSound.start();
+        LoadCemeteryLevelFromIntroCutscene();
+        /*PlayUISounds.UISelectionGhostVoiceSound.start();
 
-        // Part1Text = GameObject.Find("Part1 Text");
-        // TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
+        Part1Text = GameObject.Find("Part1 Text");
+        TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
 
         BlackFade.SetActive(true);
         
         LevelChangerAnimator.Play("FadeOut", 0, 0.25f);
 
-        /* if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
+        if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
         {
             TriggerLayerChangeScript.ShouldTransitionToBassoonPart = true;
-        } */
+        }*/
     }
 
     public void LoadCemeteryLevelFromIntroCutscene()
     {
-        if (CurrentScene.name == "Intro CutScene")
+        SceneManager.LoadScene("Cemetery Level");
+        /*if (CurrentScene.name == "Intro CutScene")
         {
             SceneManager.LoadScene("Cemetery Level");
-        }
+        }*/
     }
 
     public void LoadIntroCutScene()
     {
-        if (CurrentScene.name == "Main Menu")
+        SceneManager.LoadScene("Intro CutScene");
+        /*if (CurrentScene.name == "Main Menu")
         {
             SceneManager.LoadScene("Intro CutScene");
             ShouldFadeInGlock = true;
-            //BlackFade.SetActive(false);
-        }
+            BlackFade.SetActive(false);
+        }*/
     }
 
     public void TransitionToIntroCutscene()
     {
         PlayUISounds.UISelectionGhostVoiceSound.start();
-        LevelChangerAnimator.Play("FadeOut");
-        ShouldFadeInSopranos = true;       
+        LoadIntroCutScene();
+        /*LevelChangerAnimator.Play("FadeOut");
+        ShouldFadeInSopranos = true;*/
     }
 
     
