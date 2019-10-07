@@ -126,17 +126,17 @@ public class SceneManagement : MonoBehaviour
     {
         PlayUISounds.UISelectionGhostVoiceSound.start();
 
-        Part1Text = GameObject.Find("Part1 Text");
-        TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
+        // Part1Text = GameObject.Find("Part1 Text");
+        // TriggerLayerChangeScript = Part1Text.GetComponent<TriggerLayerChange>();
 
         BlackFade.SetActive(true);
         
         LevelChangerAnimator.Play("FadeOut", 0, 0.25f);
 
-        if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
+        /* if (!TriggerLayerChangeScript.ShouldTransitionToBassoonPart)
         {
             TriggerLayerChangeScript.ShouldTransitionToBassoonPart = true;
-        }
+        } */
     }
 
     public void LoadCemeteryLevelFromIntroCutscene()
