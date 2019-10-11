@@ -386,6 +386,7 @@ GameObject:
   - component: {fileID: 503700712}
   - component: {fileID: 503700711}
   - component: {fileID: 503700710}
+  - component: {fileID: 503700713}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -478,6 +479,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 503700713}
+        m_MethodName: PlayGhostUISound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &503700711
@@ -517,6 +529,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503700708}
   m_CullTransparentMesh: 0
+--- !u!114 &503700713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503700708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af7f05b85d465e4cb05068f06422778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &589404101
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,14 +869,14 @@ RectTransform:
   m_GameObject: {fileID: 727524462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 341231643}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: -26, y: 50}
   m_SizeDelta: {x: 1162.5, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &727524464
@@ -1049,6 +1073,7 @@ GameObject:
   - component: {fileID: 998664541}
   - component: {fileID: 998664540}
   - component: {fileID: 998664539}
+  - component: {fileID: 998664542}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -1141,6 +1166,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 998664542}
+        m_MethodName: PlayGhostUISound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &998664540
@@ -1180,6 +1216,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998664537}
   m_CullTransparentMesh: 0
+--- !u!114 &998664542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998664537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af7f05b85d465e4cb05068f06422778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1054049199
 GameObject:
   m_ObjectHideFlags: 0

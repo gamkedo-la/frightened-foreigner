@@ -10,12 +10,15 @@ public class Guidebook : MonoBehaviour
     private FMOD.Studio.EventInstance elementsPuzzleGuidebookSound;
     private FMOD.Studio.EventInstance sicknessPuzzleGuidebookSound;
 
+    private FMOD.Studio.EventInstance GhostUISound;
+
     void Start()
     {
         candyPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/candyPuzzle");
         catPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/catPuzzle");
         elementsPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/elementsPuzzle");
         sicknessPuzzleGuidebookSound = FMODUnity.RuntimeManager.CreateInstance("event:/GuideBook/sicknessPuzzle");
+        GhostUISound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/UIGhostVoice");
     }
 
     void Update()
@@ -51,6 +54,7 @@ public class Guidebook : MonoBehaviour
 
 	public void NextPage( )
 	{
+        GhostUISound.start();
 		if (currentPage < pages.Length)
 		{
 			foreach ( var page in pages )
@@ -63,6 +67,7 @@ public class Guidebook : MonoBehaviour
 
 	public void PreviousPage( )
 	{
+        GhostUISound.start();
 		if ( currentPage > 0 )
 		{
 			foreach ( var page in pages )
@@ -72,4 +77,9 @@ public class Guidebook : MonoBehaviour
 			pages[currentPage].SetActive( true );
 		}
 	}
+
+    private void OnEnable()
+    {
+        GhostUISound.start();
+    }
 }

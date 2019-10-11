@@ -221,14 +221,14 @@ MonoBehaviour:
     have a death mythology theme,\nbut you're not quite sure.\nWhen the group is done
     exploring, \neveryone gets back on the bus,\n but you have to go to the bathroom
     \nbecause you were chugging water \non the hot, stuffy bus. \nOne of your friends
-    says \u201COh yeah, \nI think I saw a bathroom in the cemetery, \nwe\u2019ll wait
+    says \"Oh yeah, \nI think I saw a bathroom in the cemetery, \nwe\u2019ll wait
     for you. But hurry up, \nCharlie isn\u2019t feeling well. \nHe always gets sick
     when he smokes too much, \nand I tried taking away his lighter earlier today,
     \nbut he still got sick. He has medicine with him \njust in case this happens,\n
-    but apparently it\u2019s not working for him today.\u201D \nYour friend then continues
-    in a sarcastically joking voice, \n\n\n\u201CBe careful\u2026 It\u2019s getting
-    late \nand this place might be HAUNTED! Haha.\u201D \nYou respond dismissively,
-    \u201CYeah, OKAAAAYYY.\u201D\n\n"
+    but apparently it\u2019s not working for him today.\"\nYour friend then continues
+    in a sarcastically joking voice, \n\n\n\"Be careful\u2026 It\u2019s getting late
+    \nand this place might be HAUNTED! Haha.\"\nYou respond dismissively, \"Yeah,
+    OKAAAAYYY.\"\n\n"
 --- !u!222 &38373247
 CanvasRenderer:
   m_ObjectHideFlags: 0
