@@ -433,7 +433,7 @@ public class LockView : MonoBehaviour
             }
         }
 
-        if (hit.transform.name == "Charlie")
+        if (hit.transform.name == "Charlie" && !AnItemIsBeingHeld)
         {
             LockedWithCharlie = true;
             if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)

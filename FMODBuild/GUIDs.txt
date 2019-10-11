@@ -17,6 +17,7 @@
 {08faa348-87f2-43bb-a266-1e2463487ae1} event:/Dialogue/Charlie/IDontFeelWell
 {63df5a52-d972-4ab2-ae60-5a5dbcf56368} event:/Dialogue/Charlie/IncorrectWordForMedicine
 {3828a951-92c8-414e-848a-4bfbce4b62f1} event:/Dialogue/Charlie/StillDontKnowWordForMedicine
+{41d859d3-6f50-442e-a97a-f82b4b014ef5} event:/Dialogue/Charlie/IDontWantThat
 {bd4504da-04fd-4e7a-b41a-fba689ca3461} event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse
 {f6357e1c-3c18-46bc-a577-e80278b3af95} event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse
 {22951b32-251e-45fb-b8fd-419b10882e02} event:/Dialogue/Player/ITriedToFindTheBathroom
@@ -32,6 +33,7 @@
 {b5d0c0f7-86fb-4472-9846-386f80a92916} event:/Dialogue/Vanessa/OMGTheGateClosed
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
+{a0a0aa0d-d16e-400e-aa6f-2b4b5983c4f7} event:/Dialogue/Vanessa/IDontWantThat
 {4ecdc3be-9c62-4a9b-a37c-998c1a6c3748} event:/Dialogue/fanAndLighterHints
 {6e1fbde4-61d4-487b-a5e8-aa18a70449b6} event:/Dialogue/youLookSick
 {ac6a9d81-290a-4ba6-8637-cfbbf351c271} event:/ElementsPuzzle/earth

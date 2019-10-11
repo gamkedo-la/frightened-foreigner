@@ -10,6 +10,7 @@ public class DialogueWithCharlie : MonoBehaviour
     public static FMOD.Studio.EventInstance CorrectWordForMedicineResponse;
     public static FMOD.Studio.EventInstance IncorrectWordForMedicineResponse;
     public static FMOD.Studio.EventInstance StillDontKnowWordForMedicine;
+    public static FMOD.Studio.EventInstance CharlieSaysIDontWantThat;
 
 
     // Start is called before the first frame update
@@ -20,11 +21,17 @@ public class DialogueWithCharlie : MonoBehaviour
         CorrectWordForMedicineResponse = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Charlie/CorrectWordForMedicine");
         IncorrectWordForMedicineResponse = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Charlie/IncorrectWordForMedicine");
         StillDontKnowWordForMedicine = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Charlie/StillDontKnowWordForMedicine");
+        CharlieSaysIDontWantThat = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Charlie/IDontWantThat");
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void PlayIDontWantThat()
+    {
+        CharlieSaysIDontWantThat.start();
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 public class DialogueWithVanessa : MonoBehaviour
 {
 
+
+
     private LockView LockViewScript;
     public GameObject PlayerCamera;
 
@@ -17,7 +19,7 @@ public class DialogueWithVanessa : MonoBehaviour
     private DoorScript doorScript;
 
     public FMOD.Studio.EventInstance TellPlayerToFindTheBathroom;
-    
+    public FMOD.Studio.EventInstance IDontWantThat;
 
     public FMOD.Studio.EventInstance ITriedToFindTheBathroom;
     
@@ -55,7 +57,7 @@ public class DialogueWithVanessa : MonoBehaviour
 
         CameraShakeScript = PlayerCamera.GetComponent<CameraShake>();
 
-        
+        IDontWantThat = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/IDontWantThat");
     }
 
     // Update is called once per frame
@@ -101,5 +103,10 @@ public class DialogueWithVanessa : MonoBehaviour
                 learnedFurduszoba = true;
             }
         }
+    }
+
+    public void PlayIDontWantThat()
+    {
+        IDontWantThat.start();
     }
 }

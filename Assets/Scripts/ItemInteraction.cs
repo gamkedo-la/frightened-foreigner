@@ -30,7 +30,8 @@ public class ItemInteraction : MonoBehaviour
 		else
 		{
 			giveHint.Invoke( );
-            generalIncorrectAnswerOrInteractionComment.start();
+            
+            
 			return itemInHand;
 		}
 	}
