@@ -5,7 +5,6 @@ using UnityEngine;
 public class BackgroundMusicManagement : MonoBehaviour
 {
     private FMOD.Studio.EventInstance BackgroundMusic;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +15,5 @@ public class BackgroundMusicManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
-
 }

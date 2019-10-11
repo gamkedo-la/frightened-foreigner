@@ -124,6 +124,7 @@ public class SceneManagement : MonoBehaviour
 
     public void TransitionsForCemeteryLevelFromIntroCutscene()
     {
+        //LoadCemeteryLevelFromIntroCutscene();
         PlayUISounds.UISelectionGhostVoiceSound.start();
 
         Part1Text = GameObject.Find("Part1 Text");
@@ -141,6 +142,7 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadCemeteryLevelFromIntroCutscene()
     {
+        //SceneManager.LoadScene("Cemetery Level");
         if (CurrentScene.name == "Intro CutScene")
         {
             SceneManager.LoadScene("Cemetery Level");
@@ -149,19 +151,21 @@ public class SceneManagement : MonoBehaviour
 
     public void LoadIntroCutScene()
     {
+        //SceneManager.LoadScene("Intro CutScene");
         if (CurrentScene.name == "Main Menu")
         {
             SceneManager.LoadScene("Intro CutScene");
             ShouldFadeInGlock = true;
-            //BlackFade.SetActive(false);
+            BlackFade.SetActive(false);
         }
     }
 
     public void TransitionToIntroCutscene()
     {
         PlayUISounds.UISelectionGhostVoiceSound.start();
+        //LoadIntroCutScene();
         LevelChangerAnimator.Play("FadeOut");
-        ShouldFadeInSopranos = true;       
+        ShouldFadeInSopranos = true;
     }
 
     
