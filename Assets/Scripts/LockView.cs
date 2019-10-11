@@ -19,7 +19,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private UnityEvent usePhone = null;
 
 	public bool locked = false;
-	public RandomWords randomWord = null;
+	public RandomWordWorkaround randomWord = null;
     public bool randomWordBool = false;
 
     private GameObject TargetsTextGraphic;
@@ -140,8 +140,17 @@ public class LockView : MonoBehaviour
     public FMOD.Studio.EventInstance obtainLighterFromCharlieComment;
     public FMOD.Studio.EventInstance obtainFanFromVanessaComment;
 
+    public GameObject Groundskeeper;
+    private DialogueWithGroundskeeper dialogueWithGroundskeeperScript;
+
+    public GameObject Vanessa;
+    private DialogueWithVanessa dialogueWithVanessaScript;
+
     void Start()
     {
+        dialogueWithGroundskeeperScript = Groundskeeper.GetComponent<DialogueWithGroundskeeper>();
+        dialogueWithVanessaScript = Vanessa.GetComponent<DialogueWithVanessa>();
+
         lockedWithNPC = false;
         UhhhhMaybeYouShouldWait = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Player/UhhhhMaybeYouShouldWait");
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
@@ -212,7 +221,7 @@ public class LockView : MonoBehaviour
                 }
                 if (!LockedWithMilk)
                 {
-                    MilkTextGraphic.SetActive(false);
+                   // MilkTextGraphic.SetActive(false);
                 }
 
                 //candy/cukorkat
@@ -222,7 +231,7 @@ public class LockView : MonoBehaviour
                 }
                 if (!LockedWithCandyBowl)
                 {
-                    candyBowlTextGraphic.SetActive(false);
+                   // candyBowlTextGraphic.SetActive(false);
                 }
 
                 //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
@@ -436,7 +445,17 @@ public class LockView : MonoBehaviour
         if (hit.transform.name == "Groundskeeper")
         {
             LockedWithGroundskeeper = true;
+            if (!DialogManager.PlayerHasAskedWhereTheBathroomIs)
+            {
+                dialogueWithGroundskeeperScript.PlayerAsksWhereTheBathroomIs();
+            }
+            if (dialogueWithVanessaScript.learnedFurduszoba)
+            {
+                dialogueWithGroundskeeperScript.PlayerAttemptsToSayBathroomToGroundskeeper();
+            }
         }
+
+
         if (hit.transform.name == "Bathroom Attendant")
         {
             LockedWithBathroomAttendant = true;
@@ -603,9 +622,9 @@ public class LockView : MonoBehaviour
 
 
         // Does it have a RandomWords on it?
-        if (hit.collider.gameObject.GetComponent<RandomWords>() != null)
+        if (hit.collider.gameObject.GetComponent<RandomWordWorkaround>() != null)
         {
-            randomWord = hit.collider.gameObject.GetComponent<RandomWords>();
+            randomWord = hit.collider.gameObject.GetComponent<RandomWordWorkaround>();
             randomWordBool = true;
         } else
         {
@@ -678,7 +697,7 @@ public class LockView : MonoBehaviour
         randomWordBool = false;
         ambientInteractable = false;
 
-        charliesTextGraphic.SetActive(false);
+        //charliesTextGraphic.SetActive(false);
         ForintTextGraphic.SetActive(false);
 	}
 

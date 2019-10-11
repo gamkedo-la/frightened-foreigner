@@ -11,17 +11,11 @@ public class MouseClicks: MonoBehaviour
     private GameObject AudioActiveStatusManager;
 
     private List<string> ImageNameList;//to keep a list of possible word choices
-    private int ImageListIndex = 0;
+    public static int ImageListIndex = 0;
 
     public RandomWords RandomWordsScript;//where to put list of possible words in memory
 
     public string temporaryPictureName;//helps cycle through word choices
-
-    
-    
-
-    
-    
 
     private FMOD.Studio.EventInstance PostFirstPuzzleMusic;
     private FMOD.Studio.EventInstance TitleScreenMusic;
@@ -105,7 +99,6 @@ public class MouseClicks: MonoBehaviour
     void Start()
     {
 
-
         PauseGameScript = GameObject.Find("GameController")?.GetComponent<PauseGame>();
 
         AudioActiveStatusManager = GameObject.Find("ActiveStatusManager");
@@ -114,22 +107,16 @@ public class MouseClicks: MonoBehaviour
 
         temporaryPictureName = transform.name;//grabbing the correct answer choice based on the parent object
         
-        ImageNameList = new List<string>(RandomWordsScript.MasterListOfChoices);
+        ImageNameList = new List<string>(RandomWordsScript.ListOfChoicesForThisTextGraphic);
+        Debug.Log(ImageNameList.Count);
 
         Lights = GameObject.Find("Lights");
         LightScript = Lights.GetComponent<ProgressiveLights>();
-
-        
-
-        
-
 
         LevelChanger = GameObject.Find("LevelChanger");
         SceneManagementScript = LevelChanger.GetComponent<SceneManagement>();
         TitleScreenMusic = SceneManagement.TitleScreenMusic;
         PostFirstPuzzleMusic = SceneManagement.PostFirstPuzzleMusic;
-
-        
 
         LockViewScript = PlayerCamera.GetComponent<LockView>();
         GroundskeeperRespondsToIncorrectAnswer = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse");
@@ -181,8 +168,6 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
-
-
                 //Debug.Log("temporary picture name: " + temporaryPictureName);
                 //Debug.Log("parent object name: " + gameObject.transform.parent.name);
                 
@@ -247,11 +232,6 @@ public class MouseClicks: MonoBehaviour
                     }
 
                     
-
-
-
-
-                    
                     if (LockViewScript.LockedWithBasin && !PuzzleManagement.WaterWordSolved)
                     {
                         PuzzleManagement.WaterWordSolved = true;
@@ -280,7 +260,6 @@ public class MouseClicks: MonoBehaviour
                         Debug.Log("inside correct answer for fire");
                         LockViewScript.LockedWithTorch = false;
                         TurulSaysIgenSound.start();
-
                     }
                     if (LockViewScript.LockedWithPinwheel && !PuzzleManagement.WindWordSolved)
                     {
@@ -290,12 +269,7 @@ public class MouseClicks: MonoBehaviour
                         Debug.Log("inside correct answer for wind");
                         LockViewScript.LockedWithPinwheel = false;
                         TurulSaysIgenSound.start();
-
                     }
-
-
-
-
                 }
                 else //incorrect answer choice
                 {
@@ -350,9 +324,8 @@ public class MouseClicks: MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        ImageListIndex = Random.Range(0, ImageNameList.Count - 1);
-    }
+    
+        
+  
 
 }//end of right click class

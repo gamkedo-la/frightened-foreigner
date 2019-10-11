@@ -33,16 +33,27 @@ public class DialogueWithGroundskeeper : MonoBehaviour
     {
         if (LockViewScript.LockedWithGroundskeeper && !DialogManager.PlayerHasAskedWhereTheBathroomIs)
         {
-            WheresTheBathroom.start();
-            DialogManager.PlayerHasAskedWhereTheBathroomIs = true;
+            
         }
         if (LockViewScript.LockedWithGroundskeeper && DialogueWithVanessaScript.learnedFurduszoba)
         {
-            Furduszoba.SetActive(true);
-            TextGraphic.SetActive(true);
+            
         }
 
         
+    }
+
+    public void PlayerAsksWhereTheBathroomIs()
+    {
+        WheresTheBathroom.start();
+        DialogManager.PlayerHasAskedWhereTheBathroomIs = true;
+    }
+
+    public void PlayerAttemptsToSayBathroomToGroundskeeper()
+    {
+        TextGraphic.GetComponent<RandomWords>().ShuffleList();
+        Furduszoba.SetActive(true);
+        TextGraphic.SetActive(true);
     }
 }
 

@@ -4,58 +4,44 @@ using UnityEngine;
 
 public class RandomWords : MonoBehaviour
 {
-    public GameObject player;
 
-    public List<string> AnswerChoices = new List<string>();//create a list of possible choices
+    public List<string> MasterListOfAnswerChoices = new List<string>();
     
-    public string CurrentChoice;
+    public List<string> ListOfChoicesForThisTextGraphic = new List<string>();
 
-    public MasterListOfWordChoices MasterListOfChoicesScript;//reference the master list of choices
-    public List<string> MasterListOfChoices;
-
-    public List<string> CurrentTransferableChoicesList;//for setting up a future flexible list of possible choices
-    public int CurrentLengthOfTransferableList;
-    public int RandomIntegerForTransferableListOfChoices;
+    public int RandomInteger;
 
     public string CurrentStringToAddToAnswerChoicesList;
 
     private void Awake()
     {
-        player = GameObject.Find("Character");
-        MasterListOfChoicesScript = player.GetComponent<MasterListOfWordChoices>();
-        MasterListOfChoices = MasterListOfChoicesScript.ListOfAllChoicesForGame;
 
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void ShuffleList()
     {
-        
-        CurrentTransferableChoicesList = new List<string>(MasterListOfChoices);
-        
+        Debug.Log("This is being enabled: " + gameObject.name);
 
-        //initialize a random word choice for the parent object        
-        RandomIntegerForTransferableListOfChoices = Random.Range(0, CurrentTransferableChoicesList.Count);
-        CurrentChoice = CurrentTransferableChoicesList[RandomIntegerForTransferableListOfChoices];
+        MasterListOfAnswerChoices.Add("fürdőszoba");//bathroom
+        MasterListOfAnswerChoices.Add("gyógyszert");//medicine
+        MasterListOfAnswerChoices.Add("cukorkát");//candy
+        MasterListOfAnswerChoices.Add("tej");//milk
+        MasterListOfAnswerChoices.Add("forint");//money
+        MasterListOfAnswerChoices.Add("Tűz");//fire
+        MasterListOfAnswerChoices.Add("szél");//wind
+        MasterListOfAnswerChoices.Add("föld");//earth
+        MasterListOfAnswerChoices.Add("víz");//water
 
-        //Add incorrect choices to choices list and remove them from transferable list to repeat multiple instances of
-        //the same choices
-        int wrongAnswerCount = 8;
-        for (int i = 0; i < wrongAnswerCount; i++)
+        for (int i = 0; i < MasterListOfAnswerChoices.Count; i++)
         {
 
-            RandomIntegerForTransferableListOfChoices = Random.Range(0, CurrentTransferableChoicesList.Count);//grab a random integer from current length of list
-            
-            CurrentStringToAddToAnswerChoicesList = CurrentTransferableChoicesList[RandomIntegerForTransferableListOfChoices];//pull the string from the random index of the list
-            
-            AnswerChoices.Add(CurrentStringToAddToAnswerChoicesList);//add the string to the list of answer choices
-            CurrentTransferableChoicesList.RemoveAt(RandomIntegerForTransferableListOfChoices);//remove the added choice from the transferable list to prevent redundancy
-        }
-    }
+            Debug.Log(MasterListOfAnswerChoices.Count);
+            RandomInteger = Random.Range(0, MasterListOfAnswerChoices.Count);//grab a random integer from current length of list
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            CurrentStringToAddToAnswerChoicesList = MasterListOfAnswerChoices[RandomInteger];//pull the string from the random index of the list
+
+            ListOfChoicesForThisTextGraphic.Add(CurrentStringToAddToAnswerChoicesList);//add the string to the list of answer choices
+            MasterListOfAnswerChoices.RemoveAt(RandomInteger);//remove the added choice from the transferable list to prevent redundancy
+        }
     }
 }

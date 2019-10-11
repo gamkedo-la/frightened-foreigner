@@ -9,15 +9,7 @@ public class MasterListOfWordChoices : MonoBehaviour
 
     private void Awake()
     {
-        ListOfAllChoicesForGame.Add("fürdőszoba");//bathroom
-        ListOfAllChoicesForGame.Add("gyógyszert");//medicine
-        ListOfAllChoicesForGame.Add("cukorkát");//candy
-        ListOfAllChoicesForGame.Add("tej");//milk
-        ListOfAllChoicesForGame.Add("forint");//money
-        ListOfAllChoicesForGame.Add("Tűz");//fire
-        ListOfAllChoicesForGame.Add("szél");//wind
-        ListOfAllChoicesForGame.Add("föld");//earth
-        ListOfAllChoicesForGame.Add("víz");//water
+        
 
 
 
