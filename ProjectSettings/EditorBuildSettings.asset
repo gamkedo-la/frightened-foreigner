@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: ebb06bc35fa55d14d9b01aaedd04fb5b
   - enabled: 1
-    path: Assets/Scenes/Cemetery Level.unity
-    guid: e7b02d5acfadf0645a720e8aaed324fc
-  - enabled: 1
     path: Assets/Scenes/Intro CutScene.unity
     guid: fa15658c76bd42e4eb6dec3a9c1224b9
+  - enabled: 1
+    path: Assets/Scenes/Cemetery Level.unity
+    guid: e7b02d5acfadf0645a720e8aaed324fc
   m_configObjects: {}

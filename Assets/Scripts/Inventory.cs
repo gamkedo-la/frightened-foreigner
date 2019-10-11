@@ -67,7 +67,7 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             PlayUISounds.UISelectionGhostVoiceSound.start();
-            if (!inventory.active)
+            if (!inventory.activeInHierarchy)
             {
                 inventory.SetActive(true);
                 inventoryActive = true;

@@ -60,7 +60,7 @@ public class PuzzleManagement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            if (!puzzleJumper.active)
+            if (!puzzleJumper.activeInHierarchy)
             {
                 puzzleJumper.SetActive(true);
                 Time.timeScale = 0;
