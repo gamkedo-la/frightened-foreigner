@@ -17,11 +17,11 @@ public class MouseClicks: MonoBehaviour
 
     public string temporaryPictureName;//helps cycle through word choices
 
-    private GameObject GhostSoul;//hidden soul to be set free when correct choice is chosen
-    private bool GhostSoulVisible = false;
+    
+    
 
-    private GameObject freedSoulsCounter;//keeping track of level progress
-    private CountFreedSouls FreedSoulsScript;
+    
+    
 
     private FMOD.Studio.EventInstance PostFirstPuzzleMusic;
     private FMOD.Studio.EventInstance TitleScreenMusic;
@@ -119,10 +119,10 @@ public class MouseClicks: MonoBehaviour
         Lights = GameObject.Find("Lights");
         LightScript = Lights.GetComponent<ProgressiveLights>();
 
-        GhostSoul = GameObject.Find("BathroomGhostSoul");//grabbing the specific ghost soul
+        
 
-        freedSoulsCounter = GameObject.Find("SoulCounter");
-        FreedSoulsScript = freedSoulsCounter.GetComponent<CountFreedSouls>();
+        
+
 
         LevelChanger = GameObject.Find("LevelChanger");
         SceneManagementScript = LevelChanger.GetComponent<SceneManagement>();
@@ -188,7 +188,7 @@ public class MouseClicks: MonoBehaviour
                 
                 if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
                 {
-                    Debug.Log("Definitely a correct answer");
+
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
                     {
                         stormSystemAnimator.enabled = true;
@@ -248,10 +248,10 @@ public class MouseClicks: MonoBehaviour
 
                     
 
-                    FreedSoulsScript.IncreaseNumberOfFreedSouls();//keep track of progress in level
 
-                    Debug.Log("reached just before puzzle checks");
-                    Debug.Log(thisTextGraphic);
+
+
+                    
                     if (LockViewScript.LockedWithBasin && !PuzzleManagement.WaterWordSolved)
                     {
                         PuzzleManagement.WaterWordSolved = true;
@@ -271,7 +271,7 @@ public class MouseClicks: MonoBehaviour
                         TurulSaysIgenSound.start();
 
                     }
-                    Debug.Log("Locked with torch?: " + LockViewScript.LockedWithTorch + " and FireWordSolved?: " + PuzzleManagement.FireWordSolved);
+
                     if (LockViewScript.LockedWithTorch && !PuzzleManagement.FireWordSolved)
                     {
                         PuzzleManagement.FireWordSolved = true;
@@ -318,11 +318,7 @@ public class MouseClicks: MonoBehaviour
                 }
 
             }//end of left click
-            if (GhostSoulVisible)
-            {
-                GhostSoul.transform.position += Vector3.up * 0.1f;//when the soul is freed, make it fly to heaven
-                
-            }
+            
         }
             }//end of update
 

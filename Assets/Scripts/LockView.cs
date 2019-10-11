@@ -346,8 +346,8 @@ public class LockView : MonoBehaviour
 
 		if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
-			Debug.Log( "locked " + locked );
-            Debug.Log("checkHit " + checkHit);
+
+            
 			if ( locked )
 				UnLockView( );
 			else
@@ -656,12 +656,12 @@ public class LockView : MonoBehaviour
         controlsLockedReminder.SetActive(true);
         if (locked)
         {
-            Debug.Log("successful lock with: " + hit.transform.name);
+           // Debug.Log("successful lock with: " + hit.transform.name);
 
         }
         else
         {
-            Debug.Log("unsuccessful lock");
+           // Debug.Log("unsuccessful lock");
         }
 
 
