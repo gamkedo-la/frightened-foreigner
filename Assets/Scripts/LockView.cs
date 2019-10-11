@@ -294,36 +294,7 @@ public class LockView : MonoBehaviour
                 
          }
 
-           /* if (LockedWithTurul && !candyPuzzleLightningCutscene && !sicknessPuzzleCutsceneWithFene && !elementsPuzzleLightningCutscene)
-            {
-                VectargetPos = turul.transform.position;
-                LockOnToTargetObject(targetPos);
-            }
-
-            if (sicknessPuzzleCutsceneWithFene)
-            {
-                targetPos = fene.transform.position;
-                LockOnToTargetObject(targetPos);
-            }
-
-            if (candyPuzzleLightningCutscene)
-            {
-                targetPos = candyPuzzle.transform.position;
-                LockOnToTargetObject(targetPos);
-            }
-
-            if (elementsPuzzleLightningCutscene)
-            {
-                LockedWithTurul = false;
-                targetPos = elementsPuzzle.transform.position;
-                LockOnToTargetObject(targetPos);
-            }
-            if (LockedWithBathroomAttendant)
-            {
-                Vector3 targetPos = bathroomAttendant.transform.position;
-                LockOnToTargetObject(targetPos);
-            }
-            else*/
+           
 
             
 

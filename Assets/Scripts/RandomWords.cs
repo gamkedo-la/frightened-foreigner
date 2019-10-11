@@ -7,7 +7,7 @@ public class RandomWords : MonoBehaviour
     public GameObject player;
 
     public List<string> AnswerChoices = new List<string>();//create a list of possible choices
-    public string CorrectChoice;
+    
     public string CurrentChoice;
 
     public MasterListOfWordChoices MasterListOfChoicesScript;//reference the master list of choices
@@ -24,9 +24,7 @@ public class RandomWords : MonoBehaviour
         player = GameObject.Find("Character");
         MasterListOfChoicesScript = player.GetComponent<MasterListOfWordChoices>();
         MasterListOfChoices = MasterListOfChoicesScript.ListOfAllChoicesForGame;
-        
 
-        CorrectChoice = gameObject.name;
     }
 
     // Start is called before the first frame update
@@ -34,27 +32,15 @@ public class RandomWords : MonoBehaviour
     {
         
         CurrentTransferableChoicesList = new List<string>(MasterListOfChoices);
-        AnswerChoices.Add(CorrectChoice);//ensure that the correct choice is in the list
+        
 
         //initialize a random word choice for the parent object        
         RandomIntegerForTransferableListOfChoices = Random.Range(0, CurrentTransferableChoicesList.Count);
         CurrentChoice = CurrentTransferableChoicesList[RandomIntegerForTransferableListOfChoices];
-        
-
-
-        //Remove correct choice from possible transferable choices to avoid redundancy
-        for (int i = 0; i < CurrentTransferableChoicesList.Count; i++)
-        {
-            if (CurrentTransferableChoicesList[i] == CorrectChoice)
-            {
-                CurrentTransferableChoicesList.RemoveAt(i);
-                break;
-            }
-        }
 
         //Add incorrect choices to choices list and remove them from transferable list to repeat multiple instances of
         //the same choices
-        int wrongAnswerCount = 4;
+        int wrongAnswerCount = 8;
         for (int i = 0; i < wrongAnswerCount; i++)
         {
 

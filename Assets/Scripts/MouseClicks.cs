@@ -350,5 +350,9 @@ public class MouseClicks: MonoBehaviour
         }
     }
 
-    
+    private void OnEnable()
+    {
+        ImageListIndex = Random.Range(0, ImageNameList.Count - 1);
+    }
+
 }//end of right click class
