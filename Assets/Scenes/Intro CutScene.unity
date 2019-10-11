@@ -200,7 +200,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
+    m_FontSize: 46
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -226,8 +226,8 @@ MonoBehaviour:
     when he smokes too much, \nand I tried taking away his lighter earlier today,
     \nbut he still got sick. He has medicine with him \njust in case this happens,\n
     but apparently it\u2019s not working for him today.\u201D \nYour friend then continues
-    in a sarcastically joking voice, \n\n\n\n\u201CAnd be careful\u2026 It\u2019s
-    getting late \nand this place might be HAUNTED! Haha.\u201D \nYou respond dismissively,
+    in a sarcastically joking voice, \n\n\n\u201CBe careful\u2026 It\u2019s getting
+    late \nand this place might be HAUNTED! Haha.\u201D \nYou respond dismissively,
     \u201CYeah, OKAAAAYYY.\u201D\n\n"
 --- !u!222 &38373247
 CanvasRenderer:

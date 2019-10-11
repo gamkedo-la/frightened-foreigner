@@ -92,6 +92,7 @@
 {746c165b-488d-402c-ad3c-c62e151a9363} event:/SFX/mausoleumRain
 {07f10a00-9ae7-4456-90a1-3cb1c1a2f8b7} event:/SFX/OwlHoots1
 {fffc9c53-58ca-4bde-935f-9f5cfc7e0b82} event:/SFX/OwlHoots2
+{51430826-2c33-4a21-8e85-8dee21f97a7c} event:/SFX/pinwheelPuzzleSolved
 {135dc761-31a7-43db-ac03-90701e90d388} event:/SFX/rain
 {2648964c-bea3-4479-85f4-554a4bb08650} event:/SFX/RightClickScrollThroughWords
 {244e9f9e-2305-4fad-b9f6-262d3cb9fb7f} event:/SFX/ShakingGate
@@ -100,7 +101,6 @@
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
 {e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
-{51430826-2c33-4a21-8e85-8dee21f97a7c} event:/SFX/pinwheelPuzzleSolved
 {4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {4ceb91b6-4ce3-4ecd-8fc3-88894cf9b30b} bus:/Master/Dialogue
