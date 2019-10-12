@@ -31,15 +31,6 @@ public class DialogueWithGroundskeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LockViewScript.LockedWithGroundskeeper && !DialogManager.PlayerHasAskedWhereTheBathroomIs)
-        {
-            
-        }
-        if (LockViewScript.LockedWithGroundskeeper && DialogueWithVanessaScript.learnedFurduszoba)
-        {
-            
-        }
-
         
     }
 

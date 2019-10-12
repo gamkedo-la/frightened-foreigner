@@ -11,7 +11,7 @@ public class LockView : MonoBehaviour
 	[SerializeField] private Image itemPreview = null;
 	[SerializeField] private Behaviour[] toDisable = null;
 	[SerializeField] private Transform character = null;
-	[SerializeField] private float maxTargetDistance = 7f;
+	//[SerializeField] private float maxTargetDistance = 7f;
 	[SerializeField] private float lookUpCorrection = 0.3f;
 	[SerializeField] private float damping = 1f;
 	[SerializeField] private LayerMask mask = 0;
