@@ -34,7 +34,7 @@ public class RandomWords : MonoBehaviour
         MasterListOfAnswerChoices.Add("föld");//earth
         MasterListOfAnswerChoices.Add("víz");//water
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 9; i++)
         {
 
            // Debug.Log("Master List Count: " + MasterListOfAnswerChoices.Count);
@@ -46,7 +46,7 @@ public class RandomWords : MonoBehaviour
             MasterListOfAnswerChoices.RemoveAt(RandomInteger);//remove the added choice from the transferable list to prevent redundancy
         }
 
-        MouseClicks.ImageListIndex = Random.Range(0, 8);
+        MouseClicks.ImageListIndex = Random.Range(0, 9);
         MouseClicks.ImageNameList = ListOfChoicesForThisTextGraphic;
         MouseClicks.temporaryPictureName = MouseClicks.ImageNameList[0];
         Sprite SpriteToLoad = Resources.Load<Sprite>("Images/TextSprites/" + MouseClicks.temporaryPictureName);

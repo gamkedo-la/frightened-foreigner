@@ -40,6 +40,8 @@ public class InventoryItemManager : MonoBehaviour
     public GameObject textGraphic;
 
     public GameObject MilkInLevel;
+
+    public GameObject randomWordsScriptHolder;
     
 
     void FixedUpdate()
@@ -58,30 +60,19 @@ public class InventoryItemManager : MonoBehaviour
 		buttons[10].SetActive( true );
 }
 
-    void Update()
+    private void Update()
     {
-        if (playerHasForint)
-        {
-            ForintInLevel.SetActive(false);//make the forint no longer visible in the cemetery when obtained
-            textGraphic.SetActive(false); // text graphic no longer visible when the forint is obtained
-        }
-        if (playerHasMilk)
-        {
-            MilkInLevel.SetActive(false);
-            textGraphic.SetActive(false);
-        }
-
         if (Input.GetKeyDown(KeyCode.N))
         {
             playerHasFullWaterBottle = true;
-            playerHasDirt = true;
-            playerHasFan = true;
             playerHasLighter = true;
-            PuzzleManagement.PlayerIsDoingElementsPuzzle = true;
+            playerHasFan = true;
+            playerHasDirt = true;
+            randomWordsScriptHolder.GetComponent<RandomWords>().ShuffleList();
         }
     }
 
-	public void GiveItem( PlayerItem recivedItem )
+    public void GiveItem( PlayerItem recivedItem )
 	{
 		SetItem( recivedItem, true );
 	}

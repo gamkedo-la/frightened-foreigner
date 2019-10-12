@@ -7,7 +7,7 @@ public class PinwheelResponses : MonoBehaviour
 
     public FMOD.Studio.EventInstance TurulSaysWindSound;
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
-    public GameObject pinwheelTextGraphic;
+    
 
     public GameObject playerCamera;
     private LockView lockViewScript;
@@ -37,7 +37,7 @@ public class PinwheelResponses : MonoBehaviour
         Debug.Log("Pinwheel Solved!");
         TurulSaysIgenSound.start();
         pinwheelSoundsHolder.SetActive(true);
-        pinwheelTextGraphic.SetActive(true);
+        
         GetComponent<Animator>().enabled = true;
         lockViewScript.LockOnToTargetObject(gameObject.transform.position);
     }

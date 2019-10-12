@@ -8,7 +8,7 @@ public class FlowerPotResponses : MonoBehaviour
     public FMOD.Studio.EventInstance TurulSaysEarthSound;
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
     public GameObject FilledPot;
-    public GameObject FlowerPotTextGraphic;
+    
 
     public GameObject playerCamera;
     private LockView lockViewScript;
@@ -32,7 +32,7 @@ public class FlowerPotResponses : MonoBehaviour
         PuzzleManagement.FlowerPotSolved = true;
         Debug.Log("Flower Pot Solved");
         TurulSaysIgenSound.start();
-        FlowerPotTextGraphic.SetActive(true);
+        
         
         lockViewScript.LockOnToTargetObject(gameObject.transform.position);
         FilledPot.SetActive(true);

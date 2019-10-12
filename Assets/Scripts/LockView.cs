@@ -142,6 +142,14 @@ public class LockView : MonoBehaviour
 
     public GameObject Forint;
 
+    public GameObject milk;
+    public GameObject Charlie;
+    public GameObject CandyBowl;
+    public GameObject FlowerPot;
+    public GameObject PinwheelLeafs;
+    public GameObject Torch;
+    public GameObject WaterBasin;
+
     void Start()
     {
         dialogueWithGroundskeeperScript = Groundskeeper.GetComponent<DialogueWithGroundskeeper>();
@@ -373,6 +381,9 @@ public class LockView : MonoBehaviour
             if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
             {
                 MouseClicks.currentCorrectAnswer = "gyógyszert";
+                textGraphic.transform.position = hit.transform.position;
+                Vector3 correction = new Vector3(0, 0.35f, -2.0f);
+                textGraphic.transform.position += correction;
                 textGraphic.SetActive(true);
                  if (!DialogManager.PlayerHasAskedForMedicine)
                 {
@@ -474,6 +485,10 @@ public class LockView : MonoBehaviour
         }
         else if (hit.transform.name == "Milk")
         {
+            textGraphic.transform.position = milk.transform.position;
+            Vector3 correction = new Vector3(0, 0.55f, 0);
+            textGraphic.transform.position += correction;
+            textGraphic.SetActive(true);
             MouseClicks.currentCorrectAnswer = "tej";
             LockedWithMilk = true;
         }
@@ -485,6 +500,11 @@ public class LockView : MonoBehaviour
         else if (hit.transform.name == "Candy Bowl")
         {
             MouseClicks.currentCorrectAnswer = "cukorkát";
+            textGraphic.transform.position = CandyBowl.transform.position;
+            Vector3 correction = new Vector3(0, 0.35f, 0);
+            textGraphic.transform.position += correction;
+            textGraphic.SetActive(true);
+
             LockedWithCandyBowl = true;
 
         }
@@ -567,21 +587,41 @@ public class LockView : MonoBehaviour
         else if (hit.transform.name == "FlowerPot")
         {
             MouseClicks.currentCorrectAnswer = "föld";
+            textGraphic.transform.position = FlowerPot.transform.position;
+            Vector3 correction = new Vector3(0, 0.65f, 0);
+            textGraphic.transform.position += correction;
+            textGraphic.SetActive(true);
+
             LockedWithFlowerPot = true;
         }
         else if (hit.transform.name == "Torch")
         {
             MouseClicks.currentCorrectAnswer = "Tűz";
+            textGraphic.transform.position = Torch.transform.position;
+            Vector3 correction = new Vector3(0, 0.65f, 0);
+            textGraphic.transform.position += correction;
+            textGraphic.SetActive(true);
+
             LockedWithTorch = true;
         }
         else if (hit.transform.name == "PinwheelLeafs")
         {
             MouseClicks.currentCorrectAnswer = "szél";
+            textGraphic.transform.position = PinwheelLeafs.transform.position;
+            Vector3 correction = new Vector3(0, 0.65f, 0);
+            textGraphic.transform.position += correction;
+            textGraphic.SetActive(true);
+
             LockedWithPinwheel = true;
         }
         else if (hit.transform.name == "Basin")
         {
             MouseClicks.currentCorrectAnswer = "víz";
+            textGraphic.transform.position = WaterBasin.transform.position;
+            Vector3 correction = new Vector3(0, 0.65f, 0);
+            textGraphic.transform.position += correction;
+            textGraphic.SetActive(true);
+
             LockedWithBasin = true;
         }
 

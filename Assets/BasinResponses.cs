@@ -10,7 +10,7 @@ public class BasinResponses : MonoBehaviour
     public FMOD.Studio.EventInstance FillingBasinSound;
 
     public GameObject FilledBasin;
-    public GameObject BasinTextGraphic;
+    
 
     public GameObject playerCamera;
     private LockView lockViewScript;
@@ -36,7 +36,7 @@ public class BasinResponses : MonoBehaviour
         Debug.Log("Water Basin Solved");
         TurulSaysIgenSound.start();
         FillingBasinSound.start();
-        BasinTextGraphic.SetActive(true);
+        
         
         lockViewScript.LockOnToTargetObject(gameObject.transform.position);
         FilledBasin.SetActive(true);

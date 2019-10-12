@@ -8,7 +8,7 @@ public class TorchResponses : MonoBehaviour
     public FMOD.Studio.EventInstance TurulSaysFireSound;
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
     public GameObject torchFlame;
-    public GameObject torchTextGraphic;
+    
 
     public GameObject playerCamera;
     private LockView lockViewScript;
@@ -33,7 +33,7 @@ public class TorchResponses : MonoBehaviour
         Debug.Log("Torch Solved!");
         TurulSaysIgenSound.start();
         torchFlame.SetActive(true);
-        torchTextGraphic.SetActive(true);
+        
         lockViewScript.LockOnToTargetObject(gameObject.transform.position);
     }
 
