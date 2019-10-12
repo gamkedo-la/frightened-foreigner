@@ -210,7 +210,7 @@ public class LockView : MonoBehaviour
                 }
                 if (!LockedWithForint)
                 {
-                    ForintTextGraphic.SetActive(false);
+                    //ForintTextGraphic.SetActive(false);
                 }
 
 
@@ -418,7 +418,7 @@ public class LockView : MonoBehaviour
             LockedWithCharlie = true;
             if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
             {
-
+                MouseClicks.currentCorrectAnswer = "gyógyszert";
                 charliesTextGraphic.SetActive(true);
                  if (!DialogManager.PlayerHasAskedForMedicine)
                 {
@@ -445,6 +445,7 @@ public class LockView : MonoBehaviour
         if (hit.transform.name == "Groundskeeper")
         {
             LockedWithGroundskeeper = true;
+            MouseClicks.currentCorrectAnswer = "fürdőszoba";
             if (!DialogManager.PlayerHasAskedWhereTheBathroomIs)
             {
                 dialogueWithGroundskeeperScript.PlayerAsksWhereTheBathroomIs();
@@ -462,6 +463,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "forint")
         {
+            MouseClicks.currentCorrectAnswer = "forint";
             LockedWithForint = true;
         }
         if (hit.transform.name == "BathroomDoor")
@@ -496,7 +498,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "Milk")
         {
-            
+            MouseClicks.currentCorrectAnswer = "tej";
             LockedWithMilk = true;
         }
         if (hit.transform.name == "CatPuzzle")
@@ -506,6 +508,7 @@ public class LockView : MonoBehaviour
         }
         if (hit.transform.name == "Candy Bowl")
         {
+            MouseClicks.currentCorrectAnswer = "cukorkát";
             LockedWithCandyBowl = true;
 
         }
@@ -587,18 +590,22 @@ public class LockView : MonoBehaviour
         
         if (hit.transform.name == "FlowerPot")
         {
+            MouseClicks.currentCorrectAnswer = "föld";
             LockedWithFlowerPot = true;
         }
         if (hit.transform.name == "Torch")
         {
+            MouseClicks.currentCorrectAnswer = "Tűz";
             LockedWithTorch = true;
         }
         if (hit.transform.name == "PinwheelLeafs")
         {
+            MouseClicks.currentCorrectAnswer = "szél";
             LockedWithPinwheel = true;
         }
         if (hit.transform.name == "Basin")
         {
+            MouseClicks.currentCorrectAnswer = "víz";
             LockedWithBasin = true;
         }
 
@@ -698,7 +705,7 @@ public class LockView : MonoBehaviour
         ambientInteractable = false;
 
         //charliesTextGraphic.SetActive(false);
-        ForintTextGraphic.SetActive(false);
+       // ForintTextGraphic.SetActive(false);
 	}
 
     public IEnumerator DelayUhhhhDialogue()

@@ -32,16 +32,22 @@ public class RandomWords : MonoBehaviour
         MasterListOfAnswerChoices.Add("föld");//earth
         MasterListOfAnswerChoices.Add("víz");//water
 
-        for (int i = 0; i < MasterListOfAnswerChoices.Count; i++)
+        for (int i = 0; i < 9; i++)
         {
 
-            Debug.Log(MasterListOfAnswerChoices.Count);
+           // Debug.Log("Master List Count: " + MasterListOfAnswerChoices.Count);
             RandomInteger = Random.Range(0, MasterListOfAnswerChoices.Count);//grab a random integer from current length of list
-
+           // Debug.Log("Random Integer: " + RandomInteger);
             CurrentStringToAddToAnswerChoicesList = MasterListOfAnswerChoices[RandomInteger];//pull the string from the random index of the list
-
+           // Debug.Log("CurrentStringToAddToAnswerChoicesList: " + CurrentStringToAddToAnswerChoicesList);
             ListOfChoicesForThisTextGraphic.Add(CurrentStringToAddToAnswerChoicesList);//add the string to the list of answer choices
             MasterListOfAnswerChoices.RemoveAt(RandomInteger);//remove the added choice from the transferable list to prevent redundancy
         }
+
+        MouseClicks.ImageNameList = ListOfChoicesForThisTextGraphic;
+        /*for (int i = 0; i < ListOfChoicesForThisTextGraphic.Count; i++)
+        {
+            Debug.Log(ListOfChoicesForThisTextGraphic[i]);
+        }*/
     }
 }

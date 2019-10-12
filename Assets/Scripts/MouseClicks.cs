@@ -10,8 +10,8 @@ public class MouseClicks: MonoBehaviour
     private PauseGame PauseGameScript;
     private GameObject AudioActiveStatusManager;
 
-    private List<string> ImageNameList;//to keep a list of possible word choices
-    public static int ImageListIndex = 0;
+    public static List<string> ImageNameList;//to keep a list of possible word choices
+    public static int ImageListIndex = 1;
 
     public RandomWords RandomWordsScript;//where to put list of possible words in memory
 
@@ -85,6 +85,12 @@ public class MouseClicks: MonoBehaviour
 
     public FMOD.Studio.EventInstance TurulSaysIgenSound;
 
+    public GameObject RandomWordsScriptHolder;
+
+    public GameObject GroundskeeperTextGraphic;
+
+    public static string currentCorrectAnswer;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
@@ -107,8 +113,8 @@ public class MouseClicks: MonoBehaviour
 
         temporaryPictureName = transform.name;//grabbing the correct answer choice based on the parent object
         
-        ImageNameList = new List<string>(RandomWordsScript.ListOfChoicesForThisTextGraphic);
-        Debug.Log(ImageNameList.Count);
+        ImageNameList = new List<string>(RandomWordsScriptHolder.GetComponent<RandomWords>().ListOfChoicesForThisTextGraphic);
+        
 
         Lights = GameObject.Find("Lights");
         LightScript = Lights.GetComponent<ProgressiveLights>();
@@ -133,6 +139,8 @@ public class MouseClicks: MonoBehaviour
         IHaveMilk = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveMilk");
         IHaveCandy = FMODUnity.RuntimeManager.CreateInstance("event:/ItemInteractions/IHaveCandy");
 
+        
+
     }
 
     void Update()
@@ -148,14 +156,19 @@ public class MouseClicks: MonoBehaviour
                 {
                     ImageListIndex = 0;
                 }
-
+                //Debug.Log("ImageListIndex: " + ImageListIndex);
+                //Debug.Log("ImageNameList Count: " + ImageNameList.Count);
+                //for (int i = 0; i < ImageNameList.Count - 1; i++)
+                //{
+                //    Debug.Log("Image List Name: " + ImageNameList[i]);
+                //}
                 temporaryPictureName = ImageNameList[ImageListIndex];//string for picture to load
 
                 Sprite SpriteToLoad = Resources.Load<Sprite>("Images/TextSprites/" + temporaryPictureName);//create a space in memory for the sprite to load
 
                 if (SpriteToLoad)//error checking
                 {
-                    GetComponent<SpriteRenderer>().sprite = SpriteToLoad;//if no error, load the sprite 
+                    thisTextGraphic.GetComponent<SpriteRenderer>().sprite = SpriteToLoad;//if no error, load the sprite 
 
                 }
                 else
@@ -168,10 +181,9 @@ public class MouseClicks: MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))//left click submits an answer choice
             {
-                //Debug.Log("temporary picture name: " + temporaryPictureName);
-                //Debug.Log("parent object name: " + gameObject.transform.parent.name);
                 
-                if (temporaryPictureName == gameObject.transform.parent.name)//if the answer is correct
+                
+                if (temporaryPictureName == currentCorrectAnswer)//if the answer is correct
                 {
 
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper

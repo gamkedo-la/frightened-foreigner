@@ -13,6 +13,7 @@ public class DialogueWithGroundskeeper : MonoBehaviour
     
     public GameObject Furduszoba;
     public GameObject TextGraphic;
+    public GameObject RandomWordsScriptHolder;
 
     public GameObject Vanessa;
     private DialogueWithVanessa DialogueWithVanessaScript;
@@ -42,7 +43,7 @@ public class DialogueWithGroundskeeper : MonoBehaviour
 
     public void PlayerAttemptsToSayBathroomToGroundskeeper()
     {
-        TextGraphic.GetComponent<RandomWords>().ShuffleList();
+        RandomWordsScriptHolder.GetComponent<RandomWords>().ShuffleList();
         Furduszoba.SetActive(true);
         TextGraphic.SetActive(true);
     }
