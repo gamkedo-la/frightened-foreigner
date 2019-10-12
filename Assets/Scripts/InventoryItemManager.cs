@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+
+
 public enum PlayerItem
 {
 	None,
@@ -35,10 +37,10 @@ public class InventoryItemManager : MonoBehaviour
     public static bool playerHasLighter = false;
 
     public GameObject ForintInLevel;
-    public GameObject ForintTextGraphic;
+    public GameObject textGraphic;
 
     public GameObject MilkInLevel;
-    public GameObject MilkTextGraphic;
+    
 
     void FixedUpdate()
     {
@@ -61,12 +63,12 @@ public class InventoryItemManager : MonoBehaviour
         if (playerHasForint)
         {
             ForintInLevel.SetActive(false);//make the forint no longer visible in the cemetery when obtained
-            ForintTextGraphic.SetActive(false); // text graphic no longer visible when the forint is obtained
+            textGraphic.SetActive(false); // text graphic no longer visible when the forint is obtained
         }
         if (playerHasMilk)
         {
             MilkInLevel.SetActive(false);
-            MilkTextGraphic.SetActive(false);
+            textGraphic.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.N))

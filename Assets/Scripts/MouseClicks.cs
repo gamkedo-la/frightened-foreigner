@@ -15,7 +15,7 @@ public class MouseClicks: MonoBehaviour
 
     public RandomWords RandomWordsScript;//where to put list of possible words in memory
 
-    public string temporaryPictureName;//helps cycle through word choices
+    public static string temporaryPictureName;//helps cycle through word choices
 
     private FMOD.Studio.EventInstance PostFirstPuzzleMusic;
     private FMOD.Studio.EventInstance TitleScreenMusic;
@@ -49,7 +49,7 @@ public class MouseClicks: MonoBehaviour
     public FMOD.Studio.EventInstance LightningSound;
 
     public GameObject Groundskeeper;
-    public GameObject thisTextGraphic;
+    public GameObject TextGraphic;
     public GameObject shovel;
     public GameObject Forint;
 
@@ -87,7 +87,7 @@ public class MouseClicks: MonoBehaviour
 
     public GameObject RandomWordsScriptHolder;
 
-    public GameObject GroundskeeperTextGraphic;
+    
 
     public static string currentCorrectAnswer;
 
@@ -145,6 +145,7 @@ public class MouseClicks: MonoBehaviour
 
     void Update()
     {
+        
         if (!PauseGame.GamePaused)// if the game isn't paused
         {
            
@@ -156,19 +157,20 @@ public class MouseClicks: MonoBehaviour
                 {
                     ImageListIndex = 0;
                 }
-                //Debug.Log("ImageListIndex: " + ImageListIndex);
-                //Debug.Log("ImageNameList Count: " + ImageNameList.Count);
+                Debug.Log("ImageListIndex: " + ImageListIndex);
+                Debug.Log("ImageNameList Count: " + ImageNameList.Count);
                 //for (int i = 0; i < ImageNameList.Count - 1; i++)
                 //{
                 //    Debug.Log("Image List Name: " + ImageNameList[i]);
                 //}
+                Debug.Log("ImageNameList Count: " + ImageNameList.Count);
                 temporaryPictureName = ImageNameList[ImageListIndex];//string for picture to load
 
                 Sprite SpriteToLoad = Resources.Load<Sprite>("Images/TextSprites/" + temporaryPictureName);//create a space in memory for the sprite to load
 
                 if (SpriteToLoad)//error checking
                 {
-                    thisTextGraphic.GetComponent<SpriteRenderer>().sprite = SpriteToLoad;//if no error, load the sprite 
+                    TextGraphic.GetComponent<SpriteRenderer>().sprite = SpriteToLoad;//if no error, load the sprite 
 
                 }
                 else
@@ -185,7 +187,7 @@ public class MouseClicks: MonoBehaviour
                 
                 if (temporaryPictureName == currentCorrectAnswer)//if the answer is correct
                 {
-
+                    TextGraphic.SetActive(false);
                     if (LockViewScript.LockedWithGroundskeeper) //if provided the correct answer for bathroom while speaking with the groundskeeper
                     {
                         stormSystemAnimator.enabled = true;
@@ -211,7 +213,7 @@ public class MouseClicks: MonoBehaviour
                         makeItRainInTheBathroom.start();
                         InventoryItemManager.playerHasForint = true;
                         
-                        thisTextGraphic.SetActive(false);
+                        TextGraphic.SetActive(false);
                         Forint.SetActive(false);
                      }
                     if (LockView.LockedWithMilk)
@@ -225,7 +227,7 @@ public class MouseClicks: MonoBehaviour
                     if (LockViewScript.LockedWithCharlie)
                     {
                         DialogueWithCharlie.CorrectWordForMedicineResponse.start();
-                        thisTextGraphic.SetActive(false);
+                        TextGraphic.SetActive(false);
                         PuzzleManagement.PlayerIsDoingSicknessPuzzle = false;
                         //StartCoroutine(delayTransitionOutOfSicknessPuzzle());
                         PuzzleManagement.PlayerIsDoingCandyPuzzle = true;
@@ -238,7 +240,7 @@ public class MouseClicks: MonoBehaviour
                     }
                     if (LockViewScript.LockedWithCandyBowl)
                     {
-                        thisTextGraphic.SetActive(false);
+                        TextGraphic.SetActive(false);
                         InventoryItemManager.playerHasCandy = true;
                         IHaveCandy.start();
                     }
@@ -248,7 +250,7 @@ public class MouseClicks: MonoBehaviour
                     {
                         PuzzleManagement.WaterWordSolved = true;
                         PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
-                        thisTextGraphic.SetActive(false);
+                        TextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for water");
                         LockViewScript.LockedWithBasin = false;
                         TurulSaysIgenSound.start();
@@ -257,7 +259,7 @@ public class MouseClicks: MonoBehaviour
                     {
                         PuzzleManagement.EarthWordSolved = true;
                         PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
-                        thisTextGraphic.SetActive(false);
+                        TextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for flower pot");
                         LockViewScript.LockedWithFlowerPot = false;
                         TurulSaysIgenSound.start();
@@ -268,7 +270,7 @@ public class MouseClicks: MonoBehaviour
                     {
                         PuzzleManagement.FireWordSolved = true;
                         PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
-                        thisTextGraphic.SetActive(false);
+                        TextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for fire");
                         LockViewScript.LockedWithTorch = false;
                         TurulSaysIgenSound.start();
@@ -277,7 +279,7 @@ public class MouseClicks: MonoBehaviour
                     {
                         PuzzleManagement.WindWordSolved = true;
                         PuzzleManagement.NumberOfFullElementsPuzzlesSolved++;
-                        thisTextGraphic.SetActive(false);
+                        TextGraphic.SetActive(false);
                         Debug.Log("inside correct answer for wind");
                         LockViewScript.LockedWithPinwheel = false;
                         TurulSaysIgenSound.start();

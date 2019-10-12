@@ -149,7 +149,7 @@ public class TriggerGateClose : MonoBehaviour
 
     public void turnOnCatPuzzle()
     {
-        PuzzleManagement.PlayerIsDoingBathroomPuzzle = true;
+        PuzzleManagement.PlayerIsDoingBathroomPuzzle = false;
         lockViewScript.UnLockView();
         lockViewScript.checkHit = true;
         

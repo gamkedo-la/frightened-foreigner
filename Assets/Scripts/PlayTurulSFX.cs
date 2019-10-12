@@ -52,46 +52,38 @@ public class PlayTurulSFX : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    
+
+    public void HandleTurulSFXAndEvents()
     {
-        if (LockViewScript.LockedWithTurul)
-        {
-            
             PlayLoopingSquawk.TurulLoopsSquawk.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            
+
             if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCatPuzzle)
-            {                    
+            {
                 lightningScript.emitLightningForCatPuzzle();
                 playerHasInteractedWithTurulThisPuzzle = true;
                 emersionLightningHasStruckThisPuzzle = true;
             }
-            if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingSicknessPuzzle)
+            else if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingSicknessPuzzle)
             {
                 LockViewScript.sicknessPuzzleCutsceneWithFene = true;
                 lightningScript.emitLightningForSicknessPuzzle();
                 playerHasInteractedWithTurulThisPuzzle = true;
                 emersionLightningHasStruckThisPuzzle = true;
             }
-            if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCandyPuzzle)
+            else if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingCandyPuzzle)
             {
                 LockViewScript.candyPuzzleLightningCutscene = true;
                 lightningScript.emitLightningForCandyPuzzle();
                 playerHasInteractedWithTurulThisPuzzle = true;
                 emersionLightningHasStruckThisPuzzle = true;
             }
-            if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingElementsPuzzle)
+            else if (!playerHasInteractedWithTurulThisPuzzle && !emersionLightningHasStruckThisPuzzle && PuzzleManagement.PlayerIsDoingElementsPuzzle)
             {
                 LockViewScript.elementsPuzzleLightningCutscene = true;
                 lightningScript.emitLightningForElementsPuzzle();
                 playerHasInteractedWithTurulThisPuzzle = true;
                 emersionLightningHasStruckThisPuzzle = true;
             }
-        }
-    }
-
-    /*public void PlayTurulSquawkSound()
-    {
-        
-        TurulSquawkSound.start();
-    }*/
+     }
 }

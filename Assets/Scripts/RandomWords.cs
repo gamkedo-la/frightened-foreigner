@@ -13,6 +13,8 @@ public class RandomWords : MonoBehaviour
 
     public string CurrentStringToAddToAnswerChoicesList;
 
+    public GameObject textGraphic;
+
     private void Awake()
     {
 
@@ -32,11 +34,11 @@ public class RandomWords : MonoBehaviour
         MasterListOfAnswerChoices.Add("föld");//earth
         MasterListOfAnswerChoices.Add("víz");//water
 
-        for (int i = 0; i < 9; i++)
+        for (int i = 0; i < 8; i++)
         {
 
            // Debug.Log("Master List Count: " + MasterListOfAnswerChoices.Count);
-            RandomInteger = Random.Range(0, MasterListOfAnswerChoices.Count);//grab a random integer from current length of list
+            RandomInteger = Random.Range(0, MasterListOfAnswerChoices.Count - 1);//grab a random integer from current length of list
            // Debug.Log("Random Integer: " + RandomInteger);
             CurrentStringToAddToAnswerChoicesList = MasterListOfAnswerChoices[RandomInteger];//pull the string from the random index of the list
            // Debug.Log("CurrentStringToAddToAnswerChoicesList: " + CurrentStringToAddToAnswerChoicesList);
@@ -44,7 +46,11 @@ public class RandomWords : MonoBehaviour
             MasterListOfAnswerChoices.RemoveAt(RandomInteger);//remove the added choice from the transferable list to prevent redundancy
         }
 
+        MouseClicks.ImageListIndex = Random.Range(0, 8);
         MouseClicks.ImageNameList = ListOfChoicesForThisTextGraphic;
+        MouseClicks.temporaryPictureName = MouseClicks.ImageNameList[0];
+        Sprite SpriteToLoad = Resources.Load<Sprite>("Images/TextSprites/" + MouseClicks.temporaryPictureName);
+        textGraphic.GetComponent<SpriteRenderer>().sprite = SpriteToLoad;
         /*for (int i = 0; i < ListOfChoicesForThisTextGraphic.Count; i++)
         {
             Debug.Log(ListOfChoicesForThisTextGraphic[i]);

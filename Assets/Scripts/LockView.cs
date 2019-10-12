@@ -22,9 +22,6 @@ public class LockView : MonoBehaviour
 	public RandomWordWorkaround randomWord = null;
     public bool randomWordBool = false;
 
-    private GameObject TargetsTextGraphic;
-    //private GameObject TargetHit;
-
     public RaycastHit hit;
     private bool lockedWithNPC = false;
     private bool lockedWithGround = false;
@@ -64,15 +61,9 @@ public class LockView : MonoBehaviour
     public bool sicknessPuzzleCutsceneWithFene = false;
 
     public GameObject fene;
-    public GameObject GroundskeeperTextGraphic;
-
+    
     public FMOD.Studio.EventInstance UhhhhMaybeYouShouldWait;
     public bool UhhhMaybeYouShouldWaitPlayed = false;
-
-    public GameObject charliesTextGraphic;
-
-    public GameObject ForintTextGraphic;
-    public GameObject MilkTextGraphic;
 
     public GameObject turul;
     private PlayTurulSFX turulSFXScript;
@@ -112,8 +103,6 @@ public class LockView : MonoBehaviour
     public GameObject elementsPuzzle;
     public bool elementsPuzzleLightningCutscene = false;
 
-    public GameObject candyBowlTextGraphic;
-
     public GameObject shovel;
 
     public GameObject sink;
@@ -145,6 +134,13 @@ public class LockView : MonoBehaviour
 
     public GameObject Vanessa;
     private DialogueWithVanessa dialogueWithVanessaScript;
+
+    private FMOD.Studio.EventInstance LeaveForintOnTheGround;
+    private FMOD.Studio.PLAYBACK_STATE LeaveForintOnTheGroundPlaybackState;
+
+    public GameObject textGraphic;
+
+    public GameObject Forint;
 
     void Start()
     {
@@ -178,7 +174,8 @@ public class LockView : MonoBehaviour
         inventoryScript = GetComponent<Inventory>();
 
         inventoryItemManagerScript = InventoryCanvas.GetComponent<InventoryItemManager>();
-        
+
+        LeaveForintOnTheGround = FMODUnity.RuntimeManager.CreateInstance("event:/Monologue/LeaveForintOnTheGround");
     }
 
     void Update()
@@ -199,49 +196,6 @@ public class LockView : MonoBehaviour
                 }
                 //toggle visibility of text graphics based on if player is focused on the object
 
-
-
-                //money/forint
-                if (LockedWithForint)
-                {
-                    //Vector3 targetPos =
-                    //ForintTextGraphic.SetActive(true);
-
-                }
-                if (!LockedWithForint)
-                {
-                    //ForintTextGraphic.SetActive(false);
-                }
-
-
-                //milk/tej
-                if (LockedWithMilk)
-                {
-                    MilkTextGraphic.SetActive(true);
-                }
-                if (!LockedWithMilk)
-                {
-                   // MilkTextGraphic.SetActive(false);
-                }
-
-                //candy/cukorkat
-                if (LockedWithCandyBowl && !InventoryItemManager.playerHasCandy)
-                {
-                    candyBowlTextGraphic.SetActive(true);
-                }
-                if (!LockedWithCandyBowl)
-                {
-                   // candyBowlTextGraphic.SetActive(false);
-                }
-
-                //Quaternion rotationT = Quaternion.LookRotation(targetPos - transform.position);
-                //Quaternion rotationC = Quaternion.LookRotation(targetPos - character.position);
-                //rotationT = Quaternion.Slerp(transform.rotation, rotationT, Time.deltaTime * damping);
-                //rotationC = Quaternion.Slerp(character.rotation, rotationC, Time.deltaTime * damping);
-
-                //transform.localRotation = Quaternion.Euler(rotationT.eulerAngles.x, 0, 0);
-                //character.rotation = Quaternion.Euler(0, rotationC.eulerAngles.y, 0);
-
             }//end of random word condition
 
          else if (!bathroomLightningCutSceneCameraPan && checkHit)//if locked with something that is not a random word puzzle
@@ -257,40 +211,40 @@ public class LockView : MonoBehaviour
                         LockOnToTargetObject(catPuzzle.transform.position);
                     }
                     //cat puzzle after lightning
-                    if (PuzzleManagement.PlayerIsDoingCatPuzzle && EmersionLightningEmmissionToggle.catLightningEmitted)
+                    else if (PuzzleManagement.PlayerIsDoingCatPuzzle && EmersionLightningEmmissionToggle.catLightningEmitted)
                     {
                         LockOnToTargetObject(targetPos);
                     }
 
                     //sickness puzzle before lightning
-                    if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && !EmersionLightningEmmissionToggle.sicknessLightningEmitted)
+                    else if(PuzzleManagement.PlayerIsDoingSicknessPuzzle && !EmersionLightningEmmissionToggle.sicknessLightningEmitted)
                     {
                         LockOnToTargetObject(fene.transform.position);
                     }
                     //sickness puzzle after lightning
-                    if (PuzzleManagement.PlayerIsDoingSicknessPuzzle && EmersionLightningEmmissionToggle.sicknessLightningEmitted)
+                    else if(PuzzleManagement.PlayerIsDoingSicknessPuzzle && EmersionLightningEmmissionToggle.sicknessLightningEmitted)
                     {
                         LockOnToTargetObject(targetPos);
                     }
 
                     //candy puzzle before lightning
-                    if (PuzzleManagement.PlayerIsDoingCandyPuzzle && !EmersionLightningEmmissionToggle.candyLightningEmitted)
+                    else if(PuzzleManagement.PlayerIsDoingCandyPuzzle && !EmersionLightningEmmissionToggle.candyLightningEmitted)
                     {
                         LockOnToTargetObject(candyPuzzle.transform.position);
                     }
                     //candy puzzle after lightning
-                    if (PuzzleManagement.PlayerIsDoingCandyPuzzle && EmersionLightningEmmissionToggle.candyLightningEmitted)
+                    else if(PuzzleManagement.PlayerIsDoingCandyPuzzle && EmersionLightningEmmissionToggle.candyLightningEmitted)
                     {
                         LockOnToTargetObject(targetPos);
                     }
 
                     //elements puzzle before lightning
-                    if (PuzzleManagement.PlayerIsDoingElementsPuzzle && !EmersionLightningEmmissionToggle.elementsLightningEmitted)
+                    else if(PuzzleManagement.PlayerIsDoingElementsPuzzle && !EmersionLightningEmmissionToggle.elementsLightningEmitted)
                     {
                         LockOnToTargetObject(elementsPuzzleLockViewTarget.transform.position);
                     }
                     //elements puzzle after lightning
-                    if (PuzzleManagement.PlayerIsDoingElementsPuzzle && EmersionLightningEmmissionToggle.elementsLightningEmitted)
+                    else if(PuzzleManagement.PlayerIsDoingElementsPuzzle && EmersionLightningEmmissionToggle.elementsLightningEmitted)
                     {
                         LockOnToTargetObject(targetPos);
                     }
@@ -395,7 +349,7 @@ public class LockView : MonoBehaviour
         {
             lockedWithNPC = true;
         }
-        if (hit.transform.tag == "Ground")
+        else if (hit.transform.tag == "Ground")
         {
             lockedWithGround = true;
         }
@@ -413,13 +367,13 @@ public class LockView : MonoBehaviour
             }
         }
 
-        if (hit.transform.name == "Charlie" && !AnItemIsBeingHeld)
+        else if (hit.transform.name == "Charlie" && !AnItemIsBeingHeld)
         {
             LockedWithCharlie = true;
             if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
             {
                 MouseClicks.currentCorrectAnswer = "gyógyszert";
-                charliesTextGraphic.SetActive(true);
+                textGraphic.SetActive(true);
                  if (!DialogManager.PlayerHasAskedForMedicine)
                 {
                     DialogueWithCharlie.AskingForMedicine.start();
@@ -442,7 +396,7 @@ public class LockView : MonoBehaviour
             }
         }
 
-        if (hit.transform.name == "Groundskeeper")
+        else if (hit.transform.name == "Groundskeeper")
         {
             LockedWithGroundskeeper = true;
             MouseClicks.currentCorrectAnswer = "fürdőszoba";
@@ -450,95 +404,117 @@ public class LockView : MonoBehaviour
             {
                 dialogueWithGroundskeeperScript.PlayerAsksWhereTheBathroomIs();
             }
-            if (dialogueWithVanessaScript.learnedFurduszoba)
+            else if (dialogueWithVanessaScript.learnedFurduszoba)
             {
                 dialogueWithGroundskeeperScript.PlayerAttemptsToSayBathroomToGroundskeeper();
             }
         }
 
 
-        if (hit.transform.name == "Bathroom Attendant")
+        else if (hit.transform.name == "Bathroom Attendant")
         {
             LockedWithBathroomAttendant = true;
         }
-        if (hit.transform.name == "forint")
+        else if (hit.transform.name == "forint")
         {
             MouseClicks.currentCorrectAnswer = "forint";
             LockedWithForint = true;
+
+            if (!DialogManager.BathroomAttendantSaidToGetForint)
+            {
+                LeaveForintOnTheGround.start();
+                
+            }
+            else if (DialogManager.BathroomAttendantSaidToGetForint)
+            {
+                textGraphic.transform.position = Forint.transform.position;
+                Vector3 correction = new Vector3(0, 0.35f, 0);
+                textGraphic.transform.position += correction;
+                textGraphic.SetActive(true);
+            }
         }
-        if (hit.transform.name == "BathroomDoor")
+        else if (hit.transform.name == "BathroomDoor")
         {
             LockedWithBathroomDoor = true;
         }
-        if (hit.transform.name == "Turul")
+        else if (hit.transform.name == "Turul")
         {
-            
+            Debug.Log("Player is doing bathroom puzzle? " + PuzzleManagement.PlayerIsDoingBathroomPuzzle);
+            Debug.Log("Player is doing cat puzzle? " + PuzzleManagement.PlayerIsDoingCatPuzzle);
+
             LockedWithTurul = true;
             if (PuzzleManagement.PlayerIsDoingBathroomPuzzle)
             {
                 TurulSingleSquawk.start();
-            }
-            if (PuzzleManagement.PlayerIsDoingCatPuzzle)
+            } 
+            else if (PuzzleManagement.PlayerIsDoingCatPuzzle)
             {
                 turulSFXScript.TurulSaysMilkTejSound.start();
+                turulSFXScript.HandleTurulSFXAndEvents();
             }
-            if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
+            else if (PuzzleManagement.PlayerIsDoingSicknessPuzzle)
             {
                 turulSFXScript.TurulSaysMedicineSound.start();
+                turulSFXScript.HandleTurulSFXAndEvents();
+
             }
-            if (PuzzleManagement.PlayerIsDoingCandyPuzzle)
+            else if (PuzzleManagement.PlayerIsDoingCandyPuzzle)
             {
                 turulSFXScript.TurulSaysCandySound.start();
+                turulSFXScript.HandleTurulSFXAndEvents();
+
             }
-            if (PuzzleManagement.PlayerIsDoingElementsPuzzle)
+            else if (PuzzleManagement.PlayerIsDoingElementsPuzzle)
             {
                 turulSFXScript.TurulSaysFireWaterEarthWindSound.start();
+                turulSFXScript.HandleTurulSFXAndEvents();
+
             }
 
         }
-        if (hit.transform.name == "Milk")
+        else if (hit.transform.name == "Milk")
         {
             MouseClicks.currentCorrectAnswer = "tej";
             LockedWithMilk = true;
         }
-        if (hit.transform.name == "CatPuzzle")
+        else if (hit.transform.name == "CatPuzzle")
         {
 
             LockedWithCatPuzzle = true;
         }
-        if (hit.transform.name == "Candy Bowl")
+        else if (hit.transform.name == "Candy Bowl")
         {
             MouseClicks.currentCorrectAnswer = "cukorkát";
             LockedWithCandyBowl = true;
 
         }
-        if (hit.transform.name == "CandyPuzzle")
+        else if (hit.transform.name == "CandyPuzzle")
         {
 
             LockedWithCandyPuzzle = true;
 
         }
-        if (hit.transform.name == "Shovel")
+        else if (hit.transform.name == "Shovel")
         {
             InventoryItemManager.playerHasShovel = true;
             shovel.SetActive(false);
             IHaveAShovel.start();
         }
-        if (hit.transform.name == "VanessasBlankGrave" || hit.transform.name == "PlayersBlankGrave" || hit.transform.name == "CharliesBlankGrave")
+        else if (hit.transform.name == "VanessasBlankGrave" || hit.transform.name == "PlayersBlankGrave" || hit.transform.name == "CharliesBlankGrave")
         {
             LockedWithBlankGrave = true;
             ambientInteractable = true;
             BlankGraveComment.start();
         }
 
-        if (hit.transform.name == "GraveFront" || hit.transform.name == "Charlies Grave" || hit.transform.name == "Vanessas Grave")
+        else if (hit.transform.name == "GraveFront" || hit.transform.name == "Charlies Grave" || hit.transform.name == "Vanessas Grave")
         {
             LockedWithEngravedGrave = true;
             ambientInteractable = true;
             FilledInGravesComment.start();
         }
 
-        if (hit.transform.name == "CreepyClock")
+        else if (hit.transform.name == "CreepyClock")
         {
             CreepyClockComment.start();
         }
@@ -550,7 +526,7 @@ public class LockView : MonoBehaviour
             ambientInteractable = true;
             LockComment.start();
         }
-        if (hit.transform.name == "Left Wall" || hit.transform.name == "Right Wall" || hit.transform.name == "Front Wall" || hit.transform.name == "Back Wall")
+        else if (hit.transform.name == "Left Wall" || hit.transform.name == "Right Wall" || hit.transform.name == "Front Wall" || hit.transform.name == "Back Wall")
         {
             LockedWithMausoleum = true;
             ambientInteractable = true;
@@ -565,45 +541,45 @@ public class LockView : MonoBehaviour
 
         }
 
-        if (hit.transform.name == "GhostParticleSystem")
+        else if (hit.transform.name == "GhostParticleSystem")
         {
             IgnoreTheGhostComment.start();
         }
 
-        if (hit.transform.name == "stillClock")
+        else if (hit.transform.name == "stillClock")
         {
             LockedWithStillClock = true;
             ambientInteractable = true;
             StillClockComment.start();
         }
-        if (hit.transform.name == "CreepyClock")
+        else if (hit.transform.name == "CreepyClock")
         {
             LockedWithCreepyClock = true;
             ambientInteractable = true;
         }
-        if (hit.transform.name == "Tree of Life")
+        else if (hit.transform.name == "Tree of Life")
         {
             LockedWithTreeOfLife = true;
             ambientInteractable = true;
             TreeOfLifeComment.start();
         }
-        
-        if (hit.transform.name == "FlowerPot")
+
+        else if (hit.transform.name == "FlowerPot")
         {
             MouseClicks.currentCorrectAnswer = "föld";
             LockedWithFlowerPot = true;
         }
-        if (hit.transform.name == "Torch")
+        else if (hit.transform.name == "Torch")
         {
             MouseClicks.currentCorrectAnswer = "Tűz";
             LockedWithTorch = true;
         }
-        if (hit.transform.name == "PinwheelLeafs")
+        else if (hit.transform.name == "PinwheelLeafs")
         {
             MouseClicks.currentCorrectAnswer = "szél";
             LockedWithPinwheel = true;
         }
-        if (hit.transform.name == "Basin")
+        else if (hit.transform.name == "Basin")
         {
             MouseClicks.currentCorrectAnswer = "víz";
             LockedWithBasin = true;
@@ -631,6 +607,8 @@ public class LockView : MonoBehaviour
         // Does it have a RandomWords on it?
         if (hit.collider.gameObject.GetComponent<RandomWordWorkaround>() != null)
         {
+            
+            
             randomWord = hit.collider.gameObject.GetComponent<RandomWordWorkaround>();
             randomWordBool = true;
         } else
@@ -704,6 +682,7 @@ public class LockView : MonoBehaviour
         randomWordBool = false;
         ambientInteractable = false;
 
+        textGraphic.SetActive(false);
         //charliesTextGraphic.SetActive(false);
        // ForintTextGraphic.SetActive(false);
 	}
