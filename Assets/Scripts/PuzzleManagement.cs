@@ -46,6 +46,7 @@ public class PuzzleManagement : MonoBehaviour
     public GameObject bathroomDoor;
 
     public GameObject turul;
+    Animator turulsAnimator;
     private PlayTurulSFX turulSFXScript;
 
     public GameObject placeholderEndingTextUI;
@@ -54,6 +55,7 @@ public class PuzzleManagement : MonoBehaviour
     {
         lightsScript = lights.GetComponent<ProgressiveLights>();
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
+        turulsAnimator = turul.GetComponent<Animator>();
     }
 
     private void Update()
@@ -78,8 +80,9 @@ public class PuzzleManagement : MonoBehaviour
 
         if (NumberOfFullElementsPuzzlesSolved == 4)
         {
-            Debug.Log("Ending cutscene goes here");
-            placeholderEndingTextUI.SetActive(true);
+            //Debug.Log("Ending cutscene goes here");
+            //placeholderEndingTextUI.SetActive(true);
+            turulsAnimator.Play("TurulEndingCutscene");
         }
     }
 

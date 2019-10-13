@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayTurulSFX : MonoBehaviour
 {
 
-    private FMOD.Studio.EventInstance TurulSquawkSound;
+    public FMOD.Studio.EventInstance TurulSquawkSound;
 
     public GameObject bathroomCutsceneTimeline;
     private TriggerGateClose triggerGateCloseScript;

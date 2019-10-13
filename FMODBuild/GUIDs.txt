@@ -15,9 +15,9 @@
 {b48c0485-0c53-4149-b70b-68b76959748c} event:/Dialogue/Charlie/AskingForMedicine
 {afe668e7-a144-4021-a1be-4a86b9ad20e4} event:/Dialogue/Charlie/CorrectWordForMedicine
 {08faa348-87f2-43bb-a266-1e2463487ae1} event:/Dialogue/Charlie/IDontFeelWell
+{41d859d3-6f50-442e-a97a-f82b4b014ef5} event:/Dialogue/Charlie/IDontWantThat
 {63df5a52-d972-4ab2-ae60-5a5dbcf56368} event:/Dialogue/Charlie/IncorrectWordForMedicine
 {3828a951-92c8-414e-848a-4bfbce4b62f1} event:/Dialogue/Charlie/StillDontKnowWordForMedicine
-{41d859d3-6f50-442e-a97a-f82b4b014ef5} event:/Dialogue/Charlie/IDontWantThat
 {bd4504da-04fd-4e7a-b41a-fba689ca3461} event:/Dialogue/Groundskeeper/CorrectBathroomAnswerResponse
 {f6357e1c-3c18-46bc-a577-e80278b3af95} event:/Dialogue/Groundskeeper/IncorrectBathroomAnswerResponse
 {22951b32-251e-45fb-b8fd-419b10882e02} event:/Dialogue/Player/ITriedToFindTheBathroom
@@ -30,10 +30,10 @@
 {2f84a51c-ce47-4bd1-b2db-5782e2f0722f} event:/Dialogue/Turul/medicine
 {bef58491-b42d-4fd7-abe3-6a504295736f} event:/Dialogue/Turul/milkTej
 {d0bdba2f-aa98-4376-81d2-1b6464a14b7e} event:/Dialogue/Vanessa/AskIfSheKnowsWordForBathroom
+{a0a0aa0d-d16e-400e-aa6f-2b4b5983c4f7} event:/Dialogue/Vanessa/IDontWantThat
 {b5d0c0f7-86fb-4472-9846-386f80a92916} event:/Dialogue/Vanessa/OMGTheGateClosed
 {d98725dc-1dad-474b-9b96-68ee82617b5b} event:/Dialogue/Vanessa/TellPlayerToFindTheBathroom
 {399d2638-354b-408a-9c18-7e656244b044} event:/Dialogue/Vanessa/VanessaSaysComeHere
-{a0a0aa0d-d16e-400e-aa6f-2b4b5983c4f7} event:/Dialogue/Vanessa/IDontWantThat
 {4ecdc3be-9c62-4a9b-a37c-998c1a6c3748} event:/Dialogue/fanAndLighterHints
 {6e1fbde4-61d4-487b-a5e8-aa18a70449b6} event:/Dialogue/youLookSick
 {ac6a9d81-290a-4ba6-8637-cfbbf351c271} event:/ElementsPuzzle/earth
@@ -103,6 +103,9 @@
 {049ce4b6-b302-4164-a859-d5c55526f6ca} event:/SFX/TurulSquawk
 {d02a7201-f142-44fc-a491-8dd6cb1832ed} event:/SFX/TurulSquawkingLoop
 {e514a61f-ac36-416d-9d3a-9124b5652ef9} event:/SFX/UIGhostVoice
+{9db75bcf-e687-4b53-adfb-b313270c95ae} event:/SFX/DragonShriek
+{8620512b-88c2-48bf-b574-6754c1c80d2a} event:/SFX/DragonDeath
+{6ed932ce-fc75-4829-8f51-bf2660aea059} event:/SFX/HereGoesNothing
 {4d85793c-3a3b-404f-9aa8-0014fa88188d} bus:/
 {89466833-5135-4b73-a093-35697adecad7} bus:/Master
 {4ceb91b6-4ce3-4ecd-8fc3-88894cf9b30b} bus:/Master/Dialogue

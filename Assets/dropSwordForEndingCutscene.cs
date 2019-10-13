@@ -19,11 +19,20 @@ public class dropSwordForEndingCutscene : MonoBehaviour
 
     public static bool endingCutscene = false;
 
+    public FMOD.Studio.EventInstance DragonShriek;
+    public FMOD.Studio.EventInstance HereGoesNothing;
+    public FMOD.Studio.EventInstance DragonDeath;
+
+    public GameObject YouWinCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
         swordAnimator = sword.GetComponent<Animator>();
         lockViewScript = playerCamera.GetComponent<LockView>();
+        DragonShriek = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/DragonShriek");
+        HereGoesNothing = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/HereGoesNothing");
+        DragonDeath = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/DragonDeath");
     }
 
     // Update is called once per frame
@@ -38,6 +47,7 @@ public class dropSwordForEndingCutscene : MonoBehaviour
         lockViewScript.randomWordBool = false;
         lockViewScript.locked = true;
         LockView.endingCutsceneLockWithTurul = true;
+        GetComponent<PlayTurulSFX>().TurulSquawkSound.start();
         
     }
 
@@ -52,6 +62,7 @@ public class dropSwordForEndingCutscene : MonoBehaviour
     {
         LockView.endingCutsceneLockWithSword = false;
         LockView.endingCutsceneLockWithDragon = true;
+        DragonShriek.start();
     }
 
     public void lockOnToKey()
@@ -59,6 +70,7 @@ public class dropSwordForEndingCutscene : MonoBehaviour
         LockView.endingCutsceneLockWithSword = false;
         LockView.endingCutsceneLockWithDragon = false;
         LockView.endingCutsceneLockWithKey = true;
+        DragonDeath.start();
     }
 
     public void activateAndAnimateSword()
@@ -71,6 +83,7 @@ public class dropSwordForEndingCutscene : MonoBehaviour
     public void activateAndAnimateDragon()
     {
         dragon.SetActive(true);
+        DragonShriek.start();
         lockOnToDragon();
         //dragonAnimator.enabled = true;
     }
@@ -81,6 +94,7 @@ public class dropSwordForEndingCutscene : MonoBehaviour
     {
         swordAnimator.Play("pickUpSwordAndThrowAtDragon");
         lockOnToSword();
+        HereGoesNothing.start();
     }
 
     public void keyDropAnimation()
@@ -90,5 +104,10 @@ public class dropSwordForEndingCutscene : MonoBehaviour
         key.SetActive(true);
         lockViewScript.locked = true;
         lockOnToKey();
+    }
+
+    public void turnOnEndingText()
+    {
+
     }
 }
