@@ -54,6 +54,7 @@ public class LockView : MonoBehaviour
     public bool LockedWithTorch = false;
 
     public static bool endingCutsceneLockWithTurul = false;
+    public static bool endingCutsceneLockWithSword = false;
     public static bool endingCutsceneLockWithDragon = false;
     public static bool endingCutsceneLockWithKey = false;
 
@@ -152,6 +153,7 @@ public class LockView : MonoBehaviour
     public GameObject Torch;
     public GameObject WaterBasin;
 
+    public GameObject sword;
     public GameObject dragon;
     public GameObject key;
 
@@ -200,7 +202,7 @@ public class LockView : MonoBehaviour
 		if ( locked )
 		{
             
-            if (randomWordBool )
+            if (randomWordBool && !dropSwordForEndingCutscene.endingCutscene)
             {
                 if (!LockedWithForint)
                 {
@@ -211,7 +213,7 @@ public class LockView : MonoBehaviour
 
             }//end of random word condition
 
-         else if (!bathroomLightningCutSceneCameraPan && checkHit)//if locked with something that is not a random word puzzle
+         else if (!bathroomLightningCutSceneCameraPan && checkHit && !dropSwordForEndingCutscene.endingCutscene)//if locked with something that is not a random word puzzle
             {
                 
                 Vector3 targetPos = hit.transform.position;
@@ -289,23 +291,29 @@ public class LockView : MonoBehaviour
 
             }//end of bathroomCutScene
 
+            else if (dropSwordForEndingCutscene.endingCutscene)
+            {
+                if (endingCutsceneLockWithTurul)
+                {
+                    LockOnToTargetObject(turul.transform.position);
+                }
+                else if (endingCutsceneLockWithSword)
+                {
+                    LockOnToTargetObject(sword.transform.position);
+                }
+                else if (endingCutsceneLockWithDragon)
+                {
+                    LockOnToTargetObject(dragon.transform.position);
+                }
+                else if (endingCutsceneLockWithKey)
+                {
+                    LockOnToTargetObject(key.transform.position);
+                }
+            }
+
         }//end of locked
 
-        else if (dropSwordForEndingCutscene.endingCutscene)
-        {
-            if (endingCutsceneLockWithTurul)
-            {
-                LockOnToTargetObject(turul.transform.position);
-            }
-            else if (endingCutsceneLockWithDragon)
-            {
-                LockOnToTargetObject(dragon.transform.position);
-            }
-            else if (endingCutsceneLockWithKey)
-            {
-                LockOnToTargetObject(key.transform.position);
-            }
-        }
+        
 		if ( Input.GetKeyDown( KeyCode.Space ) )
 		{
 

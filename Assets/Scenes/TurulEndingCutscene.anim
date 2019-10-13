@@ -75,14 +75,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.5833333
         value: {x: 3.51, y: 9.36, z: 9.25}
-        inSlope: {x: 0, y: 5.162791, z: 5.4558144}
-        outSlope: {x: 0, y: 5.162791, z: 5.4558144}
+        inSlope: {x: 0, y: 2.573913, z: 2.72}
+        outSlope: {x: 0, y: 2.573913, z: 2.72}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 3.35
+        time: 6.233333
         value: {x: 3.51, y: 23.8, z: 25.69}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -150,7 +150,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 3.35
+    m_StopTime: 6.233333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -233,7 +233,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.35
+        time: 6.233333
         value: 3.51
         inSlope: 0
         outSlope: 0
@@ -308,14 +308,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.5833333
         value: 9.36
-        inSlope: 5.162791
-        outSlope: 5.162791
+        inSlope: 2.573913
+        outSlope: 2.573913
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.35
+        time: 6.233333
         value: 23.8
         inSlope: 0
         outSlope: 0
@@ -390,14 +390,14 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.5833333
         value: 9.25
-        inSlope: 5.4558144
-        outSlope: 5.4558144
+        inSlope: 2.72
+        outSlope: 2.72
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 3.35
+        time: 6.233333
         value: 25.69
         inSlope: 0
         outSlope: 0
@@ -430,28 +430,21 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.33333334
+  - time: 1
     functionName: activateAndAnimateDragon
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.5
-    functionName: lockOnToDragon
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1.2833333
+  - time: 1.6
     functionName: pickUpSwordAndThrowAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2.4166667
+  - time: 2.8
     functionName: keyDropAnimation
     data: 
     objectReferenceParameter: {fileID: 0}

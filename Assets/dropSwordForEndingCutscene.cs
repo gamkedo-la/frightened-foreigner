@@ -35,18 +35,28 @@ public class dropSwordForEndingCutscene : MonoBehaviour
     public void lockOnToTurul()
     {
         endingCutscene = true;
+        lockViewScript.randomWordBool = false;
+        lockViewScript.locked = true;
         LockView.endingCutsceneLockWithTurul = true;
         
     }
 
-    public void lockOnToDragon()
+    public void lockOnToSword()
     {
         LockView.endingCutsceneLockWithTurul = false;
+        LockView.endingCutsceneLockWithSword = true;
+        LockView.endingCutsceneLockWithDragon = false;
+    }
+
+    public void lockOnToDragon()
+    {
+        LockView.endingCutsceneLockWithSword = false;
         LockView.endingCutsceneLockWithDragon = true;
     }
 
     public void lockOnToKey()
     {
+        LockView.endingCutsceneLockWithSword = false;
         LockView.endingCutsceneLockWithDragon = false;
         LockView.endingCutsceneLockWithKey = true;
     }
@@ -54,19 +64,23 @@ public class dropSwordForEndingCutscene : MonoBehaviour
     public void activateAndAnimateSword()
     {
         sword.SetActive(true);
+        lockOnToSword();
         //swordAnimator.enabled = true;
     }
 
     public void activateAndAnimateDragon()
     {
         dragon.SetActive(true);
+        lockOnToDragon();
         //dragonAnimator.enabled = true;
     }
+
+    
 
     public void pickUpSwordAndThrowAnimation()
     {
         swordAnimator.Play("pickUpSwordAndThrowAtDragon");
-        
+        lockOnToSword();
     }
 
     public void keyDropAnimation()
@@ -75,6 +89,6 @@ public class dropSwordForEndingCutscene : MonoBehaviour
         sword.SetActive(false);
         key.SetActive(true);
         lockViewScript.locked = true;
-        lockViewScript.LockOnToTargetObject(key.transform.position);
+        lockOnToKey();
     }
 }
