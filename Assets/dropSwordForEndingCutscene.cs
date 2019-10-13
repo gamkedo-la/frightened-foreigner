@@ -14,16 +14,41 @@ public class dropSwordForEndingCutscene : MonoBehaviour
     public GameObject key;
     Animator keyAnimator;
 
+    public GameObject playerCamera;
+    private LockView lockViewScript;
+
+    public static bool endingCutscene = false;
+
     // Start is called before the first frame update
     void Start()
     {
         swordAnimator = sword.GetComponent<Animator>();
+        lockViewScript = playerCamera.GetComponent<LockView>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void lockOnToTurul()
+    {
+        endingCutscene = true;
+        LockView.endingCutsceneLockWithTurul = true;
+        
+    }
+
+    public void lockOnToDragon()
+    {
+        LockView.endingCutsceneLockWithTurul = false;
+        LockView.endingCutsceneLockWithDragon = true;
+    }
+
+    public void lockOnToKey()
+    {
+        LockView.endingCutsceneLockWithDragon = false;
+        LockView.endingCutsceneLockWithKey = true;
     }
 
     public void activateAndAnimateSword()
@@ -49,5 +74,7 @@ public class dropSwordForEndingCutscene : MonoBehaviour
         dragon.SetActive(false);
         sword.SetActive(false);
         key.SetActive(true);
+        lockViewScript.locked = true;
+        lockViewScript.LockOnToTargetObject(key.transform.position);
     }
 }
