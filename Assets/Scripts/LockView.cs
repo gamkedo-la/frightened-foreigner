@@ -614,43 +614,81 @@ public class LockView : MonoBehaviour
 
         else if (hit.transform.name == "FlowerPot")
         {
-            MouseClicks.currentCorrectAnswer = "föld";
-            textGraphic.transform.position = FlowerPot.transform.position;
-            Vector3 correction = new Vector3(0, 0.65f, 0);
-            textGraphic.transform.position += correction;
-            textGraphic.SetActive(true);
+            if (PuzzleManagement.FlowerPotSolved)
+            {
+                LockedWithFlowerPot = true;
+                MouseClicks.currentCorrectAnswer = "föld";
+                textGraphic.transform.position = gameObject.transform.position;
+                Vector3 correction = new Vector3(0, 0.65f, 0);
+                textGraphic.transform.position += correction;
+                textGraphic.SetActive(true);
+            }
+            else
+            {
+                LockedWithFlowerPot = true;
+            }
+            
+                
+            
 
-            LockedWithFlowerPot = true;
         }
         else if (hit.transform.name == "Torch")
         {
-            MouseClicks.currentCorrectAnswer = "Tűz";
-            textGraphic.transform.position = Torch.transform.position;
-            Vector3 correction = new Vector3(0, 0.65f, 0);
-            textGraphic.transform.position += correction;
-            textGraphic.SetActive(true);
+            if (PuzzleManagement.TorchSolved)
+            {
+                LockedWithTorch = true;
+                MouseClicks.currentCorrectAnswer = "Tűz";
+                textGraphic.transform.position = gameObject.transform.position;
+                Vector3 correction = new Vector3(0, 0.65f, 0);
+                textGraphic.transform.position += correction;
+                textGraphic.SetActive(true);
+            }
+            else
+            {
+                LockedWithTorch = true;
+            }
 
-            LockedWithTorch = true;
         }
         else if (hit.transform.name == "PinwheelLeafs")
         {
-            MouseClicks.currentCorrectAnswer = "szél";
-            textGraphic.transform.position = PinwheelLeafs.transform.position;
-            Vector3 correction = new Vector3(0, 0.65f, 0);
-            textGraphic.transform.position += correction;
-            textGraphic.SetActive(true);
+            if (PuzzleManagement.PinwheelSolved)
+            {
+                LockedWithPinwheel = true;
+                MouseClicks.currentCorrectAnswer = "szél";
+                textGraphic.transform.position = gameObject.transform.position;
+                Vector3 correction = new Vector3(0, 0.65f, 0);
+                textGraphic.transform.position += correction;
+                textGraphic.SetActive(true);
+            }
+            else
+            {
+                LockedWithPinwheel = true;
+            }
+            
+            
+            
 
             LockedWithPinwheel = true;
         }
         else if (hit.transform.name == "Basin")
         {
-            MouseClicks.currentCorrectAnswer = "víz";
-            textGraphic.transform.position = WaterBasin.transform.position;
-            Vector3 correction = new Vector3(0, 0.65f, 0);
-            textGraphic.transform.position += correction;
-            textGraphic.SetActive(true);
+            if (PuzzleManagement.WaterBasinSolved)
+            {
+                LockedWithBasin = true;
+                MouseClicks.currentCorrectAnswer = "víz";
+                textGraphic.transform.position = gameObject.transform.position;
+                Vector3 correction = new Vector3(0, 0.65f, 0);
+                textGraphic.transform.position += correction;
+                textGraphic.SetActive(true);
+            }
+            else
+            {
+                LockedWithBasin = true;
+            }
+           
+            
 
-            LockedWithBasin = true;
+            
         }
 
 		// Did we hit something we can interact with?

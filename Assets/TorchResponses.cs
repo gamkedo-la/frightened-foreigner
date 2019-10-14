@@ -13,6 +13,8 @@ public class TorchResponses : MonoBehaviour
     public GameObject playerCamera;
     private LockView lockViewScript;
 
+    public GameObject textGraphic;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,13 @@ public class TorchResponses : MonoBehaviour
         torchFlame.SetActive(true);
         
         lockViewScript.LockOnToTargetObject(gameObject.transform.position);
+
+        MouseClicks.currentCorrectAnswer = "Tűz";
+
+        textGraphic.transform.position = gameObject.transform.position;
+        Vector3 correction = new Vector3(0, 0.65f, 0);
+        textGraphic.transform.position += correction;
+        textGraphic.SetActive(true);
     }
 
     public void IncorrectResponse()
