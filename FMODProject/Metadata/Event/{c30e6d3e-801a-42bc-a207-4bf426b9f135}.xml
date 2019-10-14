@@ -97,7 +97,6 @@
         </property>
         <relationship name="modulators">
             <destination>{1f36e935-34ab-4d1a-93a0-22ddeb4fe1ee}</destination>
-            <destination>{e2e09a48-c0a3-48e4-a8f2-e566633c791f}</destination>
         </relationship>
         <relationship name="fadeInCurve">
             <destination>{0e213466-b38b-4516-a87e-f70b7041acfe}</destination>
@@ -158,14 +157,6 @@
         </property>
         <property name="amount">
             <value>3</value>
-        </property>
-    </object>
-    <object class="RandomizerModulator" id="{e2e09a48-c0a3-48e4-a8f2-e566633c791f}">
-        <property name="nameOfPropertyBeingModulated">
-            <value>pitch</value>
-        </property>
-        <property name="amount">
-            <value>5.20833302</value>
         </property>
     </object>
     <object class="FadeCurve" id="{0e213466-b38b-4516-a87e-f70b7041acfe}">
