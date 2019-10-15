@@ -110,4 +110,5 @@
 {a5913a4e-618f-4e21-add3-32ea81914989} bus:/Master/Music
 {66b5e267-4ab2-4f33-98c9-b3d192d436f3} bus:/Master/SFX
 {7f11b81c-4d1e-4f60-a9ad-e1ef7a47be5b} bus:/Reverb
+{d1440d97-68e7-46f6-878e-426d679fee97} snapshot:/MusicAndSFXDuckingWhenTrapped
 {b1c3f9c2-5418-405a-913e-c8334fe8f0f1} bank:/Master Bank
