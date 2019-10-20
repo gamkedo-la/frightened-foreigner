@@ -5,7 +5,7 @@
             <value>Lightning</value>
         </property>
         <property name="outputFormat">
-            <value>1</value>
+            <value>2</value>
         </property>
         <relationship name="folder">
             <destination>{8ac5c845-fb1f-4f36-8f4f-4c400c72f98f}</destination>
@@ -116,6 +116,8 @@
     <object class="MixerBusEffectChain" id="{a98dd1a1-8c8b-4cda-a725-576fbb5946d1}">
         <relationship name="effects">
             <destination>{a8856907-5852-496a-81bd-0de9e07912b8}</destination>
+            <destination>{38e3bd57-b9ec-408c-b490-c422e6515809}</destination>
+            <destination>{b38f76ae-bbcc-4238-bb4d-3edb02873302}</destination>
         </relationship>
     </object>
     <object class="MixerBusPanner" id="{1cd9c567-f058-4347-90fc-f31127fbaed2}"/>
@@ -127,5 +129,21 @@
     </object>
     <object class="MixerBusPanner" id="{2a07d37d-fdb7-477a-aea1-97a5ebbcde76}"/>
     <object class="MixerBusFader" id="{a8856907-5852-496a-81bd-0de9e07912b8}"/>
+    <object class="SpatialiserEffect" id="{38e3bd57-b9ec-408c-b490-c422e6515809}">
+        <property name="minimumDistance">
+            <value>20</value>
+        </property>
+        <property name="maximumDistance">
+            <value>100</value>
+        </property>
+    </object>
+    <object class="ThreeEQEffect" id="{b38f76ae-bbcc-4238-bb4d-3edb02873302}">
+        <property name="lowGain">
+            <value>8.5</value>
+        </property>
+        <property name="lowCrossover">
+            <value>500</value>
+        </property>
+    </object>
     <object class="MixerBusFader" id="{5cf4ab83-7477-40a6-9883-47d9fee9c98a}"/>
 </objects>

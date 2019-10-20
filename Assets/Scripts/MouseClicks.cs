@@ -201,6 +201,8 @@ public class MouseClicks: MonoBehaviour
                         LockViewScript.bathroomLightningCutSceneCameraPan = true; //camera pans to the bathroom
                         LockViewScript.checkHit = false;
                         //Groundskeeper.SetActive(false);
+                        var bathroomStuffPosition = FMODUnity.RuntimeUtils.To3DAttributes(bathroomStuff.transform.position);
+                        LightningSound.set3DAttributes(bathroomStuffPosition);
                         LightningSound.start();
                         StartCoroutine(delayAppearanceOfBathroomStuff());
                         SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;

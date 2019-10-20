@@ -37,6 +37,9 @@ public class DialogueWithVanessa : MonoBehaviour
     private CameraShake CameraShakeScript;
 
     public GameObject stormSystem;
+    public FMOD.Studio.EventInstance baseLightningSound;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +61,9 @@ public class DialogueWithVanessa : MonoBehaviour
         CameraShakeScript = PlayerCamera.GetComponent<CameraShake>();
 
         IDontWantThat = FMODUnity.RuntimeManager.CreateInstance("event:/Dialogue/Vanessa/IDontWantThat");
+
+        baseLightningSound = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Lightning");
+
     }
 
     // Update is called once per frame
@@ -88,7 +94,9 @@ public class DialogueWithVanessa : MonoBehaviour
             if (LockViewScript.LockedWithVanessa && DialogManager.groundskeeperInvisible && DoorScript.playerHasExploredTheCemetery && !DialogManager.ITriedToFindTheBathroomPlayed)
             {
                 groundskeeper.SetActive(true);
-                
+                var lightningPosition = FMODUnity.RuntimeUtils.To3DAttributes(groundskeeper.transform.position);
+                baseLightningSound.set3DAttributes(lightningPosition);
+                StartCoroutine(DelayLightningStrikeForGroundskeeperPuzzle());
                 DialogManager.groundskeeperInvisible = false;
                 ITriedToFindTheBathroom.start();
                 DialogManager.ITriedToFindTheBathroomPlayed = true;
@@ -108,5 +116,11 @@ public class DialogueWithVanessa : MonoBehaviour
     public void PlayIDontWantThat()
     {
         IDontWantThat.start();
+    }
+
+    private IEnumerator DelayLightningStrikeForGroundskeeperPuzzle()
+    {
+        yield return new WaitForSeconds(4.0f);
+        baseLightningSound.start();
     }
 }

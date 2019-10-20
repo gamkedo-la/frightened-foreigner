@@ -70,8 +70,12 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     //cat/milk puzzle, currently the 'first' puzzle
     public void emitLightningForCatPuzzle()
     {
-        baseLightningSound.start();
+       
+        
         gameObject.transform.position = new Vector3(2.75f, 20.4f, -5.0f);
+        var lightningPosition = FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform.position);
+        baseLightningSound.set3DAttributes(lightningPosition);
+        baseLightningSound.start();
         StartCoroutine(DelayLightningStrikeForCatPuzzle());
         StartCoroutine(DelayAppearanceOfCatPuzzle());
     }
@@ -94,8 +98,11 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     //sickness puzzle, currently the 'second' puzzle
     public void emitLightningForSicknessPuzzle()
     {
-        baseLightningSound.start();
+        
         gameObject.transform.position = new Vector3(-2.96f, 20.4f, 8.59f);
+        var lightningPosition = FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform.position);
+        baseLightningSound.set3DAttributes(lightningPosition);
+        baseLightningSound.start();
         StartCoroutine(DelayLightningStrikeForSicknessPuzzle());
         StartCoroutine(DelayAppearanceOfFene());
     }
@@ -125,8 +132,11 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
     //candy puzzle, currently the 'third' puzzle
     public void emitLightningForCandyPuzzle()
     {
-        baseLightningSound.start();
+        
         gameObject.transform.position = new Vector3(10.42f, 20.4f, 4.84f);
+        var lightningPosition = FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform.position);
+        baseLightningSound.set3DAttributes(lightningPosition);
+        baseLightningSound.start();
         StartCoroutine(DelayLightningStrikeForCandyPuzzle());
         StartCoroutine(DelayAppearanceOfCandyPuzzle());
     }
@@ -151,9 +161,11 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
 
     public void emitLightningForElementsPuzzle()
     {
-        baseLightningSound.start();
-        gameObject.transform.position = new Vector3(4.77f, 20.4f, 0.79f);
         
+        gameObject.transform.position = new Vector3(4.77f, 20.4f, 0.79f);
+        var lightningPosition = FMODUnity.RuntimeUtils.To3DAttributes(gameObject.transform.position);
+        baseLightningSound.set3DAttributes(lightningPosition);
+        baseLightningSound.start();
         StartCoroutine(DelayLightningStrikeForElementsPuzzle());
         StartCoroutine(DelayAppearanceOfElementsPuzzle());
     }
