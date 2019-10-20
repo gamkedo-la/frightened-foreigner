@@ -49,7 +49,9 @@ public class CatPuzzleResponses : MonoBehaviour
     {
         catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("OnOff", 0f);
         catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("catSounds", 1.0f);
-        
+        lightsScript.targetLightIntensity -= lightsScript.targetDimAmount;
+        ProgressiveLights.lightsShouldBeDimming = true;
+
         lightsScript.MakeAmbientCreepier();
         lockViewScript.makeGraphicsGrainier();
 

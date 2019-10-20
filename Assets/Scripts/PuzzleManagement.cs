@@ -38,9 +38,9 @@ public class PuzzleManagement : MonoBehaviour
     private PostProcessVolume PPVScript;
     private Grain GrainLayer;
     private Vignette VignetteLayer;
-    private float PPVMultiplier = 1.5f;
-    private float maxGrainIntensity = 0.5f;
-    private float maxVignetteIntensity = 0.45f;
+    private float PPVMultiplier = 2f;
+    private float maxGrainIntensity = 2f;
+    private float maxVignetteIntensity = 1.8f;
 
     public GameObject wallInFrontOfBathroom;
     public GameObject bathroomDoor;
@@ -106,8 +106,13 @@ public class PuzzleManagement : MonoBehaviour
         DialogManager.HeDoesntKnowEnglishHasPlayed = true;
         DialogManager.learnedFurduszoba = true;
         DialogManager.BathroomAttendantSaidToGetForint = true;
-        
+
         //lets get darker twice because player has solved the word for bathroom and forint
+        ProgressiveLights.lightsShouldBeDimming = true;
+
+        lightsScript.targetLightIntensity -= lightsScript.targetDimAmount;
+        lightsScript.targetLightIntensity -= lightsScript.targetDimAmount;
+
         lightsScript.MakeAmbientCreepier();
         lightsScript.MakeAmbientCreepier();
 
@@ -130,6 +135,10 @@ public class PuzzleManagement : MonoBehaviour
         JumpToCatPuzzle();
         PlayerIsDoingCatPuzzle = false;
         PlayerIsDoingSicknessPuzzle = true;
+        ProgressiveLights.lightsShouldBeDimming = true;
+
+        lightsScript.targetLightIntensity -= lightsScript.targetDimAmount;
+
         lightsScript.MakeAmbientCreepier();
         makeGraphicsGrainier();
         

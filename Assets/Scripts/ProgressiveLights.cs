@@ -7,15 +7,16 @@ public class ProgressiveLights : MonoBehaviour
     private List<GameObject> allLightObjects = new List<GameObject>();
 
     public static bool lightsShouldBeDimming = false;
-    private float targetDimAmount = -0.4f;
+    public float targetDimAmount = 0.2f;
+    public float targetLightIntensity = 1.0f;
     private float dimGradient = 0.005f;
     private float currentTempDimAmount = 0.0f;
 
     public static bool fogShouldBeGettingFoggier = false;
-    private float afterBathroomLightningFogAmount = 20.0f;
+    private float afterBathroomLightningFogAmount = 25.0f;
     private float fogGradient = 1.0f;
 
-    private float bathroomCutsceneFogAmount = 14.0f;
+    private float bathroomCutsceneFogAmount = 20.0f;
     private float bathroomCutsceneFogGradient = 0.5f;
     
 
@@ -34,18 +35,12 @@ public class ProgressiveLights : MonoBehaviour
             lightsShouldBeDimming = true;
             
         }
-        if (lightsShouldBeDimming && currentTempDimAmount > targetDimAmount)
+        if (lightsShouldBeDimming)
         {
             MakeAmbientCreepier();
             
         }
-        if (currentTempDimAmount <= targetDimAmount)
-        {
-            
-            lightsShouldBeDimming = false;
-            currentTempDimAmount = 0.0f;
-            
-        }
+        
 
         if (fogShouldBeGettingFoggier)
         {
@@ -74,16 +69,20 @@ public class ProgressiveLights : MonoBehaviour
 
     public void MakeAmbientCreepier()
     {
-        lightsShouldBeDimming = true;
+        
         //RenderSettings.ambientIntensity -= 0.4f;
         for (int i = 0; i < allLightObjects.Count; i++)
         {
-            float tempIntensity = allLightObjects[i].GetComponent<Light>().intensity;
-            tempIntensity -= 0.3f;
-            if (tempIntensity > 0)
+            float currentLightIntensity = allLightObjects[i].GetComponent<Light>().intensity;
+            Debug.Log("currentLightIntensity: " + currentLightIntensity);
+            Debug.Log("targetLightIntentisy: " + targetLightIntensity);
+            if (currentLightIntensity > targetLightIntensity)
             {
                 allLightObjects[i].GetComponent<Light>().intensity -= dimGradient;
-                currentTempDimAmount -= dimGradient;
+                
+            } else
+            {
+                lightsShouldBeDimming = false;
             }
         }
     }

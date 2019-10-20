@@ -109,6 +109,10 @@ public class TriggerGateClose : MonoBehaviour
         BushRainSoundHolder.SetActive(true);
         stormSoundControlsScript.increaseThunderAndRainIntensityAfterBathroomCutscene();
         sceneManagementScript.ShouldFadeInPostBathroomMusic = true;
+        ProgressiveLights.lightsShouldBeDimming = true;
+
+        LightsScript.targetLightIntensity -= LightsScript.targetDimAmount;
+
         LightsScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
         stormSystemAnimator.Play("Storm Convergence 2");
         PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();

@@ -55,7 +55,8 @@ public class CandyPuzzleResponses : MonoBehaviour
     {
         candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("OnOff", 0f);
         candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("CandyPuzzleSounds", 1.0f);
-
+        ProgressiveLights.lightsShouldBeDimming = true;
+        lightsScript.targetLightIntensity -= lightsScript.targetDimAmount;
         lightsScript.MakeAmbientCreepier();
         lockViewScript.makeGraphicsGrainier();
 
