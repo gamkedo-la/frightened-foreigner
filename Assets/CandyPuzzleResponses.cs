@@ -24,11 +24,12 @@ public class CandyPuzzleResponses : MonoBehaviour
     public GameObject candyPuzzleLoopTriggerObject;
     private PlayCandyPuzzleLoop candyPuzzleLoopScript;
 
+    private float tempCandyPuzzleSoundsValue;
+
     // Start is called before the first frame update
     void Start()
     {
-        SavedChild = FMODUnity.RuntimeManager.CreateInstance("event:/CandyPuzzle/ThankYou");
-        WickedWitchCackle = FMODUnity.RuntimeManager.CreateInstance("event:/CandyPuzzle/Cackle");
+        
 
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
         lightsScript = lights.GetComponent<ProgressiveLights>();
@@ -42,13 +43,19 @@ public class CandyPuzzleResponses : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        candyPuzzleLoopScript.candyPuzzleLoopSound.getParameterValue("CandyPuzzleSounds", out tempCandyPuzzleSoundsValue, out tempCandyPuzzleSoundsValue);
+        if (tempCandyPuzzleSoundsValue == 0.5f)
+        {
+            tempCandyPuzzleSoundsValue = 0.0f;
+            candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("CandyPuzzleSounds", 0.0f);
+        }
     }
 
     public void CandyPuzzleSolvedResponse()
     {
         candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("OnOff", 0f);
-        SavedChild.start();
+        candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("CandyPuzzleSounds", 1.0f);
+
         lightsScript.MakeAmbientCreepier();
         lockViewScript.makeGraphicsGrainier();
 
@@ -66,15 +73,11 @@ public class CandyPuzzleResponses : MonoBehaviour
 
     public void CandyPuzzleIncorrectResponse()
     {
-        WickedWitchCackle.start();
-        Debug.Log("Should hear cat sound");
-        candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("OnOff", 0f);
-        StartCoroutine(delayCandyPuzzleLoopSound());
+
+        candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("CandyPuzzleSounds", 0.5f);
+
+
     }
 
-    private IEnumerator delayCandyPuzzleLoopSound()
-    {
-        yield return new WaitForSeconds(3.25f);
-        candyPuzzleLoopScript.candyPuzzleLoopSound.setParameterValue("OnOff", 1f);
-    }
+
 }

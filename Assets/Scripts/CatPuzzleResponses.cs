@@ -5,10 +5,7 @@ using UnityEngine;
 public class CatPuzzleResponses : MonoBehaviour
 {
 
-    public FMOD.Studio.EventInstance PleasedCat;
-
-    public FMOD.Studio.EventInstance DispleasedCat;
-
+    
     public GameObject turul;
     private PlayTurulSFX turulSFXScript;
 
@@ -24,12 +21,11 @@ public class CatPuzzleResponses : MonoBehaviour
     public GameObject catPuzzleLoopTriggerObject;
     private PlayCatPuzzleLoop catPuzzleLoopScript;
 
+    private float tempCatSoundsValue;
+
     // Start is called before the first frame update
     void Start()
     {
-        PleasedCat = FMODUnity.RuntimeManager.CreateInstance("event:/CatPuzzle/PleasedCat");
-        DispleasedCat = FMODUnity.RuntimeManager.CreateInstance("event:/CatPuzzle/DispleasedCat");
-
         turulSFXScript = turul.GetComponent<PlayTurulSFX>();
         lightsScript = lights.GetComponent<ProgressiveLights>();
 
@@ -39,16 +35,20 @@ public class CatPuzzleResponses : MonoBehaviour
         catPuzzleLoopScript = catPuzzleLoopTriggerObject.GetComponent<PlayCatPuzzleLoop>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        catPuzzleLoopScript.catPuzzleLoopSound.getParameterValue("catSounds", out tempCatSoundsValue, out tempCatSoundsValue);
+        if (tempCatSoundsValue == 0.5f)
+        {
+            tempCatSoundsValue = 0.0f;
+            catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("catSounds", 0.0f);
+        }
     }
 
     public void CatPuzzleSolvedResponse()
     {
         catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("OnOff", 0f);
-        PleasedCat.start();
+        catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("catSounds", 1.0f);
         
         lightsScript.MakeAmbientCreepier();
         lockViewScript.makeGraphicsGrainier();
@@ -66,14 +66,8 @@ public class CatPuzzleResponses : MonoBehaviour
 
     public void CatPuzzleIncorrectResponse()
     {
-        catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("OnOff", 0f);
-        StartCoroutine(delayCatPuzzleLoopSound());
-        DispleasedCat.start();
+        catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("catSounds", 0.5f);
     }
 
-    private IEnumerator delayCatPuzzleLoopSound()
-    {
-        yield return new WaitForSeconds(3.25f);
-        catPuzzleLoopScript.catPuzzleLoopSound.setParameterValue("OnOff", 1f);
-    }
+
 }
