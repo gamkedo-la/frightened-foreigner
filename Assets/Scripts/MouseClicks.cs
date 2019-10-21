@@ -207,9 +207,9 @@ public class MouseClicks: MonoBehaviour
                         StartCoroutine(delayAppearanceOfBathroomStuff());
                         SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;
                         ProgressiveLights.lightsShouldBeDimming = true;
-
+                        LightScript.rotateSunBathroomAppearance = true;
                         LightScript.targetLightIntensity -= LightScript.targetDimAmount*3;
-
+                        LightScript.lowerExposureBathroomAppearance = true;
                         LightScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
                         increaseGraininessOfGraphics();
                     }

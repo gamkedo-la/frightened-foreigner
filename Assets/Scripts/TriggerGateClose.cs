@@ -60,6 +60,8 @@ public class TriggerGateClose : MonoBehaviour
     public GameObject mausoleumRainHolder;
     public GameObject BushRainSoundHolder;
 
+    public Material testSkyBox;
+
     private void Awake()
     {
         stormSystemAnimator = stormSystem.GetComponent<Animator>();
@@ -110,6 +112,10 @@ public class TriggerGateClose : MonoBehaviour
         stormSoundControlsScript.increaseThunderAndRainIntensityAfterBathroomCutscene();
         sceneManagementScript.ShouldFadeInPostBathroomMusic = true;
         ProgressiveLights.lightsShouldBeDimming = true;
+        LightsScript.rotateSunBathroomCutscene = true;
+        //RenderSettings.skybox.SetColor("_Tint", new Color(0.0f, 51.0f/255.0f, 106.0f/255.0f, 1.0f));
+        //testSkyBox.SetColor("_Tint", new Color(0.0f, 51.0f / 255.0f, 106.0f / 255.0f, 1.0f));
+        LightsScript.lowerExposureBathroomCutscene = true;
 
         LightsScript.targetLightIntensity -= LightsScript.targetDimAmount;
 

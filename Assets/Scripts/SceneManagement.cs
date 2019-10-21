@@ -146,6 +146,7 @@ public class SceneManagement : MonoBehaviour
         if (CurrentScene.name == "Intro CutScene")
         {
             SceneManager.LoadScene("Cemetery Level");
+            RenderSettings.skybox.SetFloat("_Exposure", 2.2f);
         }
     }
 

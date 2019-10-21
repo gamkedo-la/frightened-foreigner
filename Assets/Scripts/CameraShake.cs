@@ -70,7 +70,7 @@ public class CameraShake : MonoBehaviour
 
     public IEnumerator DelayedCameraShakeForGroundskeeperLightning()
     {
-        yield return new WaitForSeconds(6.6f);
+        yield return new WaitForSeconds(6.0f);
         ResetShakeSettings();
         gateSideStormControlScript.activateMe();
         sicknessSideStormControlsScript.activateMe();

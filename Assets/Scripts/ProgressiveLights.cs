@@ -13,12 +13,24 @@ public class ProgressiveLights : MonoBehaviour
     private float currentTempDimAmount = 0.0f;
 
     public static bool fogShouldBeGettingFoggier = false;
-    private float afterBathroomLightningFogAmount = 25.0f;
+    private float afterBathroomLightningFogAmount = 20.0f;
     private float fogGradient = 1.0f;
 
-    private float bathroomCutsceneFogAmount = 20.0f;
+    private float bathroomCutsceneFogAmount = 15.0f;
     private float bathroomCutsceneFogGradient = 0.5f;
-    
+
+    public GameObject sun;
+    public bool rotateSunBathroomAppearance;
+    public float tempRotationAmount;
+    public float targetRotationAmount;
+
+    public bool rotateSunBathroomCutscene = false;
+
+    public bool lowerExposureBathroomAppearance = false;
+    public float targetExposureAmount = 0.0f;
+    public float tempExposureAmount = 0.0f;
+
+    public bool lowerExposureBathroomCutscene = false;
 
     private void Start()
     {
@@ -39,8 +51,11 @@ public class ProgressiveLights : MonoBehaviour
         {
             MakeAmbientCreepier();
             
+            
         }
-        
+
+        lowerExposure();
+        //rotateSun();
 
         if (fogShouldBeGettingFoggier)
         {
@@ -92,5 +107,72 @@ public class ProgressiveLights : MonoBehaviour
         RenderSettings.fog = true;
         fogShouldBeGettingFoggier = true;
         
+    }
+
+    public void rotateSun()
+    {
+        if (rotateSunBathroomAppearance)
+        {
+            float rotationGradient = 0.1f;
+            targetRotationAmount = 10.0f;
+            sun.transform.Rotate(-rotationGradient, 0f, 0f, Space.Self);
+            tempRotationAmount += rotationGradient;
+            if (tempRotationAmount >= targetRotationAmount)
+            {
+                rotateSunBathroomAppearance = false;
+                tempRotationAmount = 0.0f;
+                targetRotationAmount = 0.0f;
+            }
+        }
+        if (rotateSunBathroomCutscene)
+        {
+            float rotationGradient = 0.1f;
+            targetRotationAmount = 25.0f;
+            sun.transform.Rotate(-rotationGradient, 0f, 0f, Space.Self);
+            if (tempRotationAmount >= targetRotationAmount)
+            {
+                rotateSunBathroomCutscene = false;
+                tempRotationAmount = 0.0f;
+                targetRotationAmount = 0.0f;
+            }
+        }
+    }
+
+    public void lowerExposure()
+    {
+
+        if (lowerExposureBathroomAppearance)
+        {
+            float exposureGradient = 0.01f;
+            targetExposureAmount = 0.6f;
+            float currentExposure = 0.0f;
+
+            currentExposure = RenderSettings.skybox.GetFloat("_Exposure");
+            RenderSettings.skybox.SetFloat("_Exposure", currentExposure - exposureGradient);
+            tempExposureAmount += exposureGradient;
+            if (tempExposureAmount >= targetExposureAmount)
+            {
+                lowerExposureBathroomAppearance = false;
+                targetExposureAmount = 0.0f;
+                tempExposureAmount = 0.0f;
+            }
+        }
+
+        if (lowerExposureBathroomCutscene)
+        {
+            float exposureGradient = 0.01f;
+            targetExposureAmount = 1.2f;
+            float currentExposure = 0.0f;
+            currentExposure = RenderSettings.skybox.GetFloat("_Exposure");
+            //Debug.Log("currentExposure: " + currentExposure);
+            RenderSettings.skybox.SetFloat("_Exposure", currentExposure - exposureGradient);
+            tempExposureAmount += exposureGradient;
+            if (tempExposureAmount >= targetExposureAmount)
+            {
+                lowerExposureBathroomCutscene = false;
+                targetExposureAmount = 0.0f;
+                tempExposureAmount = 0.0f;
+            }
+        }
     }
 }
