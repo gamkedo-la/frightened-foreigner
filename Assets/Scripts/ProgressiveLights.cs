@@ -8,15 +8,15 @@ public class ProgressiveLights : MonoBehaviour
 
     public static bool lightsShouldBeDimming = false;
     public float targetDimAmount = 0.2f;
-    public float targetLightIntensity = 1.0f;
+    public float targetLightIntensity = 0.8f;
     private float dimGradient = 0.005f;
     private float currentTempDimAmount = 0.0f;
 
     public static bool fogShouldBeGettingFoggier = false;
-    private float afterBathroomLightningFogAmount = 20.0f;
+    private float afterBathroomLightningFogAmount = 22.5f;
     private float fogGradient = 1.0f;
 
-    private float bathroomCutsceneFogAmount = 15.0f;
+    private float bathroomCutsceneFogAmount = 18.0f;
     private float bathroomCutsceneFogGradient = 0.5f;
 
     public GameObject sun;
@@ -55,7 +55,7 @@ public class ProgressiveLights : MonoBehaviour
         }
 
         lowerExposure();
-        //rotateSun();
+        rotateSun();
 
         if (fogShouldBeGettingFoggier)
         {
@@ -127,7 +127,7 @@ public class ProgressiveLights : MonoBehaviour
         if (rotateSunBathroomCutscene)
         {
             float rotationGradient = 0.1f;
-            targetRotationAmount = 25.0f;
+            targetRotationAmount = 17.5f;
             sun.transform.Rotate(-rotationGradient, 0f, 0f, Space.Self);
             if (tempRotationAmount >= targetRotationAmount)
             {
@@ -165,10 +165,15 @@ public class ProgressiveLights : MonoBehaviour
             float currentExposure = 0.0f;
             currentExposure = RenderSettings.skybox.GetFloat("_Exposure");
             //Debug.Log("currentExposure: " + currentExposure);
-            RenderSettings.skybox.SetFloat("_Exposure", currentExposure - exposureGradient);
-            tempExposureAmount += exposureGradient;
-            if (tempExposureAmount >= targetExposureAmount)
+            if (tempExposureAmount < targetExposureAmount)
             {
+                RenderSettings.skybox.SetFloat("_Exposure", currentExposure - exposureGradient);
+                tempExposureAmount += exposureGradient;
+
+            }
+            else if (tempExposureAmount >= targetExposureAmount)
+            {
+                
                 lowerExposureBathroomCutscene = false;
                 targetExposureAmount = 0.0f;
                 tempExposureAmount = 0.0f;

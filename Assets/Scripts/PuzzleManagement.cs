@@ -51,6 +51,18 @@ public class PuzzleManagement : MonoBehaviour
 
     public GameObject placeholderEndingTextUI;
 
+    
+    private float targetGrainSize = 0.0f;
+    private float grainSizeGradient = 0.01f;
+    private float tempGrainSizeAccumulation = 0.0f;
+    public static bool shouldIncreaseGrainSizeBathroomAppearance = false;
+    public static bool shouldIncreaseGrainSizeBathroomCutscene = false;
+
+    private float targetVignetteIntensity = 0.3f;
+    private float vignetteIntensityGradient = 0.001f;
+    private float currentVignetteIntensity = 0.0f;
+    public static bool shouldIncreaseVignetteIntensity = false;
+
     private void Start()
     {
         lightsScript = lights.GetComponent<ProgressiveLights>();
@@ -83,6 +95,16 @@ public class PuzzleManagement : MonoBehaviour
             //Debug.Log("Ending cutscene goes here");
             //placeholderEndingTextUI.SetActive(true);
             turulsAnimator.Play("TurulEndingCutscene");
+        }
+
+        if (shouldIncreaseGrainSizeBathroomAppearance)
+        {
+            increaseGrainSizeBathroomAppearnace();
+        }
+
+        if (shouldIncreaseVignetteIntensity)
+        {
+            increaseVignetteIntensity();
         }
     }
 
@@ -147,7 +169,7 @@ public class PuzzleManagement : MonoBehaviour
 
     private void makeGraphicsGrainier()
     {
-        PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
+        /*PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
         
@@ -160,6 +182,62 @@ public class PuzzleManagement : MonoBehaviour
         if (VignetteLayer.intensity > maxVignetteIntensity)
         {
             VignetteLayer.intensity.Override(maxVignetteIntensity);
+        }*/
+    }
+
+    private void increaseGrainSizeBathroomAppearnace()
+    {
+        targetGrainSize = 1.45f;
+        PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
+        PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
+        float currentGrainSize = GrainLayer.size;
+        if (currentGrainSize < targetGrainSize)
+        {
+            GrainLayer.size.Override(currentGrainSize + grainSizeGradient);
         }
+        else if (currentGrainSize >= targetGrainSize)
+        {
+            GrainLayer.size.Override(targetGrainSize);
+            shouldIncreaseGrainSizeBathroomAppearance = false;
+
+        }
+
+    }
+
+    private void increaseGrainSizeBathroomCutscene()
+    {
+        targetGrainSize = 2.2f;
+        PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
+        PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
+        float currentGrainSize = GrainLayer.size;
+        if (currentGrainSize < targetGrainSize)
+        {
+            GrainLayer.size.Override(currentGrainSize + grainSizeGradient);
+        }
+        else if (currentGrainSize >= targetGrainSize)
+        {
+            GrainLayer.size.Override(targetGrainSize);
+            shouldIncreaseGrainSizeBathroomCutscene = false;
+
+        }
+    }
+
+    private void increaseVignetteIntensity()//limits field of view, kind of like squinting
+    {
+
+        PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
+        currentVignetteIntensity = VignetteLayer.intensity;
+        Debug.Log("currentVignetteIntensity: " + currentVignetteIntensity);
+        Debug.Log("targetVignetteIntensity: " + targetVignetteIntensity);
+        if (currentVignetteIntensity < targetVignetteIntensity)
+        {
+            VignetteLayer.intensity.Override(currentVignetteIntensity + vignetteIntensityGradient);
+        }
+        else if (currentVignetteIntensity >= targetVignetteIntensity)
+        {
+            shouldIncreaseVignetteIntensity = false;
+        }
+        //VignetteLayer.intensity.Override(currentVignetteIntensity + vignetteIntensityGradient);
+
     }
 }

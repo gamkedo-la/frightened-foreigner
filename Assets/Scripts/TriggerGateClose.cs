@@ -116,7 +116,8 @@ public class TriggerGateClose : MonoBehaviour
         //RenderSettings.skybox.SetColor("_Tint", new Color(0.0f, 51.0f/255.0f, 106.0f/255.0f, 1.0f));
         //testSkyBox.SetColor("_Tint", new Color(0.0f, 51.0f / 255.0f, 106.0f / 255.0f, 1.0f));
         LightsScript.lowerExposureBathroomCutscene = true;
-
+        PuzzleManagement.shouldIncreaseGrainSizeBathroomCutscene = true;
+        PuzzleManagement.shouldIncreaseVignetteIntensity = true;
         LightsScript.targetLightIntensity -= LightsScript.targetDimAmount;
 
         LightsScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
@@ -125,7 +126,7 @@ public class TriggerGateClose : MonoBehaviour
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
         
-        GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
+       /* GrainLayer.intensity.Override(GrainLayer.intensity * PPVMultiplier);
         VignetteLayer.intensity.Override(VignetteLayer.intensity * PPVMultiplier);
         if (GrainLayer.intensity > maxGrainIntensity)
         {
@@ -134,7 +135,7 @@ public class TriggerGateClose : MonoBehaviour
         if (VignetteLayer.intensity > maxVignetteIntensity)
         {
             VignetteLayer.intensity.Override(maxVignetteIntensity);
-        }
+        }*/
     }
 
     public void VanessaSaysOMGAfterTheGateCloses()

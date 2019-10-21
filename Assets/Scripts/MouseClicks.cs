@@ -208,8 +208,9 @@ public class MouseClicks: MonoBehaviour
                         SceneManagementScript.ShouldFadeInPostFirstLevelTrack = true;
                         ProgressiveLights.lightsShouldBeDimming = true;
                         LightScript.rotateSunBathroomAppearance = true;
-                        LightScript.targetLightIntensity -= LightScript.targetDimAmount*3;
+                        //LightScript.targetLightIntensity -= LightScript.targetDimAmount*3;
                         LightScript.lowerExposureBathroomAppearance = true;
+                        PuzzleManagement.shouldIncreaseGrainSizeBathroomAppearance = true;
                         LightScript.MakeAmbientCreepier();//make the game slightly darker to help add progressive creepy ambience
                         increaseGraininessOfGraphics();
                     }
@@ -328,7 +329,7 @@ public class MouseClicks: MonoBehaviour
 
     public void increaseGraininessOfGraphics()
     {
-        PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
+        /*PPVScript = PostProccessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
         
@@ -341,7 +342,7 @@ public class MouseClicks: MonoBehaviour
         if (VignetteLayer.intensity > maxVignetteIntensity)
         {
             VignetteLayer.intensity.Override(maxVignetteIntensity);
-        }
+        }*/
     }
 
     

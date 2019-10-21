@@ -811,7 +811,7 @@ public class LockView : MonoBehaviour
 
     public void makeGraphicsGrainier()
     {
-        PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
+        /*PPVScript = postProcessingValue.GetComponent<PostProcessVolume>();
         PPVScript.profile.TryGetSettings<Grain>(out GrainLayer);
         PPVScript.profile.TryGetSettings<Vignette>(out VignetteLayer);
         
@@ -824,6 +824,6 @@ public class LockView : MonoBehaviour
         if (VignetteLayer.intensity > maxVignetteIntensity)
         {
             VignetteLayer.intensity.Override(maxVignetteIntensity);
-        }
+        }*/
     }
 }
