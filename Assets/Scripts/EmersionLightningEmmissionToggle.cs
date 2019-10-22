@@ -49,10 +49,7 @@ public class EmersionLightningEmmissionToggle : MonoBehaviour
             StartCoroutine(DelayLightningStrikeForBathroom());
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            FeneLaughs.start();
-        }
+        
     }
 
     

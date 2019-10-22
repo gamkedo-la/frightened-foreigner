@@ -72,7 +72,7 @@ public class PuzzleManagement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        /*if (Input.GetKeyDown(KeyCode.J))
         {
             if (!puzzleJumper.activeInHierarchy)
             {
@@ -88,7 +88,7 @@ public class PuzzleManagement : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-        }
+        }*/
 
         if (NumberOfFullElementsPuzzlesSolved == 4)
         {

@@ -17,14 +17,7 @@ public class triggerConvergenceAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("c"))
-        {
-            gameObject.GetComponent<Animator>().enabled = true;
-        }
-        if (Input.GetKeyDown("v"))
-        {
-            triggerSecondCloudConvergence();
-        }
+        
     }
 
     public void triggerSecondCloudConvergence()

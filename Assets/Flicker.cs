@@ -35,21 +35,7 @@ public class Flicker : MonoBehaviour
 
 
 
-        //testing light functionality
-        if (Input.GetKeyDown("l"))//allows player to navigate out of the game space
-        {
-            if (!lightIsOn)
-            {
-                
-                lightIsOn = true;
-            }
-            else if (lightIsOn)
-            {
-                
-
-                lightIsOn = false;
-            }
-        }
+        
     }
 
     public void flickerOn()

@@ -16,14 +16,6 @@ public class toggleEmersionLightning : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.L) && !emersionLightningParticleSystem.activeInHierarchy)
-        {
-            emersionLightningParticleSystem.SetActive(true);
-           
-        }
-        else if (Input.GetKeyDown(KeyCode.L) && emersionLightningParticleSystem.activeInHierarchy)
-        {
-            emersionLightningParticleSystem.SetActive(false);
-        }
+        
     }
 }

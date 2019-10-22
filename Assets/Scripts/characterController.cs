@@ -31,10 +31,7 @@ public class characterController : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
         }
 
-        if (Input.GetKeyDown("r"))//repeats target audio
-        {
-            FMODUnity.RuntimeManager.PlayOneShot("event:/Words/Bathroom_Furdoszoba");
-        }
+        
 
         
             

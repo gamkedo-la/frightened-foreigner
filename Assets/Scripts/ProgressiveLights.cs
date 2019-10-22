@@ -42,11 +42,7 @@ public class ProgressiveLights : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("b"))
-        {
-            lightsShouldBeDimming = true;
-            
-        }
+        
         if (lightsShouldBeDimming)
         {
             MakeAmbientCreepier();
